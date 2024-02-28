@@ -1,4 +1,4 @@
 # Ignorar los siguientes directorios
 __pycache__/
-gliomas/
+data/
 
