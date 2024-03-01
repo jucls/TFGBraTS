@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.2.28)  28 FEB 2024 22:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.2.28)  1 MAR 2024 03:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -482,7 +482,7 @@ Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 ))
 (./portada/portada.tex
 \centeroffset=\skip70
-<imagenes/logo_ugr.jpg, id=39, 777.90625pt x 231.86626pt>
+<imagenes/logo_ugr.jpg, id=31, 777.90625pt x 231.86626pt>
 File: imagenes/logo_ugr.jpg Graphic file (type jpg)
 <use imagenes/logo_ugr.jpg>
 Package pdftex.def Info: imagenes/logo_ugr.jpg  used on input line 12.
@@ -543,7 +543,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-<imagenes/etsiit_logo.png, id=40, 110.814pt x 40.4712pt>
+<imagenes/etsiit_logo.png, id=32, 110.814pt x 40.4712pt>
 File: imagenes/etsiit_logo.png Graphic file (type png)
 <use imagenes/etsiit_logo.png>
 Package pdftex.def Info: imagenes/etsiit_logo.png  used on input line 31.
@@ -559,14 +559,12 @@ Overfull \hbox (24.0pt too wide) in paragraph at lines 25--38
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./imagenes/logo_ugr.jpg> <
 ./imagenes/etsiit_logo.png>]) (./prefacios/prefacio.tex [2
 
-] [3] [4
-
 ]
 ! Undefined control sequence.
 \myTitle ...mediante aprendizaje profundo \xspace 
                                                   
-l.10 {\large\bfseries \myTitle
-                              : \mySubTitle}\\
+l.7 {\large\bfseries \myTitle
+                             : \mySubTitle}\\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -576,8 +574,8 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \mySubTitle ...iante aprendizaje profundo \xspace 
                                                   
-l.10 {\large\bfseries \myTitle: \mySubTitle
-                                           }\\
+l.7 {\large\bfseries \myTitle: \mySubTitle
+                                          }\\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -587,7 +585,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \myName ->Jaime Castillo Uclés\xspace 
                                        
-l.13 \myName
+l.10 \myName
             \\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -596,22 +594,22 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
+Underfull \hbox (badness 10000) in paragraph at lines 14--15
+
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 17--18
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 20--21
-
- []
-
-[5] [6
+[3] [4
 
 ]
 ! Undefined control sequence.
 \mySubTitleENGLISH ...using deep learning \xspace 
                                                   
-l.28 {\large\bfseries \mySubTitleENGLISH
+l.25 {\large\bfseries \mySubTitleENGLISH
                                         : \mySubTitleENGLISH}\\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -622,7 +620,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \mySubTitleENGLISH ...using deep learning \xspace 
                                                   
-l.28 ...ies \mySubTitleENGLISH: \mySubTitleENGLISH
+l.25 ...ies \mySubTitleENGLISH: \mySubTitleENGLISH
                                                   }\\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -633,7 +631,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \myName ->Jaime Castillo Uclés\xspace 
                                        
-l.31 \myName
+l.28 \myName
             \\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -642,26 +640,26 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
+Underfull \hbox (badness 10000) in paragraph at lines 32--33
+
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 35--36
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 38--39
-
- []
-
-[7] [8
+[5] [6
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 46--47
+Underfull \hbox (badness 10000) in paragraph at lines 43--44
 
  []
 
 ! Undefined control sequence.
 \myName ->Jaime Castillo Uclés\xspace 
                                        
-l.48 Yo, \textbf{\myName}
+l.45 Yo, \textbf{\myName}
                          , alumno de la titulación \myDegree de la \textbf{...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -672,7 +670,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \myDegree ... en Ingeniería Informática \xspace 
                                                   
-l.48 ...yName}, alumno de la titulación \myDegree
+l.45 ...yName}, alumno de la titulación \myDegree
                                                    de la \textbf{Escuela Té...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -683,7 +681,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \myName ->Jaime Castillo Uclés\xspace 
                                        
-l.55 \noindent Fdo: \myName
+l.52 \noindent Fdo: \myName
                            
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -691,17 +689,17 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-[9] [10
+[7] [8
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 67--68
+Underfull \hbox (badness 10000) in paragraph at lines 64--65
 
  []
 
 ! Undefined control sequence.
 \myProf ->Rosa María Rodríguez Sánchez\xspace 
                                                  
-l.69 Dña. \textbf{\myProf}
+l.66 Dña. \textbf{\myProf}
                            , Profesor del Área de \myDepartment del Departa...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -712,7 +710,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \myDepartment ... Inteligencia Artificial \xspace 
                                                   
-l.69 ...Prof}, Profesor del Área de \myDepartment
+l.66 ...Prof}, Profesor del Área de \myDepartment
                                                    del Departamento de \myDe...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -723,7 +721,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \myDepartment ... Inteligencia Artificial \xspace 
                                                   
-l.69 ...partment del Departamento de \myDepartment
+l.66 ...partment del Departamento de \myDepartment
                                                    de la Universidad de Gran...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -734,7 +732,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \myTitle ...mediante aprendizaje profundo \xspace 
                                                   
-l.78 ...do \textit{\textbf{\myTitle, \mySubTitle}}
+l.75 ...do \textit{\textbf{\myTitle, \mySubTitle}}
                                                   ,
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -745,7 +743,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \mySubTitle ...iante aprendizaje profundo \xspace 
                                                   
-l.78 ...do \textit{\textbf{\myTitle, \mySubTitle}}
+l.75 ...do \textit{\textbf{\myTitle, \mySubTitle}}
                                                   ,
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -756,7 +754,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \myName ->Jaime Castillo Uclés\xspace 
                                        
-l.79 ... bajo su supervisión por \textbf{\myName}
+l.76 ... bajo su supervisión por \textbf{\myName}
                                                   , y autorizamos la defensa...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -764,9 +762,9 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-[11] [12
+[9] [10
 
-]) [13] [14
+]) [11] [12
 
 ] (./proyecto.toc
 LaTeX Info: Redefining \. on input line 1.
@@ -798,52 +796,65 @@ LaTeX Info: Redefining \% on input line 1.
 
  [5] [6
 
-] (./capitulos/01_introduccion.tex)
-(./capitulos/02_estadodelarte.tex
+] (./capitulos/01_introduccion.tex
+Cap\'{\i }tulo 1.
+
+Underfull \vbox (badness 2547) has occurred while \output is active []
+
+
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1 \chapter
-            *{Estado del arte} [1
+l.19 
+      [1
 
-]
+]) (./capitulos/02_estadodelarte.tex
+LaTeX Info: Redefining \. on input line 1.
+LaTeX Info: Redefining \% on input line 1.
+
 pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.1 \chapter
-            *{Estado del arte} [2
-
-]) (./capitulos/03_metodologia.tex
+            {Estado del arte} [2]
+Cap\'{\i }tulo 2.
+) (./capitulos/03_metodologia.tex
 pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.1 \chapter
-            *{Metodología} [3]
+            {Metodología} [3
+
+]
 pdfTeX warning (ext4): destination with the same identifier (name{page.4}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.1 \chapter
-            *{Metodología} [4
+            {Metodología} [4
 
-]) (./capitulos/04_experimentacion.tex
+]
+Cap\'{\i }tulo 3.
+) (./capitulos/04_experimentacion.tex
 pdfTeX warning (ext4): destination with the same identifier (name{page.5}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.1 \chapter
-            *{Experimentación} [5]
+            {Experimentación} [5]
 pdfTeX warning (ext4): destination with the same identifier (name{page.6}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.1 \chapter
-            *{Experimentación} [6
+            {Experimentación} [6
 
-]) (./proyecto.bbl
+]
+Cap\'{\i }tulo 4.
+) (./proyecto.bbl
 pdfTeX warning (ext4): destination with the same identifier (name{page.7}) has 
 been already used, duplicate ignored
 <to be read again> 
@@ -862,22 +873,8 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.9}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.211 \chapter
-              *{} [9]
-pdfTeX warning (ext4): destination with the same identifier (name{page.10}) has
- been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.211 \chapter
-              *{} [10
-
-]
-pdfTeX warning (ext4): destination with the same identifier (name{page.11}) has
- been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.214 \end{document}
-                     [11] (./proyecto.aux
+l.210 \end{document}
+                     [9] (./proyecto.aux
 LaTeX Info: Redefining \. on input line 22.
 LaTeX Info: Redefining \% on input line 22.
 )
@@ -886,26 +883,26 @@ LaTeX2e <2023-06-01>
 L3 programming layer <2023-06-05>
  ***********
 Package rerunfilecheck Info: File `proyecto.out' has not changed.
-(rerunfilecheck)             Checksum: 791FBD02544FD2C21D17E022152A7565;1110.
+(rerunfilecheck)             Checksum: 168B78DE6887B41722A2A9DC81E4C706;769.
  ) 
 Here is how much of TeX's memory you used:
- 13351 strings out of 475735
- 208544 string characters out of 5784786
- 1857759 words of memory out of 5000000
- 33859 multiletter control sequences out of 15000+600000
- 520163 words of font info for 56 fonts, out of 8000000 for 9000
+ 13359 strings out of 475735
+ 208711 string characters out of 5784786
+ 1858759 words of memory out of 5000000
+ 33870 multiletter control sequences out of 15000+600000
+ 520769 words of font info for 58 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,6n,79p,234b,481s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,12n,79p,645b,490s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/te
 xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-
 dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on proyecto.pdf (31 pages, 207776 bytes).
+Output written on proyecto.pdf (27 pages, 218558 bytes).
 PDF statistics:
- 227 PDF objects out of 1000 (max. 8388607)
- 177 compressed objects within 2 object streams
- 39 named destinations out of 1000 (max. 500000)
- 83 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 200 PDF objects out of 1000 (max. 8388607)
+ 154 compressed objects within 2 object streams
+ 36 named destinations out of 1000 (max. 500000)
+ 67 words of extra memory for PDF output out of 10000 (max. 10000000)
 

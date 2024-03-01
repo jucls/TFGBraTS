@@ -181,25 +181,21 @@ pdfproducer = {pdflatex}
 \listoftables
 %
 \mainmatter
-%\setlength{\parskip}{5pt}
-\addcontentsline{toc}{chapter}{Introducción}
+\setlength{\parskip}{5pt}
+
 \input{capitulos/01_introduccion}
-
-\addcontentsline{toc}{chapter}{Estado del arte}
 \input{capitulos/02_estadodelarte}
-
-\addcontentsline{toc}{chapter}{Metodología}
 \input{capitulos/03_metodologia}
-
-\addcontentsline{toc}{chapter}{Experimentación}
 \input{capitulos/04_experimentacion}
 
 %\chapter{Conclusiones y Trabajos Futuros}
 %
 %
-%\nocite{*}
+
+\nocite{*}
+\addcontentsline{toc}{chapter}{Bibliografía}
+\bibliography{bibliografia/bibliografia}
 \bibliographystyle{plain}
-\bibliography{bibliografia/bibliografia}\addcontentsline{toc}{chapter}{Bibliografía}
 
 %
 %\appendix
@@ -208,7 +204,7 @@ pdfproducer = {pdflatex}
 %\input{glosario/entradas_glosario}
 % \addcontentsline{toc}{chapter}{Glosario}
 % \printglossary
-\chapter*{}
-\thispagestyle{empty}
+%\chapter*{}
+%\thispagestyle{empty}
 
 \end{document}
