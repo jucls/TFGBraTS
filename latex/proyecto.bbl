@@ -1,20 +1,27 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{}
 
-\bibitem{MULTIMODALBRAINTUMORSEGMENTATION}
-S.~Bauer J. Kalpathy-Cramer K. Farahani J. Kirby et~al. B.~H.~Menze, A.~Jakab.
-\newblock {\em The Multimodal Brain Tumor Image Segmentation Benchmark
-  (BRATS)}.
-\newblock IEEE Transactions on Medical Imaging, 2015.
+\bibitem[B.~H.~Menze, 2015]{MULTIMODALBRAINTUMORSEGMENTATION}
+B.~H.~Menze, e.~a. (2015).
+\newblock The multimodal brain tumor image segmentation benchmark (brats).
 
-\bibitem{labella2023asnrmiccai}
-et~al. Dominic~LaBella.
+\bibitem[Dominic~LaBella, 2023]{labella2023asnrmiccai}
+Dominic~LaBella, e.~a. (2023).
 \newblock The asnr-miccai brain tumor segmentation (brats) challenge 2023:
-  Intracranial meningioma, 2023.
+  Intracranial meningioma.
 
-\bibitem{BRATS2021}
-et~al. U.Baid.
-\newblock {\em The RSNA-ASNR-MICCAI BraTS 2021 Benchmark on Brain Tumor
-  Segmentation and Radiogenomic Classification}.
-\newblock arXiv:2107.02314, 2021.
+\bibitem[Qiangli and Dong, 2022]{DAVINCI}
+Qiangli and Dong, Y. (2022).
+\newblock Da vinci robot-assisted video image processing under artificial
+  intelligence vision processing technology.
+
+\bibitem[U.Baid, 2021]{BRATS2021}
+U.Baid, e.~a. (2021).
+\newblock The rsna-asnr-miccai brats 2021 benchmark on brain tumor segmentation
+  and radiogenomic classification.
+
+\bibitem[Wouter~Bulten, 2022]{PANDA}
+Wouter~Bulten, e.~a. (2022).
+\newblock Artificial intelligence for diagnosis and gleason grading of prostate
+  cancer: the panda challenge.
 
 \end{thebibliography}

@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex proyecto"] 1709249406 "proyecto.aux" "proyecto.bbl" "proyecto" 1709249406 2
-  "./bibliografia/bibliografia.bib" 1709249362 727 f2e8e5350c6f29dd8f6162055909cd23 ""
-  "/usr/share/texlive/texmf-dist/bibtex/bst/base/plain.bst" 1292289607 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
-  "proyecto.aux" 1709249398 1987 e3d74abeebbb10fc5cf0d917a91ea927 "pdflatex"
+["bibtex proyecto"] 1709344111 "proyecto.aux" "proyecto.bbl" "proyecto" 1709344111 0
+  "./bibliografia/bibliografia.bib" 1709344108 1139 1037759a38d037b9a742a74d0d2109f1 ""
+  "/usr/share/texlive/texmf-dist/bibtex/bst/base/apalike.bst" 1292289607 24635 604dafcc79f521a11ea73e506e1fbd98 ""
+  "proyecto.aux" 1709344111 2229 502eb3c10c05dd69f3b68c5277d78d67 "pdflatex"
   (generated)
   "proyecto.bbl"
   "proyecto.blg"
   (rewritten before read)
-["pdflatex"] 1709248844 "proyecto.tex" "proyecto.pdf" "proyecto" 1709249406 2
+["pdflatex"] 1709344111 "proyecto.tex" "proyecto.pdf" "proyecto" 1709344111 2
   "/etc/texmf/web2c/texmf.cnf" 1709143228 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm" 1136768653 1328 c834bbb027764024c09d3d2bf908b5f0 ""
@@ -106,21 +106,21 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1693172360 40357 c95f5d5e031b5c7040b426833c11f2e0 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1709143248 4643645 d2d1d8b8ba87ed005f4aaf1ce646a79e ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1709143298 7908715 127d66b858fd8ae94d16df69ac6b88ea ""
-  "capitulos/01_introduccion.tex" 1709239482 2379 30f01d7c8d61e1797bb49c510a549fae ""
+  "capitulos/01_introduccion.tex" 1709341889 2801 55f9e5d9f6d2624ebdbb414a7f6428f0 ""
   "capitulos/02_estadodelarte.tex" 1709225086 25 0160bab7f182cee43e2deb50ca7d8c40 ""
   "capitulos/03_metodologia.tex" 1709225093 22 d3de580a3684094a84a6dbd99e5b6d61 ""
   "capitulos/04_experimentacion.tex" 1709225098 26 2419eab189ffc673ffb31349e8a4b0a6 ""
   "imagenes/etsiit_logo.png" 1709139976 15686 70bc5d741d9ed0241e268f68e916ccd7 ""
   "imagenes/logo_ugr.jpg" 1709139976 85532 25866cc28cc667a1cdd972180571e7be ""
-  "portada/portada.tex" 1709148330 1015 6ce69fbcb87c4bafe229b419856d07f0 ""
-  "prefacios/prefacio.tex" 1709208308 2003 95d8102850db0e3b3c8fdf78653023b1 ""
-  "proyecto.aux" 1709249398 1987 e3d74abeebbb10fc5cf0d917a91ea927 "pdflatex"
-  "proyecto.bbl" 1709249406 666 6fe1728de6bd37174405358b82541984 "bibtex proyecto"
-  "proyecto.lof" 1709249398 110 23afabf659c39586fe5fdf469f0fda26 "pdflatex"
-  "proyecto.lot" 1709249398 110 23afabf659c39586fe5fdf469f0fda26 "pdflatex"
-  "proyecto.out" 1709249398 769 168b78de6887b41722a2a9dc81e4c706 "pdflatex"
-  "proyecto.tex" 1709248762 5483 33062115ebba4742667ed7d28be9b3b9 ""
-  "proyecto.toc" 1709249398 505 f92b96f9887aad524dba7c7b095f4322 "pdflatex"
+  "portada/portada.tex" 1709343582 1016 08a3d41ae83395a9b2c4bb9c65a4cc1b ""
+  "prefacios/prefacio.tex" 1709339198 2003 e1b682621643cd19685d4731003c840b ""
+  "proyecto.aux" 1709344111 2229 502eb3c10c05dd69f3b68c5277d78d67 "pdflatex"
+  "proyecto.bbl" 1709344111 944 8e18be52743b327d17c8b82626d3ddb6 "bibtex proyecto"
+  "proyecto.lof" 1709344111 110 23afabf659c39586fe5fdf469f0fda26 "pdflatex"
+  "proyecto.lot" 1709344111 110 23afabf659c39586fe5fdf469f0fda26 "pdflatex"
+  "proyecto.out" 1709344111 769 168b78de6887b41722a2a9dc81e4c706 "pdflatex"
+  "proyecto.tex" 1709343724 5401 bfecb7800b6a865673f23990610b5d7c ""
+  "proyecto.toc" 1709344111 505 a1279bdee6767806bf421b7b7fdf3688 "pdflatex"
   (generated)
   "proyecto.aux"
   "proyecto.lof"
