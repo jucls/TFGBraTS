@@ -7,45 +7,46 @@ Warning--empty journal in MULTIMODALBRAINTUMORSEGMENTATION
 Warning--empty journal in DAVINCI
 Warning--empty journal in BRATS2021
 Warning--empty journal in PANDA
-You've used 5 entries,
+Warning--empty journal in yoshuabengio
+You've used 6 entries,
             1935 wiz_defined-function locations,
-            498 strings with 4484 characters,
-and the built_in function-call counts, 1362 in all, are:
-= -- 124
-> -- 41
-< -- 5
-+ -- 18
-- -- 12
-* -- 93
-:= -- 260
-add.period$ -- 10
-call.type$ -- 5
-change.case$ -- 31
-chr.to.int$ -- 5
-cite$ -- 9
-duplicate$ -- 62
-empty$ -- 96
-format.name$ -- 19
-if$ -- 248
+            503 strings with 4589 characters,
+and the built_in function-call counts, 1626 in all, are:
+= -- 148
+> -- 48
+< -- 6
++ -- 20
+- -- 14
+* -- 111
+:= -- 310
+add.period$ -- 12
+call.type$ -- 6
+change.case$ -- 37
+chr.to.int$ -- 6
+cite$ -- 11
+duplicate$ -- 75
+empty$ -- 116
+format.name$ -- 22
+if$ -- 297
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 4
-newline$ -- 23
-num.names$ -- 15
-pop$ -- 33
+missing$ -- 5
+newline$ -- 27
+num.names$ -- 18
+pop$ -- 40
 preamble$ -- 1
-purify$ -- 31
+purify$ -- 37
 quote$ -- 0
-skip$ -- 54
+skip$ -- 65
 stack$ -- 0
-substring$ -- 66
+substring$ -- 78
 swap$ -- 0
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 30
-warning$ -- 4
-while$ -- 10
+type$ -- 36
+warning$ -- 5
+while$ -- 12
 width$ -- 0
-write$ -- 52
-(There were 4 warnings)
+write$ -- 62
+(There were 5 warnings)

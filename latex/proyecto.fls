@@ -34,12 +34,6 @@ INPUT /usr/share/texlive/texmf-dist/tex/generic/babel/locale/es/babel-spanish.te
 INPUT /usr/share/texlive/texmf-dist/tex/generic/babel/locale/es/babel-spanish.tex
 INPUT /usr/share/texlive/texmf-dist/tex/generic/babel/locale/es/babel-spanish.tex
 INPUT /usr/share/texlive/texmf-dist/tex/generic/babel/locale/es/babel-es.ini
-INPUT /usr/share/texlive/texmf-dist/tex/latex/tools/dcolumn.sty
-INPUT /usr/share/texlive/texmf-dist/tex/latex/tools/dcolumn.sty
-INPUT /usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
-INPUT /usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
-INPUT /usr/share/texlive/texmf-dist/tex/latex/tools/verbatim.sty
-INPUT /usr/share/texlive/texmf-dist/tex/latex/tools/verbatim.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
@@ -56,8 +50,6 @@ INPUT /usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
 INPUT /usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
 INPUT /usr/share/texlive/texmf-dist/tex/latex/tools/afterpage.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/tools/afterpage.sty
-INPUT /usr/share/texlive/texmf-dist/tex/latex/tools/longtable.sty
-INPUT /usr/share/texlive/texmf-dist/tex/latex/tools/longtable.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
 INPUT /usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
@@ -117,6 +109,8 @@ INPUT /usr/share/texlive/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
 INPUT /usr/share/texlive/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
 INPUT /usr/share/texlive/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/tools/longtable.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/tools/longtable.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/pdfpages/pdfpages.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/pdfpages/pdfpages.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
@@ -139,9 +133,15 @@ INPUT /usr/share/texlive/texmf-dist/tex/latex/pdfpages/pppdftex.def
 INPUT /usr/share/texlive/texmf-dist/tex/latex/pdfpages/pppdftex.def
 INPUT /usr/share/texlive/texmf-dist/tex/latex/colortbl/colortbl.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/colortbl/colortbl.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/footmisc/footmisc.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/footmisc/footmisc.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/tools/verbatim.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/tools/verbatim.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/tools/dcolumn.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/tools/dcolumn.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 INPUT /usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 INPUT ./proyecto.aux
@@ -153,8 +153,6 @@ INPUT /usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 INPUT /usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 INPUT /usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
-INPUT /usr/share/texlive/texmf-dist/tex/latex/grfext/grfext.sty
-INPUT /usr/share/texlive/texmf-dist/tex/latex/grfext/grfext.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 INPUT /usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 INPUT /usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
@@ -258,4 +256,5 @@ INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb
+INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb

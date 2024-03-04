@@ -24,4 +24,8 @@ Wouter~Bulten, e.~a. (2022).
 \newblock Artificial intelligence for diagnosis and gleason grading of prostate
   cancer: the panda challenge.
 
+\bibitem[Yoshua~Bengio, 2017]{yoshuabengio}
+Yoshua~Bengio, e.~a. (2017).
+\newblock Brain tumor segmentation with deep neural networks.
+
 \end{thebibliography}

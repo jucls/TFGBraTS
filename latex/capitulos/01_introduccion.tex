@@ -10,17 +10,36 @@ Resultados notables como la inclusión de robots especializados para la cirugía
 
 \section{Objetivos}
 
-**Hablar sobre porqué al dejar la tarea de segmentar a una máquina esta puede ser más precisa que un humano**
 
-Con este trabajo se pretende perseguir la creación de una arquitectura que mejore el estado del arte actual para equipar a un programa al servicio de personal médico para la ayuda en la evaluación del diagnóstico de un posible paciente de tumor cerebral.
+Con este trabajo se persigue la creación de una arquitectura basada en aprendizaje profundo que aproxime o mejore al estado del arte actual para equipar a un programa de uso médico. Este programa tiene los objetivos de la ayuda en la evaluación del diagnóstico y pronóstico de un posible paciente de tumor cerebral y en caso afirmativo, la ayuda en la aplicación de la terapia por radiación. 
 
-A continuación, detallaremos de una forma más profunda estos objetivos.
+Se seguirá un planteamiento similar al seguido en la competición \textbf{BraTS Brain Tumor Segmentation 2023} \cite{BRATS2021} históricamente reconocida por ser un benchmark recurrente de las capacidades de las arquitecturas profundas en el campo de la imagen médica.
+ 
+De forma análoga a esta competición, se plantea conseguir dichos objetivos a partir de la resolución de las siguientes tareas.
 
-El cerebro no tiene terminaciones nerviosas. Los pacientes no sienten dolor a causa de un tumor cerebral por sí mismo. Generalmente, acaban buscando ayuda médica por la aparición de otros indicios relacionados difíciles de distinguir de otras patologías agudas y de mucho menor transcendencia (visión borrosa, pérdida del control, etc).
+\begin{enumerate}
+	\item \textbf{Segmentación de los tumores y sus zonas.}  
+	\item \textbf{Clasificación entre tipos de tumores.} Clasificación binaria entre glioblastomas y meningiomas.
+	
+	\item \textbf{Predicción de la evolución.}
+\end{enumerate}
 
-Los glioblastomas y sus variantes tienen una media de supervivencia de 15 meses tras su diagnóstico.
+A continuación, detallaremos de una forma más profunda la naturaleza de este planteamiento.
+
+Sólo en los EEUU más de 10000 personas sufrirán un glioblastoma cada año. La supervivencia de estos a los cinco años es del $6.9 \%$ de los pacientes, con una media de supervivencia de 15 meses tras su diagnóstico.
+
+El cerebro no tiene terminaciones nerviosas. Los pacientes no sienten dolor a causa de un tumor cerebral por sí mismo, lo cual hace que no exista una alerta sobre el paciente que lo motive a buscar ayuda médica en las primeras fases de la patología. Generalmente, acaban buscando ayuda médica por la aparición de otros indicios relacionados difíciles de distinguir de otras patologías agudas y de menor transcendencia como visión borrosa, pérdida del control, etc. Además, los glioblastomas son tumores de muy rápido crecimiento pueden llegar a estar en una fase avanzada desde su inicio en tan solo 2-3 meses.
+
+Por estos motivos, es común llegar tarde. Tomando mucha importancia el diagnóstico temprano para su superación. Es en este punto donde se tiene el objetivo de evaluar las capacidades del aprendizaje profundo para la segmentación de tumores que en sus inicios podrían ser pasados desapercibidos por incluso el ojo médico y eventualmente la segmentación de las zonas de interés de la aparición de nuevos tumores.
 
 En general, los tumores cerebrales son difíciles de tratar y son resistentes a terapias convencionales usadas en otros tipos de cánceres como la quimioterapia debido a los desafíos que presenta el cerebro para tolerar ciertos químicos, transportar medicamentos dentro de él y la alta importancia que tiene en este órgano la optimización del uso de tratamientos que puedan ser invasivos. En otras palabras, el uso de tratamientos basados en la extirpación o en la medicación pueden ser arriesgados. Por tanto, el tratamiento más común de estos está basado en la radioterapia.
+
+A la hora de aplicar un tratamiento de radioterapia siempre se tiene el objetivo de ser lo menos invasivo posible. Para ello, el médico debe ser lo más preciso posible en introducir la segmentación correcta en la que se aplicarán los rayos. 
+
+El objetivo específico para la ayuda en el tratamiento se basaría en el uso del modelo para automatizar esta tarea ya que podría suponer ahorrar costes en errores humanos y en tiempo a veces escaso para el personal médico cuya tarea ya se reduciría a corregir dicha segmentación.
+ 
+
+
 
 
 \section{Metodología}
