@@ -1,4 +1,8 @@
 # Ignorar los siguientes directorios
 __pycache__/
 data/
+ejemplo.py
+main.py
+nii_to_png.py
+
 
