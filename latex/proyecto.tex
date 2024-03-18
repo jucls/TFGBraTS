@@ -7,7 +7,8 @@
 \usepackage{fancyhdr}
 \usepackage{graphicx}
 \usepackage{afterpage}
-\usepackage[pdfborder={000}]{hyperref} %referencia
+%\usepackage[pdfborder={000}]{hyperref} %referencia
+\usepackage[colorlinks=true, allcolors=black]{hyperref}
 \usepackage{longtable}
 \usepackage{pdfpages}
 \usepackage{url}
@@ -38,28 +39,26 @@
 % ********************************************************************
 \newcommand{\myTitle}{Diagnóstico de tumores cerebrales a partir de IRM mediante aprendizaje profundo \xspace}
 \newcommand{\mySubTitle}{Diseño e implementación de una arquitectura \xspace}
-\newcommand{\myTitleENGLISH}{Brain tumor diagnosis from MRI images using deep learning \xspace}
+\newcommand{\myTitleENGLISH}{Brain tumor diagnosis from MRI images using Deep Learning \xspace}
 \newcommand{\mySubTitleENGLISH}{Design and architecture implementation \xspace}
 \newcommand{\myDegree}{Grado en Ingeniería Informática \xspace}
 \newcommand{\myName}{Jaime Castillo Uclés\xspace}
 \newcommand{\myProf}{Rosa María Rodríguez Sánchez\xspace}
-%\newcommand{\mySupervisor}{Put name here\xspace}
 \newcommand{\myFaculty}{Escuela Técnica Superior de Ingenierías Informática y de
-Telecomunicación\xspace}
+	Telecomunicación\xspace}
 \newcommand{\myFacultyShort}{E.T.S. de Ingenierías Informática y de
-Telecomunicación\xspace}
+	Telecomunicación\xspace}
 \newcommand{\myDepartment}{Ciencias de la Computación e Inteligencia Artificial \xspace}
 \newcommand{\myUni}{\protect{Universidad de Granada}\xspace}
 \newcommand{\myLocation}{Granada\xspace}
 \newcommand{\myTime}{\today\xspace}
 \newcommand{\myVersion}{Version 0.1\xspace}
 
-
 \hypersetup{
 	pdfauthor = {\myName jaimecastillo@correo.ugr.es},
 	pdftitle = {\myTitle},
 	pdfsubject = {},
-	pdfkeywords = {palabra_clave1, palabra_clave2, palabra_clave3, ...},
+	pdfkeywords = {palabra\_clave1, palabra\_clave2, palabra\_clave3, ...},
 	pdfcreator = {LaTeX con el paquete ....},
 	pdfproducer = {pdflatex}
 }

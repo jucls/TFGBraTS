@@ -1,31 +1,45 @@
 \begin{thebibliography}{}
 
-\bibitem[B.~H.~Menze, 2015]{MULTIMODALBRAINTUMORSEGMENTATION}
-B.~H.~Menze, e.~a. (2015).
-\newblock The multimodal brain tumor image segmentation benchmark (brats).
+\bibitem[Baid et~al., 2021]{baid2021rsna}
+Baid, U., Ghodasara, S., Mohan, S., Bilello, M., Calabrese, E., Colak, E.,
+  Farahani, K., Kalpathy-Cramer, J., Kitamura, F.~C., Pati, S., et~al. (2021).
+\newblock The rsna-asnr-miccai brats 2021 benchmark on brain tumor segmentation
+  and radiogenomic classification.
+\newblock {\em arXiv preprint arXiv:2107.02314}.
+
+\bibitem[Bulten et~al., 2022]{bulten2022artificial}
+Bulten, W., Kartasalo, K., Chen, P.-H.~C., Str{\"o}m, P., Pinckaers, H.,
+  Nagpal, K., Cai, Y., Steiner, D.~F., van Boven, H., Vink, R., et~al. (2022).
+\newblock Artificial intelligence for diagnosis and gleason grading of prostate
+  cancer: the panda challenge.
+\newblock {\em Nature medicine}, 28(1):154--163.
+
+\bibitem[cancer.org, 2024]{cancerorg}
+cancer.org (2024).
+\newblock American cancer society, cancer statistics center.
+\newblock 17 de marzo de 2024.
+
+\bibitem[Cheng et~al., 2022]{cheng2022vinci}
+Cheng, Q., Dong, Y., et~al. (2022).
+\newblock Da vinci robot-assisted video image processing under artificial
+  intelligence vision processing technology.
+\newblock {\em Computational and Mathematical Methods in Medicine}, 2022.
 
 \bibitem[Dominic~LaBella, 2023]{labella2023asnrmiccai}
 Dominic~LaBella, e.~a. (2023).
 \newblock The asnr-miccai brain tumor segmentation (brats) challenge 2023:
   Intracranial meningioma.
 
-\bibitem[Qiangli and Dong, 2022]{DAVINCI}
-Qiangli and Dong, Y. (2022).
-\newblock Da vinci robot-assisted video image processing under artificial
-  intelligence vision processing technology.
-
-\bibitem[U.Baid, 2021]{BRATS2021}
-U.Baid, e.~a. (2021).
-\newblock The rsna-asnr-miccai brats 2021 benchmark on brain tumor segmentation
-  and radiogenomic classification.
-
-\bibitem[Wouter~Bulten, 2022]{PANDA}
-Wouter~Bulten, e.~a. (2022).
-\newblock Artificial intelligence for diagnosis and gleason grading of prostate
-  cancer: the panda challenge.
-
-\bibitem[Yoshua~Bengio, 2017]{yoshuabengio}
-Yoshua~Bengio, e.~a. (2017).
+\bibitem[Havaei et~al., 2017]{havaei2017brain}
+Havaei, M., Davy, A., Warde-Farley, D., Biard, A., Courville, A., Bengio, Y.,
+  Pal, C., Jodoin, P.-M., and Larochelle, H. (2017).
 \newblock Brain tumor segmentation with deep neural networks.
+\newblock {\em Medical image analysis}, 35:18--31.
+
+\bibitem[Menze et~al., 2014]{menze2014multimodal}
+Menze, B.~H., Jakab, A., Bauer, S., Kalpathy-Cramer, J., Farahani, K., Kirby,
+  J., Burren, Y., Porz, N., Slotboom, J., Wiest, R., et~al. (2014).
+\newblock The multimodal brain tumor image segmentation benchmark (brats).
+\newblock {\em IEEE transactions on medical imaging}, 34(10):1993--2024.
 
 \end{thebibliography}

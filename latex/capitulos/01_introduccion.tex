@@ -4,29 +4,31 @@ Los tumores cerebrales son una de las formas más letales de cáncer. Específic
 
 Desde el punto de vista de la ingeniería y la informática, vemos como sin duda la aplicación de técnicas de Visión por Computador es una de las máximas para la investigación en imagen médica en la actualidad. Sólo considerando su aplicación en el diagnóstico de enfermedades, desde 2008 el número de publicaciones promedio realizadas por año se ha incrementado notablemente tanto que actualmente es diez veces mayor que en sus inicios. 
 
-Resultados notables como la inclusión de robots especializados para la cirugía \cite{DAVINCI} o buenos resultados en competiciones de ciencia de datos que replican la precisión médica \cite{PANDA} evidencian esta tendencia. El trabajo conjunto de personal médico e ingenieros promete seguir dando resultados que de forma separada eran inaccesibles.
+Resultados notables como la inclusión de robots especializados para la cirugía \cite{cheng2022vinci} o buenos resultados en competiciones de ciencia de datos que replican la precisión médica en el diagnóstico mediante imagen \cite{bulten2022artificial} evidencian esta tendencia. El trabajo conjunto de personal médico e ingenieros promete seguir dando resultados que de forma separada eran inaccesibles.
 
 
 
 \section{Objetivos}
 
 
-Con este trabajo se persigue la creación de una arquitectura basada en aprendizaje profundo que aproxime o mejore al estado del arte actual para equipar a un programa de uso médico. Este programa tiene los objetivos de la ayuda en la evaluación del diagnóstico y pronóstico de un posible paciente de tumor cerebral y en caso afirmativo, la ayuda en la aplicación de la terapia por radiación. 
+Con este trabajo se persigue la creación de una arquitectura basada en aprendizaje profundo para equipar a un programa de uso médico, estudiarla y compararla junto a trabajos previos y estado del arte. Este programa tiene el objetivos de la ayuda en la evaluación del diagnóstico y pronóstico de un posible paciente de tumor cerebral y en caso afirmativo, la ayuda en la aplicación de la terapia por radiación. 
 
-Se seguirá un planteamiento similar al seguido en la competición \textbf{BraTS Brain Tumor Segmentation 2023} \cite{BRATS2021} históricamente reconocida por ser un benchmark recurrente de las capacidades de las arquitecturas profundas en el campo de la imagen médica.
- 
-De forma análoga a esta competición, se plantea conseguir dichos objetivos a partir de la resolución de las siguientes tareas.
+Se seguirá un planteamiento similar al seguido en la competición \textbf{BraTS Brain Tumor Segmentation 2023} \cite{baid2021rsna} históricamente reconocida por ser un benchmark recurrente de las capacidades de las arquitecturas profundas en el campo de la imagen médica.
+
+BraTS es una competición que se define como un conglomerado de diferentes tareas relevantes en el diagnóstico de los tumores cerebrales. En concreto, para 2023 se contemplaron las siguientes tareas por separado: segmentación de glioblastomas en adultos, segmentación de meningiomas en adultos, segmentación de tumores pediátricos, segmentación de tumores de pacientes de origen africano, generación de pruebas faltantes y generación de partes de la imagen.
+
+De forma análoga a esta competición, se plantea conseguir dicho objetivo a partir de la resolución de las siguientes tareas.
 
 \begin{enumerate}
-	\item \textbf{Segmentación de los tumores y sus zonas.}  
-	\item \textbf{Clasificación entre tipos de tumores.} Clasificación binaria entre glioblastomas y meningiomas.
-	
-	\item \textbf{Predicción de la evolución.}
+	\item \textbf{Segmentación de los tumores.} 
+	Segmentación de glioblastomas y meningiomas, indicando sus zonas médicas reconocidas.
+	\item \textbf{Clasificación entre tipos de tumores.} Clasificación binaria entre glioblastomas y meningiomas. El programa indicará de qué tipo de tumor se trata una prueba dada.
+	\item \textbf{Predicción de la evolución.} 
 \end{enumerate}
 
 A continuación, detallaremos de una forma más profunda la naturaleza de este planteamiento.
 
-Sólo en los EEUU más de 10000 personas sufrirán un glioblastoma cada año. La supervivencia de estos a los cinco años es del $6.9 \%$ de los pacientes, con una media de supervivencia de 15 meses tras su diagnóstico.
+Sólo en los EEUU para 2024 se esperan 25400 nuevos casos de tumor cerebral. La supervivencia de estos a los cinco años es del $33.8 \%$ de los pacientes. \cite{cancerorg}
 
 El cerebro no tiene terminaciones nerviosas. Los pacientes no sienten dolor a causa de un tumor cerebral por sí mismo, lo cual hace que no exista una alerta sobre el paciente que lo motive a buscar ayuda médica en las primeras fases de la patología. Generalmente, acaban buscando ayuda médica por la aparición de otros indicios relacionados difíciles de distinguir de otras patologías agudas y de menor transcendencia como visión borrosa, pérdida del control, etc. Además, los glioblastomas son tumores de muy rápido crecimiento pueden llegar a estar en una fase avanzada desde su inicio en tan solo 2-3 meses.
 
