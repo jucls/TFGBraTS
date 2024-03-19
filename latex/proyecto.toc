@@ -2,6 +2,8 @@
 \contentsline {chapter}{\numberline {1}Introducción}{1}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Objetivos}{1}{section.1.1}%
 \contentsline {section}{\numberline {1.2}Metodología}{3}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}Conjunto de datos}{3}{subsection.1.2.1}%
+\contentsline {subsection}{\numberline {1.2.2}Arquitectura propuesta}{4}{subsection.1.2.2}%
 \contentsline {chapter}{\numberline {2}Estado del arte}{5}{chapter.2}%
 \contentsline {chapter}{\numberline {3}Metodología}{7}{chapter.3}%
 \contentsline {chapter}{\numberline {4}Experimentación}{9}{chapter.4}%

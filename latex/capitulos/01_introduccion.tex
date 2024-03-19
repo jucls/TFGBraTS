@@ -38,10 +38,33 @@ En general, los tumores cerebrales son difíciles de tratar y son resistentes a 
 
 A la hora de aplicar un tratamiento de radioterapia siempre se tiene el objetivo de ser lo menos invasivo posible. Para ello, el médico debe ser lo más preciso posible en introducir la segmentación correcta en la que se aplicarán los rayos. 
 
-El objetivo específico para la ayuda en el tratamiento se basaría en el uso del modelo para automatizar esta tarea ya que podría suponer ahorrar costes en errores humanos y en tiempo a veces escaso para el personal médico cuya tarea ya se reduciría a corregir dicha segmentación.
+El objetivo específico para la ayuda en el tratamiento se basaría en el uso del modelo para automatizar esta tarea ya que podría suponer ahorrar costes en errores humanos y en tiempo a veces escaso para el personal médico cuya tarea se reduciría a corregir dicha segmentación. En nuestro caso, integrándolo en un programa de uso médico.
  
 
 
-
-
 \section{Metodología}
+
+\subsection{Conjunto de datos}
+
+Definiremos como nuestro conjunto de datos $X$ a un conjunto de resonancias magnéticas cerebrales completas.
+
+Una de las limitaciones frecuentes en el campo de la imagen médica es la poca disponibilidad de datos. En general y también para nuestro problema, las dificultades que se presentan a la hora de construir un conjunto de datos médico grande son:
+
+\begin{enumerate}
+	\item \textbf{Poca densidad de pruebas médicas.} A pesar de que la densidad de casos es alta, en magnitud es frecuente que la cantidad de pruebas que se realizan sea mucho más baja. 
+	
+	\item \textbf{La desvinculación de los pacientes de sus datos}. El tratamiento de un dato médico siempre supone la eliminación de cualquier identificativo que ponga en riesgo la privacidad de este. Suponiendo un trabajo adicional para el personal médico que no siempre se puede asumir.
+	
+	\item \textbf{No existe una fuerte centralización de datos}. Al igual que los avances en imagen médica. 
+\end{enumerate}
+ para  ya que supone  para poder conservar su privacidad (eliminación de cualquier identificativo en las )
+
+\subsection{Arquitectura propuesta}
+
+** Explicar profundamente cuando lo tenga claro **
+
+Unificación de las 3 tareas en un transformer. Uso de GAN para aumento de datos... E intentar unificarlo. Ir en contra un poco del estado del arte por no usar una arquitectura basada en convoluciones es frecuente el uso de U-nets.
+
+
+
+

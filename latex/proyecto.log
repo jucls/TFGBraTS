@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.3.15)  18 MAR 2024 00:36
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.3.15)  19 MAR 2024 02:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -460,7 +460,7 @@ Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 ))
 (./portada/portada.tex
 \centeroffset=\skip70
-<imagenes/logo_ugr.jpg, id=31, 777.90625pt x 231.86626pt>
+<imagenes/logo_ugr.jpg, id=39, 777.90625pt x 231.86626pt>
 File: imagenes/logo_ugr.jpg Graphic file (type jpg)
 <use imagenes/logo_ugr.jpg>
 Package pdftex.def Info: imagenes/logo_ugr.jpg  used on input line 11.
@@ -521,12 +521,12 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-<imagenes/etsiit_logo.png, id=32, 110.814pt x 40.4712pt>
+<imagenes/etsiit_logo.png, id=40, 110.814pt x 40.4712pt>
 File: imagenes/etsiit_logo.png Graphic file (type png)
 <use imagenes/etsiit_logo.png>
 Package pdftex.def Info: imagenes/etsiit_logo.png  used on input line 30.
 (pdftex.def)             Requested size: 108.0011pt x 39.44412pt.
-<imagenes/decsai_logo.png, id=34, 339.4701pt x 411.07706pt>
+<imagenes/decsai_logo.png, id=42, 339.4701pt x 411.07706pt>
 File: imagenes/decsai_logo.png Graphic file (type png)
 <use imagenes/decsai_logo.png>
 Package pdftex.def Info: imagenes/decsai_logo.png  used on input line 31.
@@ -791,24 +791,25 @@ been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.38 
-      [2]) (./capitulos/02_estadodelarte.tex
-LaTeX Info: Redefining \. on input line 1.
-LaTeX Info: Redefining \% on input line 1.
+      [2]
+LaTeX Info: Redefining \. on input line 62.
+LaTeX Info: Redefining \% on input line 62.
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1 \chapter
-            {Estado del arte} [3]
+l.62 \subsection
+                {Arquitectura propuesta} [3]) (./capitulos/02_estadodelarte.tex
+LaTeX Info: Redefining \. on input line 1.
+LaTeX Info: Redefining \% on input line 1.
+
 pdfTeX warning (ext4): destination with the same identifier (name{page.4}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.1 \chapter
-            {Estado del arte} [4
-
-]
+            {Estado del arte} [4]
 Cap\'{\i }tulo 2.
 ) (./capitulos/03_metodologia.tex
 pdfTeX warning (ext4): destination with the same identifier (name{page.5}) has 
@@ -816,7 +817,9 @@ been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.1 \chapter
-            {Metodología} [5]
+            {Metodología} [5
+
+]
 pdfTeX warning (ext4): destination with the same identifier (name{page.6}) has 
 been already used, duplicate ignored
 <to be read again> 
@@ -871,16 +874,16 @@ LaTeX2e <2023-06-01>
 L3 programming layer <2023-06-05>
  ***********
 Package rerunfilecheck Info: File `proyecto.out' has not changed.
-(rerunfilecheck)             Checksum: 168B78DE6887B41722A2A9DC81E4C706;769.
+(rerunfilecheck)             Checksum: 3B27A6C262BF09A32261AE046B4B26B2;1095.
  ) 
 Here is how much of TeX's memory you used:
- 13345 strings out of 475735
- 208254 string characters out of 5784786
+ 13352 strings out of 475735
+ 208340 string characters out of 5784786
  1863759 words of memory out of 5000000
- 33853 multiletter control sequences out of 15000+600000
+ 33855 multiletter control sequences out of 15000+600000
  520769 words of font info for 58 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,12n,79p,689b,482s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,12n,79p,689b,490s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/te
@@ -888,10 +891,10 @@ xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf
 -dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/f
 onts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on proyecto.pdf (29 pages, 268204 bytes).
+Output written on proyecto.pdf (29 pages, 271098 bytes).
 PDF statistics:
- 228 PDF objects out of 1000 (max. 8388607)
- 176 compressed objects within 2 object streams
- 43 named destinations out of 1000 (max. 500000)
- 72 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 241 PDF objects out of 1000 (max. 8388607)
+ 189 compressed objects within 2 object streams
+ 48 named destinations out of 1000 (max. 500000)
+ 88 words of extra memory for PDF output out of 10000 (max. 10000000)
 
