@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex proyecto"] 1710691400 "proyecto.aux" "proyecto.bbl" "proyecto" 1710691401 0
-  "./bibliografia/bibliografia.bib" 1710691399 2548 12648b254bdb44313f00b06d011e2097 ""
+["bibtex proyecto"] 1711069596 "proyecto.aux" "proyecto.bbl" "proyecto" 1711069597 0
+  "./bibliografia/bibliografia.bib" 1711058031 3016 4682661fc78cae14535fd0027d7efc26 ""
   "/usr/share/texlive/texmf-dist/bibtex/bst/base/apalike.bst" 1292289607 24635 604dafcc79f521a11ea73e506e1fbd98 ""
-  "proyecto.aux" 1710691401 2451 9a9a8647aabef227978bfadd0cb652c8 "pdflatex"
+  "proyecto.aux" 1711069597 2926 ec7514c6775e91a57728038674583ae3 "pdflatex"
   (generated)
   "proyecto.bbl"
   "proyecto.blg"
   (rewritten before read)
-["pdflatex"] 1710691400 "proyecto.tex" "proyecto.pdf" "proyecto" 1710691401 2
+["pdflatex"] 1711069596 "proyecto.tex" "proyecto.pdf" "proyecto" 1711069597 2
   "/etc/texmf/web2c/texmf.cnf" 1709143228 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm" 1136768653 1328 c834bbb027764024c09d3d2bf908b5f0 ""
@@ -26,6 +26,7 @@
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmsy6.tfm" 1136768653 1116 933a60c408fc0a863a92debe84b2d294 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmsy8.tfm" 1136768653 1120 8b7d695260f3cff42e636090a8002094 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmti10.tfm" 1136768653 1480 aa8e34af0eb6a2941b776984cf1dfdc4 ""
+  "/usr/share/texlive/texmf-dist/fonts/tfm/public/latex-fonts/lasy10.tfm" 1136768653 520 82a3d37183f34b6eb363a161dfc002c2 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb" 1248133631 34811 78b52f49e893bcba91bd7581cdc144c0 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb" 1248133631 32080 340ef9bf63678554ee606688e7b5339d ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb" 1248133631 36554 b67dc2cfa451409e100b3fcf5f506509 ""
@@ -33,6 +34,7 @@
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb" 1248133631 36299 5f9df58c2139e7edcf37c8fca4bd384d ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1248133631 35752 024fb6c41858982481f6968b5fc26508 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb" 1248133631 37944 359e864bd06cde3b1cf57bb20757fb06 ""
+  "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/latxfont/lasy10.pfb" 1248133631 10304 e98704f815e417bc375e9a880a38e542 ""
   "/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1461363279 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "/usr/share/texlive/texmf-dist/tex/generic/atbegshi/atbegshi.sty" 1575674566 24708 5584a51a7101caf7e6bbf1fc27d8f7b1 ""
   "/usr/share/texlive/texmf-dist/tex/generic/babel-spanish/spanish.ldf" 1622145181 26965 3b6d1655ad716f98e788b1fb9f2e87b8 ""
@@ -59,6 +61,7 @@
   "/usr/share/texlive/texmf-dist/tex/latex/base/book.cls" 1686341992 23268 4ef3f0c1d276578b68abf6a1d0e1b8ad ""
   "/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty" 1686341992 5319 5435f8f7051e23a851a1c665c5b84e22 ""
   "/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty" 1686341992 5048 4a74b0804469fbfae7849704c4687a07 ""
+  "/usr/share/texlive/texmf-dist/tex/latex/base/ulasy.fd" 1686341992 2233 a8dae763ff42567048077a611a94f56b ""
   "/usr/share/texlive/texmf-dist/tex/latex/colortbl/colortbl.sty" 1659300143 12441 3b2a708337608012a865c7d9b7f05d28 ""
   "/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty" 1579991033 13886 d1306dcf79a944f6988e688c1785f9ce ""
   "/usr/share/texlive/texmf-dist/tex/latex/eso-pic/eso-pic.sty" 1683144721 11876 6ef493863ae0d7a984706973240c2237 ""
@@ -107,7 +110,7 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1693172360 40357 c95f5d5e031b5c7040b426833c11f2e0 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1709143248 4643645 d2d1d8b8ba87ed005f4aaf1ce646a79e ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1710501680 7908943 e3dd4246395bacf1a976c871c09f2ecf ""
-  "capitulos/01_introduccion.tex" 1710691141 4810 8b5180915d20c058991a3fcc1c36ec47 ""
+  "capitulos/01_introduccion.tex" 1711069595 8058 e848b1d3b6c6f0ee04704f0be757bb61 ""
   "capitulos/02_estadodelarte.tex" 1709225086 25 0160bab7f182cee43e2deb50ca7d8c40 ""
   "capitulos/03_metodologia.tex" 1709225093 22 d3de580a3684094a84a6dbd99e5b6d61 ""
   "capitulos/04_experimentacion.tex" 1709225098 26 2419eab189ffc673ffb31349e8a4b0a6 ""
@@ -116,13 +119,13 @@
   "imagenes/logo_ugr.jpg" 1709139976 85532 25866cc28cc667a1cdd972180571e7be ""
   "portada/portada.tex" 1710688002 1091 03f476dfd2e856db6e56a935fe2321ff ""
   "prefacios/prefacio.tex" 1710687467 1966 8da1f1a89732abaad95a8e4ca6062580 ""
-  "proyecto.aux" 1710691401 2451 9a9a8647aabef227978bfadd0cb652c8 "pdflatex"
-  "proyecto.bbl" 1710691400 2026 aaa5aeea79d9766410e8c7cdb429eef1 "bibtex proyecto"
-  "proyecto.lof" 1710691401 110 23afabf659c39586fe5fdf469f0fda26 "pdflatex"
-  "proyecto.lot" 1710691401 110 23afabf659c39586fe5fdf469f0fda26 "pdflatex"
-  "proyecto.out" 1710691401 769 168b78de6887b41722a2a9dc81e4c706 "pdflatex"
-  "proyecto.tex" 1710688360 5403 0555e18ac46169d9ef7ed443c326abbf ""
-  "proyecto.toc" 1710691401 505 b1a39e72f3304be52144bbe26565fa25 "pdflatex"
+  "proyecto.aux" 1711069597 2926 ec7514c6775e91a57728038674583ae3 "pdflatex"
+  "proyecto.bbl" 1711069596 2381 9e3b74ac150521b6660de3119b6dc7db "bibtex proyecto"
+  "proyecto.lof" 1711069597 110 23afabf659c39586fe5fdf469f0fda26 "pdflatex"
+  "proyecto.lot" 1711069597 110 23afabf659c39586fe5fdf469f0fda26 "pdflatex"
+  "proyecto.out" 1711069597 1292 dc6b429de666b5ee7313370b586621c5 "pdflatex"
+  "proyecto.tex" 1710806712 5390 cb072d6def4327668754d0f8cb30a533 ""
+  "proyecto.toc" 1711069597 780 2ad708abe2abe87e03a167a0a17d4a5c "pdflatex"
   (generated)
   "proyecto.aux"
   "proyecto.lof"

@@ -11,11 +11,11 @@ Resultados notables como la inclusión de robots especializados para la cirugía
 \section{Objetivos}
 
 
-Con este trabajo se persigue la creación de una arquitectura basada en aprendizaje profundo para equipar a un programa de uso médico, estudiarla y compararla junto a trabajos previos y estado del arte. Este programa tiene el objetivos de la ayuda en la evaluación del diagnóstico y pronóstico de un posible paciente de tumor cerebral y en caso afirmativo, la ayuda en la aplicación de la terapia por radiación. 
+Con este trabajo se persigue la creación de una arquitectura basada en aprendizaje profundo para equipar a un programa de uso médico, estudiarla y compararla junto a trabajos previos y estado del arte. Este programa tiene el objetivo de la ayuda en la evaluación del diagnóstico y pronóstico de un posible paciente de tumor cerebral y en caso afirmativo, la ayuda en la aplicación de la terapia por radiación. 
 
 Se seguirá un planteamiento similar al seguido en la competición \textbf{BraTS Brain Tumor Segmentation 2023} \cite{baid2021rsna} históricamente reconocida por ser un benchmark recurrente de las capacidades de las arquitecturas profundas en el campo de la imagen médica.
 
-BraTS es una competición que se define como un conglomerado de diferentes tareas relevantes en el diagnóstico de los tumores cerebrales. En concreto, para 2023 se contemplaron las siguientes tareas por separado: segmentación de glioblastomas en adultos, segmentación de meningiomas en adultos, segmentación de tumores pediátricos, segmentación de tumores de pacientes de origen africano, generación de pruebas faltantes y generación de partes de la imagen.
+BraTS es una competición que se define como un conglomerado de diferentes tareas relevantes en el diagnóstico de los tumores cerebrales << Cluster of Challenges >>. Este año dando especialmente importancia a la generalidad de un modelo que mantenga los resultados anteriores para pacientes más diversos (de diferente origen étnico y de diferentes edades) y con diferentes tipos de tumores. En concreto para 2023, se contemplaron las siguientes tareas por separado: segmentación de glioblastomas en adultos, segmentación de meningiomas en adultos, segmentación de tumores pediátricos, segmentación de tumores de pacientes de origen africano, generación de pruebas faltantes y generación de partes de la imagen.
 
 De forma análoga a esta competición, se plantea conseguir dicho objetivo a partir de la resolución de las siguientes tareas.
 
@@ -46,25 +46,34 @@ El objetivo específico para la ayuda en el tratamiento se basaría en el uso de
 
 \subsection{Conjunto de datos}
 
-Definiremos como nuestro conjunto de datos $X$ a un conjunto de resonancias magnéticas cerebrales completas.
+Definiremos como nuestro conjunto de datos \textbf{$X$} a un conjunto de resonancias magnéticas cerebrales completas.
 
-Una de las limitaciones frecuentes en el campo de la imagen médica es la poca disponibilidad de datos. En general y también para nuestro problema, las dificultades que se presentan a la hora de construir un conjunto de datos médico grande son:
+Una de las \textbf{limitaciones frecuentes en el campo de la imagen médica} es la poca disponibilidad de datos. En general y también para nuestro problema, las dificultades que se presentan a la hora de construir un conjunto de datos médico grande son:
 
 \begin{enumerate}
-	\item \textbf{Poca densidad de pruebas médicas.} A pesar de que la densidad de casos es alta, en magnitud es frecuente que la cantidad de pruebas que se realizan sea mucho más baja. 
+	\item \textbf{Poca densidad de pruebas médicas.} A pesar de que la densidad de casos es alta, es frecuente que la cantidad de pruebas que se realizan sea mucho más baja. Especialmente, para datos médicos es frecuente encontrarse con pocos datos en magnitud con la necesidad de variabilidad en la muestra que tienen las técnicas típicas de optimización.
 	
 	\item \textbf{La desvinculación de los pacientes de sus datos}. El tratamiento de un dato médico siempre supone la eliminación de cualquier identificativo que ponga en riesgo la privacidad de este. Suponiendo un trabajo adicional para el personal médico que no siempre se puede asumir.
 	
-	\item \textbf{No existe una fuerte centralización de datos}. Al igual que los avances en imagen médica. 
+	\item \textbf{No existe una fuerte centralización de datos}. Al igual que los avances en imagen médica, el interés por la construcción de una base de datos única que recoja los máximo datos posibles es también reciente haciendo que en la actualidad la mayoría de los datos estén distribuidos en muchos centros médicos diferentes con formatos diferentes.
+	
 \end{enumerate}
- para  ya que supone  para poder conservar su privacidad (eliminación de cualquier identificativo en las )
 
-\subsection{Arquitectura propuesta}
+\textbf{BraTS} está patrocinado y organizado por la ASNR (American Society of Neurology), MICCAI (Medical Image Computing and Computer Assisted Intervention Society), National Cancer Institute, la Universidad de Pensilvania e Intel entre otros.
+
+Hasta nuestro conocimiento, BraTS es el mayor conglomerado de resonancias magnéticas en la actualidad para los desafíos que planteamos en este trabajo. Otros datasets usados por la comunidad para este problema como el incluido en \textbf{Medical Segmentation Decathlon} descubrimos que es un subconjunto de \textbf{BraTS}.
+
+Adicionalmente, \textbf{los datos de BraTS son heterogéneos} ya no sólo externamente con diferentes tipos tumores (glioblastomas y meningiomas) y de pacientes de orígenes distintos y de diferentes edades sino también internamente con lesiones en más y menos avanzadas en el tiempo (low- and high-grade) y con datos de multitud de centros que han sido escaneados con distintos escáneres.
+
+Utilizaremos únicamente los datos proporcionados por BraTS2023 para todo el trabajo.
+
+\subsection{Propuesta de Arquitectura}
 
 ** Explicar profundamente cuando lo tenga claro **
 
-Unificación de las 3 tareas en un transformer. Uso de GAN para aumento de datos... E intentar unificarlo. Ir en contra un poco del estado del arte por no usar una arquitectura basada en convoluciones es frecuente el uso de U-nets.
+Unificación de las 3 tareas en un transformer. Uso de GAN para aumento de datos. Encoder-Decoder. Uso frecuente de U-nets.
 
+\subsection{Evaluación y métricas}
 
 
 
