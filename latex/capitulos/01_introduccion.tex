@@ -13,7 +13,7 @@ Resultados notables como la inclusión de robots especializados para la cirugía
 
 Con este trabajo se persigue la creación de una arquitectura basada en aprendizaje profundo para equipar a un programa de uso médico, estudiarla y compararla junto a trabajos previos y estado del arte. Este programa tiene el objetivo de la ayuda en la evaluación del diagnóstico y pronóstico de un posible paciente de tumor cerebral y en caso afirmativo, la ayuda en la aplicación de la terapia por radiación. 
 
-Se seguirá un planteamiento similar al seguido en la competición \textbf{BraTS Brain Tumor Segmentation 2023} \cite{baid2021rsna} históricamente reconocida por ser un benchmark recurrente de las capacidades de las arquitecturas profundas en el campo de la imagen médica.
+Se seguirá un planteamiento similar al seguido en la competición \textbf{BraTS: Brain Tumor Segmentation 2023} \cite{baid2021rsna} históricamente reconocida por ser un benchmark recurrente de las capacidades de las arquitecturas profundas en el campo de la imagen médica.
 
 BraTS es una competición que se define como un conglomerado de diferentes tareas relevantes en el diagnóstico de los tumores cerebrales << Cluster of Challenges >>. Este año dando especialmente importancia a la generalidad de un modelo que mantenga los resultados anteriores para pacientes más diversos (de diferente origen étnico y de diferentes edades) y con diferentes tipos de tumores. En concreto para 2023, se contemplaron las siguientes tareas por separado: segmentación de glioblastomas en adultos, segmentación de meningiomas en adultos, segmentación de tumores pediátricos, segmentación de tumores de pacientes de origen africano, generación de pruebas faltantes y generación de partes de la imagen.
 
@@ -21,9 +21,9 @@ De forma análoga a esta competición, se plantea conseguir dicho objetivo a par
 
 \begin{enumerate}
 	\item \textbf{Segmentación de los tumores.} 
-	Segmentación de glioblastomas y meningiomas, indicando sus zonas médicas reconocidas.
+	La segmentación de los glioblastomas y los meningiomas, indicando sus zonas médicas reconocidas.
 	\item \textbf{Clasificación entre tipos de tumores.} Clasificación binaria entre glioblastomas y meningiomas. El programa indicará de qué tipo de tumor se trata una prueba dada.
-	\item \textbf{Predicción de la evolución.} 
+	\item \textbf{Predicción de la evolución.} La segmentación a corto plazo de la más probable instancia futura a partir de la resonancia actual. Ya no solo se pretende dar una segmentación y clasificación que pudieran aportar valor en las decisiones médicas, sino por predecir una nueva segmentación a partir de la resonancia apoyándose en casos similares y en la segmentación de la metástasis de la resonancia actual.
 \end{enumerate}
 
 A continuación, detallaremos de una forma más profunda la naturaleza de este planteamiento.
@@ -38,15 +38,14 @@ En general, los tumores cerebrales son difíciles de tratar y son resistentes a 
 
 A la hora de aplicar un tratamiento de radioterapia siempre se tiene el objetivo de ser lo menos invasivo posible. Para ello, el médico debe ser lo más preciso posible en introducir la segmentación correcta en la que se aplicarán los rayos. 
 
-El objetivo específico para la ayuda en el tratamiento se basaría en el uso del modelo para automatizar esta tarea ya que podría suponer ahorrar costes en errores humanos y en tiempo a veces escaso para el personal médico cuya tarea se reduciría a corregir dicha segmentación. En nuestro caso, integrándolo en un programa de uso médico.
- 
+Uno de los objetivos específicos para la ayuda en el tratamiento se basaría en el uso del modelo para automatizar esta tarea ya que podría suponer ahorrar costes en errores humanos y en tiempo a veces escaso para el personal médico cuya tarea se reduciría a corregir dicha segmentación. En nuestro caso, integrándolo en un programa de uso médico. 
+
+Por otro lado, de forma general lo podemos interpretar como un \textbf{sistema de apoyo a la decisión médica} ya que en ningún caso respecto el desarrollo actual de este problema se pretende sustituir la decisión final del personal médico. Aunque sí aprovechar las capacidades que puede ofrecer el aprendizaje profundo en un mejor diagnóstico a través de caracterizar mejor el tejido afectado, clasificándolo y caracterizando la evolución del tejido afectado.
 
 
 \section{Metodología}
 
 \subsection{Conjunto de datos}
-
-Definiremos como nuestro conjunto de datos \textbf{$X$} a un conjunto de resonancias magnéticas cerebrales completas.
 
 Una de las \textbf{limitaciones frecuentes en el campo de la imagen médica} es la poca disponibilidad de datos. En general y también para nuestro problema, las dificultades que se presentan a la hora de construir un conjunto de datos médico grande son:
 
@@ -59,15 +58,26 @@ Una de las \textbf{limitaciones frecuentes en el campo de la imagen médica} es 
 	
 \end{enumerate}
 
-\textbf{BraTS} está patrocinado y organizado por la ASNR (American Society of Neurology), MICCAI (Medical Image Computing and Computer Assisted Intervention Society), National Cancer Institute, la Universidad de Pensilvania e Intel entre otros.
+Partimos del conjunto de datos \textbf{BraTS} y serán los que únicamente utilizaremos para todo el trabajo ya que son los únicos que se pueden encontrar en la red pidiendo un acceso a ellos de una forma simple e incluso podríamos decir legal.
 
 Hasta nuestro conocimiento, BraTS es el mayor conglomerado de resonancias magnéticas en la actualidad para los desafíos que planteamos en este trabajo. Otros datasets usados por la comunidad para este problema como el incluido en \textbf{Medical Segmentation Decathlon} descubrimos que es un subconjunto de \textbf{BraTS}.
 
-Adicionalmente, \textbf{los datos de BraTS son heterogéneos} ya no sólo externamente con diferentes tipos tumores (glioblastomas y meningiomas) y de pacientes de orígenes distintos y de diferentes edades sino también internamente con lesiones más y menos avanzadas en el tiempo (low- and high-grade) y con datos de multitud de centros que han sido escaneados con distintos escáneres.
 
-Utilizaremos únicamente los datos proporcionados por \textbf{BraTS2023} para todo el trabajo.
+\textbf{BraTS} está patrocinado y organizado por la ASNR (American Society of Neurology), MICCAI (Medical Image Computing and Computer Assisted Intervention Society), National Cancer Institute, la Universidad de Pensilvania e Intel entre otros. 
 
-\subsection{Propuesta de Arquitectura}
+\textbf{Los datos de BraTS son heterogéneos} ya no sólo externamente con diferentes tipos tumores (glioblastomas y meningiomas) y de pacientes de orígenes distintos y de diferentes edades sino también internamente con lesiones más y menos avanzadas en el tiempo (low- and high-grade) y con datos de multitud de centros que han sido escaneados con distintos escáneres.
+
+Definiremos como nuestro conjunto de datos \textbf{$X$} a un conjunto de resonancias magnéticas cerebrales completas. Este lo tenemos en formato \textbf{nii : Neuroimaging Informatics Technology Initiative (NIfTI)} el cual podremos hacer operar con el directamente con su versión comprimida en \textbf{.gz : GNU ZIP} gracias al uso de la librería \textbf{nibabel} la cual nos permitirá la lectura y conversión de cada resonancia a un 3D-array de NumPy de dimensiones $240 \times 240 \times 155$ que representa un array de $155$ imágenes de resolución $240 \times 240$ del cerebro del paciente divida en partes equidistantes. 
+
+Por otro lado, definimos el conjunto de etiquetas $Y$ como otro 3D-array de las mismas dimensiones que en el conjunto de datos donde se muestra la segmentación (Grout Truth) de los tumores.
+
+En términos numéricos, contando solo los datos que tenemos sobre adultos tenemos $1251$ resonancias de glioblastomas y $1000$ resonancias de meningiomas. Adicionalmente, tenemos glioblastomas pediátricos
+
+\subsubsection{Visualizado de datos}
+
+A continuación, detallaremos más profundamente los datos haciendo algunas visualizaciones. 
+
+\subsection{Línea de investigación}
 
 ** Explicar profundamente cuando lo tenga claro **
 
