@@ -71,12 +71,66 @@ Definiremos como nuestro conjunto de datos \textbf{$X$} a un conjunto de resonan
 
 Por otro lado, definimos el conjunto de etiquetas $Y$ como otro 3D-array de las mismas dimensiones que en el conjunto de datos donde se muestra la segmentación (Grout Truth) de los tumores.
 
-En términos numéricos, contando solo los datos que tenemos sobre adultos tenemos $1251$ resonancias de glioblastomas y $1000$ resonancias de meningiomas. Adicionalmente, tenemos glioblastomas pediátricos
+En términos numéricos, contando solo los datos que tenemos sobre adultos tenemos $1251$ resonancias de glioblastomas de $1133$ pacientes diferentes y $1000$ resonancias de meningiomas de $944$ pacientes diferentes. Adicionalmente, tenemos resonancias de glioblastomas pediátricos y de adultos de origen africano que brindan de una distribución mucho más rica al dataset, aunque estos son una minoría siendo $99$ y $60$ respectivamente. 
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.8\linewidth]{imagenes/porcentajeGLIvsMEN.png}
+	\caption{Porcentaje de Glioblastomas y Meningiomas en el conjunto de datos}
+\end{figure}
+
+Por otro lado, observamos los pacientes que tienen más de una resonancia versus los que tienen una única resonancia para caracterizar la cantidad de instancias temporales que tenemos en el dataset.
+\\
+\\
+\\
+\\
+\\
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.8\linewidth]{imagenes/cantidadinstanciastemporales.png}
+	\caption{Cantidad de instancias temporales en el conjunto de datos}
+\end{figure}
+
+En comparativa, observamos como la mayoría de pacientes no tienen más de una resonancia magnética, dejando sólo una cantidad de $118$ pacientes de glioblastoma y de $16$ pacientes de meningiomas con varias resonancias en el tiempo.
 
 \subsubsection{Visualizado de datos}
 
 A continuación, detallaremos más profundamente los datos haciendo algunas visualizaciones. 
 
+Por resonancia magnética para todos los tumores del conjunto de datos tenemos distintos tipos de muestra según las características de la frecuencia empleados en la toma de la resonancia, \textbf{T1-weighted} o \textbf{T2-weighted}.
+
+El tiempo de repetición (TR) es la cantidad de tiempo entre secuencias de pulsos sucesivas aplicadas al mismo segmento. El tiempo hasta el eco (TE) es el tiempo entre la entrega del pulso de RF y la recepción de la señal de eco.
+
+Las imágenes ponderadas en T1 se producen utilizando tiempos TE y TR cortos. Por el contrario, las imágenes potenciadas en T2 se producen utilizando tiempos TE y TR más largos.
+
+Las imágenes ponderadas en T1 muestran con más detalle la anatomía normal del tejido blando y la grasa. Las imágenes ponderadas en T2 muestran con más detalle el líquido y alteraciones (p. ej., tumores, inflamación, traumatismo). 
+
+En resumen, tenemos cuatro 3D-arrays por resonancia magnética con los diferentes contrastes:
+
+\begin{enumerate}
+	\item \textbf{T1C: } 
+	\item \textbf{T1N: }
+	\item \textbf{T2F: }
+	\item \textbf{T2W: }
+\end{enumerate}
+
+A continuación, observamos las imágenes producidas por una resonancia magnética en las diferentes pruebas para los dos tipos de tumores que tenemos.
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=1.1\linewidth]{imagenes/introduccion_imagenesMRI.png}
+	\caption{Visualización de imágenes MRI de tumores en adultos de origen europeo y americano}
+\end{figure}
+
+Por otro lado, podemos observar algunas imágenes de las resonancias más específicas que tenemos, pediátrica y de adultos de origen africano.
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=1.1\linewidth]{imagenes/imgSSAPEDMRI.png}
+	\caption{Visualización de imágenes MRI de tumores en niños y de adultos de origen africano}
+\end{figure}
+\newpage
 \subsection{Línea de investigación}
 
 ** Explicar profundamente cuando lo tenga claro **

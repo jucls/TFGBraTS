@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.3.15)  5 APR 2024 01:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.3.15)  6 APR 2024 01:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -817,87 +817,161 @@ been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.71 
-      [4]) (./capitulos/02_estadodelarte.tex
-LaTeX Info: Redefining \. on input line 1.
-LaTeX Info: Redefining \% on input line 1.
+      [4]
+<imagenes/porcentajeGLIvsMEN.png, id=195, 422.0568pt x 348.3414pt>
+File: imagenes/porcentajeGLIvsMEN.png Graphic file (type png)
+<use imagenes/porcentajeGLIvsMEN.png>
+Package pdftex.def Info: imagenes/porcentajeGLIvsMEN.png  used on input line 78
+.
+(pdftex.def)             Requested size: 288.0011pt x 237.70882pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 82--88
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 82--88
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 82--88
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 82--88
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 82--88
+
+ []
+
+<imagenes/cantidadinstanciastemporales.png, id=196, 446.6286pt x 312.2064pt>
+File: imagenes/cantidadinstanciastemporales.png Graphic file (type png)
+<use imagenes/cantidadinstanciastemporales.png>
+Package pdftex.def Info: imagenes/cantidadinstanciastemporales.png  used on inp
+ut line 91.
+(pdftex.def)             Requested size: 288.0011pt x 201.32156pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+LaTeX Info: Redefining \. on input line 96.
+LaTeX Info: Redefining \% on input line 96.
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.5}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1 \chapter
-            {Estado del arte} [5]
+l.96 
+      [5 <./imagenes/porcentajeGLIvsMEN.png>]
+LaTeX Info: Redefining \. on input line 110.
+LaTeX Info: Redefining \% on input line 110.
+
 pdfTeX warning (ext4): destination with the same identifier (name{page.6}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1 \chapter
-            {Estado del arte} [6
+l.110 
+       [6 <./imagenes/cantidadinstanciastemporales.png>]
+<imagenes/introduccion_imagenesMRI.png, id=208, 1148.3703pt x 570.2103pt>
+File: imagenes/introduccion_imagenesMRI.png Graphic file (type png)
+<use imagenes/introduccion_imagenesMRI.png>
+Package pdftex.def Info: imagenes/introduccion_imagenesMRI.png  used on input l
+ine 122.
+(pdftex.def)             Requested size: 396.0022pt x 196.62706pt.
 
-]
-Cap\'{\i }tulo 2.
-) (./capitulos/03_metodologia.tex
+Overfull \hbox (36.0022pt too wide) in paragraph at lines 122--123
+ [][] 
+ []
+
+<imagenes/imgSSAPEDMRI.png, id=209, 1148.3703pt x 570.2103pt>
+File: imagenes/imgSSAPEDMRI.png Graphic file (type png)
+<use imagenes/imgSSAPEDMRI.png>
+Package pdftex.def Info: imagenes/imgSSAPEDMRI.png  used on input line 130.
+(pdftex.def)             Requested size: 396.0022pt x 196.62706pt.
+
+Overfull \hbox (36.0022pt too wide) in paragraph at lines 130--131
+ [][] 
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+LaTeX Info: Redefining \. on input line 133.
+LaTeX Info: Redefining \% on input line 133.
+
 pdfTeX warning (ext4): destination with the same identifier (name{page.7}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1 \chapter
-            {Metodología} [7]
+l.133 \newpage
+               [7 <./imagenes/introduccion_imagenesMRI.png>])
+(./capitulos/02_estadodelarte.tex
+LaTeX Info: Redefining \. on input line 1.
+LaTeX Info: Redefining \% on input line 1.
+
 pdfTeX warning (ext4): destination with the same identifier (name{page.8}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.1 \chapter
-            {Metodología} [8
-
-]
-Cap\'{\i }tulo 3.
-) (./capitulos/04_experimentacion.tex
+            {Estado del arte} [8 <./imagenes/imgSSAPEDMRI.png>]
+Cap\'{\i }tulo 2.
+) (./capitulos/03_metodologia.tex
 pdfTeX warning (ext4): destination with the same identifier (name{page.9}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.1 \chapter
-            {Experimentación} [9]
+            {Metodología} [9
+
+]
 pdfTeX warning (ext4): destination with the same identifier (name{page.10}) has
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.1 \chapter
-            {Experimentación} [10
+            {Metodología} [10
 
 ]
-Cap\'{\i }tulo 4.
-) (./proyecto.bbl
+Cap\'{\i }tulo 3.
+) (./capitulos/04_experimentacion.tex
 pdfTeX warning (ext4): destination with the same identifier (name{page.11}) has
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1 \begin{thebibliography}{}
-                              [11]
+l.1 \chapter
+            {Experimentación} [11]
 pdfTeX warning (ext4): destination with the same identifier (name{page.12}) has
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1 \begin{thebibliography}{}
-                              [12
+l.1 \chapter
+            {Experimentación} [12
 
 ]
+Cap\'{\i }tulo 4.
+) (./proyecto.bbl
 pdfTeX warning (ext4): destination with the same identifier (name{page.13}) has
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.52 \end{thebibliography}
-                           [13])
-LaTeX Info: Redefining \. on input line 206.
-LaTeX Info: Redefining \% on input line 206.
-
+l.1 \begin{thebibliography}{}
+                              [13]
 pdfTeX warning (ext4): destination with the same identifier (name{page.14}) has
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.206 \end{document}
-                     [14] (./proyecto.aux
+l.1 \begin{thebibliography}{}
+                              [14
+
+] [15])
+LaTeX Info: Redefining \. on input line 206.
+LaTeX Info: Redefining \% on input line 206.
+ [16] (./proyecto.aux
 LaTeX Info: Redefining \. on input line 22.
 LaTeX Info: Redefining \% on input line 22.
 )
@@ -909,10 +983,10 @@ Package rerunfilecheck Info: File `proyecto.out' has not changed.
 (rerunfilecheck)             Checksum: 732CE894678F72B7DCD5C9142C7493FA;1283.
  ) 
 Here is how much of TeX's memory you used:
- 13383 strings out of 475735
- 208952 string characters out of 5784786
- 1862759 words of memory out of 5000000
- 33877 multiletter control sequences out of 15000+600000
+ 13424 strings out of 475735
+ 210228 string characters out of 5784786
+ 1863759 words of memory out of 5000000
+ 33908 multiletter control sequences out of 15000+600000
  520875 words of font info for 59 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,12n,79p,908b,579s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -925,10 +999,10 @@ xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive
 onts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/t
 ype1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
 ublic/amsfonts/latxfont/lasy10.pfb>
-Output written on proyecto.pdf (34 pages, 277586 bytes).
+Output written on proyecto.pdf (36 pages, 772025 bytes).
 PDF statistics:
- 278 PDF objects out of 1000 (max. 8388607)
- 216 compressed objects within 3 object streams
- 53 named destinations out of 1000 (max. 500000)
- 96 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 311 PDF objects out of 1000 (max. 8388607)
+ 239 compressed objects within 3 object streams
+ 63 named destinations out of 1000 (max. 500000)
+ 116 words of extra memory for PDF output out of 10000 (max. 10000000)
 
