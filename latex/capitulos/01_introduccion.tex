@@ -98,21 +98,21 @@ En comparativa, observamos como la mayoría de pacientes no tienen más de una r
 
 A continuación, detallaremos más profundamente los datos haciendo algunas visualizaciones. 
 
-Por resonancia magnética para todos los tumores del conjunto de datos tenemos distintos tipos de muestra según las características de la frecuencia empleados en la toma de la resonancia, \textbf{T1-weighted} o \textbf{T2-weighted}.
+Por resonancia magnética para todos los tumores del conjunto de datos tenemos distintos tipos de muestras según las características de la frecuencia empleada en la toma de la resonancia, \textbf{T1-weighted} o \textbf{T2-weighted}. \cite{labella2023asnrmiccai}
 
-El tiempo de repetición (TR) es la cantidad de tiempo entre secuencias de pulsos sucesivas aplicadas al mismo segmento. El tiempo hasta el eco (TE) es el tiempo entre la entrega del pulso de RF y la recepción de la señal de eco.
+El tiempo de repetición (TR) es la cantidad de tiempo entre secuencias de pulsos sucesivas aplicadas al mismo segmento. El tiempo hasta el eco (TE) es el tiempo entre la entrega del pulso sobre el tejido y la recepción de la señal de eco.
 
-Las imágenes ponderadas en T1 se producen utilizando tiempos TE y TR cortos. Por el contrario, las imágenes potenciadas en T2 se producen utilizando tiempos TE y TR más largos.
+Las imágenes ponderadas en T1 se producen utilizando tiempos TE y TR cortos. Por el contrario, las imágenes ponderadas en T2 se producen utilizando tiempos TE y TR más largos.
 
 Las imágenes ponderadas en T1 muestran con más detalle la anatomía normal del tejido blando y la grasa. Las imágenes ponderadas en T2 muestran con más detalle el líquido y alteraciones (p. ej., tumores, inflamación, traumatismo). 
 
-En resumen, tenemos cuatro 3D-arrays por resonancia magnética con los diferentes contrastes:
+En resumen, tenemos cuatro 3D-arrays por resonancia magnética según frecuencia de señal y aplicando o no un agente de contraste:
 
 \begin{enumerate}
-	\item \textbf{T1C: } 
-	\item \textbf{T1N: }
-	\item \textbf{T2F: }
-	\item \textbf{T2W: }
+	\item \textbf{T1N Pre-contrast T1-weighted} :  Resonancia en frecuencia T1 sin suministrarle ningún agente de contraste al paciente.
+	\item \textbf{T1C Post-contrast T1-weighted} : Resonancia en frecuencia T1 suministrándole un agente de contraste al paciente.
+	\item \textbf{T2W T2-weighted} : Resonancia en frecuencia T2 convencional.
+	\item \textbf{T2F T2-weighted Fluid Attenuated Inversion Recovery} : Resonancia en frecuencia T2 en la que se anula la señal proveniente del líquido cefalorraquídeo.
 \end{enumerate}
 
 A continuación, observamos las imágenes producidas por una resonancia magnética en las diferentes pruebas para los dos tipos de tumores que tenemos.
@@ -128,8 +128,34 @@ Por otro lado, podemos observar algunas imágenes de las resonancias más espec�
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=1.1\linewidth]{imagenes/imgSSAPEDMRI.png}
-	\caption{Visualización de imágenes MRI de tumores en niños y de adultos de origen africano}
+	\caption{Visualización de imágenes MRI de tumores en niños y adultos de origen africano}
 \end{figure}
+
+\newpage
+
+A continuación, exploraremos el \textbf{etiquetado de las resonancias}, es decir, su segmentación realizada por el personal médico colaborador en BraTS.
+
+La etiquetas de la segmentación pueden tomar cuatro valores, los del intervalo $[0, 3]$ que están relacionados con el tipo de tejido que segmentan. Tenemos tres tipos de tejidos que se relacionando con el valor de etiqueta de las siguientes etiquetas.
+
+\begin{enumerate}
+	\item \textbf{Etiqueta 1. NCR}: Tejido Necrótico. Núcleo del tumor tejido sin vida y usualmente reseco.
+	\item \textbf{Etiqueta 2. ED}: Edema peritumoral. Tejido afectado resultado de la expansión del tumor generalmente acumulación de líquido y tejido sano desplazado. 
+	\item \textbf{Etiqueta 3. ET}: Enhancing tumor. Tejido donde se encuentra la principal actividad de expansión del tumor. Área de actividad tumoral más agresiva o prolifera.
+	\item \textbf{Etiqueta 0. Sano}: Tejido sano o la no existencia de tejido es etiquetado con $0$.
+\end{enumerate}
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=1.1\linewidth]{imagenes/segimagenesMRI.png}
+	\caption{Visualización de imágenes MRI de tumores en adultos de origen europeo y americano con su segmentación.}
+\end{figure}
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=1.1\linewidth]{imagenes/segimagenesSSAPEDMRI.png}
+	\caption{Visualización de imágenes MRI de tumores en niños y adultos de origen africano con su segmentación.}
+\end{figure}
+
 \newpage
 \subsection{Línea de investigación}
 
@@ -138,6 +164,14 @@ Por otro lado, podemos observar algunas imágenes de las resonancias más espec�
 Unificación de las 3 tareas en un transformer. Uso de GAN para aumento de datos. Encoder-Decoder. Uso frecuente de U-nets.
 
 \subsection{Evaluación y métricas}
+
+Para la evaluación de los tumores se tendrá en cuenta la segmentación de tres zonas diferenciadas según los tipo de tejidos en ellas.
+
+\begin{enumerate}
+	\item \textbf{Enhancing Tumor ET}: Sólo incluye al tejido ET.
+	\item \textbf{Tumor Core TC}: Incluye al tejido ET y al tejido NCR.
+	\item \textbf{Whole Tumor WT}: Incluye a todos los tejidos. La segmentación de toda la lesión.
+\end{enumerate}
 
 
 
