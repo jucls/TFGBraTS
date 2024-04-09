@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.3.15)  8 APR 2024 03:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.3.15)  9 APR 2024 03:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -460,7 +460,7 @@ Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 ))
 (./portada/portada.tex
 \centeroffset=\skip70
-<imagenes/logoUGR.jpg, id=43, 816.04875pt x 232.87pt>
+<imagenes/logoUGR.jpg, id=47, 816.04875pt x 232.87pt>
 File: imagenes/logoUGR.jpg Graphic file (type jpg)
 <use imagenes/logoUGR.jpg>
 Package pdftex.def Info: imagenes/logoUGR.jpg  used on input line 11.
@@ -521,12 +521,12 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-<imagenes/etsiit_logo.png, id=44, 110.814pt x 40.4712pt>
+<imagenes/etsiit_logo.png, id=48, 110.814pt x 40.4712pt>
 File: imagenes/etsiit_logo.png Graphic file (type png)
 <use imagenes/etsiit_logo.png>
 Package pdftex.def Info: imagenes/etsiit_logo.png  used on input line 30.
 (pdftex.def)             Requested size: 108.0011pt x 39.44412pt.
-<imagenes/decsai_logo.png, id=46, 339.4701pt x 411.07706pt>
+<imagenes/decsai_logo.png, id=50, 339.4701pt x 411.07706pt>
 File: imagenes/decsai_logo.png Graphic file (type png)
 <use imagenes/decsai_logo.png>
 Package pdftex.def Info: imagenes/decsai_logo.png  used on input line 31.
@@ -818,7 +818,7 @@ been already used, duplicate ignored
                    \relax 
 l.71 
       [4]
-<imagenes/porcentajeGLIvsMEN.png, id=201, 422.0568pt x 348.3414pt>
+<imagenes/porcentajeGLIvsMEN.png, id=214, 422.0568pt x 348.3414pt>
 File: imagenes/porcentajeGLIvsMEN.png Graphic file (type png)
 <use imagenes/porcentajeGLIvsMEN.png>
 Package pdftex.def Info: imagenes/porcentajeGLIvsMEN.png  used on input line 78
@@ -849,7 +849,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 82--88
 
  []
 
-<imagenes/cantidadinstanciastemporales.png, id=202, 446.6286pt x 312.2064pt>
+<imagenes/cantidadinstanciastemporales.png, id=215, 446.6286pt x 312.2064pt>
 File: imagenes/cantidadinstanciastemporales.png Graphic file (type png)
 <use imagenes/cantidadinstanciastemporales.png>
 Package pdftex.def Info: imagenes/cantidadinstanciastemporales.png  used on inp
@@ -876,7 +876,7 @@ been already used, duplicate ignored
                    \relax 
 l.110 
        [6 <./imagenes/cantidadinstanciastemporales.png>]
-<imagenes/introduccion_imagenesMRI.png, id=216, 1148.3703pt x 570.2103pt>
+<imagenes/introduccion_imagenesMRI.png, id=229, 1148.3703pt x 570.2103pt>
 File: imagenes/introduccion_imagenesMRI.png Graphic file (type png)
 <use imagenes/introduccion_imagenesMRI.png>
 Package pdftex.def Info: imagenes/introduccion_imagenesMRI.png  used on input l
@@ -887,7 +887,7 @@ Overfull \hbox (36.0022pt too wide) in paragraph at lines 122--123
  [][] 
  []
 
-<imagenes/imgSSAPEDMRI.png, id=217, 1148.3703pt x 570.2103pt>
+<imagenes/imgSSAPEDMRI.png, id=230, 1148.3703pt x 570.2103pt>
 File: imagenes/imgSSAPEDMRI.png Graphic file (type png)
 <use imagenes/imgSSAPEDMRI.png>
 Package pdftex.def Info: imagenes/imgSSAPEDMRI.png  used on input line 130.
@@ -909,7 +909,7 @@ been already used, duplicate ignored
                    \relax 
 l.134 \newpage
                [7 <./imagenes/introduccion_imagenesMRI.png>]
-<imagenes/segimagenesMRI.png, id=226, 1148.3703pt x 570.2103pt>
+<imagenes/segimagenesMRI.png, id=239, 1148.3703pt x 570.2103pt>
 File: imagenes/segimagenesMRI.png Graphic file (type png)
 <use imagenes/segimagenesMRI.png>
 Package pdftex.def Info: imagenes/segimagenesMRI.png  used on input line 149.
@@ -922,7 +922,7 @@ Overfull \hbox (36.0022pt too wide) in paragraph at lines 149--150
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<imagenes/segimagenesSSAPEDMRI.png, id=227, 1148.3703pt x 570.2103pt>
+<imagenes/segimagenesSSAPEDMRI.png, id=240, 1148.3703pt x 570.2103pt>
 File: imagenes/segimagenesSSAPEDMRI.png Graphic file (type png)
 <use imagenes/segimagenesSSAPEDMRI.png>
 Package pdftex.def Info: imagenes/segimagenesSSAPEDMRI.png  used on input line 
@@ -945,69 +945,118 @@ been already used, duplicate ignored
                    \relax 
 l.159 \newpage
                [8 <./imagenes/imgSSAPEDMRI.png>]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+<imagenes/metodologia_heatmapsGLI.png, id=249, 2160.873pt x 3244.2003pt>
+File: imagenes/metodologia_heatmapsGLI.png Graphic file (type png)
+<use imagenes/metodologia_heatmapsGLI.png>
+Package pdftex.def Info: imagenes/metodologia_heatmapsGLI.png  used on input li
+ne 164.
+(pdftex.def)             Requested size: 360.0pt x 540.46771pt.
 
-LaTeX Info: Redefining \. on input line 171.
-LaTeX Info: Redefining \% on input line 171.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<imagenes/metodologia_heatmapsMEN.png, id=250, 2160.873pt x 3244.2003pt>
+File: imagenes/metodologia_heatmapsMEN.png Graphic file (type png)
+<use imagenes/metodologia_heatmapsMEN.png>
+Package pdftex.def Info: imagenes/metodologia_heatmapsMEN.png  used on input li
+ne 170.
+(pdftex.def)             Requested size: 360.0pt x 540.46771pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+LaTeX Info: Redefining \. on input line 176.
+LaTeX Info: Redefining \% on input line 176.
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.9}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.171 	\item \textbf
-                    {Enhancing Tumor ET}: Sólo incluye al tejido ET. [9 <./ima
-genes/segimagenesMRI.png> <./imagenes/segimagenesSSAPEDMRI.png>])
-(./capitulos/02_estadodelarte.tex
-LaTeX Info: Redefining \. on input line 1.
-LaTeX Info: Redefining \% on input line 1.
+l.176 
+       [9 <./imagenes/segimagenesMRI.png> <./imagenes/segimagenesSSAPEDMRI.png>
+]
+
+LaTeX Warning: Text page 10 contains only floats.
+
+LaTeX Info: Redefining \. on input line 176.
+LaTeX Info: Redefining \% on input line 176.
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.10}) has
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1 \chapter
-            {Estado del arte} [10]
-Cap\'{\i }tulo 2.
-) (./capitulos/03_metodologia.tex
+l.176 
+       [10 <./imagenes/metodologia_heatmapsGLI.png>]
+
+LaTeX Warning: Text page 11 contains only floats.
+
+LaTeX Info: Redefining \. on input line 176.
+LaTeX Info: Redefining \% on input line 176.
+
 pdfTeX warning (ext4): destination with the same identifier (name{page.11}) has
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1 \chapter
-            {Metodología} [11
+l.176 
+       [11 <./imagenes/metodologia_heatmapsMEN.png>]
+<imagenes/dicesimilarity.drawio.png, id=265, 192.72pt x 191.71625pt>
+File: imagenes/dicesimilarity.drawio.png Graphic file (type png)
+<use imagenes/dicesimilarity.drawio.png>
+Package pdftex.def Info: imagenes/dicesimilarity.drawio.png  used on input line
+ 202.
+(pdftex.def)             Requested size: 90.0pt x 89.53035pt.
+LaTeX Info: Redefining \. on input line 213.
+LaTeX Info: Redefining \% on input line 213.
 
-]
 pdfTeX warning (ext4): destination with the same identifier (name{page.12}) has
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1 \chapter
-            {Metodología} [12
+l.213 	
+        [12 <./imagenes/dicesimilarity.drawio.png>]
+<imagenes/distanceHaussdorff.png, id=274, 369.63094pt x 274.77657pt>
+File: imagenes/distanceHaussdorff.png Graphic file (type png)
+<use imagenes/distanceHaussdorff.png>
+Package pdftex.def Info: imagenes/distanceHaussdorff.png  used on input line 21
+6.
+(pdftex.def)             Requested size: 143.9978pt x 107.04501pt.
+)
+(./capitulos/02_estadodelarte.tex
+LaTeX Info: Redefining \. on input line 1.
+LaTeX Info: Redefining \% on input line 1.
 
-]
-Cap\'{\i }tulo 3.
-) (./capitulos/04_experimentacion.tex
 pdfTeX warning (ext4): destination with the same identifier (name{page.13}) has
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.1 \chapter
-            {Experimentación} [13]
+            {Estado del arte} [13 <./imagenes/distanceHaussdorff.png>]
 pdfTeX warning (ext4): destination with the same identifier (name{page.14}) has
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.1 \chapter
-            {Experimentación} [14
+            {Estado del arte} [14
+
+]
+Cap\'{\i }tulo 2.
+) (./capitulos/03_metodologia.tex [15] [16
+
+]
+Cap\'{\i }tulo 3.
+) (./capitulos/04_experimentacion.tex [17] [18
 
 ]
 Cap\'{\i }tulo 4.
-) (./proyecto.bbl [15] [16
+) [19] [20
 
-] [17])
+]
+Cap\'{\i }tulo 5.
+(./proyecto.bbl [21] [22
+
+] [23])
 LaTeX Info: Redefining \. on input line 206.
 LaTeX Info: Redefining \% on input line 206.
- [18] (./proyecto.aux
+ [24] (./proyecto.aux
 LaTeX Info: Redefining \. on input line 22.
 LaTeX Info: Redefining \% on input line 22.
 )
@@ -1016,13 +1065,13 @@ LaTeX2e <2023-06-01>
 L3 programming layer <2023-06-05>
  ***********
 Package rerunfilecheck Info: File `proyecto.out' has not changed.
-(rerunfilecheck)             Checksum: 732CE894678F72B7DCD5C9142C7493FA;1283.
+(rerunfilecheck)             Checksum: 0768C1AF85DA1D68A3EC5D466D7F3C8E;1491.
  ) 
 Here is how much of TeX's memory you used:
- 13449 strings out of 475735
- 210827 string characters out of 5784786
+ 13491 strings out of 475735
+ 212095 string characters out of 5784786
  1863759 words of memory out of 5000000
- 33922 multiletter control sequences out of 15000+600000
+ 33951 multiletter control sequences out of 15000+600000
  520875 words of font info for 59 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,12n,79p,908b,579s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1030,15 +1079,19 @@ Here is how much of TeX's memory you used:
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/te
 xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf
--dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
-ublic/amsfonts/latxfont/lasy10.pfb>
-Output written on proyecto.pdf (38 pages, 1174868 bytes).
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><
+/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/latxfont/lasy10.pfb>
+Output written on proyecto.pdf (44 pages, 5515288 bytes).
 PDF statistics:
- 343 PDF objects out of 1000 (max. 8388607)
- 265 compressed objects within 3 object streams
- 74 named destinations out of 1000 (max. 500000)
- 126 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 418 PDF objects out of 1000 (max. 8388607)
+ 316 compressed objects within 4 object streams
+ 87 named destinations out of 1000 (max. 500000)
+ 154 words of extra memory for PDF output out of 10000 (max. 10000000)
 

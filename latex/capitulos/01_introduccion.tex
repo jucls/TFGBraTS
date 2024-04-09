@@ -69,7 +69,7 @@ Hasta nuestro conocimiento, BraTS es el mayor conglomerado de resonancias magné
 
 Definiremos como nuestro conjunto de datos \textbf{$X$} a un conjunto de resonancias magnéticas cerebrales completas. Este lo tenemos en formato \textbf{nii : Neuroimaging Informatics Technology Initiative (NIfTI)} el cual podremos hacer operar con el directamente con su versión comprimida en \textbf{.gz : GNU ZIP} gracias al uso de la librería \textbf{nibabel} la cual nos permitirá la lectura y conversión de cada resonancia a un 3D-array de NumPy de dimensiones $240 \times 240 \times 155$ que representa un array de $155$ imágenes de resolución $240 \times 240$ del cerebro del paciente divida en partes equidistantes. 
 
-Por otro lado, definimos el conjunto de etiquetas $Y$ como otro 3D-array de las mismas dimensiones que en el conjunto de datos donde se muestra la segmentación (Grout Truth) de los tumores.
+Por otro lado, definimos el conjunto de etiquetas $Y$ como otro 3D-array de las mismas dimensiones que en el conjunto de datos donde se muestra la segmentación (Ground Truth) de los tumores.
 
 En términos numéricos, contando solo los datos que tenemos sobre adultos tenemos $1251$ resonancias de glioblastomas de $1133$ pacientes diferentes y $1000$ resonancias de meningiomas de $944$ pacientes diferentes. Adicionalmente, tenemos resonancias de glioblastomas pediátricos y de adultos de origen africano que brindan de una distribución mucho más rica al dataset, aunque estos son una minoría siendo $99$ y $60$ respectivamente. 
 
@@ -157,6 +157,23 @@ La etiquetas de la segmentación pueden tomar cuatro valores, los del intervalo 
 \end{figure}
 
 \newpage
+A continuación, exploraremos la localización de los tumores en todo el conjunto de datos. \textbf{¿Existe alguna zona del cerebro especialmente afectada?} Crearemos un mapa de calor para los $150$ primeros slices marcando la presencia de la lesión, donde ponderaremos de forma lineal a los tejidos según su importancia NCR, ED y ET. 
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=1.0\linewidth]{imagenes/metodologia_heatmapsGLI.png}
+	\caption{Distribución del tejido tumoral en Gliomas.}
+\end{figure}
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=1.0\linewidth]{imagenes/metodologia_heatmapsMEN.png}
+	\caption{Distribución del tejido tumoral en Meningiomas.}
+\end{figure}
+
+
+No se observa una zona especialmente marcadas ni en glioblastomas ni en meningiomas. Aunque sí ciertos detalles, como era de esperar en los primeros slices (que son de la base del cerebro) la zona de los meningiomas solo presenta tejido tumoral 
+
 \subsection{Línea de investigación}
 
 ** Explicar profundamente cuando lo tenga claro **
@@ -165,7 +182,8 @@ Unificación de las 3 tareas en un transformer. Uso de GAN para aumento de datos
 
 \subsection{Evaluación y métricas}
 
-Para la evaluación de los tumores se tendrá en cuenta la segmentación de tres zonas diferenciadas según los tipo de tejidos en ellas.
+
+Siguiendo la definición de evaluación de BraTS 2023. Para la evaluación de los tumores se tendrá en cuenta la segmentación de tres zonas diferenciadas según los tipo de tejidos en ellas.
 
 \begin{enumerate}
 	\item \textbf{Enhancing Tumor ET}: Sólo incluye al tejido ET.
@@ -174,4 +192,44 @@ Para la evaluación de los tumores se tendrá en cuenta la segmentación de tres
 \end{enumerate}
 
 
+Se utilizará dos métricas. 
 
+\begin{enumerate}
+	\item \textbf{Similaridad Dice} : Mide la similaridad de dos conjuntos a través de la intersección ambos respecto el tamaño total de los dos conjuntos.
+	 
+	\begin{figure}[!h]
+		\centering
+		\includegraphics[width=0.25\linewidth]{imagenes/dicesimilarity.drawio.png}
+		\caption{Interpretación del coeficiente de Similaridad Dice}
+	\end{figure}
+	
+	Podemos expresarlo como:
+	
+	$$ Dice(A, B) = \frac{2 \times |A \cap B|}{|A| + |B|} $$
+	
+	Donde nuestros dos conjuntos son la segmentación que proporcionará nuestro modelo $A$ y la verdadera $B$.
+	
+	\item \textbf{Distancia Hausdorff 95} : Esta métrica al igual que la distancia máxima de Hausdorff DH tiene el objetivo de medir geométricamente el mayor error de segmentación resultado $A$ del modelo y la verdadera segmentación $B$, siendo $A$ y $B$ conjuntos de puntos o píxeles.
+	
+	\begin{figure}[!h]
+		\centering
+		\includegraphics[width=0.4\linewidth]{imagenes/distanceHaussdorff.png}
+		\caption{Distancias de Hausdorff entre dos conjuntos}
+	\end{figure}
+	
+	Podemos enunciar la distancia máxima de Hausdorff:
+	
+	
+	$$ H(A, B) = \max \left\{ \max_{a \in A} \min_{b \in B} d(a, b), \max_{b \in B} \min_{a \in A} d(a, b) \right\} $$
+	
+	$$ a, b  : Puntos\ concretos\ en\ los\ conjuntos $$
+	$$ d(a, b) : Distancia\ euclidea\ entre\ el\ punto\ a\ y\ el\ punto\ b\ $$
+	$$ A, B : Conjuntos\ de\ puntos $$
+	
+	
+	Sin embargo, a diferencia de DH, la distancia Hausdorff 95  mide la media aritmética del percentil $95 \%$ de las mayores distancias entre los dos conjuntos. Por consecuente, enunciamos la distancia Hausdorff 95:
+	
+	$$ H_{95}(A, B) = \frac{1}{|D_{95}|} \sum_{d \in D_{95}} H(A, B) $$ 
+	$$ D_{95}  : Conjunto\ de\ distancias\ mayor\ al\ 95\% $$
+	
+\end{enumerate}
