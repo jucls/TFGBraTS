@@ -15,7 +15,7 @@ Con este trabajo se persigue la creación de una arquitectura basada en aprendiz
 
 Se seguirá un planteamiento similar al seguido en la competición \textbf{BraTS: Brain Tumor Segmentation 2023} \cite{baid2021rsna} históricamente reconocida por ser un benchmark recurrente de las capacidades de las arquitecturas profundas en el campo de la imagen médica.
 
-BraTS es una competición que se define como un conglomerado de diferentes tareas relevantes en el diagnóstico de los tumores cerebrales << Cluster of Challenges >>. Este año dando especialmente importancia a la generalidad de un modelo que mantenga los resultados anteriores para pacientes más diversos (de diferente origen étnico y de diferentes edades) y con diferentes tipos de tumores. En concreto para 2023, se contemplaron las siguientes tareas por separado: segmentación de glioblastomas en adultos, segmentación de meningiomas en adultos, segmentación de tumores pediátricos, segmentación de tumores de pacientes de origen africano, generación de pruebas faltantes y generación de partes de la imagen.
+BraTS es una competición que se define como un conglomerado de diferentes tareas relevantes en el diagnóstico de los tumores cerebrales << Cluster of Challenges >>. En 2023 dando especialmente importancia a la generalidad de un modelo que mantenga los resultados anteriores para pacientes más diversos (de diferente origen étnico y de diferentes edades) y con diferentes tipos de tumores. En concreto para 2023, se contemplaron las siguientes tareas por separado: segmentación de glioblastomas en adultos, segmentación de meningiomas en adultos, segmentación de tumores pediátricos, segmentación de tumores de pacientes de origen africano, generación de pruebas faltantes y generación de partes de la imagen.
 
 De forma análoga a esta competición, se plantea conseguir dicho objetivo a partir de la resolución de las siguientes tareas.
 
@@ -32,7 +32,7 @@ Sólo en los EEUU para 2024 se esperan 25400 nuevos casos de tumor cerebral. La 
 
 El cerebro no tiene terminaciones nerviosas. Los pacientes no sienten dolor a causa de un tumor cerebral por sí mismo, lo cual hace que no exista una alerta sobre el paciente que lo motive a buscar ayuda médica en las primeras fases de la patología. Generalmente, acaban buscando ayuda médica por la aparición de otros indicios relacionados difíciles de distinguir de otras patologías agudas y de menor transcendencia como visión borrosa, pérdida del control, etc. Además, los glioblastomas son tumores de muy rápido crecimiento pueden llegar a estar en una fase avanzada desde su inicio en tan solo 2-3 meses.
 
-Por estos motivos, es común llegar tarde. Tomando mucha importancia el diagnóstico temprano para su superación. Es en este punto donde se tiene el objetivo de evaluar las capacidades del aprendizaje profundo para la segmentación de tumores que en sus inicios podrían ser pasados desapercibidos por incluso el ojo médico y eventualmente la segmentación de las zonas de interés de la aparición de nuevos tumores.
+Por estos motivos, es común llegar tarde. Tomando mucha importancia el diagnóstico temprano para su superación. Es en este punto donde se tiene el objetivo de evaluar las capacidades del aprendizaje profundo para la segmentación de tumores especialmente los que en sus inicios podrían ser pasados desapercibidos por incluso el ojo médico y eventualmente la segmentación de las zonas potenciales en la aparición de nuevos tumores asociado a una probabilidad.
 
 En general, los tumores cerebrales son difíciles de tratar y son resistentes a terapias convencionales usadas en otros tipos de cánceres como la quimioterapia debido a los desafíos que presenta el cerebro para tolerar ciertos químicos, transportar medicamentos dentro de él y la alta importancia que tiene en este órgano la optimización del uso de tratamientos que puedan ser invasivos. En otras palabras, el uso de tratamientos basados en la extirpación o en la medicación pueden ser arriesgados. Por tanto, el tratamiento más común de estos está basado en la radioterapia.
 
@@ -40,7 +40,7 @@ A la hora de aplicar un tratamiento de radioterapia siempre se tiene el objetivo
 
 Uno de los objetivos específicos para la ayuda en el tratamiento se basaría en el uso del modelo para automatizar esta tarea ya que podría suponer ahorrar costes en errores humanos y en tiempo a veces escaso para el personal médico cuya tarea se reduciría a corregir dicha segmentación. En nuestro caso, integrándolo en un programa de uso médico. 
 
-Por otro lado, de forma general lo podemos interpretar como un \textbf{sistema de apoyo a la decisión médica} ya que en ningún caso respecto el desarrollo actual de este problema se pretende sustituir la decisión final del personal médico. Aunque sí aprovechar las capacidades que puede ofrecer el aprendizaje profundo en un mejor diagnóstico a través de caracterizar mejor el tejido afectado, clasificándolo y caracterizando la evolución del tejido afectado.
+Por otro lado, de forma general podemos interpretar este trabajo como un \textbf{sistema de apoyo a la decisión médica} ya que en ningún caso respecto el desarrollo actual de este problema se pretende sustituir la decisión final del personal médico. Aunque sí aprovechar las capacidades que puede ofrecer el aprendizaje profundo en un mejor diagnóstico a través de caracterizar mejor el tejido afectado: segmentándolo, clasificándolo y segmentando su evolución.
 
 
 \section{Metodología}
@@ -135,7 +135,7 @@ Por otro lado, podemos observar algunas imágenes de las resonancias más espec�
 
 A continuación, exploraremos el \textbf{etiquetado de las resonancias}, es decir, su segmentación realizada por el personal médico colaborador en BraTS.
 
-La etiquetas de la segmentación pueden tomar cuatro valores, los del intervalo $[0, 3]$ que están relacionados con el tipo de tejido que segmentan. Tenemos tres tipos de tejidos que se relacionando con el valor de etiqueta de las siguientes etiquetas.
+La etiquetas de la segmentación pueden tomar cuatro valores, los del intervalo $[0, 3]$ que están relacionados con el tipo de tejido que segmentan. Tenemos tres tipos de tejidos que se relacionan con el valor de etiquetas en el array.
 
 \begin{enumerate}
 	\item \textbf{Etiqueta 1. NCR}: Tejido Necrótico. Núcleo del tumor tejido sin vida y usualmente reseco.
@@ -144,6 +144,7 @@ La etiquetas de la segmentación pueden tomar cuatro valores, los del intervalo 
 	\item \textbf{Etiqueta 0. Sano}: Tejido sano o la no existencia de tejido es etiquetado con $0$.
 \end{enumerate}
 
+Podemos ver la segmentación de las resonancias antes visualizadas.
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=1.1\linewidth]{imagenes/segimagenesMRI.png}
@@ -172,7 +173,7 @@ A continuación, exploraremos la localización de los tumores en todo el conjunt
 \end{figure}
 
 
-No se observa una zona especialmente marcadas ni en glioblastomas ni en meningiomas. Aunque sí ciertos detalles, como era de esperar en los primeros slices (que son de la base del cerebro) la zona de los meningiomas solo presenta tejido tumoral 
+No se observa una zona especialmente marcadas ni en glioblastomas ni en meningiomas. Aunque sí ciertos detalles, como era de esperar en los primeros slices (que son de la base del cerebro) la zona de los meningiomas solo presenta tejido tumoral en la parte posterior esto es debido que a los meningiomas son tumores de desarrollo entre el cráneo y el cerebro, no habiendo ahí tejido posible de esta forma. Esto también puede explicar porque los gliomas tienen una distribución más centrada en los núcleos de los dos hemisferios del cerebro y los meningiomas más distribuido pero con una ligera tendencia ahí la parte frontal del cerebro donde más liquido cefalorraquídeo se concentra. A parte, de estos detalles íntegros a la naturaleza de estos tumores vemos como siguen una localización independientemente distribuida. 
 
 \subsection{Línea de investigación}
 

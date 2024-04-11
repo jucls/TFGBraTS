@@ -43,6 +43,12 @@ Havaei, M., Davy, A., Warde-Farley, D., Biard, A., Courville, A., Bengio, Y.,
 \newblock Brain tumor segmentation with deep neural networks.
 \newblock {\em Medical image analysis}, 35:18--31.
 
+\bibitem[Liu et~al., 2023]{liu2023deep}
+Liu, Z., Tong, L., Chen, L., Jiang, Z., Zhou, F., Zhang, Q., Zhang, X., Jin,
+  Y., and Zhou, H. (2023).
+\newblock Deep learning based brain tumor segmentation: a survey.
+\newblock {\em Complex \& intelligent systems}, 9(1):1001--1026.
+
 \bibitem[Menze et~al., 2014]{menze2014multimodal}
 Menze, B.~H., Jakab, A., Bauer, S., Kalpathy-Cramer, J., Farahani, K., Kirby,
   J., Burren, Y., Porz, N., Slotboom, J., Wiest, R., et~al. (2014).

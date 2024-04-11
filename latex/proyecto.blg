@@ -5,45 +5,45 @@ The style file: apalike.bst
 Database file #1: bibliografia/bibliografia.bib
 Warning--entry type for "cancerorg" isn't style-file defined
 --line 50 of file bibliografia/bibliografia.bib
-You've used 8 entries,
+You've used 9 entries,
             1935 wiz_defined-function locations,
-            522 strings with 5897 characters,
-and the built_in function-call counts, 3974 in all, are:
-= -- 354
-> -- 302
+            529 strings with 6160 characters,
+and the built_in function-call counts, 4607 in all, are:
+= -- 411
+> -- 350
 < -- 2
-+ -- 118
-- -- 112
-* -- 383
-:= -- 741
-add.period$ -- 23
-call.type$ -- 8
-change.case$ -- 92
-chr.to.int$ -- 8
-cite$ -- 8
-duplicate$ -- 102
-empty$ -- 187
-format.name$ -- 120
-if$ -- 715
++ -- 136
+- -- 130
+* -- 450
+:= -- 853
+add.period$ -- 26
+call.type$ -- 9
+change.case$ -- 106
+chr.to.int$ -- 9
+cite$ -- 9
+duplicate$ -- 116
+empty$ -- 219
+format.name$ -- 139
+if$ -- 831
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 6
-newline$ -- 42
-num.names$ -- 24
-pop$ -- 77
+missing$ -- 7
+newline$ -- 47
+num.names$ -- 27
+pop$ -- 89
 preamble$ -- 1
-purify$ -- 92
+purify$ -- 106
 quote$ -- 0
-skip$ -- 84
+skip$ -- 94
 stack$ -- 0
-substring$ -- 193
-swap$ -- 6
+substring$ -- 236
+swap$ -- 7
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 48
+type$ -- 54
 warning$ -- 0
-while$ -- 24
+while$ -- 28
 width$ -- 0
-write$ -- 101
+write$ -- 114
 (There was 1 warning)
