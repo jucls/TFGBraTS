@@ -40,19 +40,94 @@ Diferentes dificultades han sido las que a pesar de años de desarrollo aún enc
 		\caption{Evolución histórica del estado del arte hasta 2021.}
 	\end{figure}
 	
-	En la década de 1990 investigadores como Zhu et al. fueron pioneros al utilizar una red Hopfield con un modelo de contornos activos para extraer los bordes del tumor. Sin embargo, incluso el entrenamiento de una pequeña red como esta era algo computacionalmente costoso por las limitaciones de la época.  Desde 1990 hasta 2012, los métodos que iban surgiendo para la segmentación de tumores cerebrales estaban basados en métodos clásicos de aprendizaje con características extraídas a mano, sistemas expertos que se apoyaban en los histogramas de la imagen, plantillas para la segmentación y modelos gráficos. 
+	En la década de 1990 investigadores como \cite{zhu1997computerized} fueron pioneros al utilizar una red Hopfield con un modelo de contornos activos para extraer los bordes del tumor. Sin embargo, incluso el entrenamiento de una pequeña red como esta era algo computacionalmente costoso por las limitaciones de la época.  Desde 1990 hasta 2012, los métodos que iban surgiendo para la segmentación de tumores cerebrales estaban basados en métodos clásicos de aprendizaje con características extraídas a mano, sistemas expertos que se apoyaban en los histogramas de la imagen, plantillas para la segmentación y modelos gráficos. 
 	
 	A pesar de ser un gran paso inicial, tenían grandes deficiencias. Por ejemplo, la mayoría de ellos sólo se centraba en la segmentación de todo el tumor lo cual lleva a un modelo poco útil. Por otro lado, en los modelos basados en características extraídas se hacía muy tedioso poder usarlos eficazmente ya que este paso de extracción dependía de conocimiento previo experto que en ningún momento se pudo llegar a representar en un modelo. En último lugar, los mismos problemas que compartimos hoy en día sobre el desbalanceo y la incertidumbre del problema eran mucho más agresivos. 
 	
+	Tras 2012 con la revolución del Deep Learning, se introducen nuevas tecnologías (Redes neuronales convolucionales y U-net) que mejorarán los resultados obtenidos hasta el momento. 
+	Se empezarán a construir arquitecturas encoder-decorder convolucionales para conseguir pipelines completos para la segmentación. El aprendizaje profundo toma el problema de lleno proclamándose el enfoque que define el estado del arte.
 	
+	Podemos clasificar las soluciones basadas en aprendizaje profundo aportadas en tres categorías según el principal problema para que el están pesadas. Sin embargo, como veremos en las soluciones más actuales lo ideal es tratar con los tres problemas.
 	
-	
-
-
-
+	\subsection{Métodos que se enfocan en la arquitectura}
+		
+		 Para poder obtener redes que automáticamente extraen características discriminativas a altas dimensiones es necesario un efectivo diseño de módulos y arquitecturas. Por un lado, se pretende que la arquitectura sea capaz de aprender semánticamente y a localizar regiones de interés por medio de añadir profundidad a la red, a través de mecanismos de atención o la fusión de características entre las resonancias. Por otro lado, se pretende minimizar la cantidad de parámetros entrenables de la red o conseguir un entrenamiento más rápido.
+		 
+		\subsubsection{Diseño de bloques especializados}
+			
+			Los primeros trabajos que tenían este objetivo comenzaron por basarse en arquitecturas bien conocidas como AlexNet o VGGNet a través del uso de una secuencia de imágenes de la resonancia completa como entrada.
+			
+			Para la mejora de resultados, se optó por introducir todas las resonancias como entrada de la red y añadir más capas convolucionales. Con ello, teníamos redes más profundas pero que pronto empezaban a sufrir los problemas del explosión y desvanecimiento del gradiente durante el proceso de entrenamiento. Para ayudar a lidiar con estos problemas, se introdujo a las redes, \textbf{conexiones residuales}.
+			Conectando la entrada de la red con su salida, convergiendo más rápido y con mejores resultados. 
+			
+			Este proceso de aumento de profundidad con conexiones residuales no sería definitivo porque también conlleva el sacrificio de resolución espacial. Se reemplazaría en trabajos siguientes, el uso de la convolución simple por convoluciones dilatadas. El \textbf{uso de convoluciones dilatadas} traería el aumento del espacio receptivo (ya que se aplica una convolución a un espacio mayor de la imagen) sin necesidad de introducir parámetros a la red. La convolución dilatada se vería especialmente útil por ejemplo en la segmentación de áreas grandes como suele ocupar el tejido ED (edema tumoral). 
+			
+			Respecto conseguir una buena eficiencia en tiempo de entrenamiento es conocido aplicar un reordenamiento en memoria de las imágenes de la resonancia similares (p. ej. el mismo slice en las 4 pruebas) de forma que reduzcan la comunicación entrada-salida con GPU. Adicionalmente, se utilizan \textbf{conexiones reversibles} en la red de forma que durante el proceso de backpropagation (backward pass) no se necesite memoria adicional para guardar las activaciones intermedias y la aplicación de la combinación \textbf{convoluciones separables} para cada convolución standard necesaria por motivos de eficiencia. 
+			
+			\begin{figure}[!h]
+				\centering
+				\includegraphics[width=1.0\linewidth]{imagenes/estructura_revisionhistorica.png}
+				\caption{Estructura de las arquitecturas de esta revisión.}
+			\end{figure}
+			
+			\subsubsection{Diseño de arquitecturas efectivas}
+			
+			La mayoría de los trabajos de recorrido histórico se encasillan en alguno de los siguientes dos enfoques de arquitectura: \textbf{redes neuronales convolucionales} para extraer características de la imagen y clasificar los píxeles de la imagen según las etiquetas de los tejidos posibles o \textbf{redes encoder-decoder} en las cuales se puede definir un pipeline completo convolucional sin la necesidad de la agregación de capas totalmente conectadas.
+			
+			\begin{enumerate}
+					
+				\item \textbf{Redes neuronales convolucionales de una/múltiples trayectorias}
+					
+					
+				A diferencia de una red convolucional de una única trayectoria, las redes de trayectoria múltiples tienen la capacidad de extraer diversas características a diferentes escalas. Estas características se combinan para su posterior procesamiento, permitiendo a las redes aprender tanto características globales como locales. 
+				
+				\begin{figure}[!h]
+					\centering
+					\includegraphics[width=0.5\linewidth]{imagenes/comparisonsinglemultipleCNN.png}
+					\caption{Comparación entre arquitecturas de una y múltiples trayectorias. Imagen de \cite{liu2023deep}}
+				\end{figure}
+				
+				Por ejemplo, \cite{havaei2017brain} desarrollaron una estructura de dos vías que integra información tanto local como global del tumor, utilizando núcleos de convolución de diferentes tamaños.
+				
+				\begin{figure}[!h]
+					\centering
+					\includegraphics[width=0.75\linewidth]{imagenes/havaei2017architecture.png}
+					\caption{Arquitectura de dos vías de \cite{havaei2017brain}}
+				\end{figure}
+				
+				Otros enfoques, como el de \cite{kamnitsas2017efficient}, optan por aprender información global localmente desde la entrada misma, utilizando redes de doble vía patches de diferentes tamaños y pequeños núcleos de convolución. 
+				
+				Este tipo de arquitecturas fueron una de las primeras aproximaciones que empezaban adaptarse con éxito a las complejidades de la segmentación de tumores cerebrales.
+				
+					
+				\item \textbf{Arquitecturas Encoder-Decoder}
+					
+			\end{enumerate}
+			
+			
+		\subsection{Métodos que tratan el desbalanceo}
+			\subsubsection{Métodos multi-red}
+			\begin{enumerate}
+					
+				\item \textbf{Redes en cascada}
+					
+				\item \textbf{Ensamblado de modelos}
+					
+			\end{enumerate}
+				
+			\subsubsection{Funciones de pérdida especializadas}
+		
+		
+		\subsection{Métodos que tratan la información multi-modal}
 
 
 \section{Enfoques actuales}
-	\subsection{Basados en convolución}
+	\subsection{Basados en CNN}
+	
+	Como vimos anteriormente históricamente existen referencias muy buenas de forma independiente por tratar de conseguir una arquitectura efectiva, evitar los problemas asociados al desbalanceo y sacarle partido a la información multi-modal. En aproximaciones más reciente se intenta unificar estos propósitos con el fin de un desempeño mayor en el problema.
+	
+	
+	
+	
 	\subsection{Basados en Transformers}
 

@@ -15,14 +15,14 @@
 \usepackage{colortbl,longtable}
 \usepackage[stable]{footmisc}
 
-%\usepackage{index}
+\usepackage{index}
 %\usepackage[style=list, number=none]{glossary} 
 %\usepackage{titlesec}
 %\usepackage{pailatino}
 %\usepackage[chapter]{algorithm}
 %\usepackage{doxygen/doxygen}
 %\usepackage[style=long, cols=2,border=plain,toc=true,number=none]{glossary}
-
+\usepackage{glossaries}
 \RequirePackage{verbatim}
 %\RequirePackage[Glenn]{fncychap}
 
@@ -66,11 +66,11 @@
 %\hyphenation{}
 
 %\makeindex
-%\makeglossary
+\makeglossaries
 
 % Definición de comandos que me son tiles:
 %\renewcommand{\indexname}{Índice alfabético}
-%\renewcommand{\glossaryname}{Glosario}
+\renewcommand{\glossaryname}{Glosario}
 
 \pagestyle{fancy}
 \fancyhf{}
@@ -194,13 +194,14 @@
 
 
 
-%\appendix
+\appendix
 %\input{apendices/manual_usuario/manual_usuario}
 %\input{apendices/paper/paper}
 %\input{glosario/entradas_glosario}
 %\addcontentsline{toc}{chapter}{Glosario}
 %\printglossary
-%\chapter*{}
-%\thispagestyle{empty}
+
+\chapter*{}
+\thispagestyle{empty}
 
 \end{document}

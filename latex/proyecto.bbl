@@ -43,6 +43,13 @@ Havaei, M., Davy, A., Warde-Farley, D., Biard, A., Courville, A., Bengio, Y.,
 \newblock Brain tumor segmentation with deep neural networks.
 \newblock {\em Medical image analysis}, 35:18--31.
 
+\bibitem[Kamnitsas et~al., 2017]{kamnitsas2017efficient}
+Kamnitsas, K., Ledig, C., Newcombe, V.~F., Simpson, J.~P., Kane, A.~D., Menon,
+  D.~K., Rueckert, D., and Glocker, B. (2017).
+\newblock Efficient multi-scale 3d cnn with fully connected crf for accurate
+  brain lesion segmentation.
+\newblock {\em Medical image analysis}, 36:61--78.
+
 \bibitem[Liu et~al., 2023]{liu2023deep}
 Liu, Z., Tong, L., Chen, L., Jiang, Z., Zhou, F., Zhang, Q., Zhang, X., Jin,
   Y., and Zhou, H. (2023).
@@ -54,5 +61,11 @@ Menze, B.~H., Jakab, A., Bauer, S., Kalpathy-Cramer, J., Farahani, K., Kirby,
   J., Burren, Y., Porz, N., Slotboom, J., Wiest, R., et~al. (2014).
 \newblock The multimodal brain tumor image segmentation benchmark (brats).
 \newblock {\em IEEE transactions on medical imaging}, 34(10):1993--2024.
+
+\bibitem[Zhu and Yan, 1997]{zhu1997computerized}
+Zhu, Y. and Yan, Z. (1997).
+\newblock Computerized tumor boundary detection using a hopfield neural
+  network.
+\newblock {\em IEEE transactions on medical imaging}, 16(1):55--67.
 
 \end{thebibliography}
