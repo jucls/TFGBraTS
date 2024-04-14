@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.3.15)  12 APR 2024 05:57
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.3.15)  14 APR 2024 02:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -983,14 +983,19 @@ LaTeX Info: Redefining \% on input line 1.
 ] (./proyecto.lof
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
+
+Overfull \hbox (6.61267pt too wide) in paragraph at lines 20--20
+ [][] [][][]\OT1/cmr/m/n/10.95 Arquitectura del au-to-en-co-der re-gu-la-ri-za-
+dor de [[]][][] [][]  
+ []
+
 )
 \tf@lof=\write7
 \openout7 = `proyecto.lof'.
 
  [3] [4
 
-]
-(./proyecto.lot
+] (./proyecto.lot
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
 )
@@ -1036,7 +1041,7 @@ been already used, duplicate ignored
                    \relax 
 l.71 
       [4]
-<imagenes/porcentajeGLIvsMEN.png, id=262, 422.0568pt x 348.3414pt>
+<imagenes/porcentajeGLIvsMEN.png, id=274, 422.0568pt x 348.3414pt>
 File: imagenes/porcentajeGLIvsMEN.png Graphic file (type png)
 <use imagenes/porcentajeGLIvsMEN.png>
 Package pdftex.def Info: imagenes/porcentajeGLIvsMEN.png  used on input line 78
@@ -1067,7 +1072,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 82--88
 
  []
 
-<imagenes/cantidadinstanciastemporales.png, id=263, 446.6286pt x 312.2064pt>
+<imagenes/cantidadinstanciastemporales.png, id=275, 446.6286pt x 312.2064pt>
 File: imagenes/cantidadinstanciastemporales.png Graphic file (type png)
 <use imagenes/cantidadinstanciastemporales.png>
 Package pdftex.def Info: imagenes/cantidadinstanciastemporales.png  used on inp
@@ -1089,7 +1094,7 @@ been already used, duplicate ignored
                    \relax 
 l.110 
        [6 <./imagenes/cantidadinstanciastemporales.png>]
-<imagenes/introduccion_imagenesMRI.png, id=277, 1148.3703pt x 570.2103pt>
+<imagenes/introduccion_imagenesMRI.png, id=289, 1148.3703pt x 570.2103pt>
 File: imagenes/introduccion_imagenesMRI.png Graphic file (type png)
 <use imagenes/introduccion_imagenesMRI.png>
 Package pdftex.def Info: imagenes/introduccion_imagenesMRI.png  used on input l
@@ -1100,7 +1105,7 @@ Overfull \hbox (36.0022pt too wide) in paragraph at lines 122--123
  [][] 
  []
 
-<imagenes/imgSSAPEDMRI.png, id=278, 1148.3703pt x 570.2103pt>
+<imagenes/imgSSAPEDMRI.png, id=290, 1148.3703pt x 570.2103pt>
 File: imagenes/imgSSAPEDMRI.png Graphic file (type png)
 <use imagenes/imgSSAPEDMRI.png>
 Package pdftex.def Info: imagenes/imgSSAPEDMRI.png  used on input line 130.
@@ -1120,7 +1125,7 @@ been already used, duplicate ignored
                    \relax 
 l.134 \newpage
                [7 <./imagenes/introduccion_imagenesMRI.png>]
-<imagenes/segimagenesMRI.png, id=287, 1148.3703pt x 570.2103pt>
+<imagenes/segimagenesMRI.png, id=299, 1148.3703pt x 570.2103pt>
 File: imagenes/segimagenesMRI.png Graphic file (type png)
 <use imagenes/segimagenesMRI.png>
 Package pdftex.def Info: imagenes/segimagenesMRI.png  used on input line 150.
@@ -1133,7 +1138,7 @@ Overfull \hbox (36.0022pt too wide) in paragraph at lines 150--151
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<imagenes/segimagenesSSAPEDMRI.png, id=288, 1148.3703pt x 570.2103pt>
+<imagenes/segimagenesSSAPEDMRI.png, id=300, 1148.3703pt x 570.2103pt>
 File: imagenes/segimagenesSSAPEDMRI.png Graphic file (type png)
 <use imagenes/segimagenesSSAPEDMRI.png>
 Package pdftex.def Info: imagenes/segimagenesSSAPEDMRI.png  used on input line 
@@ -1154,7 +1159,7 @@ been already used, duplicate ignored
                    \relax 
 l.160 \newpage
                [8 <./imagenes/imgSSAPEDMRI.png>]
-<imagenes/metodologia_heatmapsGLI.png, id=297, 2160.873pt x 3244.2003pt>
+<imagenes/metodologia_heatmapsGLI.png, id=309, 2160.873pt x 3244.2003pt>
 File: imagenes/metodologia_heatmapsGLI.png Graphic file (type png)
 <use imagenes/metodologia_heatmapsGLI.png>
 Package pdftex.def Info: imagenes/metodologia_heatmapsGLI.png  used on input li
@@ -1164,7 +1169,7 @@ ne 165.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<imagenes/metodologia_heatmapsMEN.png, id=298, 2160.873pt x 3244.2003pt>
+<imagenes/metodologia_heatmapsMEN.png, id=310, 2160.873pt x 3244.2003pt>
 File: imagenes/metodologia_heatmapsMEN.png Graphic file (type png)
 <use imagenes/metodologia_heatmapsMEN.png>
 Package pdftex.def Info: imagenes/metodologia_heatmapsMEN.png  used on input li
@@ -1201,7 +1206,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.11}) has
                    \relax 
 l.177 
        [11 <./imagenes/metodologia_heatmapsMEN.png>]
-<imagenes/dicesimilarity.drawio.png, id=313, 192.72pt x 191.71625pt>
+<imagenes/dicesimilarity.drawio.png, id=326, 192.72pt x 191.71625pt>
 File: imagenes/dicesimilarity.drawio.png Graphic file (type png)
 <use imagenes/dicesimilarity.drawio.png>
 Package pdftex.def Info: imagenes/dicesimilarity.drawio.png  used on input line
@@ -1218,7 +1223,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.12}) has
                    \relax 
 l.214 	
         [12]
-<imagenes/distanceHaussdorff.png, id=322, 369.63094pt x 274.77657pt>
+<imagenes/distanceHaussdorff.png, id=334, 369.63094pt x 274.77657pt>
 File: imagenes/distanceHaussdorff.png Graphic file (type png)
 <use imagenes/distanceHaussdorff.png>
 Package pdftex.def Info: imagenes/distanceHaussdorff.png  used on input line 21
@@ -1246,59 +1251,87 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [15]
 [16]
-<imagenes/evolution_stateofart.png, id=351, 1304.875pt x 461.725pt>
+<imagenes/evolution_stateofart.png, id=363, 1304.875pt x 461.725pt>
 File: imagenes/evolution_stateofart.png Graphic file (type png)
 <use imagenes/evolution_stateofart.png>
 Package pdftex.def Info: imagenes/evolution_stateofart.png  used on input line 
 39.
 (pdftex.def)             Requested size: 360.0pt x 127.38692pt.
  [17 <./imagenes/evolution_stateofart.png>]
-<imagenes/estructura_revisionhistorica.png, id=360, 859.21pt x 1255.69125pt>
+<imagenes/estructura_revisionhistorica.png, id=374, 859.21pt x 1255.69125pt>
 File: imagenes/estructura_revisionhistorica.png Graphic file (type png)
 <use imagenes/estructura_revisionhistorica.png>
 Package pdftex.def Info: imagenes/estructura_revisionhistorica.png  used on inp
-ut line 69.
+ut line 68.
 (pdftex.def)             Requested size: 360.0pt x 526.12216pt.
- [18]
-Underfull \vbox (badness 4229) has occurred while \output is active []
-
- [19 <./imagenes/estructura_revisionhistorica.png>]
-<imagenes/comparisonsinglemultipleCNN.png, id=371, 665.48625pt x 1087.06125pt>
+ [18] [19 <./imagenes/estructura_revisionhistorica.png>]
+<imagenes/comparisonsinglemultipleCNN.png, id=389, 665.48625pt x 1087.06125pt>
 File: imagenes/comparisonsinglemultipleCNN.png Graphic file (type png)
 <use imagenes/comparisonsinglemultipleCNN.png>
 Package pdftex.def Info: imagenes/comparisonsinglemultipleCNN.png  used on inpu
-t line 86.
+t line 85.
 (pdftex.def)             Requested size: 180.0pt x 294.02466pt.
-<imagenes/havaei2017architecture.png, id=375, 947.54pt x 296.10625pt>
+ [20 <./imagenes/comparisonsinglemultipleCNN.png>]
+<imagenes/havaei2017architecture.png, id=400, 947.54pt x 296.10625pt>
 File: imagenes/havaei2017architecture.png Graphic file (type png)
 <use imagenes/havaei2017architecture.png>
 Package pdftex.def Info: imagenes/havaei2017architecture.png  used on input lin
-e 94.
+e 93.
 (pdftex.def)             Requested size: 270.0pt x 84.37308pt.
- [20 <./imagenes/comparisonsinglemultipleCNN.png>]) (./capitulos/03_metodologia
-.tex [21 <./imagenes/havaei2017architecture.png>] [22]
-Cap\'{\i }tulo 3.
-) (./capitulos/04_experimentacion.tex [23
 
-] [24
+[21 <./imagenes/havaei2017architecture.png>]
+<imagenes/encoder-decoderIMG.drawio.png, id=415, 785.93625pt x 705.63625pt>
+File: imagenes/encoder-decoderIMG.drawio.png Graphic file (type png)
+<use imagenes/encoder-decoderIMG.drawio.png>
+Package pdftex.def Info: imagenes/encoder-decoderIMG.drawio.png  used on input 
+line 123.
+(pdftex.def)             Requested size: 306.0022pt x 274.74481pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [22 <./imagenes/encoder-decoderIMG.drawio.png>]
+<imagenes/cascadestructure.png, id=423, 717.68124pt x 517.935pt>
+File: imagenes/cascadestructure.png Graphic file (type png)
+<use imagenes/cascadestructure.png>
+Package pdftex.def Info: imagenes/cascadestructure.png  used on input line 153.
+
+(pdftex.def)             Requested size: 180.0pt x 129.90228pt.
+ [23 <./imagenes/cascadestructure.png>]
+[24]
+<imagenes/myroenko2019.png, id=445, 1144.275pt x 591.20876pt>
+File: imagenes/myroenko2019.png Graphic file (type png)
+<use imagenes/myroenko2019.png>
+Package pdftex.def Info: imagenes/myroenko2019.png  used on input line 181.
+(pdftex.def)             Requested size: 360.0pt x 185.9972pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 182--182
+[]\OT1/cmr/m/n/10.95 Figura 2.7: []Arquitectura del au-to-en-co-der re-gu-la-ri
+-za-dor de
+ []
+
+) (./capitulos/03_metodologia.tex [25 <./imagenes/myroenko2019.png>] [26
+
+]
+Cap\'{\i }tulo 3.
+) (./capitulos/04_experimentacion.tex [27] [28
 
 ]
 Cap\'{\i }tulo 4.
-) [25] [26
+) [29] [30
 
 ]
 Cap\'{\i }tulo 5.
-(./proyecto.bbl [27] [28
+(./proyecto.bbl [31] [32
 
-] [29]) [30]
+] [33] [34]) [35] [36
+
+]
 
 Package glossaries Warning: No \printglossary or \printglossaries found. 
 (Remove \makeglossaries if you don't want any glossaries.) 
 This document will not have a glossary.
 
-[31
-
-] (./proyecto.aux
+[37] (./proyecto.aux
 LaTeX Info: Redefining \. on input line 28.
 LaTeX Info: Redefining \% on input line 28.
 )
@@ -1310,13 +1343,13 @@ Package rerunfilecheck Info: File `proyecto.out' has not changed.
 (rerunfilecheck)             Checksum: BF84F99AD55EBAC02220490920E4F05A;2947.
  ) 
 Here is how much of TeX's memory you used:
- 20296 strings out of 475735
- 341978 string characters out of 5784786
+ 20345 strings out of 475735
+ 343162 string characters out of 5784786
  1864759 words of memory out of 5000000
- 40589 multiletter control sequences out of 15000+600000
+ 40617 multiletter control sequences out of 15000+600000
  521549 words of font info for 62 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 94i,12n,93p,2262b,581s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 94i,12n,93p,2262b,577s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/te
@@ -1330,10 +1363,10 @@ fonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
 /cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8
 .pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><
 /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/latxfont/lasy10.pfb>
-Output written on proyecto.pdf (51 pages, 6151420 bytes).
+Output written on proyecto.pdf (57 pages, 6584781 bytes).
 PDF statistics:
- 534 PDF objects out of 1000 (max. 8388607)
- 415 compressed objects within 5 object streams
- 123 named destinations out of 1000 (max. 500000)
- 230 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 602 PDF objects out of 1000 (max. 8388607)
+ 469 compressed objects within 5 object streams
+ 144 named destinations out of 1000 (max. 500000)
+ 245 words of extra memory for PDF output out of 10000 (max. 10000000)
 

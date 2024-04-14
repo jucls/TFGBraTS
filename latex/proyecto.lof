@@ -12,9 +12,12 @@
 \contentsline {figure}{\numberline {1.10}{\ignorespaces Distancias de Hausdorff entre dos conjuntos}}{13}{figure.1.10}%
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Evolución histórica del estado del arte hasta 2021.}}{17}{figure.2.1}%
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Estructura de las arquitecturas de esta revisión.}}{19}{figure.2.2}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Estructura de las arquitecturas de esta revisión. Imagen de \cite {liu2023deep}}}{19}{figure.2.2}%
 \contentsline {figure}{\numberline {2.3}{\ignorespaces Comparación entre arquitecturas de una y múltiples trayectorias. Imagen de \cite {liu2023deep}}}{20}{figure.2.3}%
 \contentsline {figure}{\numberline {2.4}{\ignorespaces Arquitectura de dos vías de \cite {havaei2017brain}}}{21}{figure.2.4}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Comparación de distintas arquitecturas encoder-decoder}}{22}{figure.2.5}%
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Estructura de método en cascada de \cite {wang2018automatic}}}{23}{figure.2.6}%
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Arquitectura del autoencoder regularizador de \cite {myronenko20193d}}}{25}{figure.2.7}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

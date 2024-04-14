@@ -4,7 +4,7 @@ En este capítulo estudiaremos y analizaremos los diferentes enfoques para nuest
 
 Otras tareas contenidas en el diagnóstico completo de tumores cerebrales como la clasificación de tumores cerebrales (glioblastomas y meningiomas) o la predicción de su evolución, que se recogen en este trabajo, van intrínsecamente unidas al buen desempeño de la tarea de segmentación. 
 
-Por un lado, la clasificación entre los dos tipos de tumores no es tan relevante a la hora de diseñar un sistema de ayuda a la toma de decisión ya que clínicamente sí existe una característica diferencial entre ambos, su \textbf{localización}. Los meningiomas siempre aparecen entre el cráneo y el cerebro no internamente en el cerebro como los glioblastomas. Esto hace que un médico pueda distinguirlos sin requerir una gran asistencia de una máquina para la mayoría de los casos. Adicionalmente, la clasificación de por sí ayuda a la toma de decisiones en el tratamiento pero no es el elemento crítico para la supervivencia del paciente que depende de la eliminación del tumor donde su segmentación toma un papel crucial.
+Por un lado, la clasificación entre los dos tipos de tumores no es tan relevante a la hora de diseñar un sistema de ayuda a la toma de decisión ya que clínicamente sí existe una característica diferencial entre ambos, su \textbf{localización}. Los meningiomas siempre aparecen entre el cráneo y el cerebro no internamente en el cerebro como los glioblastomas. Esto hace que un médico pueda distinguirlos sin requerir una gran asistencia para la mayoría de los casos. No obstante, la clasificación de por sí ayuda a la toma de decisiones en el tratamiento pero no es el elemento crítico para la supervivencia del paciente que depende de la eliminación del tumor donde su segmentación toma un papel crucial.
 
 Por otro lado, la tarea de la predicción de la evolución del tumor se representa como la predicción de la segmentación en un estado futuro del tumor es decir depende fuertemente de la segmentación actual del tumor. 
 
@@ -51,35 +51,34 @@ Diferentes dificultades han sido las que a pesar de años de desarrollo aún enc
 	
 	\subsection{Métodos que se enfocan en la arquitectura}
 		
-		 Para poder obtener redes que automáticamente extraen características discriminativas a altas dimensiones es necesario un efectivo diseño de módulos y arquitecturas. Por un lado, se pretende que la arquitectura sea capaz de aprender semánticamente y a localizar regiones de interés por medio de añadir profundidad a la red, a través de mecanismos de atención o la fusión de características entre las resonancias. Por otro lado, se pretende minimizar la cantidad de parámetros entrenables de la red o conseguir un entrenamiento más rápido.
+		 Para poder obtener redes que automáticamente extraen características discriminativas a altas dimensiones es necesario un efectivo diseño de módulos y arquitecturas. Por un lado, se pretende que la arquitectura sea capaz de aprender las características distintivas de los tejidos y a localizar regiones de interés por medio de añadir profundidad a la red, a través de mecanismos de atención o la fusión de características entre las resonancias. Por otro lado, se pretende minimizar la cantidad de parámetros entrenables de la red o conseguir un entrenamiento más rápido.
 		 
 		\subsubsection{Diseño de bloques especializados}
 			
 			Los primeros trabajos que tenían este objetivo comenzaron por basarse en arquitecturas bien conocidas como AlexNet o VGGNet a través del uso de una secuencia de imágenes de la resonancia completa como entrada.
 			
-			Para la mejora de resultados, se optó por introducir todas las resonancias como entrada de la red y añadir más capas convolucionales. Con ello, teníamos redes más profundas pero que pronto empezaban a sufrir los problemas del explosión y desvanecimiento del gradiente durante el proceso de entrenamiento. Para ayudar a lidiar con estos problemas, se introdujo a las redes, \textbf{conexiones residuales}.
-			Conectando la entrada de la red con su salida, convergiendo más rápido y con mejores resultados. 
+			Para la mejora de resultados, se optó por introducir todas las resonancias como entrada de la red y añadir más capas convolucionales. Con ello, teníamos redes más profundas pero que pronto empezaban a sufrir los problemas de la explosión y desvanecimiento del gradiente durante el proceso de entrenamiento. Para ayudar a lidiar con estos problemas, se introdujo a las redes, \textbf{conexiones residuales} \cite{chang2016fully}. Conectando la entrada de la red con su salida, convergiendo más rápido y con mejores resultados. 
 			
 			Este proceso de aumento de profundidad con conexiones residuales no sería definitivo porque también conlleva el sacrificio de resolución espacial. Se reemplazaría en trabajos siguientes, el uso de la convolución simple por convoluciones dilatadas. El \textbf{uso de convoluciones dilatadas} traería el aumento del espacio receptivo (ya que se aplica una convolución a un espacio mayor de la imagen) sin necesidad de introducir parámetros a la red. La convolución dilatada se vería especialmente útil por ejemplo en la segmentación de áreas grandes como suele ocupar el tejido ED (edema tumoral). 
 			
-			Respecto conseguir una buena eficiencia en tiempo de entrenamiento es conocido aplicar un reordenamiento en memoria de las imágenes de la resonancia similares (p. ej. el mismo slice en las 4 pruebas) de forma que reduzcan la comunicación entrada-salida con GPU. Adicionalmente, se utilizan \textbf{conexiones reversibles} en la red de forma que durante el proceso de backpropagation (backward pass) no se necesite memoria adicional para guardar las activaciones intermedias y la aplicación de la combinación \textbf{convoluciones separables} para cada convolución standard necesaria por motivos de eficiencia. 
+			Respecto conseguir una buena eficiencia en tiempo de entrenamiento es conocido aplicar un reordenamiento en memoria de las imágenes de la resonancia similares (p. ej. el mismo slice en las 4 pruebas) de forma que se reduzcan la comunicación entrada-salida con GPU. Adicionalmente, autores como \cite{brugger2019partially} utilizan \textbf{conexiones reversibles}  en la red de forma que durante el proceso de backpropagation (backward pass) no se necesite memoria adicional para guardar las activaciones intermedias. Por último, para ahorrar en eficiencia se sustituye la convolución standard por la combinación de \textbf{convoluciones separables}. 
 			
 			\begin{figure}[!h]
 				\centering
 				\includegraphics[width=1.0\linewidth]{imagenes/estructura_revisionhistorica.png}
-				\caption{Estructura de las arquitecturas de esta revisión.}
+				\caption{Estructura de las arquitecturas de esta revisión. Imagen de \cite{liu2023deep}}
 			\end{figure}
 			
 			\subsubsection{Diseño de arquitecturas efectivas}
 			
-			La mayoría de los trabajos de recorrido histórico se encasillan en alguno de los siguientes dos enfoques de arquitectura: \textbf{redes neuronales convolucionales} para extraer características de la imagen y clasificar los píxeles de la imagen según las etiquetas de los tejidos posibles o \textbf{redes encoder-decoder} en las cuales se puede definir un pipeline completo convolucional sin la necesidad de la agregación de capas totalmente conectadas.
+			La mayoría de los trabajos de recorrido histórico se encasillan en alguno de los siguientes dos enfoques de arquitectura: \textbf{redes neuronales convolucionales} para extraer características de la imagen y clasificar los patches o píxeles de la imagen según las etiquetas de los tejidos posibles o \textbf{redes encoder-decoder} en las cuales se puede definir un pipeline completo convolucional sin la necesidad de la agregación de capas totalmente conectadas.
 			
 			\begin{enumerate}
 					
 				\item \textbf{Redes neuronales convolucionales de una/múltiples trayectorias}
 					
 					
-				A diferencia de una red convolucional de una única trayectoria, las redes de trayectoria múltiples tienen la capacidad de extraer diversas características a diferentes escalas. Estas características se combinan para su posterior procesamiento, permitiendo a las redes aprender tanto características globales como locales. 
+				A diferencia de una red convolucional de una única trayectoria, las redes de trayectoria múltiples tienen la capacidad de extraer diversas características a diferentes escalas. Estas características se combinan para su posterior procesamiento, usualmente en capas totalmente conectadas, permitiendo a las redes aprender tanto características globales como locales. 
 				
 				\begin{figure}[!h]
 					\centering
@@ -95,29 +94,98 @@ Diferentes dificultades han sido las que a pesar de años de desarrollo aún enc
 					\caption{Arquitectura de dos vías de \cite{havaei2017brain}}
 				\end{figure}
 				
-				Otros enfoques, como el de \cite{kamnitsas2017efficient}, optan por aprender información global localmente desde la entrada misma, utilizando redes de doble vía patches de diferentes tamaños y pequeños núcleos de convolución. 
+				Otros enfoques, como el de \cite{kamnitsas2017efficient}, optan por aprender información global localmente desde la entrada misma, utilizando redes de doble vía, patches de diferentes tamaños y pequeños núcleos de convolución. 
 				
-				Este tipo de arquitecturas fueron una de las primeras aproximaciones que empezaban adaptarse con éxito a las complejidades de la segmentación de tumores cerebrales.
-				
+				Este tipo de arquitecturas fueron una de las primeras aproximaciones que empezaban adaptarse con éxito a las complejidades de la segmentación de tumores cerebrales. Sin embargo, veremos como la dificultad de un buen ajuste en el diseño de estas arquitecturas todavía seguía siendo un problema.
 					
 				\item \textbf{Arquitecturas Encoder-Decoder}
+				
+				Las redes de una/múltiples trayectorias toman como input un patch de una cierta región de la imagen y dan como output la clasificación del tejido que existe en ese patch. Este enfoque hace que obtener una buena arquitectura que haga la transformación de los patches a información categórica sea complicado por varios motivos: 
+				\begin{enumerate}
+					\item Existe una gran \textbf{dependencia} entre el tamaño y calidad de los patches, y los resultados que ofrecería la arquitectura.
 					
+					\item Toda la transformación de características visuales (aunque, reducidas) a información categórica estaría concentrada en las capas totalmente conectadas. Las capas totalmente conectadas de un tamaño razonables para una capacidad de memoria usualmente utilizada \textbf{no puede totalmente representar un espacio de características tan grande}.
+					
+					\item Si necesitamos tener distintas redes separadas, el proceso de ajuste de cada una de ellas es independiente. Esto lo podemos interpretar como un coste añadido en términos de \textbf{eficiencia}.
+					
+				\end{enumerate}
+				
+				Para superar estos problemas en los siguientes trabajos se empieza a utilizar \textbf{FCN Redes neuronales totalmente convolucionales} y \textbf{U-net} basadas en arquitecturas encoder-decorder, de forma que se establece un pipeline completo desde la imagen a la segmentación.
+				
+				Una de los tipos más importantes de FCN para este problema es U-net. U-net consiste en la creación de conexiones entre el encoder y el decoder. Permitiendo una vinculación directa en el proceso de reducción y ampliación de dimensionalidad. Estas conexiones reciben el nombre de \textbf{Skip Connections} y pueden ayudar a las capas del decoder a recuperar detalles visuales aprendidos en el encoder, llevando a una segmentación más precisa.
+				
+				\cite{isensee2018brain} utilizan una U-Net dándole aún más énfasis a la tarea de una segmentación utilizando una función de pérdida basada en la similaridad Dice.
+				
+				Similar a las skip connections antes mencionado, el uso de conexiones residuales  y skip connections permiten el paso de características de alto y bajo nivel para una mejor segmentación final.
+				
+				\begin{figure}[!h]
+					\centering
+					\includegraphics[width=0.85\linewidth]{imagenes/encoder-decoderIMG.drawio.png}
+					\caption{Comparación de distintas arquitecturas encoder-decoder}
+				\end{figure}
+				
 			\end{enumerate}
 			
 			
 		\subsection{Métodos que tratan el desbalanceo}
-			\subsubsection{Métodos multi-red}
-			\begin{enumerate}
+		
+		Como anunciábamos anteriormente el alto desbalanceo en la dimensión de los diferentes tejidos del tumor (usualmente, ocupando NCR regiones pequeñas, y ED grandes) puede tener un impacto negativo en el proceso de entrenamiento. Motivados por métodos como los sistemas multi-expertos, se empezó a construir métodos específicos para este problema.
+		
+		Podemos diferenciar en:
+		\begin{enumerate}
+			\item \textbf{Diseños sobre la arquitectura}: Redes en cascada, ensamblado de modelos y arquitecturas multi-tarea.
+			\item \textbf{Mejorar el entrenamiento}: Funciones de pérdida especializadas.
+		\end{enumerate}
+		
+			\subsubsection{Redes en cascada}
+			
+			Una red en cascada es un conjunto de redes más pequeñas ordenadas en las cuales el output de la red anterior sirve como una input a la siguiente, formando una  <<cascada de redes>>. De esta forma, podemos tener redes especializadas en distintos niveles. 
+			
+			Las primeras redes de la cascada especializadas a características de más alto nivel y las siguientes de más bajo.
+			
+			Por ejemplo, en \cite{wang2018automatic} se utilizan tres redes especializadas para los tres regiones de tejidos definidas por BraTS. Empezando por la región más grande hasta la más pequeña. 
+			
+			Su primera red WNet segmenta a Whole Tumor, toda la lesión. La siguiente TNet segmenta al núcleo del tumor. Finalmente, Enet a la parte activa del tumor.
+			
+			
+			\begin{figure}[!h]
+				\centering
+				\includegraphics[width=0.5\linewidth]{imagenes/cascadestructure.png}
+				\caption{Estructura de método en cascada de \cite{wang2018automatic}}
+			\end{figure}
+			
+			La ventaja de este modelo es evitar la interferencia de las clases desbalanceadas, ya que cada red trata su clase como un problema de segmentación binaria. 
+			
+			Sin embargo, hace que la redes dependientes de otras dependan también de sus resultados. Si la primera red obtiene malos resultados, todas las siguientes redes se verán afectadas por ella.
 					
-				\item \textbf{Redes en cascada}
-					
-				\item \textbf{Ensamblado de modelos}
-					
-			\end{enumerate}
+			\subsubsection{Ensamblado de modelos}
+			
+			Una de las consecuencias que tiene el uso de una sola red es que está altamente influenciada por la elección de su hiperparámetros. Con el objetivo de obtener un más robusto y general modelo para la segmentación se puede combinar la salida de múltiples redes, ensamblarlas.
+			
+			El ensamblado de modelos aumentaría el espacio de hipótesis del modelo final evitando, la caída en óptimos locales debido a el desbalanceo de datos.
+			
+			EMMA  de \cite{kamnitsas2018ensembles} es uno de los primeros modelos para segmentación de tumores que es un ensamblado de varias redes. EMMA utiliza tres modelos: DeepMedic, una red FCN y una U-net para dar el output de los tres con una mayor confianza.
+			
+			\cite{jiang2020two} ganadores de BraTS2019 adoptaron una estrategia de ensamblado con $12$ modelos obteniendo entorno $0.6 - 1 \%$ mejores resultados que el mejor único modelo.
+			
+			\subsubsection{Arquitecturas multi-tarea}
+			
+			Todo lo descrito en esta revisión histórica gira entorno a la segmentación de tumores. Sin embargo, la desventaja que puede tener enfocarnos en esta sola tarea es que quizá los modelos específicos para segmentación ignoran información útil en las imágenes para otras tareas, que indirectamente pueda ayudar a obtener una mejor generalización en la segmentación de tumores. 
+			
+			Por un lado, esta idea radica en la suposición de que los modelos que aprenden más tareas están aumentando su aprendizaje en el dominio del problema y esto debería ser beneficioso para todas las tareas. Por otro lado, de una forma más justificada, sabemos que nos enfrentamos a cierto ruido que desconocemos en los datos y etiquetas por tanto si entrenamos para múltiples tareas en conjunto el modelo aprende representaciones más generales reduciendo el riesgo de sobreajuste. Añadir tareas a la arquitectura y aprenderlas en conjunto podría tener \textbf{un efecto regularizador}.
+			
+			Un claro ejemplo de esto es \cite{myronenko20193d} que usa como tarea complementaria la reconstrucción de la resonancia de entrada mediante un autoencoder. Teniendo un efecto regularizador sobre los parámetros compartidos del encoder que a diferencia de regularizaciones L1 o L2 que explícitamente añaden una penalización para evitar el sobreajuste, la tarea nueva añade una penalización en la dirección en la que ambas tareas son optimizadas reduciendo el espacio de búsqueda de los parámetros entrenables de la red.
+			
+			\begin{figure}[!h]
+				\centering
+				\includegraphics[width=1.0\linewidth]{imagenes/myroenko2019.png}
+				\caption{Arquitectura del autoencoder regularizador de \cite{myronenko20193d}}
+			\end{figure}
+			
 				
 			\subsubsection{Funciones de pérdida especializadas}
-		
-		
+			
+			
 		\subsection{Métodos que tratan la información multi-modal}
 
 
@@ -125,8 +193,6 @@ Diferentes dificultades han sido las que a pesar de años de desarrollo aún enc
 	\subsection{Basados en CNN}
 	
 	Como vimos anteriormente históricamente existen referencias muy buenas de forma independiente por tratar de conseguir una arquitectura efectiva, evitar los problemas asociados al desbalanceo y sacarle partido a la información multi-modal. En aproximaciones más reciente se intenta unificar estos propósitos con el fin de un desempeño mayor en el problema.
-	
-	
 	
 	
 	\subsection{Basados en Transformers}
