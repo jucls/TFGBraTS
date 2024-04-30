@@ -177,9 +177,16 @@ No se observa una zona especialmente marcadas ni en glioblastomas ni en meningio
 
 \subsection{Línea de investigación}
 
-** Explicar profundamente cuando lo tenga claro **
+ En este trabajo definiremos como línea base la construcción de un arquitectura encoder-decoder totalmente convolucional que se ajuste a los datos de entrenamiento. Para posteriormente utilizar el codificador y representación latente del autoencoder para todas las tareas. Conectándole:
+ 
+ \begin{enumerate}
+ 	\item \textbf{Para clasificación} añadiendo una red densamente conectada. 
+ 	\item \textbf{Para segmentación}  un decodificador totalmente convolucional transformando la arquitectura en un autoencoder V-net (U-net con conexiones residuales).
+ 	\item \textbf{Para predicción} un decodificador basado en la arquitectura Transformer.
+ 	
+ \end{enumerate}
 
-Unificación de las 3 tareas en un transformer. Uso de GAN para aumento de datos. Encoder-Decoder. Uso frecuente de U-nets.
+Por otro lado, se explorará la unificación de la segmentación y predicción en una única arquitectura con el objetivo de aumentar la generalización gracias a la multi-tarea.
 
 \subsection{Evaluación y métricas}
 
@@ -191,7 +198,6 @@ Siguiendo la definición de evaluación de BraTS 2023. Para la evaluación de lo
 	\item \textbf{Tumor Core TC}: Incluye al tejido ET y al tejido NCR.
 	\item \textbf{Whole Tumor WT}: Incluye a todos los tejidos. La segmentación de toda la lesión.
 \end{enumerate}
-
 
 Se utilizará dos métricas. 
 

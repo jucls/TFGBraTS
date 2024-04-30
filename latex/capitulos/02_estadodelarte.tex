@@ -55,19 +55,14 @@ Diferentes dificultades han sido las que a pesar de años de desarrollo aún enc
 		 
 		\subsubsection{Diseño de bloques especializados}
 			
-			Los primeros trabajos que tenían este objetivo comenzaron por basarse en arquitecturas bien conocidas como AlexNet o VGGNet a través del uso de una secuencia de imágenes de la resonancia completa como entrada.
+			Los primeros trabajos que tenían este objetivo comenzaron por basarse en arquitecturas bien conocidas como AlexNet o VGGNet a través del uso de una única imagen de la resonancia completa como entrada de la red.
 			
-			Para la mejora de resultados, se optó por introducir todas las resonancias como entrada de la red y añadir más capas convolucionales. Con ello, teníamos redes más profundas pero que pronto empezaban a sufrir los problemas de la explosión y desvanecimiento del gradiente durante el proceso de entrenamiento. Para ayudar a lidiar con estos problemas, se introdujo a las redes, \textbf{conexiones residuales} \cite{chang2016fully}. Conectando la entrada de la red con su salida, convergiendo más rápido y con mejores resultados. 
+			Para la mejora de resultados, se optó por introducir todas la secuencia de imágenes de una resonancia como entrada de la red y añadir más capas convolucionales. Con ello, teníamos redes más profundas pero que pronto empezaban a sufrir los problemas de la explosión y desvanecimiento del gradiente durante el proceso de entrenamiento. Para ayudar a lidiar con estos problemas, se introdujo a las redes, \textbf{conexiones residuales} \cite{chang2016fully}. Conectando la entrada de la red con su salida, convergiendo más rápido y con mejores resultados. 
 			
 			Este proceso de aumento de profundidad con conexiones residuales no sería definitivo porque también conlleva el sacrificio de resolución espacial. Se reemplazaría en trabajos siguientes, el uso de la convolución simple por convoluciones dilatadas. El \textbf{uso de convoluciones dilatadas} traería el aumento del espacio receptivo (ya que se aplica una convolución a un espacio mayor de la imagen) sin necesidad de introducir parámetros a la red. La convolución dilatada se vería especialmente útil por ejemplo en la segmentación de áreas grandes como suele ocupar el tejido ED (edema tumoral). 
 			
 			Respecto conseguir una buena eficiencia en tiempo de entrenamiento es conocido aplicar un reordenamiento en memoria de las imágenes de la resonancia similares (p. ej. el mismo slice en las 4 pruebas) de forma que se reduzcan la comunicación entrada-salida con GPU. Adicionalmente, autores como \cite{brugger2019partially} utilizan \textbf{conexiones reversibles}  en la red de forma que durante el proceso de backpropagation (backward pass) no se necesite memoria adicional para guardar las activaciones intermedias. Por último, para ahorrar en eficiencia se sustituye la convolución standard por la combinación de \textbf{convoluciones separables}. 
 			
-			\begin{figure}[!h]
-				\centering
-				\includegraphics[width=1.0\linewidth]{imagenes/estructura_revisionhistorica.png}
-				\caption{Estructura de las arquitecturas de esta revisión. Imagen de \cite{liu2023deep}}
-			\end{figure}
 			
 			\subsubsection{Diseño de arquitecturas efectivas}
 			
@@ -80,21 +75,21 @@ Diferentes dificultades han sido las que a pesar de años de desarrollo aún enc
 					
 				A diferencia de una red convolucional de una única trayectoria, las redes de trayectoria múltiples tienen la capacidad de extraer diversas características a diferentes escalas. Estas características se combinan para su posterior procesamiento, usualmente en capas totalmente conectadas, permitiendo a las redes aprender tanto características globales como locales. 
 				
-				\begin{figure}[!h]
+				\begin{figure}[H]
 					\centering
-					\includegraphics[width=0.5\linewidth]{imagenes/comparisonsinglemultipleCNN.png}
+					\includegraphics[width=0.45\linewidth]{imagenes/comparisonsinglemultipleCNN.png}
 					\caption{Comparación entre arquitecturas de una y múltiples trayectorias. Imagen de \cite{liu2023deep}}
 				\end{figure}
 				
 				Por ejemplo, \cite{havaei2017brain} desarrollaron una estructura de dos vías que integra información tanto local como global del tumor, utilizando núcleos de convolución de diferentes tamaños.
 				
-				\begin{figure}[!h]
+				\begin{figure}[H]
 					\centering
 					\includegraphics[width=0.75\linewidth]{imagenes/havaei2017architecture.png}
 					\caption{Arquitectura de dos vías de \cite{havaei2017brain}}
 				\end{figure}
-				
-				Otros enfoques, como el de \cite{kamnitsas2017efficient}, optan por aprender información global localmente desde la entrada misma, utilizando redes de doble vía, patches de diferentes tamaños y pequeños núcleos de convolución. 
+
+				Otros enfoques, como el de \cite{kamnitsas2017efficient}, optan por aprender información global y local desde la entrada misma, utilizando redes de doble vía, patches de diferentes tamaños y pequeños núcleos de convolución. 
 				
 				Este tipo de arquitecturas fueron una de las primeras aproximaciones que empezaban adaptarse con éxito a las complejidades de la segmentación de tumores cerebrales. Sin embargo, veremos como la dificultad de un buen ajuste en el diseño de estas arquitecturas todavía seguía siendo un problema.
 					
@@ -118,7 +113,7 @@ Diferentes dificultades han sido las que a pesar de años de desarrollo aún enc
 				
 				Similar a las skip connections antes mencionado, el uso de conexiones residuales  y skip connections permiten el paso de características de alto y bajo nivel para una mejor segmentación final.
 				
-				\begin{figure}[!h]
+				\begin{figure}[H]
 					\centering
 					\includegraphics[width=0.85\linewidth]{imagenes/encoder-decoderIMG.drawio.png}
 					\caption{Comparación de distintas arquitecturas encoder-decoder}
@@ -176,7 +171,7 @@ Diferentes dificultades han sido las que a pesar de años de desarrollo aún enc
 			
 			Un claro ejemplo de esto es \cite{myronenko20193d} que usa como tarea complementaria la reconstrucción de la resonancia de entrada mediante un autoencoder. Teniendo un efecto regularizador sobre los parámetros compartidos del encoder que a diferencia de regularizaciones L1 o L2 que explícitamente añaden una penalización para evitar el sobreajuste, la tarea nueva añade una penalización en la dirección en la que ambas tareas son optimizadas reduciendo el espacio de búsqueda de los parámetros entrenables de la red.
 			
-			\begin{figure}[!h]
+			\begin{figure}[H]
 				\centering
 				\includegraphics[width=1.0\linewidth]{imagenes/myroenko2019.png}
 				\caption{Arquitectura del autoencoder regularizador de \cite{myronenko20193d}}
@@ -185,15 +180,76 @@ Diferentes dificultades han sido las que a pesar de años de desarrollo aún enc
 				
 			\subsubsection{Funciones de pérdida especializadas}
 			
+			De forma más detallada, el problema del desbalanceo entre los diferentes tejidos se manifiesta durante el proceso de entrenamiento, en un gradiente excesivamente influenciado por los tejidos mayoritarios. Por ello, atacando directamente al problema multitud de trabajos proponen funciones de pérdida especializadas.
+			
+			Funciones de pérdida estándar en este problema incluyen categorical cross-entropy, cross-entropy y dice loss $D_{L}$. Esta última siendo muy similar a optimizar una de las métricas que se usan en el problema.
+			
+			$$ D_{L} =  1 - D_{C} $$
+			$$ D_{C}\ es\ el\ coeficiente\ de\ similaridad\ dice\ $$
+			
+			Una de las aproximaciones es el uso de utilizar una función de pérdida balanceada. Por ejemplo, añadir una penalización en función de la presencia del tejido segmentado para mitigar su escasa presencia respecto el total.
+			
+			Otro enfoque se basa en la combinación de diferentes funciones de pérdida en una nueva. Por ejemplo, una nueva función de pérdida de cross-entropy a nivel de píxel y dice loss podría ser su media.
+			
+			En general, funciones de pérdida que eviten el desbalanceo y mejoren el nivel de atención de las arquitecturas es beneficioso a todo tipo de problemas. Por ello, a diferencia de seguir funciones clásicas como cross-entropy, \cite{lin2017focal} proponen una nueva función llamada \textbf{Focal Loss} que será vista en años recientes en combinación con Dice Loss para diversos problemas de segmentación.
+			
 			
 		\subsection{Métodos que tratan la información multi-modal}
+		
+		Las imágenes asociadas a una resonancia contienen diferentes tipos de imagen según las características de la frecuencia y contraste suministrado al paciente en su toma. Esta forma de proceder en la toma de resonancias es debido a las limitaciones de las imágenes IRM de poder representar y al menos para el ojo humano visualizar todos los tejidos importantes en el diagnóstico. Por ello, surge como idea clave tener métodos que tengan los objetivos de poder fusionar, relacionar y incluso distinguir en importancia las diferentes modalidades de imagen.
+		
+		Otras arquitecturas basadas en autoencoders como \cite{myronenko20193d} únicamente fusionan las cuatro modalidades como los canales de una imagen para un mismo slice concatenando las cuatro pruebas en la misma entrada, obteniendo entradas de dimensiones $ H \times W \times 4 $ en caso de 2D y $ H \times W \times D \times 4$ en caso de 3D.
+		
+		Sin embargo, usar concatenación o adición como método de fusión de los cuatro métodos no permitiría a la red de una forma directa aprender semánticamente la relación entre ellas. Por ello, en trabajos recientes se han adoptado mecanismos de atención aplicados a hacer aprender a la red de forma más robusta las diferentes modalidades e información espacial.
+		
+		\cite{zhou2021latent} proponen también una arquitectura encoder-decoder con la particularidad de crear un encoder y decoder especifico para cada una de las cuatro posibles representaciones, teniendo un espacio latente donde se fusiona la información de salida de los cuatro encoder dando un tratamiento especial a la fusión de las diferentes pruebas.
+		
+		A continuación, podemos ver la arquitectura especifica usada.
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.75\linewidth]{imagenes/latentcorrelationrepresentation.png}
+			\caption{Arquitectura de \cite{zhou2021latent}}
+		\end{figure}
+		
+		Por un lado, transforma las representaciones individuales a representaciones correlacionadas. A través de lo que denominan \textbf{correlation model}.
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.75\linewidth]{imagenes/zhoufusionmodel.png}
+			\caption{Modelo especializado en la correlación de las modalidades}
+		\end{figure}
+		
+		El \textbf{correlation model} se compone de dos partes: módulo de estimación de parámetros (MPE) y un módulo de expresión de correlación lineal (LCE).
+		
+		El módulo de estimación de parámetros se compone de una de dos redes totalmente conectadas que vinculan cada representación salida de cada encoder con unos parámetros $ \Gamma_i = \{ \alpha_i , \beta_i , \gamma_i , \delta_i \}$
+		
+		El módulo de expresión de la correlación lineal (LCE) utiliza estos parámetros para obtener una versión correlacionada de cada representación individual aplicando: 
+		$$ F_i (X_i | \theta_i ) = \alpha_i \odot \gamma_i f_j (X_j | \theta_j ) + \beta_i \odot f_k (X_k | \theta_k ) + \gamma_i \odot f_m (X_m | \theta_m ) + \delta_i , \quad (i \neq j \neq k \neq m)$$
+		
+		Tras ello, se fusiona las representaciones correlacionadas resultado. Permitiendo al modelo manejar de forma explícita la información multi-modal y dándole robustez ante pruebas faltantes. 
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=1.1\linewidth]{imagenes/zhouarchitecture.png}
+			\caption{Red \cite{zhou2021latent} de fusión de representaciones latentes}
+		\end{figure}
+		
+		Si bien esta arquitectura da ligeramente peores resultados que \cite{myronenko20193d} define un paso más en el estado del arte al usar menos recursos computacionales.
 
 
 \section{Enfoques actuales}
-	\subsection{Basados en CNN}
+
+	Las soluciones más relavantes presentadas en la revisión histórica que se ha hecho anteriormente se basan en la aplicación de la convolución sobre las imágenes de resonancia magnética. En el diagnóstico de tumores cerebrales ha tenido largo recorrido el uso de redes neuronales convolucionales. 
 	
-	Como vimos anteriormente históricamente existen referencias muy buenas de forma independiente por tratar de conseguir una arquitectura efectiva, evitar los problemas asociados al desbalanceo y sacarle partido a la información multi-modal. En aproximaciones más reciente se intenta unificar estos propósitos con el fin de un desempeño mayor en el problema.
+	Con la inclusión de las arquitecturas transformadoras se planteó un nuevo modelo que podía traer ventajas significativas. No siendo la imagen médica y en concreto este problema una excepción.
 	
+	Con la adaptación de los transformers al campo de la visión, los Vision Transformers podría ser un modelo más unificador, paralelizable y que ofreciera mejores resultados que las redes convolucionales al romper con la localidad que supone el uso de convoluciones. 
+	
+	En las soluciones más recientes de la segmentación de tumores cerebrales se introduce el uso de Vision Transformers con estas expectativas.
 	
 	\subsection{Basados en Transformers}
-
+	
+	A continuación, se presentan las soluciones principales que hacen uso de una arquitectura basada en Transformers para la segmentación de tumores cerebrales.
+	
+		\subsubsection{}

@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex proyecto"] 1713052129 "proyecto.aux" "proyecto.bbl" "proyecto" 1713052134 0
-  "./bibliografia/bibliografia.bib" 1713052024 7725 46ac650d10c9bfe881bebbdcbfd70d40 ""
+["bibtex proyecto"] 1713485236 "proyecto.aux" "proyecto.bbl" "proyecto" 1713485240 0
+  "./bibliografia/bibliografia.bib" 1713485085 8693 555781d87e05e332b3f033eb2f329f0a ""
   "/usr/share/texlive/texmf-dist/bibtex/bst/base/apalike.bst" 1292289607 24635 604dafcc79f521a11ea73e506e1fbd98 ""
-  "proyecto.aux" 1713052134 9302 a6883d4a239457f8944c941a63eeba63 "pdflatex"
+  "proyecto.aux" 1713485240 9828 e0d723f9e2ab949410e4b08d01c28d38 "pdflatex"
   (generated)
   "proyecto.bbl"
   "proyecto.blg"
   (rewritten before read)
-["pdflatex"] 1713052129 "proyecto.tex" "proyecto.pdf" "proyecto" 1713052134 2
+["pdflatex"] 1713485236 "proyecto.tex" "proyecto.pdf" "proyecto" 1713485240 2
   "/etc/texmf/web2c/texmf.cnf" 1709143228 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
@@ -157,8 +157,8 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1693172360 40357 c95f5d5e031b5c7040b426833c11f2e0 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1709143248 4643645 d2d1d8b8ba87ed005f4aaf1ce646a79e ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1710501680 7908943 e3dd4246395bacf1a976c871c09f2ecf ""
-  "capitulos/01_introduccion.tex" 1712962721 19381 3818742f2d8eb1c02a7f870f523bc971 ""
-  "capitulos/02_estadodelarte.tex" 1713052128 19301 e1e448378c6554549f59636eda8e5cae ""
+  "capitulos/01_introduccion.tex" 1713484568 20053 e58872a44f8140bc41d915e4735509bc ""
+  "capitulos/02_estadodelarte.tex" 1713485231 22423 7d3dc46fb582a81f6931f17d38303f39 ""
   "capitulos/03_metodologia.tex" 1709225093 22 d3de580a3684094a84a6dbd99e5b6d61 ""
   "capitulos/04_experimentacion.tex" 1709225098 26 2419eab189ffc673ffb31349e8a4b0a6 ""
   "imagenes/cantidadinstanciastemporales.png" 1712306734 25660 5ff307d1240494b5c1dc89f50bb2a295 ""
@@ -177,18 +177,19 @@
   "imagenes/logoUGR.jpg" 1712270176 69250 442361ddbf4334b16756ca8429ef24bc ""
   "imagenes/metodologia_heatmapsGLI.png" 1712626028 2236965 aced7c55e1f07dfe989e258ede7caecd ""
   "imagenes/metodologia_heatmapsMEN.png" 1712626594 2247266 b17ece591f3b90155fe09523ef118c2f ""
+  "imagenes/myroenko2019.png" 1713045292 145684 a5c6bd6ca64e30eecc8c8eb069652704 ""
   "imagenes/porcentajeGLIvsMEN.png" 1712304493 21657 07481a8741003e201cb5b81f928f4c9e ""
   "imagenes/segimagenesMRI.png" 1712540589 199930 5c83250e22b4f872df1382814cec6f6f ""
   "imagenes/segimagenesSSAPEDMRI.png" 1712540645 218646 01efe0b29d6d16363626dd60a080b0ce ""
   "portada/portada.tex" 1712270326 1090 c7ba864f6eaf3d2be1707ccb3a590c7a ""
   "prefacios/prefacio.tex" 1712270616 1964 8f8568608debf32cd5dffa30d8943544 ""
-  "proyecto.aux" 1713052134 9302 a6883d4a239457f8944c941a63eeba63 "pdflatex"
-  "proyecto.bbl" 1713052129 6652 35f51b15a0534306c5516feecb655d82 "bibtex proyecto"
-  "proyecto.lof" 1713052134 2403 8a2d6a1019b1cdd1a738c438296d83ac "pdflatex"
-  "proyecto.lot" 1713052134 130 6065a55bb8926a8d1f250ea1e44d6185 "pdflatex"
-  "proyecto.out" 1713052134 2947 bf84f99ad55ebac02220490920e4f05a "pdflatex"
+  "proyecto.aux" 1713485240 9828 e0d723f9e2ab949410e4b08d01c28d38 "pdflatex"
+  "proyecto.bbl" 1713485236 7494 16c0164cd396177342c7e2fb5ff25544 "bibtex proyecto"
+  "proyecto.lof" 1713485240 2547 dc3dfe5d98d3dd2674fe3afb612c751c "pdflatex"
+  "proyecto.lot" 1713485240 130 6065a55bb8926a8d1f250ea1e44d6185 "pdflatex"
+  "proyecto.out" 1713485240 2947 bf84f99ad55ebac02220490920e4f05a "pdflatex"
   "proyecto.tex" 1712894190 5409 08fad9a391c7c3f3720d980186520c39 ""
-  "proyecto.toc" 1713052134 2079 9d590a540ed3638a32ba59b28a887164 "pdflatex"
+  "proyecto.toc" 1713485240 2079 7e988bf317d9c11fc435c32e018ed96c "pdflatex"
   (generated)
   "proyecto.aux"
   "proyecto.glo"
