@@ -2,11 +2,12 @@ import sys
 import os
 import nibabel as nib
 import numpy as np
-from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton, QLabel, QFileDialog, QVBoxLayout, QHBoxLayout, QGridLayout, QWidget, QSpinBox, QFormLayout, QToolBar, QAction
-from PyQt5.QtGui import QPixmap, QImage, QIcon
-from PyQt5.QtCore import Qt
+from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton, QLabel, QFileDialog, QVBoxLayout, QHBoxLayout, QGridLayout, QWidget, QSpinBox, QFormLayout, QToolBar, QAction, QErrorMessage, QDialog, QSplashScreen
+from PyQt5.QtGui import QPixmap, QImage, QIcon, QFont, QPainter, QColor
+from PyQt5.QtCore import Qt, QTimer
 import pyvista as pv
 from pyvistaqt import QtInteractor
+from predictions import clasify, segment
 
 class PointCloud:
     def __init__(self, nii_data):
@@ -20,6 +21,52 @@ class PointCloud:
     def get_values(self):
         return self.values
 
+class InfoWindow(QDialog):
+    def __init__(self, classification_info, parent=None):
+        super(InfoWindow, self).__init__(parent)
+        
+        self.setWindowTitle("Resultados de Clasificación")
+        self.setGeometry(100, 100, 400, 200)
+
+        layout = QVBoxLayout()
+
+        # Agregar la información de clasificación a la ventana
+        info_label = QLabel(f"Tipo de Tumor: {classification_info}")
+        layout.addWidget(info_label)
+
+        # Botón para cerrar la ventana
+        close_button = QPushButton("Cerrar")
+        close_button.clicked.connect(self.close)
+        layout.addWidget(close_button)
+
+        self.setLayout(layout)
+
+        self.setStyleSheet("""
+            QDialog {
+                background-color: #2E3440;
+                color: #D8DEE9;
+                border-radius: 10px;
+                padding: 10px;
+            }
+            QLabel {
+                font-size: 16px;
+                color: #D8DEE9;
+            }
+            QPushButton {
+                background-color: #4C566A;
+                color: #D8DEE9;
+                border: none;
+                padding: 5px 10px;
+                border-radius: 5px;
+            }
+            QPushButton:hover {
+                background-color: #5E81AC;
+            }
+            QPushButton:pressed {
+                background-color: #81A1C1;
+            }
+        """)
+
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
@@ -32,6 +79,8 @@ class MainWindow(QMainWindow):
         self.setWindowIcon(QIcon(icon_path))
 
         self.nii_data = None
+        self.nii_name = None
+        self.nii_seg = None
         self.initUI()
 
     def initUI(self):
@@ -39,13 +88,29 @@ class MainWindow(QMainWindow):
         toolbar = QToolBar("Barra principal")
         self.addToolBar(toolbar)
 
-        generate_action = QAction("Generar Puntos", self)
+        generate_action = QAction("Generar Puntos", self) # Se hace automático al cargarlo...
         generate_action.triggered.connect(self.generate_points)
         toolbar.addAction(generate_action)
 
-        load_action = QAction("Cargar Archivo NII", self)
+        load_action = QAction("Cargar", self)
         load_action.triggered.connect(self.load_file)
         toolbar.addAction(load_action)
+
+        clasifica = QAction("Clasificar", self)
+        clasifica.triggered.connect(self.clasifica)
+        toolbar.addAction(clasifica)
+
+        segmentacion = QAction("Auto-segmentación", self)
+        segmentacion.triggered.connect(self.segmenta)
+        toolbar.addAction(segmentacion)
+
+        editor = QAction("Editor", self)
+        editor.triggered.connect(self.edita)
+        toolbar.addAction(editor)
+
+        exportacion = QAction("Exportar", self)
+        exportacion.triggered.connect(self.exporta)
+        toolbar.addAction(exportacion)
 
         close_action = QAction("Cerrar Aplicación", self)
         close_action.triggered.connect(self.close_application)
@@ -93,6 +158,16 @@ class MainWindow(QMainWindow):
         grid_layout.setRowStretch(1, 1)
         grid_layout.setAlignment(Qt.AlignCenter)
 
+        # Crear contenedores negros para las imágenes y el renderizador
+        self.axial_container = self.create_black_container()
+        self.coronal_container = self.create_black_container()
+        self.sagittal_container = self.create_black_container()
+
+        # Añadir los contenedores al layout de la cuadrícula
+        grid_layout.addWidget(self.axial_container, 0, 0)
+        grid_layout.addWidget(self.coronal_container, 0, 1)
+        grid_layout.addWidget(self.sagittal_container, 1, 0)
+
         self.axial_label = QLabel(self)
         self.axial_label.setAlignment(Qt.AlignCenter)
         grid_layout.addWidget(self.axial_label, 0, 0)
@@ -111,15 +186,26 @@ class MainWindow(QMainWindow):
 
         main_layout.addLayout(grid_layout)
         central_widget.setLayout(main_layout)
+    
+    def create_black_container(self):
+        container = QWidget()
+        container.setStyleSheet("""
+            background-color: black;
+            border-radius: 15px;
+            """)
+        layout = QVBoxLayout()
+        layout.setAlignment(Qt.AlignCenter)
+        container.setLayout(layout)
+        return container
 
     def load_file(self):
         options = QFileDialog.Options()
         options |= QFileDialog.ReadOnly
-        file_name, _ = QFileDialog.getOpenFileName(self, "Seleccionar Archivo NII", "", "Archivos NII (*.nii *.nii.gz);;Todos los Archivos (*)", options=options)
+        self.nii_name, _ = QFileDialog.getOpenFileName(self, "Seleccionar Archivo NII", "", "Archivos NII (*.nii *.nii.gz);;Todos los Archivos (*)", options=options)
         
-        if file_name:
+        if self.nii_name:
             # Cargar el archivo NII
-            nii_image = nib.load(file_name)
+            nii_image = nib.load(self.nii_name)
             self.nii_data = nii_image.get_fdata()
 
             # Habilitar y configurar los SpinBoxes
@@ -147,11 +233,11 @@ class MainWindow(QMainWindow):
             coronal_slice = self.nii_data[:, self.coronal_spinbox.value(), :]
             sagittal_slice = self.nii_data[self.sagittal_spinbox.value(), :, :]
 
-            self.display_image(axial_slice, self.axial_label)
-            self.display_image(coronal_slice, self.coronal_label)
-            self.display_image(sagittal_slice, self.sagittal_label)
+            self.display_image(axial_slice, self.axial_label, self.axial_spinbox.value())
+            self.display_image(coronal_slice, self.coronal_label, self.coronal_spinbox.value())
+            self.display_image(sagittal_slice, self.sagittal_label, self.sagittal_spinbox.value())
 
-    def display_image(self, slice_data, label):
+    def display_image(self, slice_data, label, slice_index):
         # Normalizar la imagen a la escala de grises de 0 a 255
         slice_data = np.rot90(slice_data)  # Rotar la imagen 90 grados para visualizarla correctamente
         max_val = np.max(slice_data)
@@ -163,10 +249,36 @@ class MainWindow(QMainWindow):
         height, width = slice_data.shape
         bytes_per_line = width
         q_image = QImage(slice_data.data, width, height, bytes_per_line, QImage.Format_Grayscale8)
-        
-        # Convertir QImage a QPixmap y mostrarla en el QLabel
-        pixmap = QPixmap.fromImage(q_image)
-        label.setPixmap(pixmap.scaled(label.size(), Qt.KeepAspectRatio, Qt.SmoothTransformation))
+
+        # Si existe segmentación y el índice del corte está dentro de los límites
+        if self.nii_seg is not None and 0 <= slice_index < self.nii_seg.shape[0]:
+
+            result_image = QImage(q_image.size(), QImage.Format_ARGB32)
+            painter = QPainter(result_image)
+            painter.drawImage(0, 0, q_image)
+
+            # Obtener el corte de segmentación correspondiente al índice
+            seg_slice = self.nii_seg[slice_index, :, :]
+
+            seg_image = QImage(width, height, QImage.Format_ARGB32)
+            seg_image.fill(QColor(0, 0, 0, 0))  # Rellenar la imagen con color transparente
+
+            # Dibujar los píxeles con valor 1 con opacidad
+            for y in range(height):
+                for x in range(width):
+                    if seg_slice[y, x] == 1:
+                        color = QColor(255, 0, 0, 128)  # Rojo con opacidad
+                        seg_image.setPixelColor(x, y, color)
+            # Superponer la segmentación en la imagen resultante
+            painter.drawImage(0, 0, seg_image)
+            painter.end()
+            # Convertir QImage a QPixmap y mostrarla en el QLabel
+            pixmap = QPixmap.fromImage(result_image)
+            label.setPixmap(pixmap.scaled(label.size(), Qt.KeepAspectRatio, Qt.SmoothTransformation))
+        else:
+            # Convertir QImage a QPixmap y mostrarla en el QLabel
+            pixmap = QPixmap.fromImage(q_image)
+            label.setPixmap(pixmap.scaled(label.size(), Qt.KeepAspectRatio, Qt.SmoothTransformation))
 
     def generate_points(self):
         if self.nii_data is not None and self.nii_data.size > 0:
@@ -183,7 +295,8 @@ class MainWindow(QMainWindow):
 
             # Limpiar y añadir la nube de puntos al widget
             self.plotter_widget.clear()
-            self.plotter_widget.add_mesh(cloud, scalars="values", cmap="coolwarm", point_size=5, render_points_as_spheres=True)
+            self.plotter_widget.background_color = "black"
+            self.plotter_widget.add_mesh(cloud, scalars="values", cmap="coolwarm", point_size=5, render_points_as_spheres=True, show_scalar_bar=False, opacity=0.5)
 
             # Ajustar la cámara
             self.plotter_widget.reset_camera()
@@ -191,13 +304,64 @@ class MainWindow(QMainWindow):
             # Actualizar el render
             self.plotter_widget.update()
         else:
-            print("Error: No hay datos de resonancia magnética cargados.")
-    
+            error_message = QErrorMessage(self)
+            error_message.showMessage("No se pueden generar volumen 3D porque no hay datos de resonancia magnética cargados.")
+
+    def clasifica(self):
+        if self.nii_data is not None and self.nii_data.size > 0:
+            # Obtener la clasificación
+            tag = clasify(self.nii_name)
+
+            # Crear y mostrar la ventana de información
+            info_window = InfoWindow(tag)
+            info_window.exec_()
+        else:
+            error_message = QErrorMessage(self)
+            error_message.showMessage("No se puede clasificar porque no hay datos de resonancia magnética cargados.")
+
+    def segmenta(self):
+        if self.nii_data is not None and self.nii_data.size > 0:
+            # Introducir segmentación automática en array
+            self.nii_seg = segment(self.nii_name)
+
+            # Actualizar las imágenes
+            self.update_slices()
+        else:
+            error_message = QErrorMessage(self)
+            error_message.showMessage("No se puede segmentar porque no hay datos de resonancia magnética cargados.")
+
+    def edita(self):
+        if self.nii_data is not None and self.nii_data.size > 0:
+            print("Código de editar")
+        else:
+            error_message = QErrorMessage(self)
+            error_message.showMessage("Esta versión de interfaz requiere hacer auto-segmentación antes.")
+
+    def exporta(self):
+        if self.nii_data is not None and self.nii_data.size > 0:
+            print("Código de exportar")
+        else:
+            error_message = QErrorMessage(self)
+            error_message.showMessage("No se puede exportar segmentación sin antes realizar auto-segmentación.")
+
     def close_application(self):
         sys.exit()
 
 def main():
     app = QApplication(sys.argv)
+
+    splash_pix = QPixmap("GUI/resources/icons/icono.png")
+    splash = QSplashScreen(splash_pix, Qt.WindowStaysOnTopHint)
+    splash.setWindowFlag(Qt.FramelessWindowHint)
+    splash.show()
+
+    font = QFont("Lexend", 32)
+    splash.setFont(font)
+    splash.showMessage("BraTS UGR", Qt.AlignBottom | Qt.AlignCenter, Qt.black)
+
+    timer = QTimer()
+    timer.singleShot(3000, splash.close)
+
     mainWindow = MainWindow()
     mainWindow.show()
     sys.exit(app.exec_())
