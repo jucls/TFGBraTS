@@ -21,7 +21,7 @@ De forma análoga a esta competición, se plantea conseguir dicho objetivo a par
 
 \begin{enumerate}
 	\item \textbf{Segmentación de los tumores.} 
-	La segmentación de los glioblastomas y los meningiomas, indicando sus zonas médicas reconocidas.
+	La segmentación de la lesión tumoral de los glioblastomas y los meningiomas.
 	\item \textbf{Clasificación entre tipos de tumores.} Clasificación binaria entre glioblastomas y meningiomas. El programa indicará de qué tipo de tumor se trata una prueba dada.
 	\item \textbf{Predicción de la evolución.} La segmentación a corto plazo de la más probable instancia futura a partir de la resonancia actual. Ya no solo se pretende dar una segmentación y clasificación que pudieran aportar valor en las decisiones médicas, sino predecir una nueva segmentación a partir de la resonancia apoyándose en casos similares y en la segmentación de la metástasis de la resonancia actual.
 \end{enumerate}
@@ -40,7 +40,9 @@ A la hora de aplicar un tratamiento de radioterapia siempre se tiene el objetivo
 
 Uno de los objetivos específicos para la ayuda en el tratamiento se basaría en el uso del modelo para automatizar esta tarea ya que podría suponer ahorrar costes en errores humanos y en tiempo a veces escaso para el personal médico cuya tarea se reduciría a corregir dicha segmentación. En nuestro caso, integrándolo en un programa de uso médico. 
 
-Por otro lado, de forma general podemos interpretar este trabajo como un \textbf{sistema de apoyo a la decisión médica} ya que en ningún caso respecto el desarrollo actual de este problema se pretende sustituir la decisión final del personal médico. Aunque sí aprovechar las capacidades que puede ofrecer el aprendizaje profundo en un mejor diagnóstico a través de caracterizar mejor el tejido afectado: segmentándolo, clasificándolo y segmentando su evolución.
+Por otro lado, de forma general podemos interpretar este trabajo como un \textbf{sistema de apoyo a la decisión médica} ya que en ningún caso respecto el desarrollo actual de este problema se pretende sustituir la decisión final del personal médico. Aunque sí aprovechar las capacidades que puede ofrecer el aprendizaje profundo en un mejor diagnóstico a través de caracterizar mejor el tejido afectado: segmentándolo y clasificándolo.
+
+Este sistema de apoyo a la decisión médica se plasmaría en una aplicación de escritorio que el personal médico pueda usar como paso intermedio entre la recogida de las imágenes del escáner y un posible tratamiento de radioterapia.
 
 
 \section{Metodología}
@@ -158,7 +160,7 @@ Podemos ver la segmentación de las resonancias antes visualizadas.
 \end{figure}
 
 \newpage
-A continuación, exploraremos la localización de los tumores en todo el conjunto de datos. \textbf{¿Existe alguna zona del cerebro especialmente afectada?} Crearemos un mapa de calor para los $150$ primeros slices marcando la presencia de la lesión, donde ponderaremos de forma lineal a los tejidos según su importancia NCR, ED y ET. 
+A continuación, exploraremos la \textbf{localización de los tumores} en todo el conjunto de datos. Buscando responder a la siguiente pregunta significativa para el trascurso del trabajo: ¿Existe alguna zona del cerebro especialmente afectada? Para responderlo podemos intentar visualizarlo. Crearemos un mapa de calor para los $150$ primeros slices marcando la presencia de la lesión, ponderaremos de forma lineal a los tejidos según su importancia.
 
 \begin{figure}[!h]
 	\centering
@@ -173,7 +175,7 @@ A continuación, exploraremos la localización de los tumores en todo el conjunt
 \end{figure}
 
 
-No se observa una zona especialmente marcadas ni en glioblastomas ni en meningiomas. Aunque sí ciertos detalles, como era de esperar en los primeros slices (que son de la base del cerebro) la zona de los meningiomas solo presenta tejido tumoral en la parte posterior esto es debido que a los meningiomas son tumores de desarrollo entre el cráneo y el cerebro, no habiendo ahí tejido posible de esta forma. Esto también puede explicar porque los gliomas tienen una distribución más centrada en los núcleos de los dos hemisferios del cerebro y los meningiomas más distribuido pero con una ligera tendencia ahí la parte frontal del cerebro donde más liquido cefalorraquídeo se concentra. A parte, de estos detalles íntegros a la naturaleza de estos tumores vemos como siguen una localización independientemente distribuida. 
+Tras la visualización, no se observa una zona especialmente marcada ni en glioblastomas ni en meningiomas. Aunque sí ciertos detalles, como era de esperar en los primeros slices (que son de la base del cerebro) la zona de los meningiomas solo presenta tejido tumoral en la parte posterior esto es debido que a los meningiomas son tumores de desarrollo entre el cráneo y el cerebro, no habiendo ahí tejido posible de esta forma. Esto también puede explicar porque los gliomas tienen una distribución más centrada en los núcleos de los dos hemisferios del cerebro y los meningiomas más distribuido pero con una ligera tendencia en la parte frontal del cerebro donde más liquido cefalorraquídeo se concentra. A parte, de estos detalles íntegros a la naturaleza de estos tumores vemos como siguen una \textbf{localización independientemente distribuida}. 
 
 \subsection{Línea de investigación}
 
@@ -185,24 +187,25 @@ No se observa una zona especialmente marcadas ni en glioblastomas ni en meningio
  	\item \textbf{Para predicción} un decodificador basado en la arquitectura Transformer.
  	
  \end{enumerate}
-
-Por otro lado, se explorará la unificación de la segmentación y predicción en una única arquitectura con el objetivo de aumentar la generalización gracias a la multi-tarea.
+ 
+ La tarea de predicción sólo se planteará a nivel teórico por una baja existencia de datos con relación temporal. 
 
 \subsection{Evaluación y métricas}
 
-
-Siguiendo la definición de evaluación de BraTS 2023. Para la evaluación de los tumores se tendrá en cuenta la segmentación de tres zonas diferenciadas según los tipo de tejidos en ellas.
+Siguiendo la definición de evaluación de BraTS 2023, la evaluación de los tumores en su forma original comprende la segmentación de tres zonas diferenciadas según los tipos de tejidos que hay en ella. En BraTS se estudian los siguientes tres conjuntos de tejidos tumoral.
 
 \begin{enumerate}
 	\item \textbf{Enhancing Tumor ET}: Sólo incluye al tejido ET.
 	\item \textbf{Tumor Core TC}: Incluye al tejido ET y al tejido NCR.
-	\item \textbf{Whole Tumor WT}: Incluye a todos los tejidos. La segmentación de toda la lesión.
+	\item \textbf{Whole Tumor WT}: Incluye a todos los tejidos enfermos: ET, NCR y ED. La segmentación de toda la lesión.
 \end{enumerate}
 
-Se utilizará dos métricas. 
+Sin embargo, en este trabajo hacemos una reducción del problema por falta de recursos a \textbf{la segmentación únicamente del conjunto WT Whole Tumor}. De esta forma, la misión que tendremos es la de segmentar tejido enfermo o lesionado en todo el volumen de la resonancia. En otras palabras, diferenciar con la segmentación el tejido enfermo del tejido sano o la no existencia de tejido.
+
+Para ello, se utilizará tres métricas. Las dos primeras utilizadas en todas las competiciones de BraTS y la tercera adicionalmente utilizada en los trabajos que han ido conformando el estado del arte como \cite{zhou2021latent}.
 
 \begin{enumerate}
-	\item \textbf{Similaridad Dice} : Mide la similaridad de dos conjuntos a través de la intersección ambos respecto el tamaño total de los dos conjuntos.
+	\item \textbf{Similaridad Dice} : Mide la similaridad de dos conjuntos a través de la intersección de ambos respecto el tamaño total de los dos conjuntos.
 	 
 	\begin{figure}[!h]
 		\centering
@@ -212,13 +215,19 @@ Se utilizará dos métricas.
 	
 	Podemos expresarlo como:
 	
-	$$ Dice(A, B) = \frac{2 \times |A \cap B|}{|A| + |B|} $$
+	$$ Dice(A, B) = \frac{2 \times |A \cap B|}{|A| + |B|}$$
 	
-	Donde nuestros dos conjuntos son la segmentación que proporcionará nuestro modelo $A$ y la verdadera $B$.
+	Donde $A$ es la segmentación que proporcionará nuestro modelo y $B$ la verdadera.
 	
-	\item \textbf{Distancia Hausdorff 95} : Esta métrica al igual que la distancia máxima de Hausdorff DH tiene el objetivo de medir geométricamente el mayor error de segmentación resultado $A$ del modelo y la verdadera segmentación $B$, siendo $A$ y $B$ conjuntos de puntos o píxeles.
+	De forma más detallada, para una resonancia completa podemos expresarlo como:
 	
-	\begin{figure}[!h]
+	$$ Dice(A, B) =  2 \cdot \frac{\sum_{i=1}^{N} \sum_{j=1}^{C} A_{ij} B_{ij} + \epsilon}{\sum_{i=1}^{N} \sum_{j=1}^{C} A_{ij} + B_{ij} + \epsilon} $$ 
+	
+	Donde $N$ es el conjunto de todas las slices de la resonancia, $C$ el conjunto de clases en nuestro caso $C = 2$, $A_{ij}$ es el valor de la predicción en el pixel $i$ para clase $j$. $B_{ij}$ es el valor real en el pixel $i$ para la clase $j$. $\epsilon$ es una pequeña constante para evitar dividir entre 0. 
+	
+	\item \textbf{Distancia Hausdorff} : Esta métrica tiene el objetivo de medir geométricamente la mayor distancia resultado entre $A$ la predicción del modelo y la verdadera segmentación $B$, siendo $A$ y $B$ conjuntos de puntos o píxeles.
+	
+	\begin{figure}[H]
 		\centering
 		\includegraphics[width=0.4\linewidth]{imagenes/distanceHaussdorff.png}
 		\caption{Distancias de Hausdorff entre dos conjuntos}
@@ -226,17 +235,22 @@ Se utilizará dos métricas.
 	
 	Podemos enunciar la distancia máxima de Hausdorff:
 	
-	
 	$$ H(A, B) = \max \left\{ \max_{a \in A} \min_{b \in B} d(a, b), \max_{b \in B} \min_{a \in A} d(a, b) \right\} $$
 	
-	$$ a, b  : Puntos\ concretos\ en\ los\ conjuntos $$
-	$$ d(a, b) : Distancia\ euclidea\ entre\ el\ punto\ a\ y\ el\ punto\ b\ $$
-	$$ A, B : Conjuntos\ de\ puntos $$
+	Donde $a, b$ son puntos concretos en los conjuntos, $d(a, b)$ la distancia euclidiana entre los dos puntos y $A, B$ los conjuntos de puntos.
 	
+	Obtendremos la distancia de Hausdorff media de todos los slices de cada resonancia:
 	
-	Sin embargo, a diferencia de DH, la distancia Hausdorff 95  mide la media aritmética del percentil $95 \%$ de las mayores distancias entre los dos conjuntos. Por consecuente, enunciamos la distancia Hausdorff 95:
+	$$ \bar{H}(A, B) = \frac{1}{|N|} \sum_{s \in N} H(A, B) $$
 	
-	$$ H_{95}(A, B) = \frac{1}{|D_{95}|} \sum_{d \in D_{95}} H(A, B) $$ 
-	$$ D_{95}  : Conjunto\ de\ distancias\ mayor\ al\ 95\% $$
+	De esta forma, a menor distancia de Hausdorff la segmentación salida y real son geométricamente más parecidas.
+	
+	\item \textbf{Sensibilidad o Recall} : Mide la proporción de casos positivos que fueron correctamente identificados por el modelo. En otras palabras y para nuestro problema, mide cuánto la segmentación predicción coincide con la segmentación verdadera, cuantificado en porcentaje.
+	
+	Podemos expresarlo como:
+	
+	$$ \text{Recall} = \frac{\text{TP}}{\text{TP} + \text{FN}} $$
+	
+	Donde $TP$ son los pixeles que son verdaderos positivos y $FN$ los pixeles que son falsos negativos.
 	
 \end{enumerate}

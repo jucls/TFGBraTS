@@ -2,7 +2,7 @@ import sys
 import os
 import nibabel as nib
 import numpy as np
-from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton, QLabel, QFileDialog, QVBoxLayout, QHBoxLayout, QGridLayout, QWidget, QSpinBox, QFormLayout, QToolBar, QAction, QErrorMessage, QDialog, QSplashScreen
+from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton, QLabel, QFileDialog, QVBoxLayout, QHBoxLayout, QGridLayout, QWidget, QSpinBox, QFormLayout, QToolBar, QAction, QErrorMessage, QDialog, QSplashScreen, QDesktopWidget, QMessageBox
 from PyQt5.QtGui import QPixmap, QImage, QIcon, QFont, QPainter, QColor
 from PyQt5.QtCore import Qt, QTimer
 import pyvista as pv
@@ -73,6 +73,7 @@ class MainWindow(QMainWindow):
 
         self.setWindowTitle("Brain Tumor Segmentator")
         self.setGeometry(100, 100, 1200, 800)
+        self.center()
 
         # Establecer el ícono de la ventana
         icon_path = os.path.join(os.path.dirname(__file__), 'GUI', 'resources', 'icons', 'icono.png')
@@ -82,6 +83,13 @@ class MainWindow(QMainWindow):
         self.nii_name = None
         self.nii_seg = None
         self.initUI()
+    
+    def center(self):
+        # Método para centrar la ventana en la pantalla
+        qr = self.frameGeometry()
+        cp = QDesktopWidget().availableGeometry().center()
+        qr.moveCenter(cp)
+        self.move(qr.topLeft())
 
     def initUI(self):
         # Crear una barra de herramientas superior
@@ -221,11 +229,15 @@ class MainWindow(QMainWindow):
             self.sagittal_spinbox.setMaximum(self.nii_data.shape[0] - 1)
             self.sagittal_spinbox.setValue(self.nii_data.shape[0] // 2)
 
+            # Poner a None el atributo de segmentación
+            self.nii_seg = None
+
             # Actualizar las imágenes
             self.update_slices()
 
             # Generar automáticamente la nube de puntos después de cargar el archivo
             self.generate_points()
+            
 
     def update_slices(self):
         if self.nii_data is not None:
@@ -233,11 +245,11 @@ class MainWindow(QMainWindow):
             coronal_slice = self.nii_data[:, self.coronal_spinbox.value(), :]
             sagittal_slice = self.nii_data[self.sagittal_spinbox.value(), :, :]
 
-            self.display_image(axial_slice, self.axial_label, self.axial_spinbox.value())
-            self.display_image(coronal_slice, self.coronal_label, self.coronal_spinbox.value())
-            self.display_image(sagittal_slice, self.sagittal_label, self.sagittal_spinbox.value())
+            self.display_image(axial_slice, self.axial_label, self.axial_spinbox.value(), 'axial')
+            self.display_image(coronal_slice, self.coronal_label, self.coronal_spinbox.value(), 'coronal')
+            self.display_image(sagittal_slice, self.sagittal_label, self.sagittal_spinbox.value(), 'sagittal')
 
-    def display_image(self, slice_data, label, slice_index):
+    def display_image(self, slice_data, label, slice_index, slice_type):
         # Normalizar la imagen a la escala de grises de 0 a 255
         slice_data = np.rot90(slice_data)  # Rotar la imagen 90 grados para visualizarla correctamente
         max_val = np.max(slice_data)
@@ -258,14 +270,22 @@ class MainWindow(QMainWindow):
             painter.drawImage(0, 0, q_image)
 
             # Obtener el corte de segmentación correspondiente al índice
-            seg_slice = self.nii_seg[slice_index, :, :]
+            if slice_type == 'sagittal':
+                seg_slice = self.nii_seg[:, slice_index, :]
+                seg_slice = np.fliplr(np.rot90(np.rot90(seg_slice)))
+            elif slice_type == 'coronal':
+                seg_slice = self.nii_seg[:, :, slice_index]
+                seg_slice = np.fliplr(np.rot90(np.rot90(seg_slice)))
+            else:
+                seg_slice = self.nii_seg[slice_index, :, :]
+                seg_slice = np.rot90(seg_slice)  # Rotar la imagen 90 grados para visualizarla correctamente
 
-            seg_image = QImage(width, height, QImage.Format_ARGB32)
+            seg_image = QImage(seg_slice.shape[1], seg_slice.shape[0], QImage.Format_ARGB32)
             seg_image.fill(QColor(0, 0, 0, 0))  # Rellenar la imagen con color transparente
 
             # Dibujar los píxeles con valor 1 con opacidad
-            for y in range(height):
-                for x in range(width):
+            for y in range(seg_slice.shape[0]):
+                for x in range(seg_slice.shape[1]):
                     if seg_slice[y, x] == 1:
                         color = QColor(255, 0, 0, 128)  # Rojo con opacidad
                         seg_image.setPixelColor(x, y, color)
@@ -338,8 +358,26 @@ class MainWindow(QMainWindow):
             error_message.showMessage("Esta versión de interfaz requiere hacer auto-segmentación antes.")
 
     def exporta(self):
-        if self.nii_data is not None and self.nii_data.size > 0:
-            print("Código de exportar")
+        if self.nii_seg is not None and self.nii_seg.size > 0:
+            options = QFileDialog.Options()
+            file_path, _ = QFileDialog.getSaveFileName(self, "Exportar Archivo NII", "", "Archivos NIfTI (*.nii.gz)", options=options)
+
+            if file_path:
+                try:
+                    # Guardar el archivo NIfTI
+                    nii_image = nib.Nifti1Image(self.nii_seg.astype(np.int16), np.eye(4))
+                    nib.save(nii_image, file_path)
+                    # Mostrar mensaje de éxito
+                    message_box = QMessageBox()
+                    message_box.setWindowTitle("Archivo exportado")
+                    message_box.setText("El archivo se ha exportado satisfactoriamente.")
+                    message_box.exec_()
+                except Exception as e:
+                    # Mostrar mensaje de error si ocurre alguna excepción
+                    message_box = QMessageBox()
+                    message_box.setWindowTitle("Error al Guardar")
+                    message_box.setText(f"Se produjo un error al intentar exportar el archivo: {str(e)}")
+                    message_box.exec_()
         else:
             error_message = QErrorMessage(self)
             error_message.showMessage("No se puede exportar segmentación sin antes realizar auto-segmentación.")
@@ -355,9 +393,9 @@ def main():
     splash.setWindowFlag(Qt.FramelessWindowHint)
     splash.show()
 
-    font = QFont("Lexend", 32)
+    font = QFont("mada-700", 32, QFont.Bold) 
     splash.setFont(font)
-    splash.showMessage("BraTS UGR", Qt.AlignBottom | Qt.AlignCenter, Qt.black)
+    splash.showMessage("BraTS UGR", Qt.AlignBottom | Qt.AlignCenter, Qt.red)
 
     timer = QTimer()
     timer.singleShot(3000, splash.close)

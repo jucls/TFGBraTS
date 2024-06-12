@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.3.15)  30 APR 2024 04:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.3.15)  12 JUN 2024 20:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -700,7 +700,7 @@ Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 ))
 (./portada/portada.tex
 \centeroffset=\skip82
-<imagenes/logoUGR.jpg, id=83, 816.04875pt x 232.87pt>
+<imagenes/logoUGR.jpg, id=99, 816.04875pt x 232.87pt>
 File: imagenes/logoUGR.jpg Graphic file (type jpg)
 <use imagenes/logoUGR.jpg>
 Package pdftex.def Info: imagenes/logoUGR.jpg  used on input line 11.
@@ -718,7 +718,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-\mySubTitle ...ación de una arquitectura \xspace 
+\mySubTitle ...cación y la segmentación \xspace 
                                                   
 l.20 {\large\bfseries \mySubTitle
                                  }
@@ -755,12 +755,12 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-<imagenes/etsiit_logo.png, id=84, 110.814pt x 40.4712pt>
+<imagenes/etsiit_logo.png, id=100, 110.814pt x 40.4712pt>
 File: imagenes/etsiit_logo.png Graphic file (type png)
 <use imagenes/etsiit_logo.png>
 Package pdftex.def Info: imagenes/etsiit_logo.png  used on input line 30.
 (pdftex.def)             Requested size: 108.0011pt x 39.44412pt.
-<imagenes/decsai_logo.png, id=86, 339.4701pt x 411.07706pt>
+<imagenes/decsai_logo.png, id=102, 339.4701pt x 411.07706pt>
 File: imagenes/decsai_logo.png Graphic file (type png)
 <use imagenes/decsai_logo.png>
 Package pdftex.def Info: imagenes/decsai_logo.png  used on input line 31.
@@ -794,7 +794,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-\mySubTitle ...ación de una arquitectura \xspace 
+\mySubTitle ...cación y la segmentación \xspace 
                                                   
 l.8 	\large\bfseries \myTitle: \mySubTitle
                                            \\
@@ -952,7 +952,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-\mySubTitle ...ación de una arquitectura \xspace 
+\mySubTitle ...cación y la segmentación \xspace 
                                                   
 l.76 ...do \textit{\textbf{\myTitle, \mySubTitle}}
                                                   ,
@@ -1037,89 +1037,91 @@ been already used, duplicate ignored
                    \relax 
 l.34 
       [2]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
 pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.51 
+l.53 
       [3]
 pdfTeX warning (ext4): destination with the same identifier (name{page.4}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.71 
-      [4]
-<imagenes/porcentajeGLIvsMEN.png, id=289, 422.0568pt x 348.3414pt>
+l.72 D
+      efiniremos como nuestro conjunto de datos \textbf{$X$} a un conjunto d...
+[4]
+<imagenes/porcentajeGLIvsMEN.png, id=311, 422.0568pt x 348.3414pt>
 File: imagenes/porcentajeGLIvsMEN.png Graphic file (type png)
 <use imagenes/porcentajeGLIvsMEN.png>
-Package pdftex.def Info: imagenes/porcentajeGLIvsMEN.png  used on input line 78
+Package pdftex.def Info: imagenes/porcentajeGLIvsMEN.png  used on input line 80
 .
 (pdftex.def)             Requested size: 288.0011pt x 237.70882pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 82--88
+Underfull \hbox (badness 10000) in paragraph at lines 84--90
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 82--88
+Underfull \hbox (badness 10000) in paragraph at lines 84--90
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 82--88
+Underfull \hbox (badness 10000) in paragraph at lines 84--90
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 82--88
+Underfull \hbox (badness 10000) in paragraph at lines 84--90
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 82--88
+Underfull \hbox (badness 10000) in paragraph at lines 84--90
 
  []
-
-<imagenes/cantidadinstanciastemporales.png, id=290, 446.6286pt x 312.2064pt>
-File: imagenes/cantidadinstanciastemporales.png Graphic file (type png)
-<use imagenes/cantidadinstanciastemporales.png>
-Package pdftex.def Info: imagenes/cantidadinstanciastemporales.png  used on inp
-ut line 91.
-(pdftex.def)             Requested size: 288.0011pt x 201.32156pt.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.5}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.96 
+l.90 
       [5 <./imagenes/porcentajeGLIvsMEN.png>]
+<imagenes/cantidadinstanciastemporales.png, id=318, 446.6286pt x 312.2064pt>
+File: imagenes/cantidadinstanciastemporales.png Graphic file (type png)
+<use imagenes/cantidadinstanciastemporales.png>
+Package pdftex.def Info: imagenes/cantidadinstanciastemporales.png  used on inp
+ut line 93.
+(pdftex.def)             Requested size: 288.0011pt x 201.32156pt.
+
 pdfTeX warning (ext4): destination with the same identifier (name{page.6}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.110 
+l.108 
        [6 <./imagenes/cantidadinstanciastemporales.png>]
-<imagenes/introduccion_imagenesMRI.png, id=304, 1148.3703pt x 570.2103pt>
+<imagenes/introduccion_imagenesMRI.png, id=327, 1148.3703pt x 570.2103pt>
 File: imagenes/introduccion_imagenesMRI.png Graphic file (type png)
 <use imagenes/introduccion_imagenesMRI.png>
 Package pdftex.def Info: imagenes/introduccion_imagenesMRI.png  used on input l
-ine 122.
+ine 124.
 (pdftex.def)             Requested size: 396.0022pt x 196.62706pt.
 
-Overfull \hbox (36.0022pt too wide) in paragraph at lines 122--123
+Overfull \hbox (36.0022pt too wide) in paragraph at lines 124--125
  [][] 
  []
 
-<imagenes/imgSSAPEDMRI.png, id=305, 1148.3703pt x 570.2103pt>
+<imagenes/imgSSAPEDMRI.png, id=328, 1148.3703pt x 570.2103pt>
 File: imagenes/imgSSAPEDMRI.png Graphic file (type png)
 <use imagenes/imgSSAPEDMRI.png>
-Package pdftex.def Info: imagenes/imgSSAPEDMRI.png  used on input line 130.
+Package pdftex.def Info: imagenes/imgSSAPEDMRI.png  used on input line 132.
 (pdftex.def)             Requested size: 396.0022pt x 196.62706pt.
 
-Overfull \hbox (36.0022pt too wide) in paragraph at lines 130--131
+Overfull \hbox (36.0022pt too wide) in paragraph at lines 132--133
  [][] 
  []
 
@@ -1131,29 +1133,29 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.7}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.134 \newpage
+l.136 \newpage
                [7 <./imagenes/introduccion_imagenesMRI.png>]
-<imagenes/segimagenesMRI.png, id=314, 1148.3703pt x 570.2103pt>
+<imagenes/segimagenesMRI.png, id=337, 1148.3703pt x 570.2103pt>
 File: imagenes/segimagenesMRI.png Graphic file (type png)
 <use imagenes/segimagenesMRI.png>
-Package pdftex.def Info: imagenes/segimagenesMRI.png  used on input line 150.
+Package pdftex.def Info: imagenes/segimagenesMRI.png  used on input line 152.
 (pdftex.def)             Requested size: 396.0022pt x 196.62706pt.
 
-Overfull \hbox (36.0022pt too wide) in paragraph at lines 150--151
+Overfull \hbox (36.0022pt too wide) in paragraph at lines 152--153
  [][] 
  []
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<imagenes/segimagenesSSAPEDMRI.png, id=315, 1148.3703pt x 570.2103pt>
+<imagenes/segimagenesSSAPEDMRI.png, id=338, 1148.3703pt x 570.2103pt>
 File: imagenes/segimagenesSSAPEDMRI.png Graphic file (type png)
 <use imagenes/segimagenesSSAPEDMRI.png>
 Package pdftex.def Info: imagenes/segimagenesSSAPEDMRI.png  used on input line 
-156.
+158.
 (pdftex.def)             Requested size: 396.0022pt x 196.62706pt.
 
-Overfull \hbox (36.0022pt too wide) in paragraph at lines 156--157
+Overfull \hbox (36.0022pt too wide) in paragraph at lines 158--159
  [][] 
  []
 
@@ -1165,33 +1167,36 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.8}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.160 \newpage
+l.162 \newpage
                [8 <./imagenes/imgSSAPEDMRI.png>]
-<imagenes/metodologia_heatmapsGLI.png, id=325, 2160.873pt x 3244.2003pt>
+<imagenes/metodologia_heatmapsGLI.png, id=347, 2160.873pt x 3244.2003pt>
 File: imagenes/metodologia_heatmapsGLI.png Graphic file (type png)
 <use imagenes/metodologia_heatmapsGLI.png>
 Package pdftex.def Info: imagenes/metodologia_heatmapsGLI.png  used on input li
-ne 165.
+ne 167.
 (pdftex.def)             Requested size: 360.0pt x 540.46771pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<imagenes/metodologia_heatmapsMEN.png, id=326, 2160.873pt x 3244.2003pt>
+<imagenes/metodologia_heatmapsMEN.png, id=348, 2160.873pt x 3244.2003pt>
 File: imagenes/metodologia_heatmapsMEN.png Graphic file (type png)
 <use imagenes/metodologia_heatmapsMEN.png>
 Package pdftex.def Info: imagenes/metodologia_heatmapsMEN.png  used on input li
-ne 171.
+ne 173.
 (pdftex.def)             Requested size: 360.0pt x 540.46771pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Underfull \vbox (badness 3333) has occurred while \output is active []
 
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.9}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.177 
+l.179 
        [9 <./imagenes/segimagenesMRI.png> <./imagenes/segimagenesSSAPEDMRI.png>
 ]
 
@@ -1202,7 +1207,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.10}) has
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.177 
+l.179 
        [10 <./imagenes/metodologia_heatmapsGLI.png>]
 
 LaTeX Warning: Text page 11 contains only floats.
@@ -1212,9 +1217,9 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.11}) has
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.177 
+l.179 
        [11 <./imagenes/metodologia_heatmapsMEN.png>]
-Overfull \hbox (0.19534pt too wide) in paragraph at lines 184--185
+Overfull \hbox (0.19534pt too wide) in paragraph at lines 186--187
 []\OT1/cmr/bx/n/10.95 Para seg-men-ta-ci^^Son \OT1/cmr/m/n/10.95 un de-co-di-fi
 -ca-dor to-tal-men-te con-vo-lu-cio-nal trans-
  []
@@ -1224,34 +1229,41 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.12}) has
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.206 	
-        [12]
-<imagenes/dicesimilarity.drawio.png, id=350, 192.72pt x 191.71625pt>
+l.204 
+       [12]
+<imagenes/dicesimilarity.drawio.png, id=372, 192.72pt x 191.71625pt>
 File: imagenes/dicesimilarity.drawio.png Graphic file (type png)
 <use imagenes/dicesimilarity.drawio.png>
 Package pdftex.def Info: imagenes/dicesimilarity.drawio.png  used on input line
- 209.
+ 212.
 (pdftex.def)             Requested size: 90.0pt x 89.53035pt.
-<imagenes/distanceHaussdorff.png, id=351, 369.63094pt x 274.77657pt>
-File: imagenes/distanceHaussdorff.png Graphic file (type png)
-<use imagenes/distanceHaussdorff.png>
-Package pdftex.def Info: imagenes/distanceHaussdorff.png  used on input line 22
-3.
-(pdftex.def)             Requested size: 143.9978pt x 107.04501pt.
+
+Overfull \hbox (11.91089pt too wide) in paragraph at lines 228--229
+[]\OT1/cmr/bx/n/10.95 Distancia Haus-dorff \OT1/cmr/m/n/10.95 : Es-ta m^^Setri-
+ca tie-ne el ob-je-ti-vo de me-dir geom^^Setri-
+ []
+
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.13}) has
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.234 	$$ A, B : Conjuntos\ de\ puntos $$
-                                          [13 <./imagenes/dicesimilarity.drawio
-.png> <./imagenes/distanceHaussdorff.png>]) (./capitulos/02_estadodelarte.tex
+l.229 	
+        [13 <./imagenes/dicesimilarity.drawio.png>]
+<imagenes/distanceHaussdorff.png, id=382, 369.63094pt x 274.77657pt>
+File: imagenes/distanceHaussdorff.png Graphic file (type png)
+<use imagenes/distanceHaussdorff.png>
+Package pdftex.def Info: imagenes/distanceHaussdorff.png  used on input line 23
+2.
+(pdftex.def)             Requested size: 143.9978pt x 107.04501pt.
+)
+(./capitulos/02_estadodelarte.tex
 pdfTeX warning (ext4): destination with the same identifier (name{page.14}) has
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.1 \chapter
-            {Estado del arte} [14]
+            {Estado del arte} [14 <./imagenes/distanceHaussdorff.png>]
 Cap\'{\i }tulo 2.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1260,78 +1272,80 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 ]
 [16]
-<imagenes/evolution_stateofart.png, id=381, 1304.875pt x 461.725pt>
+<imagenes/evolution_stateofart.png, id=403, 1304.875pt x 461.725pt>
 File: imagenes/evolution_stateofart.png Graphic file (type png)
 <use imagenes/evolution_stateofart.png>
 Package pdftex.def Info: imagenes/evolution_stateofart.png  used on input line 
-39.
+38.
 (pdftex.def)             Requested size: 360.0pt x 127.38692pt.
  [17 <./imagenes/evolution_stateofart.png>] [18]
-<imagenes/comparisonsinglemultipleCNN.png, id=399, 665.48625pt x 1087.06125pt>
+<imagenes/comparisonsinglemultipleCNN.png, id=421, 665.48625pt x 1087.06125pt>
 File: imagenes/comparisonsinglemultipleCNN.png Graphic file (type png)
 <use imagenes/comparisonsinglemultipleCNN.png>
 Package pdftex.def Info: imagenes/comparisonsinglemultipleCNN.png  used on inpu
-t line 80.
-(pdftex.def)             Requested size: 161.9989pt x 264.61555pt.
+t line 77.
+(pdftex.def)             Requested size: 97.20154pt x 158.77264pt.
  [19 <./imagenes/comparisonsinglemultipleCNN.png>]
-<imagenes/havaei2017architecture.png, id=410, 947.54pt x 296.10625pt>
+<imagenes/havaei2017architecture.png, id=433, 947.54pt x 296.10625pt>
 File: imagenes/havaei2017architecture.png Graphic file (type png)
 <use imagenes/havaei2017architecture.png>
 Package pdftex.def Info: imagenes/havaei2017architecture.png  used on input lin
-e 88.
+e 85.
 (pdftex.def)             Requested size: 270.0pt x 84.37308pt.
  [20 <./imagenes/havaei2017architecture.png>]
-<imagenes/encoder-decoderIMG.drawio.png, id=425, 785.93625pt x 705.63625pt>
+<imagenes/encoder-decoderIMG.drawio.png, id=448, 785.93625pt x 705.63625pt>
 File: imagenes/encoder-decoderIMG.drawio.png Graphic file (type png)
 <use imagenes/encoder-decoderIMG.drawio.png>
 Package pdftex.def Info: imagenes/encoder-decoderIMG.drawio.png  used on input 
-line 118.
+line 115.
 (pdftex.def)             Requested size: 306.0022pt x 274.74481pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [21 <./imagenes/encoder-decoderIMG.drawio.png>]
-<imagenes/cascadestructure.png, id=433, 717.68124pt x 517.935pt>
+<imagenes/cascadestructure.png, id=456, 717.68124pt x 517.935pt>
 File: imagenes/cascadestructure.png Graphic file (type png)
 <use imagenes/cascadestructure.png>
-Package pdftex.def Info: imagenes/cascadestructure.png  used on input line 148.
+Package pdftex.def Info: imagenes/cascadestructure.png  used on input line 145.
 
 (pdftex.def)             Requested size: 180.0pt x 129.90228pt.
  [22 <./imagenes/cascadestructure.png>]
 [23]
-<imagenes/myroenko2019.png, id=456, 1144.275pt x 591.20876pt>
+<imagenes/myroenko2019.png, id=479, 1144.275pt x 591.20876pt>
 File: imagenes/myroenko2019.png Graphic file (type png)
 <use imagenes/myroenko2019.png>
-Package pdftex.def Info: imagenes/myroenko2019.png  used on input line 176.
+Package pdftex.def Info: imagenes/myroenko2019.png  used on input line 173.
 (pdftex.def)             Requested size: 360.0pt x 185.9972pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 177--177
+Underfull \hbox (badness 10000) in paragraph at lines 174--174
 []\OT1/cmr/m/n/10.95 Figura 2.6: []Arquitectura del au-to-en-co-der re-gu-la-ri
 -za-dor de
  []
 
 [24 <./imagenes/myroenko2019.png>]
-<imagenes/latentcorrelationrepresentation.png, id=468, 1165.35374pt x 320.19624
+<imagenes/latentcorrelationrepresentation.png, id=492, 1165.35374pt x 320.19624
 pt>
 File: imagenes/latentcorrelationrepresentation.png Graphic file (type png)
 <use imagenes/latentcorrelationrepresentation.png>
 Package pdftex.def Info: imagenes/latentcorrelationrepresentation.png  used on 
-input line 211.
+input line 205.
 (pdftex.def)             Requested size: 270.0pt x 74.1859pt.
- [25 <./imagenes/latentcorrelationrepresentation.png>]
-<imagenes/zhoufusionmodel.png, id=476, 1191.45125pt x 588.1975pt>
+<imagenes/zhoufusionmodel.png, id=494, 1191.45125pt x 588.1975pt>
 File: imagenes/zhoufusionmodel.png Graphic file (type png)
 <use imagenes/zhoufusionmodel.png>
-Package pdftex.def Info: imagenes/zhoufusionmodel.png  used on input line 219.
+Package pdftex.def Info: imagenes/zhoufusionmodel.png  used on input line 213.
 (pdftex.def)             Requested size: 270.0pt x 133.29008pt.
 
-Overfull \hbox (4.81381pt too wide) in paragraph at lines 227--228
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [25 <./imagenes/latentcorrelationrepresentation.png>]
+Overfull \hbox (4.81381pt too wide) in paragraph at lines 221--222
 []\OT1/cmr/m/n/10.95 El m^^Sodu-lo de ex-pre-si^^Son de la co-rre-la-ci^^Son li
 -neal (LCE) uti-li-za es-tos par^^Same-
  []
 
 
-Overfull \hbox (33.83113pt too wide) detected at line 228
+Overfull \hbox (33.83113pt too wide) detected at line 222
 \OML/cmm/m/it/10.95 F[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 X[]\OMS/cmsy/m/n
 /10.95 j\OML/cmm/m/it/10.95 ^^R[]\OT1/cmr/m/n/10.95 ) = \OML/cmm/m/it/10.95 []
  \OMS/cmsy/m/n/10.95 ^^L \OML/cmm/m/it/10.95 ^^M[]f[]\OT1/cmr/m/n/10.95 (\OML/c
@@ -1347,19 +1361,19 @@ mr/m/n/10.95 = \OML/cmm/m/it/10.95 j \OMS/cmsy/m/n/10.95 6\OT1/cmr/m/n/10.95 =
 0.95 m\OT1/cmr/m/n/10.95 )
  []
 
-<imagenes/zhouarchitecture.png, id=477, 1382.16376pt x 430.60875pt>
+<imagenes/zhouarchitecture.png, id=500, 1382.16376pt x 430.60875pt>
 File: imagenes/zhouarchitecture.png Graphic file (type png)
 <use imagenes/zhouarchitecture.png>
-Package pdftex.def Info: imagenes/zhouarchitecture.png  used on input line 234.
+Package pdftex.def Info: imagenes/zhouarchitecture.png  used on input line 228.
 
 (pdftex.def)             Requested size: 396.0022pt x 123.36867pt.
 
-Overfull \hbox (36.0022pt too wide) in paragraph at lines 234--235
+Overfull \hbox (36.0022pt too wide) in paragraph at lines 228--229
  [][] 
  []
 
 
-Overfull \hbox (35.80962pt too wide) in paragraph at lines 238--239
+Overfull \hbox (35.80962pt too wide) in paragraph at lines 232--233
 []\OT1/cmr/m/n/10.95 Si bien es-ta ar-qui-tec-tu-ra da li-ge-ra-men-te peo-res 
 re-sul-ta-dos que [[]]
  []
@@ -1369,27 +1383,33 @@ re-sul-ta-dos que [[]]
 
 ]
 Cap\'{\i }tulo 3.
+<imagenes/comparativa_rtx2060tesla.png, id=518, 867.24pt x 578.16pt>
+File: imagenes/comparativa_rtx2060tesla.png Graphic file (type png)
+<use imagenes/comparativa_rtx2060tesla.png>
+Package pdftex.def Info: imagenes/comparativa_rtx2060tesla.png  used on input l
+ine 18.
+(pdftex.def)             Requested size: 360.0pt x 240.0025pt.
 
-Overfull \hbox (2.9495pt too wide) in paragraph at lines 16--17
+Underfull \vbox (badness 5331) has occurred while \output is active []
+
+ [29]
+Overfull \hbox (2.9495pt too wide) in paragraph at lines 34--35
 []\OT1/cmr/bx/n/10.95 Dimensiones es-tan-da-ri-za-das \OT1/cmr/m/n/10.95 : To-d
 as las re-so-nan-cias (adul-tos, ni~nos,
  []
 
+[30 <./imagenes/comparativa_rtx2060tesla.png>])
+(./capitulos/04_experimentacion.tex [31] [32
 
-Underfull \vbox (badness 1360) has occurred while \output is active []
-
- [29])
-(./capitulos/04_experimentacion.tex [30]
+]
 Cap\'{\i }tulo 4.
-) [31
-
-] [32
+) [33] [34
 
 ]
 Cap\'{\i }tulo 5.
-(./proyecto.bbl [33] [34
+(./proyecto.bbl [35] [36
 
-] [35] [36]) [37] [38
+] [37] [38]) [39] [40
 
 ]
 
@@ -1397,7 +1417,7 @@ Package glossaries Warning: No \printglossary or \printglossaries found.
 (Remove \makeglossaries if you don't want any glossaries.) 
 This document will not have a glossary.
 
-[39] (./proyecto.aux
+[41] (./proyecto.aux
 LaTeX Info: Redefining \. on input line 28.
 LaTeX Info: Redefining \% on input line 28.
 )
@@ -1405,49 +1425,34 @@ LaTeX Info: Redefining \% on input line 28.
 LaTeX2e <2023-06-01>
 L3 programming layer <2023-06-05>
  ***********
-
-
-Package rerunfilecheck Warning: File `proyecto.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `proyecto.out':
-(rerunfilecheck)             Before: B9A37AADF95158196744E6C6345DE63F;3347
-(rerunfilecheck)             After:  A752EDC6972F146306B7BD04BF7BF880;3597.
+Package rerunfilecheck Info: File `proyecto.out' has not changed.
+(rerunfilecheck)             Checksum: 466DF3C4095456E72B9CA2A6A46274DB;4521.
  ) 
 Here is how much of TeX's memory you used:
- 20446 strings out of 475735
- 344940 string characters out of 5784786
+ 20465 strings out of 475735
+ 345369 string characters out of 5784786
  1864759 words of memory out of 5000000
- 40695 multiletter control sequences out of 15000+600000
+ 40705 multiletter control sequences out of 15000+600000
  521549 words of font info for 62 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  94i,13n,93p,2262b,577s stack positions out of 10000i,1000n,20000p,200000b,200000s
-
-pdfTeX warning (dest): name{subsection.3.1.2} has been referenced but does not 
-exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.3.1.1} has been referenced but does not 
-exist, replaced by a fixed one
-
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/
-share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/
-texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
-msy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.p
-fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></u
-sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/latxfont/lasy10.pfb>
-Output written on proyecto.pdf (59 pages, 7237550 bytes).
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti
+10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/latxfont/lasy
+10.pfb>
+Output written on proyecto.pdf (61 pages, 7372445 bytes).
 PDF statistics:
- 651 PDF objects out of 1000 (max. 8388607)
- 512 compressed objects within 6 object streams
- 163 named destinations out of 1000 (max. 500000)
- 271 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 683 PDF objects out of 1000 (max. 8388607)
+ 542 compressed objects within 6 object streams
+ 172 named destinations out of 1000 (max. 500000)
+ 308 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,14 +1,16 @@
 \chapter{Estado del arte}
 
-En este capítulo estudiaremos y analizaremos los diferentes enfoques para nuestra principal tarea, \textbf{la segmentación de tumores cerebrales}. Abordando desde el inicio del estudio del problema pasando por la explosión de métodos basados en Aprendizaje profundo con la constitución de \textbf{BraTS} hasta nuestros días. Se pondrá especial énfasis a las soluciones actuales comparándolas desde sus diferencias en metodología y perspectiva.
+En este capítulo estudiaremos y analizaremos los diferentes enfoques dados históricamente para nuestras tareas, \textbf{clasificación de tumores cerebrales} y \textbf{la segmentación de tumores cerebrales}. Abordando desde el inicio del estudio del problema pasando por la explosión de métodos basados en Aprendizaje profundo con la constitución de \textbf{BraTS} hasta nuestros días. Se pondrá especial énfasis a las soluciones actuales comparándolas desde sus diferencias en metodología y perspectiva.
 
-Otras tareas contenidas en el diagnóstico completo de tumores cerebrales como la clasificación de tumores cerebrales (glioblastomas y meningiomas) o la predicción de su evolución, que se recogen en este trabajo, van intrínsecamente unidas al buen desempeño de la tarea de segmentación. 
+Por un lado, la clasificación entre los dos tipos de tumores no es tan relevante a la hora de diseñar un sistema de ayuda a la toma de decisión ya que clínicamente sí existe una característica diferencial entre ambos, su \textbf{localización}. Los meningiomas aparecen entre el cráneo y el cerebro no internamente en el cerebro como los glioblastomas. Esto hace que un médico pueda distinguirlos sin requerir una gran asistencia para la mayoría de los casos. No obstante, la clasificación de por sí ayuda a la toma de decisiones en el tratamiento pero no es el elemento crítico para la supervivencia del paciente que depende de la eliminación del tumor donde su segmentación toma un papel crucial. Por esto, veremos como el estado del arte del problema de segmentación es mucho mayor que el del problema de clasificación.
 
-Por un lado, la clasificación entre los dos tipos de tumores no es tan relevante a la hora de diseñar un sistema de ayuda a la toma de decisión ya que clínicamente sí existe una característica diferencial entre ambos, su \textbf{localización}. Los meningiomas siempre aparecen entre el cráneo y el cerebro no internamente en el cerebro como los glioblastomas. Esto hace que un médico pueda distinguirlos sin requerir una gran asistencia para la mayoría de los casos. No obstante, la clasificación de por sí ayuda a la toma de decisiones en el tratamiento pero no es el elemento crítico para la supervivencia del paciente que depende de la eliminación del tumor donde su segmentación toma un papel crucial.
+Por otro lado, la tarea de predicción de la evolución del tumor debido a la baja densidad de instancias temporales de los datos existentes hacen que este problema no sea tratado en trabajos. No hemos encontrado literatura al respecto. 
 
-Por otro lado, la tarea de la predicción de la evolución del tumor se representa como la predicción de la segmentación en un estado futuro del tumor es decir depende fuertemente de la segmentación actual del tumor. 
+Los grandes esfuerzos se han realizado en entorno a la segmentación, ya que otras tareas que conforman su diagnóstico se verían arrastradas.
 
-Es por ello que grandes esfuerzos se han realizado en entorno a la segmentación, ya que otras tareas que conforman su diagnóstico se verían arrastradas.
+\section{Revisión histórica de clasificación binaria de tumores}
+
+\section{Revisión histórica de segmentación}
 
 Diferentes dificultades han sido las que a pesar de años de desarrollo aún encontrar un algoritmo para la segmentación de tumores cerebrales sea algo mejorable. 
 
@@ -29,12 +31,9 @@ Diferentes dificultades han sido las que a pesar de años de desarrollo aún enc
 \end{enumerate}
 
 
-
-\section{Revisión histórica}
-
 	A continuación, se presenta una revisión histórica sobre la segmentación de tumores cerebrales hasta 2021 apoyada en \cite{liu2023deep}. Se presenta una línea del tiempo con los principales trabajos de estudio.
 	
-	\begin{figure}[!h]
+	\begin{figure}[H]
 		\centering
 		\includegraphics[width=1.0\linewidth]{imagenes/evolution_stateofart.png}
 		\caption{Evolución histórica del estado del arte hasta 2021.}
@@ -61,8 +60,7 @@ Diferentes dificultades han sido las que a pesar de años de desarrollo aún enc
 			
 			Este proceso de aumento de profundidad con conexiones residuales no sería definitivo porque también conlleva el sacrificio de resolución espacial. Se reemplazaría en trabajos siguientes, el uso de la convolución simple por convoluciones dilatadas. El \textbf{uso de convoluciones dilatadas} traería el aumento del espacio receptivo (ya que se aplica una convolución a un espacio mayor de la imagen) sin necesidad de introducir parámetros a la red. La convolución dilatada se vería especialmente útil por ejemplo en la segmentación de áreas grandes como suele ocupar el tejido ED (edema tumoral). 
 			
-			Respecto conseguir una buena eficiencia en tiempo de entrenamiento es conocido aplicar un reordenamiento en memoria de las imágenes de la resonancia similares (p. ej. el mismo slice en las 4 pruebas) de forma que se reduzcan la comunicación entrada-salida con GPU. Adicionalmente, autores como \cite{brugger2019partially} utilizan \textbf{conexiones reversibles}  en la red de forma que durante el proceso de backpropagation (backward pass) no se necesite memoria adicional para guardar las activaciones intermedias. Por último, para ahorrar en eficiencia se sustituye la convolución standard por la combinación de \textbf{convoluciones separables}. 
-			
+			Respecto conseguir una buena eficiencia en tiempo de entrenamiento es conocido aplicar un reordenamiento en memoria de las imágenes de la resonancia similares (p. ej. el mismo slice en las 4 pruebas) de forma que se reduzcan la comunicación entrada-salida con GPU. Adicionalmente, autores como \cite{brugger2019partially} utilizan \textbf{conexiones reversibles}  en la red de forma que durante el proceso de backpropagation (backward pass) no se necesite memoria adicional para guardar las activaciones intermedias. Por último, para ahorrar en eficiencia se sustituye la convolución standard por la combinación de \textbf{convoluciones separables}.
 			
 			\subsubsection{Diseño de arquitecturas efectivas}
 			
@@ -72,12 +70,11 @@ Diferentes dificultades han sido las que a pesar de años de desarrollo aún enc
 					
 				\item \textbf{Redes neuronales convolucionales de una/múltiples trayectorias}
 					
-					
 				A diferencia de una red convolucional de una única trayectoria, las redes de trayectoria múltiples tienen la capacidad de extraer diversas características a diferentes escalas. Estas características se combinan para su posterior procesamiento, usualmente en capas totalmente conectadas, permitiendo a las redes aprender tanto características globales como locales. 
 				
 				\begin{figure}[H]
 					\centering
-					\includegraphics[width=0.45\linewidth]{imagenes/comparisonsinglemultipleCNN.png}
+					\includegraphics[width=0.27\linewidth]{imagenes/comparisonsinglemultipleCNN.png}
 					\caption{Comparación entre arquitecturas de una y múltiples trayectorias. Imagen de \cite{liu2023deep}}
 				\end{figure}
 				
@@ -182,10 +179,7 @@ Diferentes dificultades han sido las que a pesar de años de desarrollo aún enc
 			
 			De forma más detallada, el problema del desbalanceo entre los diferentes tejidos se manifiesta durante el proceso de entrenamiento, en un gradiente excesivamente influenciado por los tejidos mayoritarios. Por ello, atacando directamente al problema multitud de trabajos proponen funciones de pérdida especializadas.
 			
-			Funciones de pérdida estándar en este problema incluyen categorical cross-entropy, cross-entropy y dice loss $D_{L}$. Esta última siendo muy similar a optimizar una de las métricas que se usan en el problema.
-			
-			$$ D_{L} =  1 - D_{C} $$
-			$$ D_{C}\ es\ el\ coeficiente\ de\ similaridad\ dice\ $$
+			Funciones de pérdida estándar en este problema incluyen categorical cross-entropy, cross-entropy y dice loss $D_{L}$.
 			
 			Una de las aproximaciones es el uso de utilizar una función de pérdida balanceada. Por ejemplo, añadir una penalización en función de la presencia del tejido segmentado para mitigar su escasa presencia respecto el total.
 			
@@ -238,7 +232,7 @@ Diferentes dificultades han sido las que a pesar de años de desarrollo aún enc
 		Si bien esta arquitectura da ligeramente peores resultados que \cite{myronenko20193d} define un paso más en el estado del arte al usar menos recursos computacionales.
 
 
-\section{Enfoques actuales}
+\section{Enfoques actuales para la segmentación}
 
 	Las soluciones más relavantes presentadas en la revisión histórica que se ha hecho anteriormente se basan en la aplicación de la convolución sobre las imágenes de resonancia magnética. En el diagnóstico de tumores cerebrales ha tenido largo recorrido el uso de redes neuronales convolucionales. 
 	
