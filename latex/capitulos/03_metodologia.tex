@@ -19,8 +19,12 @@ Para la realización de este trabajo debemos considerar los recursos hardware di
 		\caption{Comparativa de rendimiento de las GPU disponibles}
 	\end{figure}
 	
+	En todas las características la gráfica ofrecida por Kaggle supera a la nuestra. Por lo que optaremos por usarla en todo el trabajo.
 	
-	\item \textbf{Hardware para inferir con los modelos}. De forma general, cualquier PC de uso personal que disponga de una GPU de rendimiento igual o mayor que   y cumpla las siguientes dependencias (link a apéndice de uso del programa). 
+	\item \textbf{Hardware para inferir con los modelos}. Para la construcción de la interfaz y su uso si hemos usado nuestro dispositivo personal.
+	
+	De forma general, el hardware necesario para inferir con los modelos es cualquier PC de uso personal que disponga de una GPU de rendimiento similar o mejor que el nuestro y cumpla las siguientes dependencias (link a apéndice de uso del programa). 
+	
 \end{enumerate}
 
 
@@ -35,6 +39,16 @@ Partiendo de nuestro conjunto de datos que presentamos en la introducción obten
 	\item \textbf{Imágenes estandarizadas} : Todas las resonancias se han hecho con el mismo estándar de escáner, todas presentan el mismo rango para su visualización. 
 	\item \textbf{No existen valores faltantes} : Observamos como el conjunto de datos es completo en su definición, todas las resonancias de cada paciente tienen las mismas cuatro pruebas.
 \end{enumerate}
+
+\subsection{Elección de dimensionalidad de las entradas}
+
+Una de las elecciones cruciales al inicio del trabajo es la dimensionalidad de las entradas de la red (determina la forma en la que preprocesaremos los datos). ¿Es mejor trabajar en 2D con una única imagen como entrada o en 3D con todo el conjunto de imágenes de una resonancia como entrada?
+
+En un primer momento debido a que la mayoría de literatura actual trabaja en 3D, intentamos trabajar en 3D. Para ello, construimos un primer modelo inicial de arquitectura para 2D y  una forma de transformarlo a 3D es simplemente duplicar cada capa por la cantidad de imágenes en cada resonancia. Por lo que, el tamaño de nuestro modelo inicial 2D $SIZE_{2D}$ sólo debíamos multiplicarlo por la cantidad de imágenes en una resonancia $SIZE_{3D} = SIZE_{2D} \times 155 $. Debido que el máximo de memoria RAM que disponíamos en la Tesla P100 de Kaggle es $16\ GB$ siguiendo esa regla, el máximo tamaño que podría ocupar un modelo inicial 2D sería: 
+
+$$ MAXSIZE_{2D} = \frac{16\ GB}{155}  = 0.10323\ GB = 105.7\ MB $$  
+
+Esta cantidad de memoria para una arquitectura que obtenga resultados competentes en la actualidad de técnicas que existen no es viable. Viéndonos obligados ante la escasez de memoria en GPU a enfocar nuestros esfuerzos en una dimensionalidad 2D. Tendremos como entrada a las arquitecturas \textbf{una única imagen la correspondiente a la vista axial de las resonancias}.
 
 \subsection{Normalizado de las imágenes}
 
@@ -54,10 +68,139 @@ Si recortamos las imágenes de forma cuadrada al cerebro más grande de todas la
 
 \subsection{Undersampling}
 
+En el estado del arte ya mencionamos que existía un desbalanceo entre tejido sano y tejido enfermo. En la mayoría de resonancias existe una mayor proporción de tejido sano que de tejido enfermo. Esto no sólo podía introducir un sesgo en los algoritmos de segmentación sino que aumenta mucho el coste computacional de entrenar a los modelos por el exceso de imágenes que no contienen la información de una lesión tumoral. 
 
-\subsection{Uso de aprendizaje no supervisado}
+El tratamiento del desbalanceo mediante undersampling siempre es una medida agresiva ya que podría eliminar información que a priori no consideramos relevante y si lo es.
 
-\subsubsection{Autoencoders}
+Sin embargo, en nuestro problema aplicaremos undersampling con el principal objetivo de reducir los tiempos de entrenamiento y poder tener una arquitectura más profunda manteniendo tiempos razonables. Intentando aliviar de paso el problema del desbalanceo. A continuación explicamos en detalle como se ha llevado a cabo.
 
-\subsubsection{Reconstrucción de las imágenes por la red}
+Para todo nuestro conjunto de datos $X$ creamos archivos CSV para cada partición (entrenamiento, validación y test) donde cada fila de cada archivo CSV representa a una imagen o entrada a la red. 
 
+Estos archivos en formato CSV contendrán únicamente el conjunto de imágenes que contienen lesión tumoral de todas las resonancias $N$ más una parte seleccionada aleatoriamente de imágenes sin lesión de tamaño $\frac{|N|}{2}$. De esta forma, nos quedamos con todas las imágenes con información de lesión y con una parte representativa y balanceada sin lesión para no sesgar al modelo a segmentar en todas las imágenes.
+
+En estos archivos CSV existen las siguientes columnas:
+
+\begin{enumerate}
+	\item \textbf{Rutas absolutas} : En $4$ columnas están las rutas absolutas a los archivos .nii de cada prueba de cada resonancia.
+	\item \textbf{Número de slice} : Se guarda el número de slice en la que se localiza esa imagen dentro de la resonancia. Este campo es necesario para poder extraer la imagen.
+	\item \textbf{Etiqueta} : Para el problema de clasificación es necesario guardar la etiqueta que identifica a cada imagen, 0 para Glioblastoma, 1 para Meningioma y 2 para No Tumor.
+\end{enumerate}
+
+Tras aplicar este undersampling nos quedamos con $74487$ imágenes en entrenamiento, $31899$ en validación y $45354$ en test. En la siguiente tabla podemos ver recogida esta información también términos de porcentaje respecto las imágenes totales.
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|c|c|}
+		\hline
+		\textbf{Partición} & \textbf{Pacientes} & \textbf{Imágenes} & \textbf{Porcentaje $\%$} \\ \hline
+		Entrenamiento & 1033 & 74487 &  46.52 \\ \hline
+		Validación & 442 & 31899 & 46.56 \\ \hline
+		Test & 632 & 45354 &  46.3\\ \hline
+	\end{tabular}
+	\caption{Porcentaje de imágenes conservadas tras undersampling.}
+\end{table}
+
+
+\section{Elección de modelos}
+
+A continuación pasamos a discutir los modelos y técnicas empleadas para la creación de las arquitecturas. En este trabajo como al igual que en parte del estado del arte combinaremos técnicas de aprendizaje no supervisado y supervisado.
+
+\subsection{Codificador y representación latente}
+
+Ponemos ahora el foco en un modelo en principio pensado para el aprendizaje sin etiquetas, los \textbf{autoencoders}.
+
+Los autoencoders son arquitecturas encoder-decoder con la finalidad de aprender las características de un conjunto de datos o distribución. Por ejemplo, siendo esto útil para obtener modelos generativos como los autoencoders variacionales. 
+
+Los autoencoders se formularon inicialmente como una generalización no lineal del análisis de componentes principales (PCA) por su poder para reducir la dimensionalidad. En este trabajo lo incluiremos como modelo base para aplicar aprendizaje no supervisado y que teóricamente presentarían notables ventajas de cara obtener una mayor convergencia y generalización en el proceso de entrenamiento. 
+
+A continuación, mostramos un esquema explicativo de las partes implicadas en la arquitectura para construir el codificador y representación latente.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1.0\linewidth]{imagenes/esquema_codificador.png}
+	\caption{Esquema de la arquitectura empleada para inicializar el codificador y representación latente}
+\end{figure}
+
+
+El objetivo tras aplicar este esquema es construir un fuerte codificador que reduzca la dimensionalidad y una representación latente (bottleneck) que comprima las características principales de las imágenes del conjunto de entrenamiento.
+
+En términos del proceso de optimización que es el entrenamiento, de forma no supervisada se están inicializando los pesos de la red para parecerse al conjunto de imágenes. \cite{zeiler2014visualizing} estudia como los diferentes filtros de las redes neuronales convolucionales al entrenarse ante una tarea de clasificación acaban replicando las características generales y específicas de las imágenes de las que son entrenados. Por ello, se llega a la conclusión de que una heurística importante dentro de las redes neuronales convolucionales es que \textbf{los filtros se parecen a las imágenes}. 
+
+Esta razón explica de forma teórica como un proceso de ajuste previo al conjunto de entrenamiento elimina el coste computacional de búsqueda de los pesos via descenso del gradiente y backpropagation que require el ajuste de la red por sí misma a las imágenes sólo a partir de las etiquetas. 
+
+\subsection{Modelo de clasificación}
+
+\subsection{Modelo de segmentación}
+
+\section{Diseño de las arquitecturas}
+
+En el siguiente apartado detallaremos los módulos y capas que componen a las arquitecturas así como las componentes importantes. 
+
+\subsection{Funciones de activación}
+
+Para todas las arquitecturas (segmentación, clasificación y el autoencoder para construir el codificador), se optará por el uso de la función de activación ReLU (Rectified Linear Unit), definida como:
+
+$$ \text{ReLU}(x) = \max(0, x) $$
+
+Donde \( x \) es la entrada a la función ReLU.
+
+A continuación, enunciamos algunas de las razones de su elección y su reconocida robustez para una gran amplitud de problemas en aprendizaje profundo.
+
+\begin{enumerate}
+	\item \textbf{No Linealidad:}
+	ReLU introduce no linealidad en las redes neuronales, lo cual es crucial para que las redes puedan aprender y modelar relaciones y características complejas en los datos. Esta no linealidad es esencial para tareas como la clasificación y la segmentación, donde las relaciones entre los datos son inherentemente no lineales.
+	
+	\item \textbf{Gradiente Constante:}
+	Para valores positivos de $ x $, la derivada de ReLU es constante e igual a 1. Esto evita el problema del desvanecimiento del gradiente en redes profundas, donde el gradiente puede volverse extremadamente pequeño en funciones de activación saturadas como la sigmoide y la tangente hiperbólica.
+	
+	\[ \frac{\partial \text{ReLU}(x)}{\partial x} = \begin{cases} 
+		1 & \text{si } x > 0 \\
+		0 & \text{si } x \leq 0 
+	\end{cases} \]
+	
+	Esto facilita el entrenamiento de redes más profundas y la convergencia más rápida durante el proceso de optimización.
+	
+	\item \textbf{Eficiencia Computacional:}
+	La función ReLU es eficiente en términos computacionales. Su implementación es simple (una comparación y una operación de máximo) y no involucra cálculos costosos como funciones exponenciales.
+	
+\end{enumerate}
+
+La elección de ReLU como función de activación común a través de estas arquitecturas se basa en sus propiedades matemáticas que promueven la eficiencia, la no linealidad y la estabilidad del gradiente.
+
+
+\subsection{Construcción del codificador y representación latente}
+
+\subsection{Arquitectura para clasificación}
+
+\subsection{Arquitectura para segmentación}
+
+\section{Optimización de las arquitecturas}
+
+En la siguiente sección detallaremos las funciones de pérdida usadas en cada arquitectura y la metodología seguida para llevar a cabo el entrenamiento de la red.
+
+\subsection{Optimizador}
+
+\subsection{Funciones de pérdida}
+
+\subsubsection{Función de pérdida para la reconstrucción de imágenes}
+
+Usamos el \textbf{error absoluto medio} (MAE) de los píxeles de salida reconstruidos y los verdaderos como función de pérdida para realizar la reconstrucción de las imágenes. El MAE mide la magnitud promedio de las diferencias absolutas entre los valores predichos por el modelo y los valores reales. Esta métrica es útil para evaluar la precisión de la reconstrucción de las imágenes, ya que considera todas las diferencias de manera uniforme, sin penalizar más las diferencias grandes que las pequeñas.
+
+$$ \text{MAE} = \frac{1}{n} \sum_{i=1}^{n} \left| y_i - \hat{y}_i \right| $$ 
+
+Donde $n$ es el número total de píxeles en la imagen, $y_i$ es el valor verdadero del píxel $i$ y $\hat{y}_i$ es el valor reconstruido o predicho del píxel $i$.
+
+En el contexto de la reconstrucción de imágenes, cada $y_i$ representa la intensidad del píxel en la imagen original, y cada $\hat{y}_i$ representa la intensidad del píxel en la imagen reconstruida por el modelo. El MAE proporciona una medida directa de cuán cerca están las intensidades de los píxeles reconstruidos de las intensidades reales.
+
+También usaremos la misma pérdida como métrica de bondad de ajuste del modelo. Esto significa que, además de utilizar el MAE para optimizar el modelo durante el entrenamiento, también lo emplearemos para evaluar el desempeño del modelo en la reconstrucción de imágenes. Utilizar el MAE como métrica de evaluación nos permite tener una interpretación clara y consistente de cómo de bien se está desempeñando el modelo en términos de error promedio de los píxeles reconstruidos.
+
+\subsubsection{Función de pérdida para clasificación}
+
+\subsubsection{Función de pérdida para segmentación}
+
+\subsection{One-Cycle Policy}
+
+
+\section{Validación y garantías}
+
+\section{Solución teórica a la predicción de la evolución}

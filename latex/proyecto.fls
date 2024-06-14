@@ -140,6 +140,8 @@ INPUT /usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/footmisc/footmisc.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/footmisc/footmisc.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/appendix/appendix.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/appendix/appendix.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/index/index.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/index/index.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/glossaries/base/glossaries.sty
@@ -307,6 +309,7 @@ INPUT ./proyecto.toc
 INPUT ./proyecto.toc
 INPUT proyecto.toc
 OUTPUT proyecto.toc
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx8.tfm
 INPUT ./proyecto.lof
 INPUT ./proyecto.lof
 INPUT proyecto.lof
@@ -438,6 +441,11 @@ INPUT ./imagenes/comparativa_rtx2060tesla.png
 INPUT ./imagenes/comparativa_rtx2060tesla.png
 INPUT ./imagenes/comparativa_rtx2060tesla.png
 INPUT ./imagenes/comparativa_rtx2060tesla.png
+INPUT ./imagenes/esquema_codificador.png
+INPUT ./imagenes/esquema_codificador.png
+INPUT ./imagenes/esquema_codificador.png
+INPUT ./imagenes/esquema_codificador.png
+INPUT ./imagenes/esquema_codificador.png
 INPUT ./capitulos/04_experimentacion.tex
 INPUT ./capitulos/04_experimentacion.tex
 INPUT ./capitulos/04_experimentacion.tex
@@ -446,11 +454,17 @@ INPUT capitulos/04_experimentacion.tex
 INPUT ./proyecto.bbl
 INPUT ./proyecto.bbl
 INPUT proyecto.bbl
+INPUT ./glosario/entradas_glosario.tex
+INPUT ./glosario/entradas_glosario.tex
+INPUT ./glosario/entradas_glosario.tex
+INPUT ./glosario/entradas_glosario.tex
+INPUT glosario/entradas_glosario.tex
 INPUT proyecto.aux
 INPUT ./proyecto.out
 INPUT ./proyecto.out
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
+INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb

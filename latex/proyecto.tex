@@ -15,7 +15,7 @@
 \usepackage{url}
 \usepackage{colortbl,longtable}
 \usepackage[stable]{footmisc}
-
+\usepackage{appendix}
 \usepackage{index}
 %\usepackage[style=list, number=none]{glossary} 
 %\usepackage{titlesec}
@@ -39,9 +39,9 @@
 % Re-usable information
 % ********************************************************************
 \newcommand{\myTitle}{Diagnóstico de tumores cerebrales a partir de IRM mediante aprendizaje profundo \xspace}
-\newcommand{\mySubTitle}{Diseño e implementación de arquitecturas para la clasificación y la segmentación \xspace}
+\newcommand{\mySubTitle}{Diseño e implementación de arquitecturas neuronales para la clasificación y la segmentación \xspace}
 \newcommand{\myTitleENGLISH}{Brain tumor diagnosis from MRI images using Deep Learning \xspace}
-\newcommand{\mySubTitleENGLISH}{Design and architecture implementation \xspace}
+\newcommand{\mySubTitleENGLISH}{Design and neuronal architecture implementation for classification and segmentation \xspace}
 \newcommand{\myDegree}{Grado en Ingeniería Informática \xspace}
 \newcommand{\myName}{Jaime Castillo Uclés\xspace}
 \newcommand{\myProf}{Rosa María Rodríguez Sánchez\xspace}
@@ -196,11 +196,12 @@
 
 
 \appendix
-%\input{apendices/manual_usuario/manual_usuario}
-%\input{apendices/paper/paper}
-%\input{glosario/entradas_glosario}
-%\addcontentsline{toc}{chapter}{Glosario}
-%\printglossary
+%\input{apendices/documentacion_interfaz}
+%\input{apendices/manual_uso_interfaz}
+\chapter*{Glosario}
+\input{glosario/entradas_glosario}
+\addcontentsline{toc}{chapter}{Glosario}
+\printglossary
 
 \chapter*{}
 \thispagestyle{empty}

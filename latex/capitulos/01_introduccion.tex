@@ -192,6 +192,33 @@ Tras la visualización, no se observa una zona especialmente marcada ni en gliob
 
 \subsection{Evaluación y métricas}
 
+Para la evaluación se distinguirán entre tres subconjuntos de datos: entrenamiento, validación y test. Se utilizará un conjuntos fijos basado en \textbf{hold out} común a todas las tareas por motivos de eficiencia no podemos permitirnos usar validación cruzada o distintos conjuntos variables. Estos conjuntos serán separados mediante la utilización de archivos CSV con las rutas absolutas de cada ejemplo para cada uno de ellos. 
+
+Seguirán la siguiente distribución: un $49 \%$ para entrenamiento, $21 \%$ para validación y un $30 \%$ para test del conjunto total de datos (glioblastomas y meningiomas juntos) haciendo un reparto aleatorio entre ellos. Se sigue la regla de partición: $70 \%$ entrenamiento + validación y $30 \%$ test. Además de $70 \%$ entrenamiento y $30 \%$ validación. La finalidad de cada subconjunto es para entrenamiento ajustar los modelos a este subconjunto de datos, validación elegir el mejor modelo de los probados, y test dar el resultado final garantizador de la bondad de los modelos.
+
+\subsubsection{Métricas para clasificación}
+
+Para clasificación las métricas usadas serán \textbf{accuracy balanceado} y \textbf{accuracy} que podremos calcular a través de la construcción de la matriz de confusión. 
+
+\begin{enumerate}
+	\item \textbf{Accuracy.} Mide cuántas predicciones del modelo son correctas respecto el total del predicciones. Se calcula como: 
+	
+	$$ \text{Accuracy} = \frac{\text{Número de predicciones correctas}}{\text{Total de predicciones}} = \frac{TP + TN}{TP + TN + FP + FN}$$
+	
+	\item \textbf{Accuracy balanceado.} En problemas de clasificación para manejar conjuntos de datos desbalanceados, donde las clases no están igualmente representadas. Se define como el promedio de las tasas de acierto (recall) obtenidas en cada clase, lo que ayuda a proporcionar una evaluación más justa y equilibrada del desempeño del modelo cuando las clases tienen diferentes tamaños.
+	
+	De forma general para un problema de clasificación de $N$ clases se calcula como:
+	
+	$$  \text{Balanced Accuracy} = \frac{1}{N} \sum_{i=1}^{N} \frac{TP_i}{TP_i + FN_i}$$
+	
+	De forma específica, para clasificación binaria $N = 2$ podemos expresarlo como:
+	
+	$$ \text{Balanced Accuracy} = \frac{1}{2} \left( \frac{TP}{TP + FN} + \frac{TN}{TN + FP} \right) $$ 
+\end{enumerate}
+
+
+\subsubsection{Métricas para segmentación}
+
 Siguiendo la definición de evaluación de BraTS 2023, la evaluación de los tumores en su forma original comprende la segmentación de tres zonas diferenciadas según los tipos de tejidos que hay en ella. En BraTS se estudian los siguientes tres conjuntos de tejidos tumoral.
 
 \begin{enumerate}

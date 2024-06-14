@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.3.15)  12 JUN 2024 20:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.3.15)  14 JUN 2024 02:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -379,6 +379,12 @@ Package footmisc Info: Declaring symbol style lamport* on input line 743.
 Package footmisc Info: Declaring symbol style lamport*-robust on input line 764
 .
 )
+(/usr/share/texlive/texmf-dist/tex/latex/appendix/appendix.sty
+Package: appendix 2020/02/08 v1.2c extra appendix facilities
+\c@@pps=\count296
+\c@@ppsavesec=\count297
+\c@@ppsaveapp=\count298
+)
 (/usr/share/texlive/texmf-dist/tex/latex/index/index.sty
 Package: index 2004/01/20 v4.2beta Improved index support (dmj)
 \@indexbox=\insert252
@@ -403,7 +409,7 @@ Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
 \XKV@toks=\toks33
 \XKV@tempa@toks=\toks34
 )
-\XKV@depth=\count296
+\XKV@depth=\count299
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/mfirstuc/mfirstuc.sty
@@ -437,14 +443,14 @@ Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2022/04/08 v2.04 operator names
 )
-\inf@bad=\count297
+\inf@bad=\count300
 LaTeX Info: Redefining \frac on input line 234.
-\uproot@=\count298
-\leftroot@=\count299
+\uproot@=\count301
+\leftroot@=\count302
 LaTeX Info: Redefining \overline on input line 399.
 LaTeX Info: Redefining \colon on input line 410.
-\classnum@=\count300
-\DOTSCASE@=\count301
+\classnum@=\count303
+\DOTSCASE@=\count304
 LaTeX Info: Redefining \ldots on input line 496.
 LaTeX Info: Redefining \dots on input line 499.
 LaTeX Info: Redefining \cdots on input line 620.
@@ -457,20 +463,20 @@ LaTeX Info: Redefining \Bigg on input line 725.
 \big@size=\dimen166
 LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
-\macc@depth=\count302
+\macc@depth=\count305
 LaTeX Info: Redefining \bmod on input line 905.
 LaTeX Info: Redefining \pmod on input line 910.
 LaTeX Info: Redefining \smash on input line 940.
 LaTeX Info: Redefining \relbar on input line 970.
 LaTeX Info: Redefining \Relbar on input line 971.
-\c@MaxMatrixCols=\count303
+\c@MaxMatrixCols=\count306
 \dotsspace@=\muskip17
-\c@parentequation=\count304
-\dspbrk@lvl=\count305
+\c@parentequation=\count307
+\dspbrk@lvl=\count308
 \tag@help=\toks38
-\row@=\count306
-\column@=\count307
-\maxfields@=\count308
+\row@=\count309
+\column@=\count310
+\maxfields@=\count311
 \andhelp@=\toks39
 \eqnshift@=\dimen167
 \alignsep@=\dimen168
@@ -487,7 +493,7 @@ LaTeX Info: Redefining \] on input line 2954.
 )
 (/usr/share/texlive/texmf-dist/tex/latex/substr/substr.sty
 Package: substr 2009/10/20 v1.2 Handle substrings
-\c@su@anzahl=\count309
+\c@su@anzahl=\count312
 )
 (/usr/share/texlive/texmf-dist/tex/latex/datatool/datatool-fp.sty
 Package: datatool-fp 2019/09/27 v2.32 (NLCT)
@@ -498,19 +504,19 @@ Package: fp 1995/04/02
 `Fixed Point Package', Version 0.8, April 2, 1995 (C) Michael Mehlich
 (/usr/share/texlive/texmf-dist/tex/latex/fp/defpattern.sty
 Package: defpattern 1994/10/12
-\actioncount=\count310
+\actioncount=\count313
 )
 (/usr/share/texlive/texmf-dist/tex/latex/fp/fp-basic.sty
 Package: fp-basic 1996/05/13
-\FP@xs=\count311
-\FP@xia=\count312
-\FP@xib=\count313
-\FP@xfa=\count314
-\FP@xfb=\count315
-\FP@rega=\count316
-\FP@regb=\count317
-\FP@regs=\count318
-\FP@times=\count319
+\FP@xs=\count314
+\FP@xia=\count315
+\FP@xib=\count316
+\FP@xfa=\count317
+\FP@xfb=\count318
+\FP@rega=\count319
+\FP@regb=\count320
+\FP@regs=\count321
+\FP@times=\count322
 )
 (/usr/share/texlive/texmf-dist/tex/latex/fp/fp-addons.sty
 Package: fp-addons 1995/03/15
@@ -529,7 +535,7 @@ Package: fp-pas 1994/08/29
 )
 (/usr/share/texlive/texmf-dist/tex/latex/fp/fp-random.sty
 Package: fp-random 1995/02/23
-\FPseed=\count320
+\FPseed=\count323
 )
 (/usr/share/texlive/texmf-dist/tex/latex/fp/fp-eqn.sty
 Package: fp-eqn 1995/04/03
@@ -541,14 +547,14 @@ Package: fp-upn 1996/10/21
 Package: fp-eval 1995/04/03
 )))
 \@dtl@toks=\toks42
-\@dtl@tmpcount=\count321
+\@dtl@tmpcount=\count324
 \dtl@tmplength=\skip73
-\dtl@sortresult=\count322
-\@dtl@numgrpsepcount=\count323
-\@dtl@datatype=\count324
-\dtl@codeA=\count325
-\dtl@codeB=\count326
-\@dtl@foreach@level=\count327
+\dtl@sortresult=\count325
+\@dtl@numgrpsepcount=\count326
+\@dtl@datatype=\count327
+\dtl@codeA=\count328
+\dtl@codeB=\count329
+\@dtl@foreach@level=\count330
 )
 (/usr/share/texlive/texmf-dist/tex/latex/tracklang/tracklang.sty
 Package: tracklang 2022/12/13 v1.6.1 (NLCT) Track Languages
@@ -563,7 +569,7 @@ File: glossaries-spanish.ldf 2014/11/23 v1.0
 
 (/usr/share/texlive/texmf-dist/tex/latex/glossaries-spanish/glossaries-spanish-
 utf8.ldf))
-\gls@level=\count328
+\gls@level=\count331
 \@gls@tmpb=\toks43
 \gls@tmplen=\skip74
 \glskeylisttok=\toks44
@@ -586,7 +592,7 @@ Package: glossary-super 2022/11/03 v4.52 (NLCT)
 
 (/usr/share/texlive/texmf-dist/tex/latex/supertabular/supertabular.sty
 Package: supertabular 2020/02/02 v4.1g the supertabular environment
-\c@tracingst=\count329
+\c@tracingst=\count332
 \ST@wd=\dimen173
 \ST@rightskip=\skip78
 \ST@leftskip=\skip79
@@ -620,13 +626,13 @@ Package: dcolumn 2014/10/28 v1.06 decimal alignment package (DPC)
 \openout4 = `proyecto.glo'.
 
 Package glossaries Info: Writing glossary file proyecto.glo on input line 70.
-\c@teorema=\count330
-\c@ejemplo=\count331
-\c@definicion=\count332
+\c@teorema=\count333
+\c@ejemplo=\count334
+\c@definicion=\count335
 
 (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2023-04-19 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count333
+\l__color_backend_stack_int=\count336
 \l__pdf_internal_box=\box69
 )
 (./proyecto.aux
@@ -653,22 +659,22 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 172.
 LaTeX Font Info:    ... okay on input line 172.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 172.
 LaTeX Font Info:    ... okay on input line 172.
-\c@lstlisting=\count334
+\c@lstlisting=\count337
 LaTeX Info: Redefining \. on input line 172.
 LaTeX Info: Redefining \% on input line 172.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count335
+\scratchcounter=\count338
 \scratchdimen=\dimen183
 \scratchbox=\box70
-\nofMPsegments=\count336
-\nofMParguments=\count337
+\nofMPsegments=\count339
+\nofMParguments=\count340
 \everyMPshowfont=\toks50
-\MPscratchCnt=\count338
+\MPscratchCnt=\count341
 \MPscratchDim=\dimen184
-\MPnumerator=\count339
-\makeMPintoPDFobject=\count340
+\MPnumerator=\count342
+\makeMPintoPDFobject=\count343
 \everyMPtoPDFconversion=\toks51
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -700,7 +706,7 @@ Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 ))
 (./portada/portada.tex
 \centeroffset=\skip82
-<imagenes/logoUGR.jpg, id=99, 816.04875pt x 232.87pt>
+<imagenes/logoUGR.jpg, id=163, 816.04875pt x 232.87pt>
 File: imagenes/logoUGR.jpg Graphic file (type jpg)
 <use imagenes/logoUGR.jpg>
 Package pdftex.def Info: imagenes/logoUGR.jpg  used on input line 11.
@@ -755,12 +761,12 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-<imagenes/etsiit_logo.png, id=100, 110.814pt x 40.4712pt>
+<imagenes/etsiit_logo.png, id=164, 110.814pt x 40.4712pt>
 File: imagenes/etsiit_logo.png Graphic file (type png)
 <use imagenes/etsiit_logo.png>
 Package pdftex.def Info: imagenes/etsiit_logo.png  used on input line 30.
 (pdftex.def)             Requested size: 108.0011pt x 39.44412pt.
-<imagenes/decsai_logo.png, id=102, 339.4701pt x 411.07706pt>
+<imagenes/decsai_logo.png, id=166, 339.4701pt x 411.07706pt>
 File: imagenes/decsai_logo.png Graphic file (type png)
 <use imagenes/decsai_logo.png>
 Package pdftex.def Info: imagenes/decsai_logo.png  used on input line 31.
@@ -840,7 +846,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-\mySubTitleENGLISH ...ture implementation \xspace 
+\mySubTitleENGLISH ...on and segmentation \xspace 
                                                   
 l.26 ...series \myTitleENGLISH: \mySubTitleENGLISH
                                                    \\
@@ -980,15 +986,22 @@ and I'll forget about whatever was undefined.
 ] (./proyecto.toc
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
-)
+ [1
+
+])
 \tf@toc=\write6
 \openout6 = `proyecto.toc'.
 
- [1
 
-] [2
 
-] (./proyecto.lof
+LaTeX Font Warning: Font shape `OT1/cmr/bx/sc' undefined
+(Font)              using `OT1/cmr/bx/n' instead on input line 178.
+
+
+Package spanish Warning: Replacing `OT1/cmr/bx/sc' by 
+(spanish)                faked small caps on input line 178.
+
+[2] (./proyecto.lof
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
 
@@ -1001,7 +1014,9 @@ dor de [[]][][] [][]
 \tf@lof=\write7
 \openout7 = `proyecto.lof'.
 
- [3] [4
+ [3
+
+] [4
 
 ] (./proyecto.lot
 LaTeX Info: Redefining \. on input line 1.
@@ -1053,7 +1068,7 @@ been already used, duplicate ignored
 l.72 D
       efiniremos como nuestro conjunto de datos \textbf{$X$} a un conjunto d...
 [4]
-<imagenes/porcentajeGLIvsMEN.png, id=311, 422.0568pt x 348.3414pt>
+<imagenes/porcentajeGLIvsMEN.png, id=398, 422.0568pt x 348.3414pt>
 File: imagenes/porcentajeGLIvsMEN.png Graphic file (type png)
 <use imagenes/porcentajeGLIvsMEN.png>
 Package pdftex.def Info: imagenes/porcentajeGLIvsMEN.png  used on input line 80
@@ -1091,7 +1106,7 @@ been already used, duplicate ignored
                    \relax 
 l.90 
       [5 <./imagenes/porcentajeGLIvsMEN.png>]
-<imagenes/cantidadinstanciastemporales.png, id=318, 446.6286pt x 312.2064pt>
+<imagenes/cantidadinstanciastemporales.png, id=405, 446.6286pt x 312.2064pt>
 File: imagenes/cantidadinstanciastemporales.png Graphic file (type png)
 <use imagenes/cantidadinstanciastemporales.png>
 Package pdftex.def Info: imagenes/cantidadinstanciastemporales.png  used on inp
@@ -1104,7 +1119,7 @@ been already used, duplicate ignored
                    \relax 
 l.108 
        [6 <./imagenes/cantidadinstanciastemporales.png>]
-<imagenes/introduccion_imagenesMRI.png, id=327, 1148.3703pt x 570.2103pt>
+<imagenes/introduccion_imagenesMRI.png, id=413, 1148.3703pt x 570.2103pt>
 File: imagenes/introduccion_imagenesMRI.png Graphic file (type png)
 <use imagenes/introduccion_imagenesMRI.png>
 Package pdftex.def Info: imagenes/introduccion_imagenesMRI.png  used on input l
@@ -1115,7 +1130,7 @@ Overfull \hbox (36.0022pt too wide) in paragraph at lines 124--125
  [][] 
  []
 
-<imagenes/imgSSAPEDMRI.png, id=328, 1148.3703pt x 570.2103pt>
+<imagenes/imgSSAPEDMRI.png, id=414, 1148.3703pt x 570.2103pt>
 File: imagenes/imgSSAPEDMRI.png Graphic file (type png)
 <use imagenes/imgSSAPEDMRI.png>
 Package pdftex.def Info: imagenes/imgSSAPEDMRI.png  used on input line 132.
@@ -1135,7 +1150,7 @@ been already used, duplicate ignored
                    \relax 
 l.136 \newpage
                [7 <./imagenes/introduccion_imagenesMRI.png>]
-<imagenes/segimagenesMRI.png, id=337, 1148.3703pt x 570.2103pt>
+<imagenes/segimagenesMRI.png, id=423, 1148.3703pt x 570.2103pt>
 File: imagenes/segimagenesMRI.png Graphic file (type png)
 <use imagenes/segimagenesMRI.png>
 Package pdftex.def Info: imagenes/segimagenesMRI.png  used on input line 152.
@@ -1148,7 +1163,7 @@ Overfull \hbox (36.0022pt too wide) in paragraph at lines 152--153
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<imagenes/segimagenesSSAPEDMRI.png, id=338, 1148.3703pt x 570.2103pt>
+<imagenes/segimagenesSSAPEDMRI.png, id=424, 1148.3703pt x 570.2103pt>
 File: imagenes/segimagenesSSAPEDMRI.png Graphic file (type png)
 <use imagenes/segimagenesSSAPEDMRI.png>
 Package pdftex.def Info: imagenes/segimagenesSSAPEDMRI.png  used on input line 
@@ -1169,7 +1184,7 @@ been already used, duplicate ignored
                    \relax 
 l.162 \newpage
                [8 <./imagenes/imgSSAPEDMRI.png>]
-<imagenes/metodologia_heatmapsGLI.png, id=347, 2160.873pt x 3244.2003pt>
+<imagenes/metodologia_heatmapsGLI.png, id=433, 2160.873pt x 3244.2003pt>
 File: imagenes/metodologia_heatmapsGLI.png Graphic file (type png)
 <use imagenes/metodologia_heatmapsGLI.png>
 Package pdftex.def Info: imagenes/metodologia_heatmapsGLI.png  used on input li
@@ -1179,7 +1194,7 @@ ne 167.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<imagenes/metodologia_heatmapsMEN.png, id=348, 2160.873pt x 3244.2003pt>
+<imagenes/metodologia_heatmapsMEN.png, id=434, 2160.873pt x 3244.2003pt>
 File: imagenes/metodologia_heatmapsMEN.png Graphic file (type png)
 <use imagenes/metodologia_heatmapsMEN.png>
 Package pdftex.def Info: imagenes/metodologia_heatmapsMEN.png  used on input li
@@ -1220,8 +1235,8 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.11}) has
 l.179 
        [11 <./imagenes/metodologia_heatmapsMEN.png>]
 Overfull \hbox (0.19534pt too wide) in paragraph at lines 186--187
-[]\OT1/cmr/bx/n/10.95 Para seg-men-ta-ci^^Son \OT1/cmr/m/n/10.95 un de-co-di-fi
--ca-dor to-tal-men-te con-vo-lu-cio-nal trans-
+[]\OT1/cmr/bx/sc/10.95 Para seg-men-ta-ci^^Son \OT1/cmr/m/n/10.95 un de-co-di-f
+i-ca-dor to-tal-men-te con-vo-lu-cio-nal trans-
  []
 
 
@@ -1229,18 +1244,10 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.12}) has
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.204 
+l.198 
        [12]
-<imagenes/dicesimilarity.drawio.png, id=372, 192.72pt x 191.71625pt>
-File: imagenes/dicesimilarity.drawio.png Graphic file (type png)
-<use imagenes/dicesimilarity.drawio.png>
-Package pdftex.def Info: imagenes/dicesimilarity.drawio.png  used on input line
- 212.
-(pdftex.def)             Requested size: 90.0pt x 89.53035pt.
-
-Overfull \hbox (11.91089pt too wide) in paragraph at lines 228--229
-[]\OT1/cmr/bx/n/10.95 Distancia Haus-dorff \OT1/cmr/m/n/10.95 : Es-ta m^^Setri-
-ca tie-ne el ob-je-ti-vo de me-dir geom^^Setri-
+Overfull \hbox (16.55241pt too wide) detected at line 206
+[] \OT1/cmr/m/n/10.95 = [] = []
  []
 
 
@@ -1248,104 +1255,118 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.13}) has
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.229 	
-        [13 <./imagenes/dicesimilarity.drawio.png>]
-<imagenes/distanceHaussdorff.png, id=382, 369.63094pt x 274.77657pt>
-File: imagenes/distanceHaussdorff.png Graphic file (type png)
-<use imagenes/distanceHaussdorff.png>
-Package pdftex.def Info: imagenes/distanceHaussdorff.png  used on input line 23
-2.
-(pdftex.def)             Requested size: 143.9978pt x 107.04501pt.
-)
-(./capitulos/02_estadodelarte.tex
+l.226 	\item \textbf
+                    {Tumor Core TC}: Incluye al tejido ET y al tejido NCR.
+[13]
+<imagenes/dicesimilarity.drawio.png, id=466, 192.72pt x 191.71625pt>
+File: imagenes/dicesimilarity.drawio.png Graphic file (type png)
+<use imagenes/dicesimilarity.drawio.png>
+Package pdftex.def Info: imagenes/dicesimilarity.drawio.png  used on input line
+ 239.
+(pdftex.def)             Requested size: 90.0pt x 89.53035pt.
+
 pdfTeX warning (ext4): destination with the same identifier (name{page.14}) has
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1 \chapter
-            {Estado del arte} [14 <./imagenes/distanceHaussdorff.png>]
+l.255 	\item \textbf
+                    {Distancia Hausdorff} : Esta métrica tiene el objetivo ...
+[14 <./imagenes/dicesimilarity.drawio.png>]
+Overfull \hbox (11.91089pt too wide) in paragraph at lines 255--256
+[]\OT1/cmr/bx/sc/10.95 Distancia Haus-dorff \OT1/cmr/m/n/10.95 : Es-ta m^^Setri
+-ca tie-ne el ob-je-ti-vo de me-dir geom^^Setri-
+ []
+
+<imagenes/distanceHaussdorff.png, id=475, 369.63094pt x 274.77657pt>
+File: imagenes/distanceHaussdorff.png Graphic file (type png)
+<use imagenes/distanceHaussdorff.png>
+Package pdftex.def Info: imagenes/distanceHaussdorff.png  used on input line 25
+9.
+(pdftex.def)             Requested size: 143.9978pt x 107.04501pt.
+) (./capitulos/02_estadodelarte.tex [15 <./imagenes/distanceHaussdorff.png>]
+[16
+
+]
 Cap\'{\i }tulo 2.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [15
-
-]
-[16]
-<imagenes/evolution_stateofart.png, id=403, 1304.875pt x 461.725pt>
+ [17]
+[18]
+<imagenes/evolution_stateofart.png, id=503, 1304.875pt x 461.725pt>
 File: imagenes/evolution_stateofart.png Graphic file (type png)
 <use imagenes/evolution_stateofart.png>
 Package pdftex.def Info: imagenes/evolution_stateofart.png  used on input line 
-38.
+37.
 (pdftex.def)             Requested size: 360.0pt x 127.38692pt.
- [17 <./imagenes/evolution_stateofart.png>] [18]
-<imagenes/comparisonsinglemultipleCNN.png, id=421, 665.48625pt x 1087.06125pt>
+ [19 <./imagenes/evolution_stateofart.png>] [20]
+<imagenes/comparisonsinglemultipleCNN.png, id=520, 665.48625pt x 1087.06125pt>
 File: imagenes/comparisonsinglemultipleCNN.png Graphic file (type png)
 <use imagenes/comparisonsinglemultipleCNN.png>
 Package pdftex.def Info: imagenes/comparisonsinglemultipleCNN.png  used on inpu
-t line 77.
+t line 76.
 (pdftex.def)             Requested size: 97.20154pt x 158.77264pt.
- [19 <./imagenes/comparisonsinglemultipleCNN.png>]
-<imagenes/havaei2017architecture.png, id=433, 947.54pt x 296.10625pt>
+ [21 <./imagenes/comparisonsinglemultipleCNN.png>]
+<imagenes/havaei2017architecture.png, id=532, 947.54pt x 296.10625pt>
 File: imagenes/havaei2017architecture.png Graphic file (type png)
 <use imagenes/havaei2017architecture.png>
 Package pdftex.def Info: imagenes/havaei2017architecture.png  used on input lin
-e 85.
+e 84.
 (pdftex.def)             Requested size: 270.0pt x 84.37308pt.
- [20 <./imagenes/havaei2017architecture.png>]
-<imagenes/encoder-decoderIMG.drawio.png, id=448, 785.93625pt x 705.63625pt>
+ [22 <./imagenes/havaei2017architecture.png>]
+<imagenes/encoder-decoderIMG.drawio.png, id=547, 785.93625pt x 705.63625pt>
 File: imagenes/encoder-decoderIMG.drawio.png Graphic file (type png)
 <use imagenes/encoder-decoderIMG.drawio.png>
 Package pdftex.def Info: imagenes/encoder-decoderIMG.drawio.png  used on input 
-line 115.
+line 114.
 (pdftex.def)             Requested size: 306.0022pt x 274.74481pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [21 <./imagenes/encoder-decoderIMG.drawio.png>]
-<imagenes/cascadestructure.png, id=456, 717.68124pt x 517.935pt>
+ [23 <./imagenes/encoder-decoderIMG.drawio.png>]
+<imagenes/cascadestructure.png, id=556, 717.68124pt x 517.935pt>
 File: imagenes/cascadestructure.png Graphic file (type png)
 <use imagenes/cascadestructure.png>
-Package pdftex.def Info: imagenes/cascadestructure.png  used on input line 145.
+Package pdftex.def Info: imagenes/cascadestructure.png  used on input line 144.
 
 (pdftex.def)             Requested size: 180.0pt x 129.90228pt.
- [22 <./imagenes/cascadestructure.png>]
-[23]
-<imagenes/myroenko2019.png, id=479, 1144.275pt x 591.20876pt>
+ [24 <./imagenes/cascadestructure.png>]
+[25]
+<imagenes/myroenko2019.png, id=577, 1144.275pt x 591.20876pt>
 File: imagenes/myroenko2019.png Graphic file (type png)
 <use imagenes/myroenko2019.png>
-Package pdftex.def Info: imagenes/myroenko2019.png  used on input line 173.
+Package pdftex.def Info: imagenes/myroenko2019.png  used on input line 172.
 (pdftex.def)             Requested size: 360.0pt x 185.9972pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 174--174
+Underfull \hbox (badness 10000) in paragraph at lines 173--173
 []\OT1/cmr/m/n/10.95 Figura 2.6: []Arquitectura del au-to-en-co-der re-gu-la-ri
 -za-dor de
  []
 
-[24 <./imagenes/myroenko2019.png>]
-<imagenes/latentcorrelationrepresentation.png, id=492, 1165.35374pt x 320.19624
+[26 <./imagenes/myroenko2019.png>]
+<imagenes/latentcorrelationrepresentation.png, id=590, 1165.35374pt x 320.19624
 pt>
 File: imagenes/latentcorrelationrepresentation.png Graphic file (type png)
 <use imagenes/latentcorrelationrepresentation.png>
 Package pdftex.def Info: imagenes/latentcorrelationrepresentation.png  used on 
-input line 205.
+input line 204.
 (pdftex.def)             Requested size: 270.0pt x 74.1859pt.
-<imagenes/zhoufusionmodel.png, id=494, 1191.45125pt x 588.1975pt>
+<imagenes/zhoufusionmodel.png, id=592, 1191.45125pt x 588.1975pt>
 File: imagenes/zhoufusionmodel.png Graphic file (type png)
 <use imagenes/zhoufusionmodel.png>
-Package pdftex.def Info: imagenes/zhoufusionmodel.png  used on input line 213.
+Package pdftex.def Info: imagenes/zhoufusionmodel.png  used on input line 212.
 (pdftex.def)             Requested size: 270.0pt x 133.29008pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [25 <./imagenes/latentcorrelationrepresentation.png>]
-Overfull \hbox (4.81381pt too wide) in paragraph at lines 221--222
+ [27 <./imagenes/latentcorrelationrepresentation.png>]
+Overfull \hbox (4.81381pt too wide) in paragraph at lines 220--221
 []\OT1/cmr/m/n/10.95 El m^^Sodu-lo de ex-pre-si^^Son de la co-rre-la-ci^^Son li
 -neal (LCE) uti-li-za es-tos par^^Same-
  []
 
 
-Overfull \hbox (33.83113pt too wide) detected at line 222
+Overfull \hbox (33.83113pt too wide) detected at line 221
 \OML/cmm/m/it/10.95 F[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 X[]\OMS/cmsy/m/n
 /10.95 j\OML/cmm/m/it/10.95 ^^R[]\OT1/cmr/m/n/10.95 ) = \OML/cmm/m/it/10.95 []
  \OMS/cmsy/m/n/10.95 ^^L \OML/cmm/m/it/10.95 ^^M[]f[]\OT1/cmr/m/n/10.95 (\OML/c
@@ -1361,29 +1382,29 @@ mr/m/n/10.95 = \OML/cmm/m/it/10.95 j \OMS/cmsy/m/n/10.95 6\OT1/cmr/m/n/10.95 =
 0.95 m\OT1/cmr/m/n/10.95 )
  []
 
-<imagenes/zhouarchitecture.png, id=500, 1382.16376pt x 430.60875pt>
+<imagenes/zhouarchitecture.png, id=598, 1382.16376pt x 430.60875pt>
 File: imagenes/zhouarchitecture.png Graphic file (type png)
 <use imagenes/zhouarchitecture.png>
-Package pdftex.def Info: imagenes/zhouarchitecture.png  used on input line 228.
+Package pdftex.def Info: imagenes/zhouarchitecture.png  used on input line 227.
 
 (pdftex.def)             Requested size: 396.0022pt x 123.36867pt.
 
-Overfull \hbox (36.0022pt too wide) in paragraph at lines 228--229
+Overfull \hbox (36.0022pt too wide) in paragraph at lines 227--228
  [][] 
  []
 
 
-Overfull \hbox (35.80962pt too wide) in paragraph at lines 232--233
+Overfull \hbox (35.80962pt too wide) in paragraph at lines 231--232
 []\OT1/cmr/m/n/10.95 Si bien es-ta ar-qui-tec-tu-ra da li-ge-ra-men-te peo-res 
 re-sul-ta-dos que [[]]
  []
 
-[26 <./imagenes/zhoufusionmodel.png> <./imagenes/zhouarchitecture.png>])
-(./capitulos/03_metodologia.tex [27] [28
+[28 <./imagenes/zhoufusionmodel.png> <./imagenes/zhouarchitecture.png>])
+(./capitulos/03_metodologia.tex [29] [30
 
 ]
 Cap\'{\i }tulo 3.
-<imagenes/comparativa_rtx2060tesla.png, id=518, 867.24pt x 578.16pt>
+<imagenes/comparativa_rtx2060tesla.png, id=618, 867.24pt x 578.16pt>
 File: imagenes/comparativa_rtx2060tesla.png Graphic file (type png)
 <use imagenes/comparativa_rtx2060tesla.png>
 Package pdftex.def Info: imagenes/comparativa_rtx2060tesla.png  used on input l
@@ -1392,32 +1413,45 @@ ine 18.
 
 Underfull \vbox (badness 5331) has occurred while \output is active []
 
- [29]
-Overfull \hbox (2.9495pt too wide) in paragraph at lines 34--35
-[]\OT1/cmr/bx/n/10.95 Dimensiones es-tan-da-ri-za-das \OT1/cmr/m/n/10.95 : To-d
-as las re-so-nan-cias (adul-tos, ni~nos,
+ [31]
+Overfull \hbox (2.9495pt too wide) in paragraph at lines 38--39
+[]\OT1/cmr/bx/sc/10.95 Dimensiones es-tan-da-ri-za-das \OT1/cmr/m/n/10.95 : To-
+das las re-so-nan-cias (adul-tos, ni~nos,
  []
 
-[30 <./imagenes/comparativa_rtx2060tesla.png>])
-(./capitulos/04_experimentacion.tex [31] [32
+[32 <./imagenes/comparativa_rtx2060tesla.png>] [33] [34] [35]
+<imagenes/esquema_codificador.png, id=649, 1535.7375pt x 668.4975pt>
+File: imagenes/esquema_codificador.png Graphic file (type png)
+<use imagenes/esquema_codificador.png>
+Package pdftex.def Info: imagenes/esquema_codificador.png  used on input line 1
+20.
+(pdftex.def)             Requested size: 360.0pt x 156.69911pt.
+ [36 <./imagenes/esquema_codificador.png>] [37] [38]) (./capitulos/04_experimen
+tacion.tex
+[39] [40
 
 ]
 Cap\'{\i }tulo 4.
-) [33] [34
+) [41] [42
 
 ]
 Cap\'{\i }tulo 5.
-(./proyecto.bbl [35] [36
+(./proyecto.bbl [43] [44
 
-] [37] [38]) [39] [40
+] [45] [46]) [47] [48
 
 ]
+(./glosario/entradas_glosario.tex)
+No file proyecto.gls.
 
-Package glossaries Warning: No \printglossary or \printglossaries found. 
-(Remove \makeglossaries if you don't want any glossaries.) 
-This document will not have a glossary.
+Overfull \hbox (1.41133pt too wide) in paragraph at lines 1--205
+\OT1/cmr/m/n/10.95 to-tal de la po-bla-ci^^Son en es-tu-dio  new-glos-sar-yentr
+y-maths na-me=mathematics,
+ []
 
-[41] (./proyecto.aux
+[49] [50
+
+] [51] (./proyecto.aux
 LaTeX Info: Redefining \. on input line 28.
 LaTeX Info: Redefining \% on input line 28.
 )
@@ -1425,34 +1459,39 @@ LaTeX Info: Redefining \% on input line 28.
 LaTeX2e <2023-06-01>
 L3 programming layer <2023-06-05>
  ***********
+
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
 Package rerunfilecheck Info: File `proyecto.out' has not changed.
-(rerunfilecheck)             Checksum: 466DF3C4095456E72B9CA2A6A46274DB;4521.
+(rerunfilecheck)             Checksum: 31C3D5F145A02E16669FCA4EA83ED8A3;7797.
  ) 
 Here is how much of TeX's memory you used:
- 20465 strings out of 475735
- 345369 string characters out of 5784786
- 1864759 words of memory out of 5000000
- 40705 multiletter control sequences out of 15000+600000
- 521549 words of font info for 62 fonts, out of 8000000 for 9000
+ 20661 strings out of 475735
+ 348725 string characters out of 5784786
+ 1866759 words of memory out of 5000000
+ 40853 multiletter control sequences out of 15000+600000
+ 521858 words of font info for 63 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 94i,13n,93p,2262b,577s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 94i,13n,93p,2262b,797s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/te
-xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf
--dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti
-10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/latxfont/lasy
-10.pfb>
-Output written on proyecto.pdf (61 pages, 7372445 bytes).
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texlive/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy
+8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/latxfont/lasy10.pfb>
+
+Output written on proyecto.pdf (71 pages, 7468349 bytes).
 PDF statistics:
- 683 PDF objects out of 1000 (max. 8388607)
- 542 compressed objects within 6 object streams
- 172 named destinations out of 1000 (max. 500000)
- 308 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 838 PDF objects out of 1000 (max. 8388607)
+ 682 compressed objects within 7 object streams
+ 212 named destinations out of 1000 (max. 500000)
+ 441 words of extra memory for PDF output out of 10000 (max. 10000000)
 

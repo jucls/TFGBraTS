@@ -139,6 +139,13 @@ Wang, G., Li, W., Ourselin, S., and Vercauteren, T. (2018).
   Conjunction with MICCAI 2017, Quebec City, QC, Canada, September 14, 2017,
   Revised Selected Papers 3}, pages 178--190. Springer.
 
+\bibitem[Zeiler and Fergus, 2014]{zeiler2014visualizing}
+Zeiler, M.~D. and Fergus, R. (2014).
+\newblock Visualizing and understanding convolutional networks.
+\newblock In {\em Computer Vision--ECCV 2014: 13th European Conference, Zurich,
+  Switzerland, September 6-12, 2014, Proceedings, Part I 13}, pages 818--833.
+  Springer.
+
 \bibitem[Zhou et~al., 2021]{zhou2021latent}
 Zhou, T., Canu, S., Vera, P., and Ruan, S. (2021).
 \newblock Latent correlation representation learning for brain tumor

@@ -8,19 +8,20 @@
 \contentsline {figure}{\numberline {1.6}{\ignorespaces Visualización de imágenes MRI de tumores en niños y adultos de origen africano con su segmentación.}}{9}{figure.1.6}%
 \contentsline {figure}{\numberline {1.7}{\ignorespaces Distribución del tejido tumoral en Gliomas.}}{10}{figure.1.7}%
 \contentsline {figure}{\numberline {1.8}{\ignorespaces Distribución del tejido tumoral en Meningiomas.}}{11}{figure.1.8}%
-\contentsline {figure}{\numberline {1.9}{\ignorespaces Interpretación del coeficiente de Similaridad Dice}}{13}{figure.1.9}%
-\contentsline {figure}{\numberline {1.10}{\ignorespaces Distancias de Hausdorff entre dos conjuntos}}{14}{figure.1.10}%
+\contentsline {figure}{\numberline {1.9}{\ignorespaces Interpretación del coeficiente de Similaridad Dice}}{14}{figure.1.9}%
+\contentsline {figure}{\numberline {1.10}{\ignorespaces Distancias de Hausdorff entre dos conjuntos}}{15}{figure.1.10}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Evolución histórica del estado del arte hasta 2021.}}{17}{figure.2.1}%
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Comparación entre arquitecturas de una y múltiples trayectorias. Imagen de \cite {liu2023deep}}}{19}{figure.2.2}%
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Arquitectura de dos vías de \cite {havaei2017brain}}}{20}{figure.2.3}%
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Comparación de distintas arquitecturas encoder-decoder}}{21}{figure.2.4}%
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Estructura de método en cascada de \cite {wang2018automatic}}}{22}{figure.2.5}%
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Arquitectura del autoencoder regularizador de \cite {myronenko20193d}}}{24}{figure.2.6}%
-\contentsline {figure}{\numberline {2.7}{\ignorespaces Arquitectura de \cite {zhou2021latent}}}{25}{figure.2.7}%
-\contentsline {figure}{\numberline {2.8}{\ignorespaces Modelo especializado en la correlación de las modalidades}}{26}{figure.2.8}%
-\contentsline {figure}{\numberline {2.9}{\ignorespaces Red \cite {zhou2021latent} de fusión de representaciones latentes}}{26}{figure.2.9}%
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Evolución histórica del estado del arte hasta 2021.}}{19}{figure.2.1}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Comparación entre arquitecturas de una y múltiples trayectorias. Imagen de \cite {liu2023deep}}}{21}{figure.2.2}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Arquitectura de dos vías de \cite {havaei2017brain}}}{22}{figure.2.3}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Comparación de distintas arquitecturas encoder-decoder}}{23}{figure.2.4}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Estructura de método en cascada de \cite {wang2018automatic}}}{24}{figure.2.5}%
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Arquitectura del autoencoder regularizador de \cite {myronenko20193d}}}{26}{figure.2.6}%
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Arquitectura de \cite {zhou2021latent}}}{27}{figure.2.7}%
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Modelo especializado en la correlación de las modalidades}}{28}{figure.2.8}%
+\contentsline {figure}{\numberline {2.9}{\ignorespaces Red \cite {zhou2021latent} de fusión de representaciones latentes}}{28}{figure.2.9}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Comparativa de rendimiento de las GPU disponibles}}{30}{figure.3.1}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Comparativa de rendimiento de las GPU disponibles}}{32}{figure.3.1}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Esquema de la arquitectura empleada para inicializar el codificador y representación latente}}{36}{figure.3.2}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }

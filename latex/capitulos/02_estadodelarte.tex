@@ -23,8 +23,7 @@ Diferentes dificultades han sido las que a pesar de años de desarrollo aún enc
 	\item \textbf{Sesgo en las etiquetas}. Existen indicios para pensar que las etiquetas proporcionadas pueden presentar ruido. El proceso de segmentado por parte del personal médico 
 	depende de su experiencia profesional lo cual puede llevar a cometer errores. Por ejemplo, se han presentado eventualmente discrepancias entre distintos anotadores: algunos tienden a conectar todas las pequeñas regiones de un tejido mientras que otros las segmentan de forma más precisa y separada. 
 	
-	\item \textbf{Desbalanceo en el tejido} : Dentro de la segmentación entre los diferentes tipos de tejidos, usualmente existe un tejido NCR que es usualmente más pequeño que los otros dos. 
-	Esto podría afectar en el proceso de aprendizaje hacia una pobre generalización de este tipo de tejido. 
+	\item \textbf{Desbalanceo en el tejido} : Dentro de la segmentación entre los diferentes tipos de tejidos, usualmente existe un el tejido enfermo y que compone la lesión tumoral es usualmente más pequeño que el tejido sano. Esto podría afectar en el proceso de aprendizaje creando rechazo a identificar al tejido enfermo. 
 	
 	\item \textbf{Desbalanceo entre pacientes} : En el conjunto de datos tenemos muchos pacientes de norteamerica y de ascendencia blanca, pero pocos de otros origenes como el africano. Además, de tener un sesgo claro de edad ya que existen pocos casos en niños. Esta falta de datos puede impedir que exista una buena generalización para estos casos más aislados.
 	
@@ -121,7 +120,7 @@ Diferentes dificultades han sido las que a pesar de años de desarrollo aún enc
 			
 		\subsection{Métodos que tratan el desbalanceo}
 		
-		Como anunciábamos anteriormente el alto desbalanceo en la dimensión de los diferentes tejidos del tumor (usualmente, ocupando NCR regiones pequeñas, y ED grandes) puede tener un impacto negativo en el proceso de entrenamiento. Motivados por métodos como los sistemas multi-expertos, se empezó a construir métodos específicos para este problema.
+		Como anunciábamos anteriormente el alto desbalanceo de los diferentes tejidos presentes en el cerebro de un paciente puede tener un impacto negativo en el proceso de entrenamiento. Motivados por métodos como los sistemas multi-expertos, se empezó a construir métodos específicos para este problema.
 		
 		Podemos diferenciar en:
 		\begin{enumerate}
