@@ -12,16 +12,36 @@
 \contentsline {figure}{\numberline {1.10}{\ignorespaces Distancias de Hausdorff entre dos conjuntos}}{15}{figure.1.10}%
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Evolución histórica del estado del arte hasta 2021.}}{19}{figure.2.1}%
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Comparación entre arquitecturas de una y múltiples trayectorias. Imagen de \cite {liu2023deep}}}{21}{figure.2.2}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Comparación entre arquitecturas de una y múltiples trayectorias. Imagen de \cite {liu2023deep}}}{22}{figure.2.2}%
 \contentsline {figure}{\numberline {2.3}{\ignorespaces Arquitectura de dos vías de \cite {havaei2017brain}}}{22}{figure.2.3}%
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Comparación de distintas arquitecturas encoder-decoder}}{23}{figure.2.4}%
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Estructura de método en cascada de \cite {wang2018automatic}}}{24}{figure.2.5}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Comparación de distintas arquitecturas encoder-decoder}}{24}{figure.2.4}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Estructura de método en cascada de \cite {wang2018automatic}}}{25}{figure.2.5}%
 \contentsline {figure}{\numberline {2.6}{\ignorespaces Arquitectura del autoencoder regularizador de \cite {myronenko20193d}}}{26}{figure.2.6}%
-\contentsline {figure}{\numberline {2.7}{\ignorespaces Arquitectura de \cite {zhou2021latent}}}{27}{figure.2.7}%
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Arquitectura de \cite {zhou2021latent}}}{28}{figure.2.7}%
 \contentsline {figure}{\numberline {2.8}{\ignorespaces Modelo especializado en la correlación de las modalidades}}{28}{figure.2.8}%
-\contentsline {figure}{\numberline {2.9}{\ignorespaces Red \cite {zhou2021latent} de fusión de representaciones latentes}}{28}{figure.2.9}%
+\contentsline {figure}{\numberline {2.9}{\ignorespaces Red \cite {zhou2021latent} de fusión de representaciones latentes}}{29}{figure.2.9}%
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Comparativa de rendimiento de las GPU disponibles}}{32}{figure.3.1}%
 \contentsline {figure}{\numberline {3.2}{\ignorespaces Esquema de la arquitectura empleada para inicializar el codificador y representación latente}}{36}{figure.3.2}%
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Curva de aprendizaje con ResNet34}}{46}{figure.4.1}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Reconstrucción de las imágenes con ResNet34}}{47}{figure.4.2}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Curva de aprendizaje con Xception}}{48}{figure.4.3}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Reconstrucción de las imágenes con Xception}}{49}{figure.4.4}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Curva de aprendizaje para clasificación parte convolucional congelada}}{50}{figure.4.5}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Curva de aprendizaje para clasificación toda la red descongelada tras ajustar capas densamente conectadas}}{51}{figure.4.6}%
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Curva de aprendizaje para clasificación todo el entrenamiento toda la red descongelada}}{52}{figure.4.7}%
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Matriz de confusión de entrenamiento sin votación}}{52}{figure.4.8}%
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Matriz de confusión de validación sin votación}}{53}{figure.4.9}%
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Matriz de confusión de validación con votación: $Meningiomas < 5$}}{53}{figure.4.10}%
+\contentsline {figure}{\numberline {4.11}{\ignorespaces Matriz de confusión de validación con votación: $Meningiomas < 3$}}{54}{figure.4.11}%
+\contentsline {figure}{\numberline {4.12}{\ignorespaces Matriz de confusión de Test con votación}}{54}{figure.4.12}%
+\contentsline {figure}{\numberline {4.13}{\ignorespaces Curva de aprendizaje para la tarea de segmentación}}{55}{figure.4.13}%
+\contentsline {figure}{\numberline {4.14}{\ignorespaces Comparación de la salida del modelo respecto la real}}{56}{figure.4.14}%
+\contentsline {figure}{\numberline {4.15}{\ignorespaces Distribución de similaridad Dice en el conjunto de validación}}{57}{figure.4.15}%
+\contentsline {figure}{\numberline {4.16}{\ignorespaces Distribución de distancia Hausdorff en el conjunto de validación}}{57}{figure.4.16}%
+\contentsline {figure}{\numberline {4.17}{\ignorespaces Distribución de sensibilidad en el conjunto de validación}}{57}{figure.4.17}%
+\contentsline {figure}{\numberline {4.18}{\ignorespaces Distribución de similaridad Dice en el conjunto de test}}{58}{figure.4.18}%
+\contentsline {figure}{\numberline {4.19}{\ignorespaces Distribución de distancia Hausdorff en el conjunto de test}}{58}{figure.4.19}%
+\contentsline {figure}{\numberline {4.20}{\ignorespaces Distribución de sensibilidad en el conjunto de test}}{58}{figure.4.20}%
 \addvspace {10\p@ }

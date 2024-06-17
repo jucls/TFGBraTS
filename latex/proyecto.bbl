@@ -130,6 +130,13 @@ Myronenko, A. (2019).
   Conjunction with MICCAI 2018, Granada, Spain, September 16, 2018, Revised
   Selected Papers, Part II 4}, pages 311--320. Springer.
 
+\bibitem[Smith and Topin, 2019]{smith2019super}
+Smith, L.~N. and Topin, N. (2019).
+\newblock Super-convergence: Very fast training of neural networks using large
+  learning rates.
+\newblock In {\em Artificial intelligence and machine learning for multi-domain
+  operations applications}, volume 11006, pages 369--386. SPIE.
+
 \bibitem[Wang et~al., 2018]{wang2018automatic}
 Wang, G., Li, W., Ourselin, S., and Vercauteren, T. (2018).
 \newblock Automatic brain tumor segmentation using cascaded anisotropic

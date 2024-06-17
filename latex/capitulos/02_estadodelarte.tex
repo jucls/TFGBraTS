@@ -2,13 +2,19 @@
 
 En este capítulo estudiaremos y analizaremos los diferentes enfoques dados históricamente para nuestras tareas, \textbf{clasificación de tumores cerebrales} y \textbf{la segmentación de tumores cerebrales}. Abordando desde el inicio del estudio del problema pasando por la explosión de métodos basados en Aprendizaje profundo con la constitución de \textbf{BraTS} hasta nuestros días. Se pondrá especial énfasis a las soluciones actuales comparándolas desde sus diferencias en metodología y perspectiva.
 
-Por un lado, la clasificación entre los dos tipos de tumores no es tan relevante a la hora de diseñar un sistema de ayuda a la toma de decisión ya que clínicamente sí existe una característica diferencial entre ambos, su \textbf{localización}. Los meningiomas aparecen entre el cráneo y el cerebro no internamente en el cerebro como los glioblastomas. Esto hace que un médico pueda distinguirlos sin requerir una gran asistencia para la mayoría de los casos. No obstante, la clasificación de por sí ayuda a la toma de decisiones en el tratamiento pero no es el elemento crítico para la supervivencia del paciente que depende de la eliminación del tumor donde su segmentación toma un papel crucial. Por esto, veremos como el estado del arte del problema de segmentación es mucho mayor que el del problema de clasificación.
+Por un lado, la clasificación entre los dos tipos de tumores no es tan relevante a la hora de diseñar un sistema de ayuda a la toma de decisión ya que clínicamente sí existe una característica diferencial entre ambos, su \textbf{localización}. Los meningiomas aparecen entre el cráneo y el cerebro no internamente en el cerebro como los glioblastomas. Esto hace que un médico pueda distinguirlos sin requerir una gran asistencia para la mayoría de los casos. No obstante, la clasificación puede ayudar a la toma de decisiones en el tratamiento ya que debido a la naturaleza difusa de los glioblastomas estos pueden aparecer en la misma localización que algunos meningiomas y pueden ser confundidos. Sin embargo, la clasificación entre tipos de tumores no es el elemento crítico para la supervivencia del paciente que depende de la eliminación del tumor donde su segmentación toma un papel crucial. Por esto, veremos como el estado del arte del problema de segmentación es mucho mayor que el del problema de clasificación.
 
 Por otro lado, la tarea de predicción de la evolución del tumor debido a la baja densidad de instancias temporales de los datos existentes hacen que este problema no sea tratado en trabajos. No hemos encontrado literatura al respecto. 
 
 Los grandes esfuerzos se han realizado en entorno a la segmentación, ya que otras tareas que conforman su diagnóstico se verían arrastradas.
 
 \section{Revisión histórica de clasificación binaria de tumores}
+
+Dentro de los problemas de clasificación que se pueden plantear para caracterizar a los tumores cerebrales se pueden encontrar clasificación multi-clase para diferenciar entre tipos de tumores (glioblastomas, meningiomas u otros tumores más raros y menos frecuentes) o clasificación multi-grado (low- or high- grade) para caracterizar el estado de avance del tumor.
+
+En este trabajo solo nos centraremos en clasificación multi-clase para los dos tipos de tumores más frecuentes y de los que disponemos de etiquetas por BraTS, glioblastomas y meningiomas.
+
+A continuación, se pretende recoger los trabajos más relevantes realizados entorno a esta clasificación multi-clase ordenados en el tiempo, haciendo especialmente hincapié en las soluciones basadas en aprendizaje profundo. 
 
 \section{Revisión histórica de segmentación}
 
@@ -73,7 +79,7 @@ Diferentes dificultades han sido las que a pesar de años de desarrollo aún enc
 				
 				\begin{figure}[H]
 					\centering
-					\includegraphics[width=0.27\linewidth]{imagenes/comparisonsinglemultipleCNN.png}
+					\includegraphics[width=0.5\linewidth]{imagenes/comparisonsinglemultipleCNN.png}
 					\caption{Comparación entre arquitecturas de una y múltiples trayectorias. Imagen de \cite{liu2023deep}}
 				\end{figure}
 				
@@ -231,9 +237,9 @@ Diferentes dificultades han sido las que a pesar de años de desarrollo aún enc
 		Si bien esta arquitectura da ligeramente peores resultados que \cite{myronenko20193d} define un paso más en el estado del arte al usar menos recursos computacionales.
 
 
-\section{Enfoques actuales para la segmentación}
+\section{Nuevas enfoques para la segmentación}
 
-	Las soluciones más relavantes presentadas en la revisión histórica que se ha hecho anteriormente se basan en la aplicación de la convolución sobre las imágenes de resonancia magnética. En el diagnóstico de tumores cerebrales ha tenido largo recorrido el uso de redes neuronales convolucionales. 
+	Las soluciones más relevantes presentadas en la revisión histórica que se ha hecho anteriormente se basan en la aplicación de la convolución sobre las imágenes de resonancia magnética. En el diagnóstico de tumores cerebrales ha tenido largo recorrido el uso de redes neuronales convolucionales. 
 	
 	Con la inclusión de las arquitecturas transformadoras se planteó un nuevo modelo que podía traer ventajas significativas. No siendo la imagen médica y en concreto este problema una excepción.
 	
@@ -245,4 +251,6 @@ Diferentes dificultades han sido las que a pesar de años de desarrollo aún enc
 	
 	A continuación, se presentan las soluciones principales que hacen uso de una arquitectura basada en Transformers para la segmentación de tumores cerebrales.
 	
-		\subsubsection{}
+	\subsubsection{}
+	
+	\subsection{Basados en aprendizaje no supervisado}

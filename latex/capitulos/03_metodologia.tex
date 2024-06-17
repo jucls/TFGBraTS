@@ -128,7 +128,11 @@ En términos del proceso de optimización que es el entrenamiento, de forma no s
 
 Esta razón explica de forma teórica como un proceso de ajuste previo al conjunto de entrenamiento elimina el coste computacional de búsqueda de los pesos via descenso del gradiente y backpropagation que require el ajuste de la red por sí misma a las imágenes sólo a partir de las etiquetas. 
 
+\subsection{Uso de transfer learning}
+
 \subsection{Modelo de clasificación}
+
+\subsubsection{Esquema de votación}
 
 \subsection{Modelo de segmentación}
 
@@ -136,7 +140,7 @@ Esta razón explica de forma teórica como un proceso de ajuste previo al conjun
 
 En el siguiente apartado detallaremos los módulos y capas que componen a las arquitecturas así como las componentes importantes. 
 
-\subsection{Funciones de activación}
+\subsection{Función de activación}
 
 Para todas las arquitecturas (segmentación, clasificación y el autoencoder para construir el codificador), se optará por el uso de la función de activación ReLU (Rectified Linear Unit), definida como:
 
@@ -170,6 +174,8 @@ La elección de ReLU como función de activación común a través de estas arqu
 
 \subsection{Construcción del codificador y representación latente}
 
+\subsubsection{Reducción de canales}
+
 \subsection{Arquitectura para clasificación}
 
 \subsection{Arquitectura para segmentación}
@@ -196,11 +202,88 @@ También usaremos la misma pérdida como métrica de bondad de ajuste del modelo
 
 \subsubsection{Función de pérdida para clasificación}
 
+Focal Loss es una función de pérdida que se ha demostrado ser particularmente efectiva para problemas de clasificación, especialmente en contextos donde hay un desequilibrio en las clases o cuando algunas muestras son más difíciles de clasificar que otras. Tras el procesamiento de datos, no existe un desbalanceo de datos grande. Sin embargo, la naturaleza de los tumores hacen que existan imágenes muy variables entre sí (con distinto grado de dificultad de optimización) es por ello que se opta por una pérdida que tenga algún mecanismo de control sobre esto. A continuación se explica por qué la Focal Loss puede ser mejor que la tradicional Cross Entropy Loss, especialmente en el contexto de datos con diferentes niveles de dificultad:
+
+La Cross Entropy Loss es la función de pérdida estándar para problemas de clasificación y se define como:
+$$  {\text{CE}} = - y_i \log(p_i) $$
+$$  L_{\text{CE}} = - \sum_{i=1}^N y_i \log(p_i) $$
+
+donde $y_i$ es la etiqueta verdadera y $p_i$ es la probabilidad predicha de la clase correcta. Aunque es efectiva, tiene algunas limitaciones:
+\begin{enumerate}
+	\item \textbf{Tratamiento Igualitario de todos los ejemplos}: Cross Entropy Loss trata todos los ejemplos de entrenamiento por igual, sin importar si son fáciles o difíciles de clasificar.
+	\item \textbf{Sensibilidad al desbalanceo de clases}: No maneja bien los datos desbalanceados, donde algunas clases son mucho más frecuentes que otras.
+\end{enumerate}
+
+Focal Loss, propuesta por \cite{lin2017focal}, introduce un término adicional para enfocar el entrenamiento en ejemplos más difíciles. Se define como:
+
+$$ {\text{FL}} = - \alpha (1 - p_t)^\gamma \log(p_t) $$
+$$ L_{\text{FL}} = - \sum_{i=1}^N \alpha_t (1 - p_{t_i})^\gamma \log(p_{t_i})$$
+
+donde $p_t$ es la probabilidad predicha de la clase correcta, $\alpha$ es un factor de ponderación para balancear la importancia de las clases, y $\gamma$ es el parámetro de focalización. Se puede desarrollar su principal ventaja:
+
+\begin{enumerate}
+	\item \textbf{Enfoque en ejemplos difíciles}: El término $(1 - p_t)^\gamma$ reduce la pérdida para los ejemplos bien clasificados (donde $p_t$ es alto) y mantiene alta la pérdida para los ejemplos mal clasificados (donde $p_t$ es bajo).
+	
+	\begin{enumerate}
+		\item Cuando un ejemplo es fácil de clasificar ($p_t$ es alto), el término $(1 - p_t)^\gamma$ es pequeño, reduciendo su contribución a la pérdida total.
+		\item Cuando un ejemplo es difícil de clasificar ($p_t$ es bajo), el término $(1 - p_t)^\gamma$ es grande, incrementando su contribución a la pérdida total.
+	\end{enumerate}
+	
+	\item \textbf{Parámetro de Focalización}: El parámetro $\gamma$ ajusta el grado de focalización. Con $\gamma=0$, Focal Loss se reduce a la Cross Entropy Loss. Valores más altos de $\gamma$ incrementan el enfoque en los ejemplos difíciles.
+	
+	\item \textbf{Reducción del impacto de ejemplos fáciles}: Dado que los ejemplos fáciles no dominan el gradiente debido al término de focalización, el modelo no se sesga hacia las clases dominantes o los ejemplos que ya son bien clasificados.
+	
+\end{enumerate}
+
+Esto implica los siguientes beneficios cuando existen datos de diferente dificultad.
+
+\begin{enumerate}
+	\item \textbf{Mejora del rendimiento general}: En muchos problemas de clasificación, hay ejemplos que son intrínsecamente difíciles de clasificar debido a la superposición de clases, ruido en los datos, o características ambiguas. Focal Loss ayuda a mejorar el rendimiento general del modelo al hacer que el modelo preste más atención a estos ejemplos difíciles durante el entrenamiento.
+	
+	\item \textbf{Mejor manejo de outliers}: Al reducir la contribución de ejemplos fáciles a la pérdida total, Focal Loss puede ayudar a mitigar el impacto de outliers o ejemplos atípicos que podrían desviar el modelo cuando se usa Cross Entropy Loss.
+	
+	\item \textbf{Robustez en modelos de gran escala}: En problemas similares como la detección de objetos en imágenes, donde el desequilibrio entre fondo y objeto puede ser significativo y algunos objetos son más difíciles de detectar que otros, Focal Loss ha demostrado ser particularmente útil.
+	
+\end{enumerate}
+
+Focal Loss es una mejora sobre Cross Entropy Loss al proporcionar un mecanismo para enfocarse en ejemplos díficiles tales como imágenes donde los tumores sean pequeños. Con la gran en este problema de que realmente no queremos principalmente predecir muy bien la mayoría de ejemplos sino ser precisos en los ejemplos especialmente difíciles también para el personal médico. Por todo ello, se opta por utilizar \text{Focal Loss} para la primera tarea de clasificación.
+
 \subsubsection{Función de pérdida para segmentación}
+
+Como función de pérdida en segmentación se escoge el complemento negativo de su métrica más importante \textbf{similaridad Dice}: \textbf{Dice Loss}. Dice Loss se define como:
+
+$$ L_{dice} = 1 - Dice(A, B) $$
+
+Por lo tanto,  \textbf{Dice Loss} varía entre 0 y 1, donde 0 indica una superposición perfecta y 1 indica ninguna superposición (es decir, pérdida máxima).
+
+Podemos enumerar las características que hacen de Dice Loss una de las pérdida más acertadas para la segmentación de tumores cerebrales. 
+
+\begin{enumerate}
+	\item \textbf{Sensibilidad a pequeñas áreas}: En la segmentación de tumores cerebrales, es crucial detectar incluso pequeñas regiones de tumores. El Dice Loss está diseñado para ser sensible a estas pequeñas áreas de superposición, lo que permite que el modelo se entrene para identificar y segmentar con precisión los bordes y áreas menos visibles del tumor.
+	
+	\item \textbf{Interpretabilidad clínica directa}: El coeficiente de similaridad Dice, en el que se basa el Dice Loss, proporciona una medida directa de cuán bien la predicción del modelo coincide con la realidad clínica. Esta métrica es intuitiva para los profesionales de la salud, ya que refleja la precisión de la segmentación en términos de superposición de áreas tumorales detectadas.
+	
+	\item \textbf{Robustez ante desbalanceo en la distribución de clases}: Los tumores cerebrales pueden representar solo una pequeña fracción de la imagen total, lo que genera desequilibrios en la distribución de clases. Dice Loss maneja este desequilibrio al penalizar menos la falta de predicción en áreas dominadas por el tejido cerebral normal, centrándose en mejorar la detección precisa de los tumores.
+	
+	\item \textbf{Optimización efectiva en el entrenamiento}: El uso de Dice Loss proporciona una superficie de optimización más suave y estable durante el entrenamiento de modelos de segmentación que otras pérdidas. Esto facilita la convergencia del modelo y reduce la necesidad de ajustes complejos de hiperparámetros, mejorando así la eficiencia del entrenamiento y la calidad de las segmentaciones obtenidas.
+\end{enumerate}
+
 
 \subsection{One-Cycle Policy}
 
+La \textbf{política 1cycle} fue propuesta por \cite{smith2019super}, y es una técnica de programación de tasas de aprendizaje para mejorar el rendimiento del entrenamiento de redes neuronales. El objetivo principal es encontrar tasas de aprendizaje que aceleren el entrenamiento y mejoren la generalización del modelo. También ajusta la tasa de aprendizaje durante el entrenamiento de manera específica en función del número de iteraciones. Esta utiliza un ciclo de entrenamiento único en lugar de tasas de aprendizaje fijas durante todo el entrenamiento. Durante este ciclo, la tasa de aprendizaje varía de manera cíclica desde un valor inicial hasta un valor máximo y luego vuelve a descender.
 
-\section{Validación y garantías}
+En la primera mitad del ciclo, la tasa de aprendizaje aumenta gradualmente desde un valor inicial hasta un valor máximo. Este aumento permite una exploración más rápida del espacio de parámetros y puede ayudar a escapar de mínimos locales subóptimos. En la segunda mitad del ciclo, la tasa de aprendizaje disminuye gradualmente desde el valor máximo hasta el valor inicial. Esto permite una refinación más precisa de los pesos del modelo y una convergencia más estable hacia el mínimo global.
 
-\section{Solución teórica a la predicción de la evolución}
+Además de ajustar la tasa de aprendizaje, la política 1cycle también propone variar el \textbf{momentum} (una técnica que ayuda a acelerar el entrenamiento). El momentum se incrementa en la fase de aumento y disminuye en la fase de descenso.
+
+La política 1cycle también actúa como una forma de regularización. El uso de tasas de aprendizaje más altas en la fase de aumento y más bajas en la fase de descenso puede ayudar a prevenir el sobreajuste. También sugiere seleccionar los valores iniciales y máximos de la tasa de aprendizaje de manera específica. El valor máximo de la tasa de aprendizaje se elige típicamente como un valor que es varias veces mayor que el valor inicial.
+
+La duración total del ciclo puede variar, pero en general, se sugiere que sea aproximadamente igual al número total de épocas de entrenamiento.
+La \textbf{política 1cycle} ha demostrado ser efectiva en mejorar la convergencia y la generalización en una variedad de tareas y arquitecturas de redes neuronales. Sin embargo, la selección precisa de los parámetros, como las tasas de aprendizaje inicial y máxima requiere ajustes específicos para cada objetivo y conjunto de datos.
+
+En este trabajo usaremos esta política como forma de regularización y como método general para evitar la búsqueda de hiperparámetros manual para el proceso de aprendizaje. Para ello, en todo el trabajo sólo usaremos las llamadas a las funciones \texttt{fit\_one\_cycle()} para entrenar toda las capas de la red y \texttt{fine\_tune()} para cuando necesitemos diferenciar qué épocas entrenar toda la red (incluyendo la parte convolucional) o solo la parte densamente conectada. Ambas funciones de \textbf{Fastai} que implementan la política 1cycle. 
+
+\section{Métricas y validación}
+
+\section{Desarrollo para la predicción de la evolución}

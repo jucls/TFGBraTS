@@ -17,12 +17,13 @@
 \contentsline {subsection}{\numberline {2.2.2}Métodos que tratan el desbalanceo}{24}{subsection.2.2.2}%
 \contentsline {subsubsection}{Redes en cascada}{24}{section*.13}%
 \contentsline {subsubsection}{Ensamblado de modelos}{25}{section*.14}%
-\contentsline {subsubsection}{Arquitecturas multi-tarea}{25}{section*.15}%
-\contentsline {subsubsection}{Funciones de pérdida especializadas}{26}{section*.16}%
+\contentsline {subsubsection}{Arquitecturas multi-tarea}{26}{section*.15}%
+\contentsline {subsubsection}{Funciones de pérdida especializadas}{27}{section*.16}%
 \contentsline {subsection}{\numberline {2.2.3}Métodos que tratan la información multi-modal}{27}{subsection.2.2.3}%
-\contentsline {section}{\numberline {2.3}Enfoques actuales para la segmentación}{29}{section.2.3}%
+\contentsline {section}{\numberline {2.3}Nuevas enfoques para la segmentación}{29}{section.2.3}%
 \contentsline {subsection}{\numberline {2.3.1}Basados en Transformers}{29}{subsection.2.3.1}%
-\contentsline {subsubsection}{}{29}{section*.17}%
+\contentsline {subsubsection}{}{30}{section*.17}%
+\contentsline {subsection}{\numberline {2.3.2}Basados en aprendizaje no supervisado}{30}{subsection.2.3.2}%
 \contentsline {chapter}{\numberline {3}Metodología}{31}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Análisis de los recursos disponibles}{31}{section.3.1}%
 \contentsline {section}{\numberline {3.2}Preprocesado de Datos}{32}{section.3.2}%
@@ -32,23 +33,32 @@
 \contentsline {subsection}{\numberline {3.2.4}Undersampling}{34}{subsection.3.2.4}%
 \contentsline {section}{\numberline {3.3}Elección de modelos}{35}{section.3.3}%
 \contentsline {subsection}{\numberline {3.3.1}Codificador y representación latente}{35}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}Modelo de clasificación}{37}{subsection.3.3.2}%
-\contentsline {subsection}{\numberline {3.3.3}Modelo de segmentación}{37}{subsection.3.3.3}%
+\contentsline {subsection}{\numberline {3.3.2}Uso de transfer learning}{37}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}Modelo de clasificación}{37}{subsection.3.3.3}%
+\contentsline {subsubsection}{Esquema de votación}{37}{section*.18}%
+\contentsline {subsection}{\numberline {3.3.4}Modelo de segmentación}{37}{subsection.3.3.4}%
 \contentsline {section}{\numberline {3.4}Diseño de las arquitecturas}{37}{section.3.4}%
-\contentsline {subsection}{\numberline {3.4.1}Funciones de activación}{37}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.1}Función de activación}{37}{subsection.3.4.1}%
 \contentsline {subsection}{\numberline {3.4.2}Construcción del codificador y representación latente}{38}{subsection.3.4.2}%
+\contentsline {subsubsection}{Reducción de canales}{38}{section*.19}%
 \contentsline {subsection}{\numberline {3.4.3}Arquitectura para clasificación}{38}{subsection.3.4.3}%
 \contentsline {subsection}{\numberline {3.4.4}Arquitectura para segmentación}{38}{subsection.3.4.4}%
 \contentsline {section}{\numberline {3.5}Optimización de las arquitecturas}{38}{section.3.5}%
 \contentsline {subsection}{\numberline {3.5.1}Optimizador}{38}{subsection.3.5.1}%
 \contentsline {subsection}{\numberline {3.5.2}Funciones de pérdida}{38}{subsection.3.5.2}%
-\contentsline {subsubsection}{Función de pérdida para la reconstrucción de imágenes}{38}{section*.18}%
-\contentsline {subsubsection}{Función de pérdida para clasificación}{39}{section*.19}%
-\contentsline {subsubsection}{Función de pérdida para segmentación}{39}{section*.20}%
-\contentsline {subsection}{\numberline {3.5.3}One-Cycle Policy}{39}{subsection.3.5.3}%
-\contentsline {section}{\numberline {3.6}Validación y garantías}{39}{section.3.6}%
-\contentsline {section}{\numberline {3.7}Solución teórica a la predicción de la evolución}{39}{section.3.7}%
-\contentsline {chapter}{\numberline {4}Experimentación}{41}{chapter.4}%
-\contentsline {chapter}{\numberline {5}Conclusiones y Trabajos Futuros}{43}{chapter.5}%
-\contentsline {chapter}{Bibliografía}{43}{chapter.5}%
-\contentsline {chapter}{Glosario}{49}{appendix*.22}%
+\contentsline {subsubsection}{Función de pérdida para la reconstrucción de imágenes}{38}{section*.20}%
+\contentsline {subsubsection}{Función de pérdida para clasificación}{39}{section*.21}%
+\contentsline {subsubsection}{Función de pérdida para segmentación}{41}{section*.22}%
+\contentsline {subsection}{\numberline {3.5.3}One-Cycle Policy}{42}{subsection.3.5.3}%
+\contentsline {section}{\numberline {3.6}Métricas y validación}{43}{section.3.6}%
+\contentsline {section}{\numberline {3.7}Desarrollo para la predicción de la evolución}{43}{section.3.7}%
+\contentsline {chapter}{\numberline {4}Experimentación}{45}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Bibliotecas y desarrollo de los experimentos}{45}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Construcción del codificador y representación latente}{46}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Arquitecturas con conexiones residuales: ResNet34}{46}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Arquitecturas con filtros con distinto tamaño: Xception}{48}{subsection.4.2.2}%
+\contentsline {section}{\numberline {4.3}Clasificación}{49}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Segmentación}{55}{section.4.4}%
+\contentsline {chapter}{\numberline {5}Conclusiones y Trabajos Futuros}{59}{chapter.5}%
+\contentsline {chapter}{Bibliografía}{59}{chapter.5}%
+\contentsline {chapter}{Glosario}{65}{appendix*.24}%
