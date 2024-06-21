@@ -1,5 +1,13 @@
 \begin{thebibliography}{}
 
+\bibitem[Abiwinanda et~al., 2019]{abiwinanda2019brain}
+Abiwinanda, N., Hanif, M., Hesaputra, S.~T., Handayani, A., and Mengko, T.~R.
+  (2019).
+\newblock Brain tumor classification using convolutional neural network.
+\newblock In {\em World Congress on Medical Physics and Biomedical Engineering
+  2018: June 3-8, 2018, Prague, Czech Republic (Vol. 1)}, pages 183--189.
+  Springer.
+
 \bibitem[Baid et~al., 2021]{baid2021rsna}
 Baid, U., Ghodasara, S., Mohan, S., Bilello, M., Calabrese, E., Colak, E.,
   Farahani, K., Kalpathy-Cramer, J., Kitamura, F.~C., Pati, S., et~al. (2021).
@@ -34,13 +42,6 @@ cancer.org (2024).
 \newblock American cancer society, cancer statistics center.
 \newblock 17 de marzo de 2024.
 
-\bibitem[Cao et~al., 2022]{cao2022swin}
-Cao, H., Wang, Y., Chen, J., Jiang, D., Zhang, X., Tian, Q., and Wang, M.
-  (2022).
-\newblock Swin-unet: Unet-like pure transformer for medical image segmentation.
-\newblock In {\em European conference on computer vision}, pages 205--218.
-  Springer.
-
 \bibitem[Chang, 2016]{chang2016fully}
 Chang, P.~D. (2016).
 \newblock Fully convolutional deep residual neural networks for brain tumor
@@ -51,22 +52,78 @@ Chang, P.~D. (2016).
   2016, Athens, Greece, October 17, 2016, Revised Selected Papers 2}, pages
   108--118. Springer.
 
+\bibitem[Chen et~al., 2021]{chen2021transunet}
+Chen, J., Lu, Y., Yu, Q., Luo, X., Adeli, E., Wang, Y., Lu, L., Yuille, A.~L.,
+  and Zhou, Y. (2021).
+\newblock Transunet: Transformers make strong encoders for medical image
+  segmentation.
+\newblock {\em arXiv preprint arXiv:2102.04306}.
+
+\bibitem[Cheng et~al., 2015]{cheng2015enhanced}
+Cheng, J., Huang, W., Cao, S., Yang, R., Yang, W., Yun, Z., Wang, Z., and Feng,
+  Q. (2015).
+\newblock Enhanced performance of brain tumor classification via tumor region
+  augmentation and partition.
+\newblock {\em PloS one}, 10(10):e0140381.
+
+\bibitem[Cheng et~al., 2016]{cheng2016retrieval}
+Cheng, J., Yang, W., Huang, M., Huang, W., Jiang, J., Zhou, Y., Yang, R., Zhao,
+  J., Feng, Y., Feng, Q., et~al. (2016).
+\newblock Retrieval of brain tumors by adaptive spatial pooling and fisher
+  vector representation.
+\newblock {\em PloS one}, 11(6):e0157112.
+
 \bibitem[Cheng et~al., 2022]{cheng2022vinci}
 Cheng, Q., Dong, Y., et~al. (2022).
 \newblock Da vinci robot-assisted video image processing under artificial
   intelligence vision processing technology.
 \newblock {\em Computational and Mathematical Methods in Medicine}, 2022.
 
+\bibitem[D{\'\i}az-Pernas et~al., 2021]{diaz2021deep}
+D{\'\i}az-Pernas, F.~J., Mart{\'\i}nez-Zarzuela, M., Ant{\'o}n-Rodr{\'\i}guez,
+  M., and Gonz{\'a}lez-Ortega, D. (2021).
+\newblock A deep learning approach for brain tumor classification and
+  segmentation using a multiscale convolutional neural network.
+\newblock In {\em Healthcare}, volume~9, page 153. MDPI.
+
 \bibitem[Dominic~LaBella, 2023]{labella2023asnrmiccai}
 Dominic~LaBella, e.~a. (2023).
 \newblock The asnr-miccai brain tumor segmentation (brats) challenge 2023:
   Intracranial meningioma.
+
+\bibitem[Ferreira et~al., 2024]{ferreira2024we}
+Ferreira, A., Solak, N., Li, J., Dammann, P., Kleesiek, J., Alves, V., and
+  Egger, J. (2024).
+\newblock How we won brats 2023 adult glioma challenge? just faking it!
+  enhanced synthetic data augmentation and model ensemble for brain tumour
+  segmentation.
+\newblock {\em arXiv preprint arXiv:2402.17317}.
+
+\bibitem[Hatamizadeh et~al., 2021]{hatamizadeh2021swin}
+Hatamizadeh, A., Nath, V., Tang, Y., Yang, D., Roth, H.~R., and Xu, D. (2021).
+\newblock Swin unetr: Swin transformers for semantic segmentation of brain
+  tumors in mri images.
+\newblock In {\em International MICCAI Brainlesion Workshop}, pages 272--284.
+  Springer.
 
 \bibitem[Havaei et~al., 2017]{havaei2017brain}
 Havaei, M., Davy, A., Warde-Farley, D., Biard, A., Courville, A., Bengio, Y.,
   Pal, C., Jodoin, P.-M., and Larochelle, H. (2017).
 \newblock Brain tumor segmentation with deep neural networks.
 \newblock {\em Medical image analysis}, 35:18--31.
+
+\bibitem[He et~al., 2016]{he2016deep}
+He, K., Zhang, X., Ren, S., and Sun, J. (2016).
+\newblock Deep residual learning for image recognition.
+\newblock In {\em Proceedings of the IEEE conference on computer vision and
+  pattern recognition}, pages 770--778.
+
+\bibitem[Ioffe and Szegedy, 2015]{ioffe2015batch}
+Ioffe, S. and Szegedy, C. (2015).
+\newblock Batch normalization: Accelerating deep network training by reducing
+  internal covariate shift.
+\newblock In {\em International conference on machine learning}, pages
+  448--456. pmlr.
 
 \bibitem[Isensee et~al., 2018]{isensee2018brain}
 Isensee, F., Kickingereder, P., Wick, W., Bendszus, M., and Maier-Hein, K.~H.
@@ -104,11 +161,24 @@ Kamnitsas, K., Ledig, C., Newcombe, V.~F., Simpson, J.~P., Kane, A.~D., Menon,
   brain lesion segmentation.
 \newblock {\em Medical image analysis}, 36:61--78.
 
+\bibitem[Kingma and Ba, 2014]{kingma2014adam}
+Kingma, D.~P. and Ba, J. (2014).
+\newblock Adam: A method for stochastic optimization.
+\newblock {\em arXiv preprint arXiv:1412.6980}.
+
 \bibitem[Lin et~al., 2017]{lin2017focal}
 Lin, T.-Y., Goyal, P., Girshick, R., He, K., and Doll{\'a}r, P. (2017).
 \newblock Focal loss for dense object detection.
 \newblock In {\em Proceedings of the IEEE international conference on computer
   vision}, pages 2980--2988.
+
+\bibitem[Liu et~al., 2021]{liu2021swin}
+Liu, Z., Lin, Y., Cao, Y., Hu, H., Wei, Y., Zhang, Z., Lin, S., and Guo, B.
+  (2021).
+\newblock Swin transformer: Hierarchical vision transformer using shifted
+  windows.
+\newblock In {\em Proceedings of the IEEE/CVF international conference on
+  computer vision}, pages 10012--10022.
 
 \bibitem[Liu et~al., 2023]{liu2023deep}
 Liu, Z., Tong, L., Chen, L., Jiang, Z., Zhou, F., Zhang, Q., Zhang, X., Jin,
@@ -130,12 +200,38 @@ Myronenko, A. (2019).
   Conjunction with MICCAI 2018, Granada, Spain, September 16, 2018, Revised
   Selected Papers, Part II 4}, pages 311--320. Springer.
 
+\bibitem[Pashaei et~al., 2018]{pashaei2018brain}
+Pashaei, A., Sajedi, H., and Jazayeri, N. (2018).
+\newblock Brain tumor classification via convolutional neural network and
+  extreme learning machines.
+\newblock In {\em 2018 8th International conference on computer and knowledge
+  engineering (ICCKE)}, pages 314--319. IEEE.
+
+\bibitem[Ronneberger et~al., 2015]{ronneberger2015u}
+Ronneberger, O., Fischer, P., and Brox, T. (2015).
+\newblock U-net: Convolutional networks for biomedical image segmentation.
+\newblock In {\em Medical image computing and computer-assisted
+  intervention--MICCAI 2015: 18th international conference, Munich, Germany,
+  October 5-9, 2015, proceedings, part III 18}, pages 234--241. Springer.
+
 \bibitem[Smith and Topin, 2019]{smith2019super}
 Smith, L.~N. and Topin, N. (2019).
 \newblock Super-convergence: Very fast training of neural networks using large
   learning rates.
 \newblock In {\em Artificial intelligence and machine learning for multi-domain
   operations applications}, volume 11006, pages 369--386. SPIE.
+
+\bibitem[Srinivasan et~al., 2021]{srinivasan2021performance}
+Srinivasan, K., Garg, L., Datta, D., Alaboudi, A.~A., Jhanjhi, N., Agarwal, R.,
+  and Thomas, A.~G. (2021).
+\newblock Performance comparison of deep cnn models for detecting driver’s
+  distraction.
+\newblock {\em CMC-Computers, Materials \& Continua}, 68(3):4109--4124.
+
+\bibitem[Sultan et~al., 2019]{sultan2019multi}
+Sultan, H.~H., Salem, N.~M., and Al-Atabany, W. (2019).
+\newblock Multi-classification of brain tumor images using deep neural network.
+\newblock {\em IEEE access}, 7:69215--69225.
 
 \bibitem[Wang et~al., 2018]{wang2018automatic}
 Wang, G., Li, W., Ourselin, S., and Vercauteren, T. (2018).
@@ -145,6 +241,12 @@ Wang, G., Li, W., Ourselin, S., and Vercauteren, T. (2018).
   Brain Injuries: Third International Workshop, BrainLes 2017, Held in
   Conjunction with MICCAI 2017, Quebec City, QC, Canada, September 14, 2017,
   Revised Selected Papers 3}, pages 178--190. Springer.
+
+\bibitem[Wenxuan et~al., 2021]{wenxuan2021transbts}
+Wenxuan, W., Chen, C., Meng, D., Hong, Y., Sen, Z., and Jiangyun, L. (2021).
+\newblock Transbts: Multimodal brain tumor segmentation using transformer.
+\newblock In {\em International Conference on Medical Image Computing and
+  Computer-Assisted Intervention, Springer}, pages 109--119.
 
 \bibitem[Zeiler and Fergus, 2014]{zeiler2014visualizing}
 Zeiler, M.~D. and Fergus, R. (2014).

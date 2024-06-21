@@ -1,57 +1,110 @@
 \chapter{Estado del arte}
 
-En este capítulo estudiaremos y analizaremos los diferentes enfoques dados históricamente para nuestras tareas, \textbf{clasificación de tumores cerebrales} y \textbf{la segmentación de tumores cerebrales}. Abordando desde el inicio del estudio del problema pasando por la explosión de métodos basados en Aprendizaje profundo con la constitución de \textbf{BraTS} hasta nuestros días. Se pondrá especial énfasis a las soluciones actuales comparándolas desde sus diferencias en metodología y perspectiva.
+En este capítulo estudiaremos y analizaremos los diferentes enfoques presentados históricamente en la literatura para nuestros objetivos, \textbf{clasificación de tumores cerebrales} y \textbf{la segmentación de tumores cerebrales}. Abordando desde el inicio del estudio del problema pasando por la explosión de métodos basados en Aprendizaje profundo con la construcción de \textbf{BraTS} hasta nuestros días. Se pondrá especial énfasis a las soluciones actuales comparándolas desde sus diferencias en metodología y perspectiva.
 
 Por un lado, la clasificación entre los dos tipos de tumores no es tan relevante a la hora de diseñar un sistema de ayuda a la toma de decisión ya que clínicamente sí existe una característica diferencial entre ambos, su \textbf{localización}. Los meningiomas aparecen entre el cráneo y el cerebro no internamente en el cerebro como los glioblastomas. Esto hace que un médico pueda distinguirlos sin requerir una gran asistencia para la mayoría de los casos. No obstante, la clasificación puede ayudar a la toma de decisiones en el tratamiento ya que debido a la naturaleza difusa de los glioblastomas estos pueden aparecer en la misma localización que algunos meningiomas y pueden ser confundidos. Sin embargo, la clasificación entre tipos de tumores no es el elemento crítico para la supervivencia del paciente que depende de la eliminación del tumor donde su segmentación toma un papel crucial. Por esto, veremos como el estado del arte del problema de segmentación es mucho mayor que el del problema de clasificación.
 
-Por otro lado, la tarea de predicción de la evolución del tumor debido a la baja densidad de instancias temporales de los datos existentes hacen que este problema no sea tratado en trabajos. No hemos encontrado literatura al respecto. 
+Por otro lado, la tarea de predicción de la evolución del tumor debido a la baja densidad de instancias temporales de los datos existentes hacen que este problema no sea tratado en la literatura. 
 
 Los grandes esfuerzos se han realizado en entorno a la segmentación, ya que otras tareas que conforman su diagnóstico se verían arrastradas.
 
 \section{Revisión histórica de clasificación binaria de tumores}
 
-Dentro de los problemas de clasificación que se pueden plantear para caracterizar a los tumores cerebrales se pueden encontrar clasificación multi-clase para diferenciar entre tipos de tumores (glioblastomas, meningiomas u otros tumores más raros y menos frecuentes) o clasificación multi-grado (low- or high- grade) para caracterizar el estado de avance del tumor.
+Dentro de los problemas de clasificación que se pueden plantear para caracterizar a los tumores cerebrales se puede distinguir en: clasificación multi-clase para diferenciar entre tipos de tumores (glioblastomas, meningiomas u otros tumores más raros y menos frecuentes) o clasificación multi-grado (low- or high- grade) para caracterizar el estado de avance del tumor.
 
-En este trabajo solo nos centraremos en clasificación multi-clase para los dos tipos de tumores más frecuentes y de los que disponemos de etiquetas por BraTS, glioblastomas y meningiomas.
+En este trabajo solo nos centraremos en clasificación multi-clase para los dos tipos de tumores más frecuentes y de los que disponemos de etiquetas por \textbf{BraTS}, glioblastomas y meningiomas. Adicionalmente en todos los trabajos que revisaremos también incluyen a otro tipo de tumor, el \textbf{tumor pituitario} y en un conjunto de datos menor que BraTS, \textbf{T1-CE image dataset}. 
 
-A continuación, se pretende recoger los trabajos más relevantes realizados entorno a esta clasificación multi-clase ordenados en el tiempo, haciendo especialmente hincapié en las soluciones basadas en aprendizaje profundo. 
+A continuación, se pretende recoger los trabajos más relevantes realizados entorno a esta clasificación multi-clase ordenados en el tiempo, haciendo especial hincapié en métodos basados en aprendizaje profundo. 
+
+\subsection{Métodos no profundos}
+
+Los primeros métodos para abordar la clasificación de tumores aparecen en 2015 mucho después de cómo veremos comienzan los esfuerzos en la tarea de segmentación. Y ni siquiera los primeros métodos utilizaban aprendizaje profundo para abordarlo, como tiempo atrás se había hecho con su tarea hermana la segmentación. A continuación, los dos principales trabajos que abordan la clasificación de tumores con métodos no profundos, es decir, extrayendo las características de la imagen a mano o a través de un proceso automático de procesamiento de imagen.
+
+\subsubsection{Basados en SVM}
+
+En \cite{cheng2015enhanced} se propone un método de clasificación basado en técnicas de aumento de la región del tumor en subregiones y la extracción de características usando tres diferentes métodos: histograma de intensidades, la matriz de concurrencia de niveles de grises (GLCM) y bag-of-words (BoW). Utilizó tres modelos: SVM (máquinas de vectores soporte), SRC (sparse representation) y kNN (k-vecinos más cercanos). Obteniendo los mejores resultados con BoW y SVM.
+
+\subsubsection{Basados en Fischer Kernel}
+
+Otro enfoque interesante que sigue la línea de construir algoritmos precisos a través del procesamiento de imagen es intentar medir la similaridad de las imágenes del dataset para así poder clasificar en base a esta similaridad. En \cite{cheng2016retrieval} se utiliza un kernel Fischer con esta finalidad. Este trabajo parte de la obtención del conjunto de entrenamiento como muestra de a la que se deben parecer la imágenes de test, la clasificación se basa en determinar a través del kernel para un ejemplo a cual subconjunto de imágenes entre todas las clases se parece más. 
+
+Este trabajo fue evaluado en un conjunto de datos muy pequeño. Sin embargo, este método permite no solo clasificar sino entender las relaciones entre las similitudes de las imágenes.
+
+\subsection{Métodos basados en CNN}
+
+\cite{abiwinanda2019brain} es una de las primeras aproximaciones que usan redes neuronales convolucionales. En este trabajo se prueba con arquitecturas no muy profundas (para los estándares actuales). Crean $5$ arquitecturas a probar consiguiendo sus mejores resultados con la siguiente arquitectura.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\linewidth]{imagenes/abiwinanda2019brain.png}
+	\caption{Arquitectura usada por \cite{abiwinanda2019brain}}
+\end{figure}
+
+Observamos como sólo utilizan dos capas convoluciones con función de activación \textbf{ReLU}, maxpolling para reducir la dimensionalidad y una red fully-connected para clasificar.
+
+En \cite{pashaei2018brain}, prueban a variar ligeramente la arquitectura de \cite{abiwinanda2019brain} añadiéndole una mayor profundidad. Sin embargo, posiblemente motivado por falta de datos obtienen peores resultados al tener una arquitectura más compleja y por tanto más difícil de ajustar. En este mismo trabajo ante esto, prueban a preprocesar las entradas con un clasificador KELM obteniendo un mejor resultado.
+
+\cite{sultan2019multi} proponen una arquitectura de $16$ capas convolucionales que por si misma a excepción de los trabajos anteriores obtiene resultados mucho más competitivos. La novedad de su trabajo es la inclusión de algún tipo de capa normalizadora en la red, en este caso \textbf{cross channel normalization}. 
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1.0\linewidth]{imagenes/sultan2019multi.png}
+	\caption{Arquitectura usada por \cite{sultan2019multi}}
+\end{figure}
+
+Para finalizar esta revisión, incluimos estado del arte del problema de \textbf{2021}. \cite{diaz2021deep} utiliza una única red CNN sin ningún clasificador añadido en sus entradas o salidas. Su estrategia es utilizar características multi-escala para capturar mejor las características de la lesión.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1.0\linewidth]{imagenes/diaz2021deep.png}
+	\caption{Arquitectura usada por \cite{diaz2021deep}}
+\end{figure}
+
+Como vemos esta arquitectura no es lineal sino que combina diferentes ramas con diferentes tamaño de filtros. Podemos apreciar algunos de las propiedades que tiene:
+
+\begin{itemize}
+	\item \textbf{Extracción jerárquica de características}: El uso de múltiples ramas con diferentes tamaños de filtro permite la extracción de características a diferentes escalas, lo cual es crucial para capturar diferentes aspectos y detalles de las imágenes de tumores cerebrales.
+	\item \textbf{Concatenación de características}: La concatenación de las características de diferentes ramas permite combinar información de diversas escalas, mejorando así la capacidad del modelo para aprender representaciones ricas y diversas de las imágenes.
+	\item \textbf{Clasificación final}: Las capas completamente conectadas al final de la red realizan la tarea de clasificación, transformando las características extraídas en una predicción final de la clase del tumor.
+\end{itemize}
+
 
 \section{Revisión histórica de segmentación}
 
-Diferentes dificultades han sido las que a pesar de años de desarrollo aún encontrar un algoritmo para la segmentación de tumores cerebrales sea algo mejorable. 
+A pesar de los años de desarrollo, el problema de la segmentación de tumores cerebrales es un reto  para los investigadores y los algoritmos propuestos a día de hoy deben ser mejorados. Algunas de las características que hacen que esta tarea se tan difícil son las siguientes:
 
 \begin{enumerate}
 	\item \textbf{Incertidumbre en la localización} : Como vimos no existe una zona concreta en general para la aparición de los tumores cerebrales. A excepción, de los meningiomas localizados en zonas superficiales del cerebro y aún siendo una región muy amplia, incluso ya desarrollado un tumor pueden aparecer otros localizados en regiones muy distintas de la original. 
-	\item \textbf{Incertidumbre en la morfología} : A diferencia de otras patologías, cada tumor cerebral presenta un tamaño y forma completamente distintas y donde en principio no se puede apreciar un patrón distintivo. Esto hace que sea muy complicado y generalmente aporte malos resultados, la construcción de sistemas basados reglas u otras aproximaciones que no incluyen una componente de aprendizaje.
+	\item \textbf{Incertidumbre en la morfología} : A diferencia de otras patologías, cada tumor cerebral presenta un tamaño y forma completamente distintas y donde en principio no se puede apreciar un patrón distintivo. Esto hace que sea muy complicado y generalmente aporte malos resultados. Por eso algunos métodos usan algoritmos basado en reglas o aproximaciones alternativas que no incluyen módulos de aprendizaje.
 	
 	\item \textbf{Bajo contraste} : Una buena resolución y contraste son características muy importantes para entender la información de una imagen. Las imágenes IRM producidas en una resonancia debido a proyecciones de imagen y procesos de tomografía usualmente ofrecen una baja resolución y contraste haciendo más difícil la definición de bordes entre diferentes tejidos de la imagen. Una segmentación precisa es difícil de conseguir.
 	
 	\item \textbf{Sesgo en las etiquetas}. Existen indicios para pensar que las etiquetas proporcionadas pueden presentar ruido. El proceso de segmentado por parte del personal médico 
 	depende de su experiencia profesional lo cual puede llevar a cometer errores. Por ejemplo, se han presentado eventualmente discrepancias entre distintos anotadores: algunos tienden a conectar todas las pequeñas regiones de un tejido mientras que otros las segmentan de forma más precisa y separada. 
 	
-	\item \textbf{Desbalanceo en el tejido} : Dentro de la segmentación entre los diferentes tipos de tejidos, usualmente existe un el tejido enfermo y que compone la lesión tumoral es usualmente más pequeño que el tejido sano. Esto podría afectar en el proceso de aprendizaje creando rechazo a identificar al tejido enfermo. 
+	\item \textbf{Desbalanceo en el tejido} : Dentro de la segmentación entre los diferentes tipos de tejidos, usualmente el tejido enfermo y que compone la lesión tumoral es usualmente más pequeño que el tejido sano. Esto podría afectar en el proceso de aprendizaje haciendo más difícil la identificación del tejido enfermo. 
 	
 	\item \textbf{Desbalanceo entre pacientes} : En el conjunto de datos tenemos muchos pacientes de norteamerica y de ascendencia blanca, pero pocos de otros origenes como el africano. Además, de tener un sesgo claro de edad ya que existen pocos casos en niños. Esta falta de datos puede impedir que exista una buena generalización para estos casos más aislados.
 	
 \end{enumerate}
 
 
-	A continuación, se presenta una revisión histórica sobre la segmentación de tumores cerebrales hasta 2021 apoyada en \cite{liu2023deep}. Se presenta una línea del tiempo con los principales trabajos de estudio.
+	A continuación, se presenta una revisión histórica sobre la segmentación de tumores cerebrales hasta 2021 \cite{liu2023deep}. Se presenta una línea del tiempo con los principales trabajos de estudio.
 	
 	\begin{figure}[H]
 		\centering
 		\includegraphics[width=1.0\linewidth]{imagenes/evolution_stateofart.png}
-		\caption{Evolución histórica del estado del arte hasta 2021.}
+		\caption{Evolución del estado del arte hasta 2021 \cite{liu2023deep}.}
 	\end{figure}
 	
 	En la década de 1990 investigadores como \cite{zhu1997computerized} fueron pioneros al utilizar una red Hopfield con un modelo de contornos activos para extraer los bordes del tumor. Sin embargo, incluso el entrenamiento de una pequeña red como esta era algo computacionalmente costoso por las limitaciones de la época.  Desde 1990 hasta 2012, los métodos que iban surgiendo para la segmentación de tumores cerebrales estaban basados en métodos clásicos de aprendizaje con características extraídas a mano, sistemas expertos que se apoyaban en los histogramas de la imagen, plantillas para la segmentación y modelos gráficos. 
 	
-	A pesar de ser un gran paso inicial, tenían grandes deficiencias. Por ejemplo, la mayoría de ellos sólo se centraba en la segmentación de todo el tumor lo cual lleva a un modelo poco útil. Por otro lado, en los modelos basados en características extraídas se hacía muy tedioso poder usarlos eficazmente ya que este paso de extracción dependía de conocimiento previo experto que en ningún momento se pudo llegar a representar en un modelo. En último lugar, los mismos problemas que compartimos hoy en día sobre el desbalanceo y la incertidumbre del problema eran mucho más agresivos. 
+	A pesar de ser un gran paso inicial, tenían grandes deficiencias. Por ejemplo, la mayoría de ellos sólo se centraba en la segmentación de todo el tumor lo cual lleva a un modelo poco útil. Por otro lado, en los modelos basados en características extraídas se hacía muy tedioso poder usarlos eficazmente ya que este paso de extracción dependía de conocimiento previo experto que en ningún momento se pudo llegar a representar en un modelo. En último lugar, los mismos problemas que compartimos hoy en día sobre el desbalanceo y la incertidumbre del problema eran mucho más notables. 
 	
 	Tras 2012 con la revolución del Deep Learning, se introducen nuevas tecnologías (Redes neuronales convolucionales y U-net) que mejorarán los resultados obtenidos hasta el momento. 
 	Se empezarán a construir arquitecturas encoder-decorder convolucionales para conseguir pipelines completos para la segmentación. El aprendizaje profundo toma el problema de lleno proclamándose el enfoque que define el estado del arte.
 	
-	Podemos clasificar las soluciones basadas en aprendizaje profundo aportadas en tres categorías según el principal problema para que el están pesadas. Sin embargo, como veremos en las soluciones más actuales lo ideal es tratar con los tres problemas.
+	Las soluciones basadas en aprendizaje profundo se pueden clasificar en tres categorías que se corresponden con el problema que quieren resolver y que describiremos  a continuación. Sin embargo, como veremos en las soluciones lo ideal es tratar con los tres problemas.
 	
 	\subsection{Métodos que se enfocan en la arquitectura}
 		
@@ -61,11 +114,11 @@ Diferentes dificultades han sido las que a pesar de años de desarrollo aún enc
 			
 			Los primeros trabajos que tenían este objetivo comenzaron por basarse en arquitecturas bien conocidas como AlexNet o VGGNet a través del uso de una única imagen de la resonancia completa como entrada de la red.
 			
-			Para la mejora de resultados, se optó por introducir todas la secuencia de imágenes de una resonancia como entrada de la red y añadir más capas convolucionales. Con ello, teníamos redes más profundas pero que pronto empezaban a sufrir los problemas de la explosión y desvanecimiento del gradiente durante el proceso de entrenamiento. Para ayudar a lidiar con estos problemas, se introdujo a las redes, \textbf{conexiones residuales} \cite{chang2016fully}. Conectando la entrada de la red con su salida, convergiendo más rápido y con mejores resultados. 
+			Para la mejora de resultados, se optó por introducir todas la secuencia de imágenes de una resonancia como entrada de la red y añadir más capas convolucionales. Con ello, teníamos redes más profundas pero que pronto empezaban a sufrir los problemas de la explosión y desvanecimiento del gradiente durante el proceso de entrenamiento. Para ayudar a lidiar con estos problemas, se introdujo a las redes, \textbf{conexiones residuales} \cite{chang2016fully}. Conectando la entrada de la red con su salida, convergiendo más rápido y con arquitecturas de la familia ResNet. 
 			
 			Este proceso de aumento de profundidad con conexiones residuales no sería definitivo porque también conlleva el sacrificio de resolución espacial. Se reemplazaría en trabajos siguientes, el uso de la convolución simple por convoluciones dilatadas. El \textbf{uso de convoluciones dilatadas} traería el aumento del espacio receptivo (ya que se aplica una convolución a un espacio mayor de la imagen) sin necesidad de introducir parámetros a la red. La convolución dilatada se vería especialmente útil por ejemplo en la segmentación de áreas grandes como suele ocupar el tejido ED (edema tumoral). 
 			
-			Respecto conseguir una buena eficiencia en tiempo de entrenamiento es conocido aplicar un reordenamiento en memoria de las imágenes de la resonancia similares (p. ej. el mismo slice en las 4 pruebas) de forma que se reduzcan la comunicación entrada-salida con GPU. Adicionalmente, autores como \cite{brugger2019partially} utilizan \textbf{conexiones reversibles}  en la red de forma que durante el proceso de backpropagation (backward pass) no se necesite memoria adicional para guardar las activaciones intermedias. Por último, para ahorrar en eficiencia se sustituye la convolución standard por la combinación de \textbf{convoluciones separables}.
+			Respecto a conseguir una buena eficiencia en tiempo de entrenamiento se aplica un reordenamiento en memoria de las imágenes de la resonancia similares (p. ej. el mismo slice en las 4 pruebas) de forma, que se reduzcan la comunicación entrada-salida con GPU. Adicionalmente, autores como \cite{brugger2019partially} utilizan \textbf{conexiones reversibles}  en la red de forma que durante el proceso de backpropagation (backward pass) no se necesite memoria adicional para guardar las activaciones intermedias. Por último, para ahorrar en eficiencia se sustituye la convolución standard por la combinación de \textbf{convoluciones separables}.
 			
 			\subsubsection{Diseño de arquitecturas efectivas}
 			
@@ -138,9 +191,9 @@ Diferentes dificultades han sido las que a pesar de años de desarrollo aún enc
 			
 			Una red en cascada es un conjunto de redes más pequeñas ordenadas en las cuales el output de la red anterior sirve como una input a la siguiente, formando una  <<cascada de redes>>. De esta forma, podemos tener redes especializadas en distintos niveles. 
 			
-			Las primeras redes de la cascada especializadas a características de más alto nivel y las siguientes de más bajo.
+			Las primeras redes en cascada están especializadas en características de más alto nivel y las siguientes de más bajo nivel.
 			
-			Por ejemplo, en \cite{wang2018automatic} se utilizan tres redes especializadas para los tres regiones de tejidos definidas por BraTS. Empezando por la región más grande hasta la más pequeña. 
+			Por ejemplo, en \cite{wang2018automatic} se utilizan tres redes especializadas para los tres regiones de tejidos definidas por \textbf{BraTS}. Empezando por la región más grande hasta la más pequeña. 
 			
 			Su primera red WNet segmenta a Whole Tumor, toda la lesión. La siguiente TNet segmenta al núcleo del tumor. Finalmente, Enet a la parte activa del tumor.
 			
@@ -157,13 +210,13 @@ Diferentes dificultades han sido las que a pesar de años de desarrollo aún enc
 					
 			\subsubsection{Ensamblado de modelos}
 			
-			Una de las consecuencias que tiene el uso de una sola red es que está altamente influenciada por la elección de su hiperparámetros. Con el objetivo de obtener un más robusto y general modelo para la segmentación se puede combinar la salida de múltiples redes, ensamblarlas.
+			Una de las consecuencias que tiene el uso de una sola red es que está altamente influenciada por la elección de su hiperparámetros. Con el objetivo de obtener un modelo más robusto y general modelo para la segmentación se puede combinar la salida de múltiples redes, ensamblarlas.
 			
 			El ensamblado de modelos aumentaría el espacio de hipótesis del modelo final evitando, la caída en óptimos locales debido a el desbalanceo de datos.
 			
 			EMMA  de \cite{kamnitsas2018ensembles} es uno de los primeros modelos para segmentación de tumores que es un ensamblado de varias redes. EMMA utiliza tres modelos: DeepMedic, una red FCN y una U-net para dar el output de los tres con una mayor confianza.
 			
-			\cite{jiang2020two} ganadores de BraTS2019 adoptaron una estrategia de ensamblado con $12$ modelos obteniendo entorno $0.6 - 1 \%$ mejores resultados que el mejor único modelo.
+			\cite{jiang2020two} ganadores de BraTS2019 adoptaron una estrategia de ensamblado con $12$ modelos obteniendo entorno $0.6 - 1 \%$ mejores resultados el mejor resultado usando un único modelo.
 			
 			\subsubsection{Arquitecturas multi-tarea}
 			
@@ -176,7 +229,7 @@ Diferentes dificultades han sido las que a pesar de años de desarrollo aún enc
 			\begin{figure}[H]
 				\centering
 				\includegraphics[width=1.0\linewidth]{imagenes/myroenko2019.png}
-				\caption{Arquitectura del autoencoder regularizador de \cite{myronenko20193d}}
+				\caption{Arquitectura autoencoder regularizador de \cite{myronenko20193d}}
 			\end{figure}
 			
 				
@@ -190,12 +243,12 @@ Diferentes dificultades han sido las que a pesar de años de desarrollo aún enc
 			
 			Otro enfoque se basa en la combinación de diferentes funciones de pérdida en una nueva. Por ejemplo, una nueva función de pérdida de cross-entropy a nivel de píxel y dice loss podría ser su media.
 			
-			En general, funciones de pérdida que eviten el desbalanceo y mejoren el nivel de atención de las arquitecturas es beneficioso a todo tipo de problemas. Por ello, a diferencia de seguir funciones clásicas como cross-entropy, \cite{lin2017focal} proponen una nueva función llamada \textbf{Focal Loss} que será vista en años recientes en combinación con Dice Loss para diversos problemas de segmentación.
+			En general, funciones de pérdida que eviten el desbalanceo y mejoren el nivel de atención de las arquitecturas es beneficioso a todo tipo de problemas. Por ello, a diferencia de seguir funciones clásicas como cross-entropy, \cite{lin2017focal} proponen una nueva función llamada \textbf{Focal Loss} que ha sido utilizada en años recientes en combinación con Dice Loss para diversos problemas de segmentación.
 			
 			
 		\subsection{Métodos que tratan la información multi-modal}
 		
-		Las imágenes asociadas a una resonancia contienen diferentes tipos de imagen según las características de la frecuencia y contraste suministrado al paciente en su toma. Esta forma de proceder en la toma de resonancias es debido a las limitaciones de las imágenes IRM de poder representar y al menos para el ojo humano visualizar todos los tejidos importantes en el diagnóstico. Por ello, surge como idea clave tener métodos que tengan los objetivos de poder fusionar, relacionar y incluso distinguir en importancia las diferentes modalidades de imagen.
+		Las imágenes asociadas a una resonancia contienen diferentes tipos de imagen según las características de la frecuencia y contraste suministrado al paciente en su toma. Esta forma de proceder en la toma de las resonancias es debido a las limitaciones de las imágenes IRM de poder representar y al menos para el ojo humano, visualizar todos los tejidos importantes en el diagnóstico. Por ello, surge como idea clave tener métodos que tengan los objetivos de poder fusionar, relacionar y incluso distinguir en importancia las diferentes modalidades de imagen.
 		
 		Otras arquitecturas basadas en autoencoders como \cite{myronenko20193d} únicamente fusionan las cuatro modalidades como los canales de una imagen para un mismo slice concatenando las cuatro pruebas en la misma entrada, obteniendo entradas de dimensiones $ H \times W \times 4 $ en caso de 2D y $ H \times W \times D \times 4$ en caso de 3D.
 		
@@ -207,7 +260,7 @@ Diferentes dificultades han sido las que a pesar de años de desarrollo aún enc
 		
 		\begin{figure}[H]
 			\centering
-			\includegraphics[width=0.75\linewidth]{imagenes/latentcorrelationrepresentation.png}
+			\includegraphics[width=1.0\linewidth]{imagenes/latentcorrelationrepresentation.png}
 			\caption{Arquitectura de \cite{zhou2021latent}}
 		\end{figure}
 		
@@ -215,7 +268,7 @@ Diferentes dificultades han sido las que a pesar de años de desarrollo aún enc
 		
 		\begin{figure}[H]
 			\centering
-			\includegraphics[width=0.75\linewidth]{imagenes/zhoufusionmodel.png}
+			\includegraphics[width=1.0\linewidth]{imagenes/zhoufusionmodel.png}
 			\caption{Modelo especializado en la correlación de las modalidades}
 		\end{figure}
 		
@@ -224,13 +277,13 @@ Diferentes dificultades han sido las que a pesar de años de desarrollo aún enc
 		El módulo de estimación de parámetros se compone de una de dos redes totalmente conectadas que vinculan cada representación salida de cada encoder con unos parámetros $ \Gamma_i = \{ \alpha_i , \beta_i , \gamma_i , \delta_i \}$
 		
 		El módulo de expresión de la correlación lineal (LCE) utiliza estos parámetros para obtener una versión correlacionada de cada representación individual aplicando: 
-		$$ F_i (X_i | \theta_i ) = \alpha_i \odot \gamma_i f_j (X_j | \theta_j ) + \beta_i \odot f_k (X_k | \theta_k ) + \gamma_i \odot f_m (X_m | \theta_m ) + \delta_i , \quad (i \neq j \neq k \neq m)$$
+		$$ F_i (X_i | \theta_i ) = \alpha_i \odot \gamma_i f_j (X_j | \theta_j ) + \beta_i \odot f_k (X_k | \theta_k ) + \gamma_i \odot f_m (X_m | \theta_m ) + \delta_i $$
 		
 		Tras ello, se fusiona las representaciones correlacionadas resultado. Permitiendo al modelo manejar de forma explícita la información multi-modal y dándole robustez ante pruebas faltantes. 
 		
 		\begin{figure}[H]
 			\centering
-			\includegraphics[width=1.1\linewidth]{imagenes/zhouarchitecture.png}
+			\includegraphics[width=1.0\linewidth]{imagenes/zhouarchitecture.png}
 			\caption{Red \cite{zhou2021latent} de fusión de representaciones latentes}
 		\end{figure}
 		
@@ -251,6 +304,72 @@ Diferentes dificultades han sido las que a pesar de años de desarrollo aún enc
 	
 	A continuación, se presentan las soluciones principales que hacen uso de una arquitectura basada en Transformers para la segmentación de tumores cerebrales.
 	
-	\subsubsection{}
+	\subsubsection{TransBTS}
+	
+	\cite{wenxuan2021transbts} introduce la novedad del uso de un transformer como representación latente. El objetivo de esto es tener una representación del conjunto de datos que no depende de las relaciones de localidad de las convoluciones convencionales. En el corazón de este transformer dos capas: Multi-Head Attention (MHA) y Feed Forward Network (FFN).
+	
+	A continuación, podemos ver la arquitectura que diseña.
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=1.0\linewidth]{imagenes/transbts.png}
+		\caption{Arquitectura de \cite{wenxuan2021transbts}}
+	\end{figure}
+	
+	\subsubsection{SwinUnet}
+	
+	Una de las ideas más rompedoras es el uso de una arquitectura transformadora como encoder, ya que romper con las convoluciones de un codificador convencional puede suponer un avance al segmentar de forma más precisa los tumores especialmente los difusos. En \cite{hatamizadeh2021swin} usan esta idea para construir una arquitectura encoder-decoder a través de un fuerte codificador basado en Swin Transformers.
+	
+	Los Swin Transformers \cite{liu2021swin} son un tipo específico de arquitectura transformadora donde se introduce el concepto de ventanas deslizantes (sliding windows) para dividir la imagen de entrada en regiones no solapadas de tamaño fijo, denominadas ventanas locales. Cada ventana local se procesa independientemente mediante un mecanismo de autoatención (self-attention) dentro de la ventana, lo que reduce significativamente la complejidad computacional en comparación con los Transformadores tradicionales, que aplican la autoatención a toda la imagen de entrada.
+	
+	El diseño de los Swin Transformers sigue una estructura jerárquica que permite la construcción de representaciones a múltiples escalas. En cada nivel jerárquico, las ventanas locales se combinan y se procesan utilizando una estrategia de atención desplazada (shifted window attention), que permite capturar relaciones entre diferentes regiones de la imagen. Esta estrategia introduce una conexión entre ventanas adyacentes, asegurando que la información pueda fluir a través de toda la imagen de manera eficiente.
+	
+	Las principales características de los Swin Transformers incluyen:
+	
+	\begin{itemize}
+		\item \textbf{Atención local}: La autoatención se calcula dentro de cada ventana local, lo que reduce la complejidad computacional de $O(n^2)$ a $O(n)$, donde $n$ es el número de píxeles en una ventana.
+		\item \textbf{Ventanas Desplazadas}: En cada nivel jerárquico, las ventanas locales se desplazan para capturar relaciones entre ventanas adyacentes, permitiendo una mejor integración de la información a lo largo de la imagen.
+		\item \textbf{Estructura jerárquica}: Los Swin Transformers construyen representaciones a múltiples escalas, lo que es crucial para tareas como la segmentación y la detección de objetos, donde se necesita comprender tanto detalles pequeños como contextos globales.
+		\item \textbf{Flexibilidad de tamaño}: El tamaño de las ventanas locales y el desplazamiento se pueden ajustar para diferentes aplicaciones, permitiendo una gran flexibilidad.
+	\end{itemize}
+	
+	Gracias a estas características, los Swin Transformers han demostrado un rendimiento superior que los Transformers ya siguen mantienen cierta relación de localidad.
+	
+	A continuación, comentamos la arquitectura de \cite{hatamizadeh2021swin}.
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=1.0\linewidth]{imagenes/swinunet.png}
+		\caption{Arquitectura de \cite{hatamizadeh2021swin}}
+	\end{figure}
+	
+	Implementan una U-net con un representación latente y decodificador convolucionales pero un codificador basado en Transformer.
+	
+	
+	En años posteriores a estos trabajos se incluirá comúnmente la fusión de arquitecturas transformadoras y CNN tomando las ventajas de ambas. Como es el siguiente trabajo que define el estado del arte para 2023.
 	
 	\subsection{Basados en aprendizaje no supervisado}
+	
+	En esta revisión histórica muchos trabajos incluyen aprendizaje no supervisado, comúnmente utilizando la preparación del encoder y la representación latente para el aprendizaje de características previas a través de la reducción de la dimensionalidad. 
+	
+	En \cite{ferreira2024we} utilizan \textbf{aumento de datos} a partir de redes generativas adversarias para generar nuevos tumores con buenos resultados. A continuación, mostramos y comentamos el esquema seguido.
+	
+	Para generar datos nuevos a partir de los originales, toman la imagen y añaden ruido aleatorio en la superposición de su segmentación etiqueta con las imágenes de la resonancia magnética. A continuación, ver cómo añaden el ruido a la imagen y como un generador se encarga de reconstruir la imagen.
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.5\linewidth]{imagenes/imagen_faking.png}
+		\caption{Imagen con ruido y reconstruida \cite{ferreira2024we}}
+	\end{figure}
+	
+	Las redes generativas adversarias tienen dos partes: el \textbf{generador} $G$ y \textbf{discriminador} $D$. En este caso, el generador que se encarga de hacer realistas las imágenes a través de una reconstrucción y el discriminador que decide este realismo. Tras un proceso suficiente de entrenamiento el generador aprende a hacer reconstruir imágenes de forma realista suficientemente bien como para ser empleado para aumentar los datos.
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=1.0\linewidth]{imagenes/esquema_faking.png}
+		\caption{Estrategia de aumento de datos de \cite{ferreira2024we}}
+	\end{figure}
+	
+	
+	Una vez tienen preparado este generador tienen una red que les generará imágenes más variables para las imágenes del dataset originales y pueden generar muchas más entradas a una red como las mencionadas para segmentación. Como arquitectura de segmentación usan la implementación de la Swin U-net de la librería MONAI, una arquitectura muy similar a la mencionada anteriormente, \textbf{SwinUnet}.
+	

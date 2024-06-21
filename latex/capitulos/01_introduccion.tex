@@ -15,14 +15,14 @@ Con este trabajo se persigue la creación de una arquitectura basada en aprendiz
 
 Se seguirá un planteamiento similar al seguido en la competición \textbf{BraTS: Brain Tumor Segmentation 2023} \cite{baid2021rsna} históricamente reconocida por ser un benchmark recurrente de las capacidades de las arquitecturas profundas en el campo de la imagen médica.
 
-BraTS es una competición que se define como un conglomerado de diferentes tareas relevantes en el diagnóstico de los tumores cerebrales << Cluster of Challenges >>. En 2023 dando especialmente importancia a la generalidad de un modelo que mantenga los resultados anteriores para pacientes más diversos (de diferente origen étnico y de diferentes edades) y con diferentes tipos de tumores. En concreto para 2023, se contemplaron las siguientes tareas por separado: segmentación de glioblastomas en adultos, segmentación de meningiomas en adultos, segmentación de tumores pediátricos, segmentación de tumores de pacientes de origen africano, generación de pruebas faltantes y generación de partes de la imagen.
+BraTS es una competición que se define como un conglomerado de diferentes tareas relevantes en el diagnóstico de los tumores cerebrales <<Cluster of Challenges>>. En 2023 dando especialmente importancia a la generalidad de un modelo que mantenga los resultados anteriores para pacientes más diversos (de diferente origen étnico y de diferentes edades) y con diferentes tipos de tumores. En concreto para 2023, se contemplaron las siguientes tareas por separado: segmentación de glioblastomas en adultos, segmentación de meningiomas en adultos, segmentación de tumores pediátricos, segmentación de tumores de pacientes de origen africano, generación de pruebas faltantes y generación de partes de la imagen.
 
 De forma análoga a esta competición, se plantea conseguir dicho objetivo a partir de la resolución de las siguientes tareas.
 
 \begin{enumerate}
 	\item \textbf{Segmentación de los tumores.} 
 	La segmentación de la lesión tumoral de los glioblastomas y los meningiomas.
-	\item \textbf{Clasificación entre tipos de tumores.} Clasificación binaria entre glioblastomas y meningiomas. El programa indicará de qué tipo de tumor se trata una prueba dada.
+	\item \textbf{Clasificación entre tipos de tumores.} Clasificación binaria entre glioblastomas y meningiomas. El programa indicará de qué tipo de tumor se trata.
 	\item \textbf{Predicción de la evolución.} La segmentación a corto plazo de la más probable instancia futura a partir de la resonancia actual. Ya no solo se pretende dar una segmentación y clasificación que pudieran aportar valor en las decisiones médicas, sino predecir una nueva segmentación a partir de la resonancia apoyándose en casos similares y en la segmentación de la metástasis de la resonancia actual.
 \end{enumerate}
 
@@ -32,7 +32,7 @@ Sólo en los EEUU para 2024 se esperan 25400 nuevos casos de tumor cerebral. La 
 
 El cerebro no tiene terminaciones nerviosas. Los pacientes no sienten dolor a causa de un tumor cerebral por sí mismo, lo cual hace que no exista una alerta sobre el paciente que lo motive a buscar ayuda médica en las primeras fases de la patología. Generalmente, acaban buscando ayuda médica por la aparición de otros indicios relacionados difíciles de distinguir de otras patologías agudas y de menor transcendencia como visión borrosa, pérdida del control, etc. Además, los glioblastomas son tumores de muy rápido crecimiento pueden llegar a estar en una fase avanzada desde su inicio en tan solo 2-3 meses.
 
-Por estos motivos, es común llegar tarde. Tomando mucha importancia el diagnóstico temprano para su superación. Es en este punto donde se tiene el objetivo de evaluar las capacidades del aprendizaje profundo para la segmentación de tumores especialmente los que en sus inicios podrían ser pasados desapercibidos por incluso el ojo médico y eventualmente la segmentación de las zonas potenciales en la aparición de nuevos tumores asociado a una probabilidad.
+Por estos motivos, es común llegar tarde. Tomando mucha importancia el diagnóstico temprano para su superación. Con el objetivo de dar un diagnostico temprano se han introducido máquinas basadas en aprendizaje profundo. Así en este proyecto evaluaremos las capacidades del aprendizaje profundo para la segmentación de tumores. Prestando mayor interés a aquellos tumores que en sus inicios podrían pasar desapercibidos por el especialista humano, e incluso dar una segmentación de zonas potenciales que pueden aparecer nuevos tumores.
 
 En general, los tumores cerebrales son difíciles de tratar y son resistentes a terapias convencionales usadas en otros tipos de cánceres como la quimioterapia debido a los desafíos que presenta el cerebro para tolerar ciertos químicos, transportar medicamentos dentro de él y la alta importancia que tiene en este órgano la optimización del uso de tratamientos que puedan ser invasivos. En otras palabras, el uso de tratamientos basados en la extirpación o en la medicación pueden ser arriesgados. Por tanto, el tratamiento más común de estos está basado en la radioterapia.
 
@@ -62,16 +62,16 @@ Una de las \textbf{limitaciones frecuentes en el campo de la imagen médica} es 
 
 Partimos del conjunto de datos \textbf{BraTS} y serán los que únicamente utilizaremos para todo el trabajo ya que son los únicos que se pueden encontrar en la red pidiendo un acceso a ellos de una forma simple e incluso podríamos decir legal.
 
-Hasta nuestro conocimiento, BraTS es el mayor conglomerado de resonancias magnéticas en la actualidad para los desafíos que planteamos en este trabajo. Otros datasets usados por la comunidad para este problema como el incluido en \textbf{Medical Segmentation Decathlon} descubrimos que es un subconjunto de \textbf{BraTS}.
+Hasta nuestro conocimiento, \textbf{BraTS} es el mayor conglomerado de resonancias magnéticas en la actualidad para los desafíos que planteamos en este trabajo. Otros datasets usados por la comunidad para este problema como el incluido en \textbf{Medical Segmentation Decathlon} descubrimos que es un subconjunto de \textbf{BraTS}.
 
 
 \textbf{BraTS} está patrocinado y organizado por la ASNR (American Society of Neurology), MICCAI (Medical Image Computing and Computer Assisted Intervention Society), National Cancer Institute, la Universidad de Pensilvania e Intel entre otros. 
 
 \textbf{Los datos de BraTS son heterogéneos} ya no sólo externamente con diferentes tipos tumores (glioblastomas y meningiomas) y de pacientes de orígenes distintos y de diferentes edades sino también internamente con lesiones más y menos avanzadas en el tiempo (low- and high-grade) y con datos de multitud de centros que han sido escaneados con distintos escáneres.
 
-Definiremos como nuestro conjunto de datos \textbf{$X$} a un conjunto de resonancias magnéticas cerebrales completas. Este lo tenemos en formato \textbf{nii : Neuroimaging Informatics Technology Initiative (NIfTI)} el cual podremos hacer operar con el directamente con su versión comprimida en \textbf{.gz : GNU ZIP} gracias al uso de la librería \textbf{nibabel} la cual nos permitirá la lectura y conversión de cada resonancia a un 3D-array de NumPy de dimensiones $240 \times 240 \times 155$ que representa un array de $155$ imágenes de resolución $240 \times 240$ del cerebro del paciente divida en partes equidistantes. 
+Definiremos como nuestro conjunto de datos \textbf{$X$} a un conjunto de resonancias magnéticas cerebrales completas (resonancias con imágenes de todo el cerebro, no una parte). Este lo tenemos en formato \textbf{nii : Neuroimaging Informatics Technology Initiative (NIfTI)}. Con este formato podemos trabajar directamente con su versión comprimida en \textbf{gz: GNU ZIP}. Para ello, usaremos la librería \textbf{nibabel} que nos permite la lectura y conversión de cada resonancia a un array 3D de la librería NumPy de Python. Cada resonancia se despliega en un array 3D de dimensiones $240 \times 240 \times 155$. Siendo $155$ el número de imágenes del cerebro del paciente dividida en partes equidistantes. Cada imagen tiene una resolución $240 \times 240$.
 
-Por otro lado, definimos el conjunto de etiquetas $Y$ como otro 3D-array de las mismas dimensiones que en el conjunto de datos donde se muestra la segmentación (Ground Truth) de los tumores.
+Por otro lado, definimos el conjunto de etiquetas $Y$ como otro 3D-array de las mismas dimensiones que en el conjunto de datos $X$ donde se muestra la segmentación (Ground Truth) de los tumores.
 
 En términos numéricos, contando solo los datos que tenemos sobre adultos tenemos $1251$ resonancias de glioblastomas de $1133$ pacientes diferentes y $1000$ resonancias de meningiomas de $944$ pacientes diferentes. Adicionalmente, tenemos resonancias de glioblastomas pediátricos y de adultos de origen africano que brindan de una distribución mucho más rica al dataset, aunque estos son una minoría siendo $99$ y $60$ respectivamente. 
 
@@ -100,9 +100,9 @@ En comparativa, observamos como la mayoría de pacientes no tienen más de una r
 
 A continuación, detallaremos más profundamente los datos haciendo algunas visualizaciones. 
 
-Por resonancia magnética para todos los tumores del conjunto de datos tenemos distintos tipos de muestras según las características de la frecuencia empleada en la toma de la resonancia, \textbf{T1-weighted} o \textbf{T2-weighted}. \cite{labella2023asnrmiccai}
+Para todos los tumores $P$ del conjunto de datos tenemos distintos tipos de muestras según las características de la frecuencia empleada en la toma de la resonancia, \textbf{T1-weighted} o \textbf{T2-weighted}. \cite{labella2023asnrmiccai}
 
-El tiempo de repetición (TR) es la cantidad de tiempo entre secuencias de pulsos sucesivas aplicadas al mismo segmento. El tiempo hasta el eco (TE) es el tiempo entre la entrega del pulso sobre el tejido y la recepción de la señal de eco.
+El tiempo de repetición (TR) es la cantidad de tiempo entre secuencias de pulsos sucesivas aplicadas al mismo segmento. El tiempo hasta el eco (TE) es el tiempo entre la llegada del pulso sobre el tejido y la recepción de la señal de eco.
 
 Las imágenes ponderadas en T1 se producen utilizando tiempos TE y TR cortos. Por el contrario, las imágenes ponderadas en T2 se producen utilizando tiempos TE y TR más largos.
 
@@ -121,41 +121,43 @@ A continuación, observamos las imágenes producidas por una resonancia magnéti
 
 \begin{figure}[!h]
 	\centering
-	\includegraphics[width=1.1\linewidth]{imagenes/introduccion_imagenesMRI.png}
+	\includegraphics[width=1.0\linewidth]{imagenes/introduccion_imagenesMRI.png}
 	\caption{Visualización de imágenes MRI de tumores en adultos de origen europeo y americano}
+	\label{fig:visual0}
 \end{figure}
 
 Por otro lado, podemos observar algunas imágenes de las resonancias más específicas que tenemos, pediátrica y de adultos de origen africano.
 
 \begin{figure}[!h]
 	\centering
-	\includegraphics[width=1.1\linewidth]{imagenes/imgSSAPEDMRI.png}
-	\caption{Visualización de imágenes MRI de tumores en niños y adultos de origen africano}
+	\includegraphics[width=1.0\linewidth]{imagenes/imgSSAPEDMRI.png}
+	\caption{Visualización de imágenes MRI de glioblastomas en niños y adultos de origen africano}
+	\label{fig:visual1}
 \end{figure}
 
 \newpage
 
-A continuación, exploraremos el \textbf{etiquetado de las resonancias}, es decir, su segmentación realizada por el personal médico colaborador en BraTS.
+A continuación, exploraremos el \textbf{etiquetado de las resonancias}, es decir, su segmentación realizada por el personal médico colaborador en \textbf{BraTS}.
 
 La etiquetas de la segmentación pueden tomar cuatro valores, los del intervalo $[0, 3]$ que están relacionados con el tipo de tejido que segmentan. Tenemos tres tipos de tejidos que se relacionan con el valor de etiquetas en el array.
 
 \begin{enumerate}
-	\item \textbf{Etiqueta 1. NCR}: Tejido Necrótico. Núcleo del tumor tejido sin vida y usualmente reseco.
-	\item \textbf{Etiqueta 2. ED}: Edema peritumoral. Tejido afectado resultado de la expansión del tumor generalmente acumulación de líquido y tejido sano desplazado. 
-	\item \textbf{Etiqueta 3. ET}: Enhancing tumor. Tejido donde se encuentra la principal actividad de expansión del tumor. Área de actividad tumoral más agresiva o prolifera.
 	\item \textbf{Etiqueta 0. Sano}: Tejido sano o la no existencia de tejido es etiquetado con $0$.
+	\item \textbf{Etiqueta 1. NCR}: Tejido Necrótico. Núcleo del tumor tejido sin vida y usualmente reseco.
+	\item \textbf{Etiqueta 2. ED}: Edema peritumoral. Tejido afectado por expansión del tumor generalmente acumulación de líquido y tejido sano desplazado. 
+	\item \textbf{Etiqueta 3. ET}: Enhancing tumor. Tejido donde se encuentra la principal actividad de expansión del tumor. Área de actividad tumoral más agresiva o prolifera.
 \end{enumerate}
 
-Podemos ver la segmentación de las resonancias antes visualizadas.
+Podemos ver la segmentación de las resonancias que se mostraron en \href{fig:visual0}{Figura 1.3} y \href{fig:visual1}{Figura 1.4}.
 \begin{figure}[!h]
 	\centering
-	\includegraphics[width=1.1\linewidth]{imagenes/segimagenesMRI.png}
+	\includegraphics[width=1.0\linewidth]{imagenes/segimagenesMRI.png}
 	\caption{Visualización de imágenes MRI de tumores en adultos de origen europeo y americano con su segmentación.}
 \end{figure}
 
 \begin{figure}[!h]
 	\centering
-	\includegraphics[width=1.1\linewidth]{imagenes/segimagenesSSAPEDMRI.png}
+	\includegraphics[width=1.0\linewidth]{imagenes/segimagenesSSAPEDMRI.png}
 	\caption{Visualización de imágenes MRI de tumores en niños y adultos de origen africano con su segmentación.}
 \end{figure}
 
@@ -183,101 +185,52 @@ Tras la visualización, no se observa una zona especialmente marcada ni en gliob
  
  \begin{enumerate}
  	\item \textbf{Para clasificación} añadiendo una red densamente conectada. 
- 	\item \textbf{Para segmentación}  un decodificador totalmente convolucional transformando la arquitectura en un autoencoder V-net (U-net con conexiones residuales).
+ 	\item \textbf{Para segmentación}  un decodificador totalmente convolucional transformando la arquitectura en un autoencoder ResU-net (U-net con conexiones residuales).
  	\item \textbf{Para predicción} un decodificador basado en modelos sequence-to-sequence como los transformadores debido a la naturaleza secuencial que tienen diferentes resonancias de un mismo paciente en el tiempo.
  	
  \end{enumerate}
  
- La tarea de predicción sólo se planteará a nivel teórico por una baja existencia de datos con relación temporal. 
+ La tarea de predicción sólo se planteará a nivel teórico por una baja existencia de datos con información temporal. 
+ 
+\subsection{Planificación del trabajo}
 
-\subsection{Evaluación y métricas}
+A continuación, mostramos la planificación de llevar a cabo este trabajo en un entorno real a través de una tabla de Gram que recoja el presupuesto y tiempo dedicado a en cada fase del desarrollo de la investigación y de su software.
 
-Para la evaluación se distinguirán entre tres subconjuntos de datos: entrenamiento, validación y test. Se utilizará un conjuntos fijos basado en \textbf{hold out} común a todas las tareas por motivos de eficiencia no podemos permitirnos usar validación cruzada o distintos conjuntos variables. Estos conjuntos serán separados mediante la utilización de archivos CSV con las rutas absolutas de cada ejemplo para cada uno de ellos. 
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|ccc|}
+		\toprule
+		\textbf{Tarea} & \textbf{Semanas} & \textbf{Presupuesto medio} \\
+		\midrule
+		Revisión del estado del arte & 1-2 & 300 \\
+		Definición de línea de investigación & 1-2 & 300 \\
+		Implementación de los experimentos & 1-2 & 300 \\
+		Ejecución de los experimentos & 3-4 & 900 \\
+		Validación de los experimentos & 1-2 & 310 \\
+		Diseño de la interfaz & 1 & 200 \\
+		Implementación de la interfaz & 1-2 & 300\\
+		Documentación & 1 &  200 \\
+		\hline
+		\textbf{Total} & 10-16 &  2810 \\
+		\bottomrule
+	\end{tabular}
+	\caption{Planificación del trabajo con tiempos y presupuesto.}
+	\label{tabla:planificacion}
+\end{table}
 
-Seguirán la siguiente distribución: un $49 \%$ para entrenamiento, $21 \%$ para validación y un $30 \%$ para test del conjunto total de datos (glioblastomas y meningiomas juntos) haciendo un reparto aleatorio entre ellos. Se sigue la regla de partición: $70 \%$ entrenamiento + validación y $30 \%$ test. Además de $70 \%$ entrenamiento y $30 \%$ validación. La finalidad de cada subconjunto es para entrenamiento ajustar los modelos a este subconjunto de datos, validación elegir el mejor modelo de los probados, y test dar el resultado final garantizador de la bondad de los modelos.
+El presupuesto medio necesario ha sido calculado lo que costaría pagar a un becario durante ese tiempo  para esa tarea asumiendo que el becario cobra \textbf{800} euros al mes más el coste del uso del hardware empleado en los experimentos. 
 
-\subsubsection{Métricas para clasificación}
-
-Para clasificación las métricas usadas serán \textbf{accuracy balanceado} y \textbf{accuracy} que podremos calcular a través de la construcción de la matriz de confusión. 
-
-\begin{enumerate}
-	\item \textbf{Accuracy.} Mide cuántas predicciones del modelo son correctas respecto el total del predicciones. Se calcula como: 
-	
-	$$ \text{Accuracy} = \frac{\text{Número de predicciones correctas}}{\text{Total de predicciones}} = \frac{TP + TN}{TP + TN + FP + FN}$$
-	
-	\item \textbf{Accuracy balanceado.} En problemas de clasificación para manejar conjuntos de datos desbalanceados, donde las clases no están igualmente representadas. Se define como el promedio de las tasas de acierto (recall) obtenidas en cada clase, lo que ayuda a proporcionar una evaluación más justa y equilibrada del desempeño del modelo cuando las clases tienen diferentes tamaños.
-	
-	De forma general para un problema de clasificación de $N$ clases se calcula como:
-	
-	$$  \text{Balanced Accuracy} = \frac{1}{N} \sum_{i=1}^{N} \frac{TP_i}{TP_i + FN_i}$$
-	
-	De forma específica, para clasificación binaria $N = 2$ podemos expresarlo como:
-	
-	$$ \text{Balanced Accuracy} = \frac{1}{2} \left( \frac{TP}{TP + FN} + \frac{TN}{TN + FP} \right) $$ 
-\end{enumerate}
+Para el calculo del hardware no asumimos que usamos las gráficas gratuitas de Kaggle sino que la alquilamos en Lambda Cloud con un precio de uso de $\approx 5$ euros por hora.
 
 
-\subsubsection{Métricas para segmentación}
+\subsection{Metodología de desarrollo}
 
-Siguiendo la definición de evaluación de BraTS 2023, la evaluación de los tumores en su forma original comprende la segmentación de tres zonas diferenciadas según los tipos de tejidos que hay en ella. En BraTS se estudian los siguientes tres conjuntos de tejidos tumoral.
-
-\begin{enumerate}
-	\item \textbf{Enhancing Tumor ET}: Sólo incluye al tejido ET.
-	\item \textbf{Tumor Core TC}: Incluye al tejido ET y al tejido NCR.
-	\item \textbf{Whole Tumor WT}: Incluye a todos los tejidos enfermos: ET, NCR y ED. La segmentación de toda la lesión.
-\end{enumerate}
-
-Sin embargo, en este trabajo hacemos una reducción del problema por falta de recursos a \textbf{la segmentación únicamente del conjunto WT Whole Tumor}. De esta forma, la misión que tendremos es la de segmentar tejido enfermo o lesionado en todo el volumen de la resonancia. En otras palabras, diferenciar con la segmentación el tejido enfermo del tejido sano o la no existencia de tejido.
-
-Para ello, se utilizará tres métricas. Las dos primeras utilizadas en todas las competiciones de BraTS y la tercera adicionalmente utilizada en los trabajos que han ido conformando el estado del arte como \cite{zhou2021latent}.
+En este trabajo nos intentaremos ajustar lo máximo posible a una metodología de desarrollo ágil, \textbf{SCRUM}. Contemplando las siguientes características a cumplir.
 
 \begin{enumerate}
-	\item \textbf{Similaridad Dice} : Mide la similaridad de dos conjuntos a través de la intersección de ambos respecto el tamaño total de los dos conjuntos.
-	 
-	\begin{figure}[!h]
-		\centering
-		\includegraphics[width=0.25\linewidth]{imagenes/dicesimilarity.drawio.png}
-		\caption{Interpretación del coeficiente de Similaridad Dice}
-	\end{figure}
+	\item \textbf{Enfoque en roles y procesos}: SCRUM define roles. En nuestro caso, la tutora líder del proyecto (tomando las decisiones estructurales) y el alumno implementador y solucionador (llevándolo a la práctica y tomando el resto de decisiones). También define procesos estructurados como las reuniones de planificación de sprint, la revisión de sprint y la retrospectiva. Que se traducen en las tutorías y comunicación proporcionado durante el desarrollo del proyecto.
 	
-	Podemos expresarlo como:
+	\item \textbf{Iterativo e incremental}: SCRUM se basa en iteraciones cortas (sprints) para desarrollar de manera incremental. En nuestro comenzando por clasificación y posteriormente por segmentación. Así como seguir la planificación de trabajo dispuesta anteriormente, informando de ello.
 	
-	$$ Dice(A, B) = \frac{2 \times |A \cap B|}{|A| + |B|}$$
-	
-	Donde $A$ es la segmentación que proporcionará nuestro modelo y $B$ la verdadera.
-	
-	De forma más detallada, para una resonancia completa podemos expresarlo como:
-	
-	$$ Dice(A, B) =  2 \cdot \frac{\sum_{i=1}^{N} \sum_{j=1}^{C} A_{ij} B_{ij} + \epsilon}{\sum_{i=1}^{N} \sum_{j=1}^{C} A_{ij} + B_{ij} + \epsilon} $$ 
-	
-	Donde $N$ es el conjunto de todas las slices de la resonancia, $C$ el conjunto de clases en nuestro caso $C = 2$, $A_{ij}$ es el valor de la predicción en el pixel $i$ para clase $j$. $B_{ij}$ es el valor real en el pixel $i$ para la clase $j$. $\epsilon$ es una pequeña constante para evitar dividir entre 0. 
-	
-	\item \textbf{Distancia Hausdorff} : Esta métrica tiene el objetivo de medir geométricamente la mayor distancia resultado entre $A$ la predicción del modelo y la verdadera segmentación $B$, siendo $A$ y $B$ conjuntos de puntos o píxeles.
-	
-	\begin{figure}[H]
-		\centering
-		\includegraphics[width=0.4\linewidth]{imagenes/distanceHaussdorff.png}
-		\caption{Distancias de Hausdorff entre dos conjuntos}
-	\end{figure}
-	
-	Podemos enunciar la distancia máxima de Hausdorff:
-	
-	$$ H(A, B) = \max \left\{ \max_{a \in A} \min_{b \in B} d(a, b), \max_{b \in B} \min_{a \in A} d(a, b) \right\} $$
-	
-	Donde $a, b$ son puntos concretos en los conjuntos, $d(a, b)$ la distancia euclidiana entre los dos puntos y $A, B$ los conjuntos de puntos.
-	
-	Obtendremos la distancia de Hausdorff media de todos los slices de cada resonancia:
-	
-	$$ \bar{H}(A, B) = \frac{1}{|N|} \sum_{s \in N} H(A, B) $$
-	
-	De esta forma, a menor distancia de Hausdorff la segmentación salida y real son geométricamente más parecidas.
-	
-	\item \textbf{Sensibilidad o Recall} : Mide la proporción de casos positivos que fueron correctamente identificados por el modelo. En otras palabras y para nuestro problema, mide cuánto la segmentación predicción coincide con la segmentación verdadera, cuantificado en porcentaje.
-	
-	Podemos expresarlo como:
-	
-	$$ \text{Recall} = \frac{\text{TP}}{\text{TP} + \text{FN}} $$
-	
-	Donde $TP$ son los pixeles que son verdaderos positivos y $FN$ los pixeles que son falsos negativos.
-	
+	\item \textbf{Flexibilidad en las prácticas técnicas}: SCRUM permite adaptarse. Esta característica es muy importante en este proyecto ante pruebas sin éxito o cambios de enfoque que sean necesarios.
 \end{enumerate}

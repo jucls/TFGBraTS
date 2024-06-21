@@ -1,14 +1,19 @@
 \babel@toc {spanish}{}\relax 
 \addvspace {10\p@ }
+\contentsline {table}{\numberline {1.1}{\ignorespaces Planificación del trabajo con tiempos y presupuesto.}}{13}{table.1.1}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {3.1}{\ignorespaces Porcentaje de imágenes conservadas tras undersampling.}}{35}{table.3.1}%
+\contentsline {table}{\numberline {3.1}{\ignorespaces Porcentaje de imágenes conservadas tras undersampling.}}{40}{table.3.1}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {4.1}{\ignorespaces Pérdida de entrenamiento y validación para la reconstrucción con ResNet34}}{46}{table.4.1}%
-\contentsline {table}{\numberline {4.2}{\ignorespaces Pérdida de entrenamiento y validación para la reconstrucción de Xception}}{48}{table.4.2}%
-\contentsline {table}{\numberline {4.3}{\ignorespaces Pérdida de entrenamiento y validación para clasificación con la parte convolucional congelada}}{49}{table.4.3}%
-\contentsline {table}{\numberline {4.4}{\ignorespaces Pérdida de entrenamiento y validación para clasificación toda la red descongelada}}{50}{table.4.4}%
-\contentsline {table}{\numberline {4.5}{\ignorespaces Pérdida de entrenamiento y validación para clasificación para todo el entrenamiento toda la red descongelada}}{51}{table.4.5}%
-\contentsline {table}{\numberline {4.6}{\ignorespaces Pérdida de entrenamiento y validación para segmentación toda la red descongelada}}{55}{table.4.6}%
-\contentsline {table}{\numberline {4.7}{\ignorespaces Resultados de hold-out en validación y test para segmentación}}{56}{table.4.7}%
+\contentsline {table}{\numberline {4.1}{\ignorespaces Pérdida de entrenamiento y validación para la reconstrucción con ResNet34}}{69}{table.4.1}%
+\contentsline {table}{\numberline {4.2}{\ignorespaces Pérdida de entrenamiento y validación para la reconstrucción de Xception}}{71}{table.4.2}%
+\contentsline {table}{\numberline {4.3}{\ignorespaces Pérdida de entrenamiento y validación para clasificación con la parte convolucional congelada}}{72}{table.4.3}%
+\contentsline {table}{\numberline {4.4}{\ignorespaces Pérdida de entrenamiento y validación para clasificación con la parte convolucional congelada}}{73}{table.4.4}%
+\contentsline {table}{\numberline {4.5}{\ignorespaces Pérdida de entrenamiento y validación para clasificación toda la red descongelada}}{74}{table.4.5}%
+\contentsline {table}{\numberline {4.6}{\ignorespaces Pérdida de entrenamiento y validación para clasificación para todo el entrenamiento toda la red descongelada}}{75}{table.4.6}%
+\contentsline {table}{\numberline {4.7}{\ignorespaces Resultados de validación y entrenamiento sin votación}}{77}{table.4.7}%
+\contentsline {table}{\numberline {4.8}{\ignorespaces Resultados de validación con votación y de la búsqueda}}{79}{table.4.8}%
+\contentsline {table}{\numberline {4.9}{\ignorespaces Resultados de validación con votación y de la búsqueda}}{81}{table.4.9}%
+\contentsline {table}{\numberline {4.10}{\ignorespaces Pérdida de entrenamiento y validación para segmentación toda la red descongelada}}{81}{table.4.10}%
+\contentsline {table}{\numberline {4.11}{\ignorespaces Resultados de hold-out en validación y test para segmentación}}{83}{table.4.11}%
 \addvspace {10\p@ }

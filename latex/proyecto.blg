@@ -5,49 +5,50 @@ The style file: apalike.bst
 Database file #1: bibliografia/bibliografia.bib
 Warning--entry type for "cancerorg" isn't style-file defined
 --line 50 of file bibliografia/bibliografia.bib
-Repeated entry---line 196 of file bibliografia/bibliografia.bib
+Repeated entry---line 189 of file bibliografia/bibliografia.bib
  : @inproceedings{lin2017focal
  :                            ,
 I'm skipping whatever remains of this entry
-You've used 23 entries,
+Warning--can't use both volume and number fields in diaz2021deep
+You've used 38 entries,
             1935 wiz_defined-function locations,
-            605 strings with 10163 characters,
-and the built_in function-call counts, 12570 in all, are:
-= -- 1236
-> -- 685
-< -- 19
-+ -- 256
-- -- 248
-* -- 1072
-:= -- 2090
-add.period$ -- 78
-call.type$ -- 23
-change.case$ -- 234
-chr.to.int$ -- 23
-cite$ -- 23
-duplicate$ -- 457
-empty$ -- 770
-format.name$ -- 277
-if$ -- 2522
+            684 strings with 14024 characters,
+and the built_in function-call counts, 20883 in all, are:
+= -- 2043
+> -- 1135
+< -- 30
++ -- 420
+- -- 410
+* -- 1782
+:= -- 3455
+add.period$ -- 128
+call.type$ -- 38
+change.case$ -- 389
+chr.to.int$ -- 38
+cite$ -- 39
+duplicate$ -- 770
+empty$ -- 1290
+format.name$ -- 458
+if$ -- 4205
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 21
-newline$ -- 117
-num.names$ -- 69
-pop$ -- 239
+missing$ -- 36
+newline$ -- 192
+num.names$ -- 114
+pop$ -- 410
 preamble$ -- 1
-purify$ -- 234
+purify$ -- 389
 quote$ -- 0
-skip$ -- 365
+skip$ -- 609
 stack$ -- 0
-substring$ -- 835
-swap$ -- 123
-text.length$ -- 12
+substring$ -- 1379
+swap$ -- 214
+text.length$ -- 21
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 138
-warning$ -- 0
-while$ -- 95
+type$ -- 228
+warning$ -- 1
+while$ -- 153
 width$ -- 0
-write$ -- 307
+write$ -- 505
 (There was 1 error message)
