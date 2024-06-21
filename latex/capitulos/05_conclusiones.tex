@@ -1,15 +1,56 @@
 \chapter{Conclusiones y Trabajos Futuros}
 
+En este capítulo abordamos las conclusiones generales y específicas del trabajo. Adicionalmente, se expone qué mejoraríamos de este o cómo lo ampliaríamos en un trabajo futuro.
+
 \section{Conclusiones del trabajo}
+
+A continuación, comenzamos por describir las conclusiones del trabajo. Para ello, haremos tres apartados que ha sido clave para entender este trabajo: los resultados obtenidos en contexto con los recursos disponibles, el preprocesado aplicado (es decir, qué conclusión podemos extraer de la reducción de imágenes realizada para hacer el trabajo viable) y cómo la reconstrucción previa ha sido clave acelerando los tiempos de entrenamiento. 
 
 \subsection{Resultados y recursos}
 
-\subsection{Unificación de arquitecturas}
+En este trabajo desde el primero momento hemos estado en desventaja ante otros autores por la falta de recursos y capacidades, ya que el único hardware personal que nos podría permitir entrenar era un PC personal. 
+
+Sin embargo, un PC personal estaba descartado como posible hardware y la alternativa era usar el entorno de Kaggle que tiene sus limitaciones. 
+
+Los resultados son moderadamente peores que la parte más reciente del estado del arte. No obstante, interpretamos que esto se debe a la falta de un entrenamiento más potente.  
 
 \subsection{Nuevo preprocesado en el problema}
 
+Para poder entrenar con los datos se tuvo que hacer un nuevo preprocesado que consistía en eliminar partes que podrían parecer redundantes. Se redujo las imágenes de entrenamiento a imágenes a aquellas con solo contenían lesión tumoral más una parte balanceada sin lesión. Esta reducción supone una nueva forma de preprocesar este conjunto de datos, y ante los resultados podemos considerar que se han mantenido estables, validando en la práctica este preprocesado.
+
+Podemos concluir que la eliminación de la prueba \textbf{T2W} tampoco ha influido significativamente en los resultados. Pudiendo significar la existencia de información redundante en el conjunto de datos.
+
+Por otro lado, tras los resultados no vemos unos fuertes efectos de la reducción en la dimensionalidad. La mayoría de los trabajos recientes usan 3D, usando toda la resonancia como entrada a la red. Descartamos esta opción por recursos, pero en la práctica no vemos una diferencia sustancial que haga que la información espacial entre imágenes de una resonancia permita segmentar mejor.
+
+
+\subsection{El poder de la reconstrucción previa}
+
+Finalmente, uno de los aspectos clave para hacer posible este trabajo es gran aceleración que hemos obtenido en el entrenamiento mediante la reconstrucción de las imágenes previa para inicializar la red.
+
+El preentrenamiento con el autoencoder ha permitido que el codificador y representación latente capten características relevantes y patrones inherentes a los datos antes de que se entrene para la tarea de clasificación o segmentación. Esto es especialmente útil cuando se dispone de una cantidad limitada de datos etiquetados como es en el caso de datos médicos. Esta técnica consiste en aprovechar al máximo las imágenes de entrada.
+
+En los experimentos hemos visto una gran convergencia en entrenamiento motivado por este paso previo clave en el proceso.
+
 \section{Trabajos futuros}
+
+A continuación, detallamos los aspectos en los que este trabajo podría ampliarse o mejorar. En primer lugar, hacemos un listado de aspectos específicos de mejora.
+
+\begin{enumerate}
+	\item \textbf{Mejora del hardware}. En un futuro necesitaríamos un hardware propio y suficiente con el podamos volver a entrenar el modelo más tiempo.
+	\item \textbf{Mejorar la exploración de modelos e hiperparámetros}. Consecuencia de la mejora anterior permitiría una investigación más guiada experimentalmente.
+	\item \textbf{Seguir investigando formas de abordar la tercera tarea}. La falta de datos y recursos impidieron poder resolver la predicción de la evolución del tumor. Una línea interesante es seguir investigando formas de aumento o creación de datos para llevarla a cabo.
+\end{enumerate}
 
 \subsection{Uso de transformers}
 
+En el estado del arte hemos visto que el uso de transformer es una tendencia al alza que puede mejorar los resultados rompiendo la localidad de las convoluciones creando codificadores más potentes. Sería interesante probar su bondad en un futuro.  
+
+\subsection{Unificación de arquitecturas}
+
+En todo el trabajo hemos usado un codificador y representación latente común a las dos tareas y en la teoría también común a la tercera. Un trabajo a futuro sería investigar la bondad de ambos tres modelos para diferentes tareas optimizando esta parte común junto a los decoder o capas densamente conectadas de cada una en un mismo proceso de entrenamiento. Parte de la literatura ha indicado que esto bien ejecutado podría tener un efecto regularizador y reducir el ruido irreducible que veíamos en la optimización.
+
+Por otro lado, esta puede ser una fuerte motivación a usar una arquitectura transformadora ya que en trabajos recientes han sido utilizadas como modelo multi-modal.
+
 \subsection{Exploración de otras técnicas de aprendizaje no supervisado}
+
+En la literatura se usan otras técnicas de aprendizaje no supervisado como las redes generativas adversarias, un trabajo futuro podría ser la investigación de la mejora de los modelos de este proyecto mediante ese tipo de aumento de datos.

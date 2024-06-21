@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex proyecto"] 1718925210 "proyecto.aux" "proyecto.bbl" "proyecto" 1718925216 2
-  "./bibliografia/bibliografia.bib" 1718865366 15003 6f709d98116473923a8f416a6a0a7a92 ""
+["bibtex proyecto"] 1718943611 "proyecto.aux" "proyecto.bbl" "proyecto" 1718943617 2
+  "./bibliografia/bibliografia.bib" 1718943608 15004 159437733c8e6f322c41533a289b5a19 ""
   "/usr/share/texlive/texmf-dist/bibtex/bst/base/apalike.bst" 1292289607 24635 604dafcc79f521a11ea73e506e1fbd98 ""
-  "proyecto.aux" 1718925216 31073 a5af156876fba799e9b6574b45f40624 "pdflatex"
+  "proyecto.aux" 1718943617 33426 12ea7b89a276f6d3161ceabe78ffb8a0 "pdflatex"
   (generated)
   "proyecto.bbl"
   "proyecto.blg"
   (rewritten before read)
-["pdflatex"] 1718925210 "proyecto.tex" "proyecto.pdf" "proyecto" 1718925216 2
+["pdflatex"] 1718943611 "proyecto.tex" "proyecto.pdf" "proyecto" 1718943617 2
   "/etc/texmf/web2c/texmf.cnf" 1709143228 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/tcrm0600.tfm" 1136768653 1536 12e8c510d3e158fdd0e9a42e75118bd9 ""
@@ -186,10 +186,10 @@
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1709143248 4643645 d2d1d8b8ba87ed005f4aaf1ce646a79e ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1710501680 7908943 e3dd4246395bacf1a976c871c09f2ecf ""
   "capitulos/01_introduccion.tex" 1718881521 21124 48406b68e903128923178fc7ea19baf5 ""
-  "capitulos/02_estadodelarte.tex" 1718882447 37717 7261f0b1be8b6290712fea9fc8ffef80 ""
+  "capitulos/02_estadodelarte.tex" 1718930605 37706 192e31af3899fbe8e3175506910bde97 ""
   "capitulos/03_metodologia.tex" 1718883350 63375 735b883b2ca0d1f28a49147844859928 ""
-  "capitulos/04_experimentacion.tex" 1718925208 15581 2418298810917cd580c5026bfab20397 ""
-  "capitulos/05_conclusiones.tex" 1718876241 422 e2df5d30e107bdd6c3f890a2962564b5 ""
+  "capitulos/04_experimentacion.tex" 1718943600 24145 91edad7709dda4689ef92b81a7e101af ""
+  "capitulos/05_conclusiones.tex" 1718935338 343 a16dc42b3611d0144ad891182cde5790 ""
   "glosario/entradas_glosario.tex" 1712893310 297 ec6ef446335b37e9fd093c572a5f94ce ""
   "imagenes/PCA_reduction.png" 1718496687 136870 439d41c9d6fda5cec3c76c366fdd31a0 ""
   "imagenes/abiwinanda2019brain.png" 1718856265 31591 0bbeec3b06c49a31db5b7d68a184051c ""
@@ -254,14 +254,14 @@
   "imagenes/zhoufusionmodel.png" 1713486594 341129 2f0a065069d8928519d1b884c76898b8 ""
   "portada/portada.tex" 1712270326 1090 c7ba864f6eaf3d2be1707ccb3a590c7a ""
   "prefacios/prefacio.tex" 1718879597 2650 4dc098d0a9dab607ca1f3a617bfb0fb3 ""
-  "proyecto.aux" 1718925216 31073 a5af156876fba799e9b6574b45f40624 "pdflatex"
-  "proyecto.bbl" 1718925210 12852 10ded190887243344b41b3c19a53225d "bibtex proyecto"
+  "proyecto.aux" 1718943617 33426 12ea7b89a276f6d3161ceabe78ffb8a0 "pdflatex"
+  "proyecto.bbl" 1718943611 12852 10ded190887243344b41b3c19a53225d "bibtex proyecto"
   "proyecto.gls" 0 -1 0 ""
-  "proyecto.lof" 1718925216 7923 67898ad21fde5313446f13c002641d9d "pdflatex"
-  "proyecto.lot" 1718925216 1652 81a08c443db84eb1a946c1a014cd23d8 "pdflatex"
-  "proyecto.out" 1718925216 12779 067d7ca75fa938fabb76959886e57e31 "pdflatex"
+  "proyecto.lof" 1718943617 7912 0c4e911b43395ab0e59cb9ab5e95e67a "pdflatex"
+  "proyecto.lot" 1718943617 2170 8f9ca815bd4efeda96c840e7fa46aa63 "pdflatex"
+  "proyecto.out" 1718943617 13910 cc0480b7eff5cc950697a564819514cc "pdflatex"
   "proyecto.tex" 1718839817 5629 6e289c3af80468682538a3b248d107fd ""
-  "proyecto.toc" 1718925216 7590 06a8f0954ebf3d20c29d58e9a129797b "pdflatex"
+  "proyecto.toc" 1718943617 8250 69ebbd4718ec509872470932565f8e85 "pdflatex"
   (generated)
   "proyecto.aux"
   "proyecto.glo"

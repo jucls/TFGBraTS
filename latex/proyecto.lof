@@ -51,14 +51,14 @@
 \contentsline {figure}{\numberline {4.9}{\ignorespaces Matriz de confusión de entrenamiento sin votación}}{76}{figure.4.9}%
 \contentsline {figure}{\numberline {4.10}{\ignorespaces Matriz de confusión de validación sin votación}}{77}{figure.4.10}%
 \contentsline {figure}{\numberline {4.11}{\ignorespaces Matriz de confusión de validación con votación: $Meningiomas < 5$}}{78}{figure.4.11}%
-\contentsline {figure}{\numberline {4.12}{\ignorespaces Matriz de confusión de validación con votación: $Meningiomas < 3$}}{79}{figure.4.12}%
-\contentsline {figure}{\numberline {4.13}{\ignorespaces Matriz de confusión de Test con votación}}{80}{figure.4.13}%
-\contentsline {figure}{\numberline {4.14}{\ignorespaces Curva de aprendizaje para la tarea de segmentación}}{82}{figure.4.14}%
-\contentsline {figure}{\numberline {4.15}{\ignorespaces Comparación de la salida del modelo respecto la real}}{83}{figure.4.15}%
-\contentsline {figure}{\numberline {4.16}{\ignorespaces Distribución de similaridad Dice en el conjunto de validación}}{84}{figure.4.16}%
-\contentsline {figure}{\numberline {4.17}{\ignorespaces Distribución de distancia Hausdorff en el conjunto de validación}}{84}{figure.4.17}%
+\contentsline {figure}{\numberline {4.12}{\ignorespaces Matriz de confusión de validación con votación: $Meningiomas < 3$}}{78}{figure.4.12}%
+\contentsline {figure}{\numberline {4.13}{\ignorespaces Matriz de confusión de Test con votación}}{79}{figure.4.13}%
+\contentsline {figure}{\numberline {4.14}{\ignorespaces Curva de aprendizaje para la tarea de segmentación}}{81}{figure.4.14}%
+\contentsline {figure}{\numberline {4.15}{\ignorespaces Comparación de la salida del modelo respecto la real}}{82}{figure.4.15}%
+\contentsline {figure}{\numberline {4.16}{\ignorespaces Distribución de similaridad Dice en el conjunto de validación}}{83}{figure.4.16}%
+\contentsline {figure}{\numberline {4.17}{\ignorespaces Distribución de distancia Hausdorff en el conjunto de validación}}{83}{figure.4.17}%
 \contentsline {figure}{\numberline {4.18}{\ignorespaces Distribución de sensibilidad en el conjunto de validación}}{84}{figure.4.18}%
-\contentsline {figure}{\numberline {4.19}{\ignorespaces Distribución de similaridad Dice en el conjunto de test}}{85}{figure.4.19}%
-\contentsline {figure}{\numberline {4.20}{\ignorespaces Distribución de distancia Hausdorff en el conjunto de test}}{85}{figure.4.20}%
+\contentsline {figure}{\numberline {4.19}{\ignorespaces Distribución de similaridad Dice en el conjunto de test}}{84}{figure.4.19}%
+\contentsline {figure}{\numberline {4.20}{\ignorespaces Distribución de distancia Hausdorff en el conjunto de test}}{84}{figure.4.20}%
 \contentsline {figure}{\numberline {4.21}{\ignorespaces Distribución de sensibilidad en el conjunto de test}}{85}{figure.4.21}%
 \addvspace {10\p@ }

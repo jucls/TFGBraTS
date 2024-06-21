@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.3.15)  21 JUN 2024 04:37
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.3.15)  21 JUN 2024 08:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -771,7 +771,7 @@ Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 ))
 (./portada/portada.tex
 \centeroffset=\skip84
-<imagenes/logoUGR.jpg, id=268, 816.04875pt x 232.87pt>
+<imagenes/logoUGR.jpg, id=276, 816.04875pt x 232.87pt>
 File: imagenes/logoUGR.jpg Graphic file (type jpg)
 <use imagenes/logoUGR.jpg>
 Package pdftex.def Info: imagenes/logoUGR.jpg  used on input line 11.
@@ -836,12 +836,12 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-<imagenes/etsiit_logo.png, id=269, 110.814pt x 40.4712pt>
+<imagenes/etsiit_logo.png, id=277, 110.814pt x 40.4712pt>
 File: imagenes/etsiit_logo.png Graphic file (type png)
 <use imagenes/etsiit_logo.png>
 Package pdftex.def Info: imagenes/etsiit_logo.png  used on input line 30.
 (pdftex.def)             Requested size: 108.0011pt x 39.44412pt.
-<imagenes/decsai_logo.png, id=271, 339.4701pt x 411.07706pt>
+<imagenes/decsai_logo.png, id=279, 339.4701pt x 411.07706pt>
 File: imagenes/decsai_logo.png Graphic file (type png)
 <use imagenes/decsai_logo.png>
 Package pdftex.def Info: imagenes/decsai_logo.png  used on input line 31.
@@ -1154,7 +1154,7 @@ been already used, duplicate ignored
 l.72 D
       efiniremos como nuestro conjunto de datos \textbf{$X$} a un conjunto d...
 [4]
-<imagenes/porcentajeGLIvsMEN.png, id=661, 422.0568pt x 348.3414pt>
+<imagenes/porcentajeGLIvsMEN.png, id=674, 422.0568pt x 348.3414pt>
 File: imagenes/porcentajeGLIvsMEN.png Graphic file (type png)
 <use imagenes/porcentajeGLIvsMEN.png>
 Package pdftex.def Info: imagenes/porcentajeGLIvsMEN.png  used on input line 80
@@ -1195,7 +1195,7 @@ been already used, duplicate ignored
                    \relax 
 l.90 
       [5 <./imagenes/porcentajeGLIvsMEN.png>]
-<imagenes/cantidadinstanciastemporales.png, id=669, 446.6286pt x 312.2064pt>
+<imagenes/cantidadinstanciastemporales.png, id=681, 446.6286pt x 312.2064pt>
 File: imagenes/cantidadinstanciastemporales.png Graphic file (type png)
 <use imagenes/cantidadinstanciastemporales.png>
 Package pdftex.def Info: imagenes/cantidadinstanciastemporales.png  used on inp
@@ -1208,13 +1208,13 @@ been already used, duplicate ignored
                    \relax 
 l.108 
        [6 <./imagenes/cantidadinstanciastemporales.png>]
-<imagenes/introduccion_imagenesMRI.png, id=677, 1148.3703pt x 570.2103pt>
+<imagenes/introduccion_imagenesMRI.png, id=689, 1148.3703pt x 570.2103pt>
 File: imagenes/introduccion_imagenesMRI.png Graphic file (type png)
 <use imagenes/introduccion_imagenesMRI.png>
 Package pdftex.def Info: imagenes/introduccion_imagenesMRI.png  used on input l
 ine 124.
 (pdftex.def)             Requested size: 360.0pt x 178.75583pt.
-<imagenes/imgSSAPEDMRI.png, id=678, 1148.3703pt x 570.2103pt>
+<imagenes/imgSSAPEDMRI.png, id=690, 1148.3703pt x 570.2103pt>
 File: imagenes/imgSSAPEDMRI.png Graphic file (type png)
 <use imagenes/imgSSAPEDMRI.png>
 Package pdftex.def Info: imagenes/imgSSAPEDMRI.png  used on input line 133.
@@ -1230,7 +1230,7 @@ been already used, duplicate ignored
                    \relax 
 l.138 \newpage
                [7 <./imagenes/introduccion_imagenesMRI.png>]
-<imagenes/segimagenesMRI.png, id=689, 1148.3703pt x 570.2103pt>
+<imagenes/segimagenesMRI.png, id=701, 1148.3703pt x 570.2103pt>
 File: imagenes/segimagenesMRI.png Graphic file (type png)
 <use imagenes/segimagenesMRI.png>
 Package pdftex.def Info: imagenes/segimagenesMRI.png  used on input line 154.
@@ -1239,7 +1239,7 @@ Package pdftex.def Info: imagenes/segimagenesMRI.png  used on input line 154.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<imagenes/segimagenesSSAPEDMRI.png, id=690, 1148.3703pt x 570.2103pt>
+<imagenes/segimagenesSSAPEDMRI.png, id=702, 1148.3703pt x 570.2103pt>
 File: imagenes/segimagenesSSAPEDMRI.png Graphic file (type png)
 <use imagenes/segimagenesSSAPEDMRI.png>
 Package pdftex.def Info: imagenes/segimagenesSSAPEDMRI.png  used on input line 
@@ -1255,7 +1255,7 @@ been already used, duplicate ignored
                    \relax 
 l.164 \newpage
                [8 <./imagenes/imgSSAPEDMRI.png>]
-<imagenes/metodologia_heatmapsGLI.png, id=699, 2160.873pt x 3244.2003pt>
+<imagenes/metodologia_heatmapsGLI.png, id=711, 2160.873pt x 3244.2003pt>
 File: imagenes/metodologia_heatmapsGLI.png Graphic file (type png)
 <use imagenes/metodologia_heatmapsGLI.png>
 Package pdftex.def Info: imagenes/metodologia_heatmapsGLI.png  used on input li
@@ -1265,7 +1265,7 @@ ne 169.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<imagenes/metodologia_heatmapsMEN.png, id=700, 2160.873pt x 3244.2003pt>
+<imagenes/metodologia_heatmapsMEN.png, id=712, 2160.873pt x 3244.2003pt>
 File: imagenes/metodologia_heatmapsMEN.png Graphic file (type png)
 <use imagenes/metodologia_heatmapsMEN.png>
 Package pdftex.def Info: imagenes/metodologia_heatmapsMEN.png  used on input li
@@ -1350,26 +1350,26 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [16]
-<imagenes/abiwinanda2019brain.png, id=743, 356.33125pt x 85.31876pt>
+<imagenes/abiwinanda2019brain.png, id=755, 356.33125pt x 85.31876pt>
 File: imagenes/abiwinanda2019brain.png Graphic file (type png)
 <use imagenes/abiwinanda2019brain.png>
 Package pdftex.def Info: imagenes/abiwinanda2019brain.png  used on input line 3
 9.
 (pdftex.def)             Requested size: 180.0pt x 43.09798pt.
-<imagenes/sultan2019multi.png, id=748, 1093.08376pt x 376.40625pt>
+<imagenes/sultan2019multi.png, id=760, 1093.08376pt x 376.40625pt>
 File: imagenes/sultan2019multi.png Graphic file (type png)
 <use imagenes/sultan2019multi.png>
 Package pdftex.def Info: imagenes/sultan2019multi.png  used on input line 51.
 (pdftex.def)             Requested size: 360.0pt x 123.96747pt.
 
 [17 <./imagenes/abiwinanda2019brain.png>]
-<imagenes/diaz2021deep.png, id=760, 1062.97125pt x 608.2725pt>
+<imagenes/diaz2021deep.png, id=772, 1062.97125pt x 608.2725pt>
 File: imagenes/diaz2021deep.png Graphic file (type png)
 <use imagenes/diaz2021deep.png>
 Package pdftex.def Info: imagenes/diaz2021deep.png  used on input line 59.
 (pdftex.def)             Requested size: 360.0pt x 206.00243pt.
  [18 <./imagenes/sultan2019multi.png> <./imagenes/diaz2021deep.png>] [19]
-<imagenes/evolution_stateofart.png, id=777, 1304.875pt x 461.725pt>
+<imagenes/evolution_stateofart.png, id=789, 1304.875pt x 461.725pt>
 File: imagenes/evolution_stateofart.png Graphic file (type png)
 <use imagenes/evolution_stateofart.png>
 Package pdftex.def Info: imagenes/evolution_stateofart.png  used on input line 
@@ -1377,7 +1377,7 @@ Package pdftex.def Info: imagenes/evolution_stateofart.png  used on input line
 (pdftex.def)             Requested size: 360.0pt x 127.38692pt.
  [20 <./imagenes/evolution_stateofart.png>]
 [21]
-<imagenes/comparisonsinglemultipleCNN.png, id=797, 665.48625pt x 1087.06125pt>
+<imagenes/comparisonsinglemultipleCNN.png, id=809, 665.48625pt x 1087.06125pt>
 File: imagenes/comparisonsinglemultipleCNN.png Graphic file (type png)
 <use imagenes/comparisonsinglemultipleCNN.png>
 Package pdftex.def Info: imagenes/comparisonsinglemultipleCNN.png  used on inpu
@@ -1387,7 +1387,7 @@ t line 135.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [22]
-<imagenes/havaei2017architecture.png, id=808, 947.54pt x 296.10625pt>
+<imagenes/havaei2017architecture.png, id=820, 947.54pt x 296.10625pt>
 File: imagenes/havaei2017architecture.png Graphic file (type png)
 <use imagenes/havaei2017architecture.png>
 Package pdftex.def Info: imagenes/havaei2017architecture.png  used on input lin
@@ -1396,34 +1396,34 @@ e 143.
 
 [23 <./imagenes/comparisonsinglemultipleCNN.png> <./imagenes/havaei2017architec
 ture.png>]
-<imagenes/encoder-decoderIMG.drawio.png, id=820, 785.93625pt x 705.63625pt>
+<imagenes/encoder-decoderIMG.drawio.png, id=832, 785.93625pt x 705.63625pt>
 File: imagenes/encoder-decoderIMG.drawio.png Graphic file (type png)
 <use imagenes/encoder-decoderIMG.drawio.png>
 Package pdftex.def Info: imagenes/encoder-decoderIMG.drawio.png  used on input 
 line 173.
 (pdftex.def)             Requested size: 306.0022pt x 274.74481pt.
  [24] [25 <./imagenes/encoder-decoderIMG.drawio.png>]
-<imagenes/cascadestructure.png, id=840, 717.68124pt x 517.935pt>
+<imagenes/cascadestructure.png, id=852, 717.68124pt x 517.935pt>
 File: imagenes/cascadestructure.png Graphic file (type png)
 <use imagenes/cascadestructure.png>
 Package pdftex.def Info: imagenes/cascadestructure.png  used on input line 203.
 
 (pdftex.def)             Requested size: 180.0pt x 129.90228pt.
  [26 <./imagenes/cascadestructure.png>]
-<imagenes/myroenko2019.png, id=853, 1144.275pt x 591.20876pt>
+<imagenes/myroenko2019.png, id=865, 1144.275pt x 591.20876pt>
 File: imagenes/myroenko2019.png Graphic file (type png)
 <use imagenes/myroenko2019.png>
 Package pdftex.def Info: imagenes/myroenko2019.png  used on input line 231.
 (pdftex.def)             Requested size: 360.0pt x 185.9972pt.
  [27 <./imagenes/myroenko2019.png>] [28]
-<imagenes/latentcorrelationrepresentation.png, id=871, 1165.35374pt x 320.19624
+<imagenes/latentcorrelationrepresentation.png, id=883, 1165.35374pt x 320.19624
 pt>
 File: imagenes/latentcorrelationrepresentation.png Graphic file (type png)
 <use imagenes/latentcorrelationrepresentation.png>
 Package pdftex.def Info: imagenes/latentcorrelationrepresentation.png  used on 
 input line 263.
 (pdftex.def)             Requested size: 360.0pt x 98.9129pt.
-<imagenes/zhoufusionmodel.png, id=873, 1191.45125pt x 588.1975pt>
+<imagenes/zhoufusionmodel.png, id=885, 1191.45125pt x 588.1975pt>
 File: imagenes/zhoufusionmodel.png Graphic file (type png)
 <use imagenes/zhoufusionmodel.png>
 Package pdftex.def Info: imagenes/zhoufusionmodel.png  used on input line 271.
@@ -1436,7 +1436,7 @@ Overfull \hbox (4.81381pt too wide) in paragraph at lines 279--280
 
 [29 <./imagenes/latentcorrelationrepresentation.png> <./imagenes/zhoufusionmode
 l.png>]
-<imagenes/zhouarchitecture.png, id=881, 1382.16376pt x 430.60875pt>
+<imagenes/zhouarchitecture.png, id=893, 1382.16376pt x 430.60875pt>
 File: imagenes/zhouarchitecture.png Graphic file (type png)
 <use imagenes/zhouarchitecture.png>
 Package pdftex.def Info: imagenes/zhouarchitecture.png  used on input line 286.
@@ -1449,7 +1449,7 @@ re-sul-ta-dos que [[]]
  []
 
 [30 <./imagenes/zhouarchitecture.png>]
-<imagenes/transbts.png, id=890, 966.61125pt x 462.72874pt>
+<imagenes/transbts.png, id=902, 966.61125pt x 462.72874pt>
 File: imagenes/transbts.png Graphic file (type png)
 <use imagenes/transbts.png>
 Package pdftex.def Info: imagenes/transbts.png  used on input line 315.
@@ -1460,7 +1460,7 @@ Overfull \hbox (8.73872pt too wide) in paragraph at lines 338--339
  [[]]. 
  []
 
-<imagenes/swinunet.png, id=903, 957.5775pt x 380.42125pt>
+<imagenes/swinunet.png, id=915, 957.5775pt x 380.42125pt>
 File: imagenes/swinunet.png Graphic file (type png)
 <use imagenes/swinunet.png>
 Package pdftex.def Info: imagenes/swinunet.png  used on input line 342.
@@ -1469,7 +1469,7 @@ Package pdftex.def Info: imagenes/swinunet.png  used on input line 342.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [32]
-<imagenes/imagen_faking.png, id=911, 451.6875pt x 273.02pt>
+<imagenes/imagen_faking.png, id=923, 451.6875pt x 273.02pt>
 File: imagenes/imagen_faking.png Graphic file (type png)
 <use imagenes/imagen_faking.png>
 Package pdftex.def Info: imagenes/imagen_faking.png  used on input line 361.
@@ -1478,7 +1478,7 @@ Package pdftex.def Info: imagenes/imagen_faking.png  used on input line 361.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [33 <./imagenes/swinunet.png>]
-<imagenes/esquema_faking.png, id=918, 816.04875pt x 354.32375pt>
+<imagenes/esquema_faking.png, id=931, 816.04875pt x 354.32375pt>
 File: imagenes/esquema_faking.png Graphic file (type png)
 <use imagenes/esquema_faking.png>
 Package pdftex.def Info: imagenes/esquema_faking.png  used on input line 369.
@@ -1486,7 +1486,7 @@ Package pdftex.def Info: imagenes/esquema_faking.png  used on input line 369.
 ) (./capitulos/03_metodologia.tex [34 <./imagenes/imagen_faking.png> <./imagene
 s/esquema_faking.png>]
 Cap\'{\i }tulo 3.
-<imagenes/comparativa_rtx2060tesla.png, id=927, 867.24pt x 578.16pt>
+<imagenes/comparativa_rtx2060tesla.png, id=939, 867.24pt x 578.16pt>
 File: imagenes/comparativa_rtx2060tesla.png Graphic file (type png)
 <use imagenes/comparativa_rtx2060tesla.png>
 Package pdftex.def Info: imagenes/comparativa_rtx2060tesla.png  used on input l
@@ -1515,21 +1515,21 @@ File: omscmr.fd 2023/04/13 v2.5m Standard LaTeX font definitions
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 97.
  [39]
-<imagenes/esquema_codificador.png, id=985, 1535.7375pt x 668.4975pt>
+<imagenes/esquema_codificador.png, id=997, 1535.7375pt x 668.4975pt>
 File: imagenes/esquema_codificador.png Graphic file (type png)
 <use imagenes/esquema_codificador.png>
 Package pdftex.def Info: imagenes/esquema_codificador.png  used on input line 1
 61.
 (pdftex.def)             Requested size: 360.0pt x 156.69911pt.
  [40] [41 <./imagenes/esquema_codificador.png>]
-<imagenes/esquema_clasificacion.png, id=998, 1357.07pt x 521.95pt>
+<imagenes/esquema_clasificacion.png, id=1010, 1357.07pt x 521.95pt>
 File: imagenes/esquema_clasificacion.png Graphic file (type png)
 <use imagenes/esquema_clasificacion.png>
 Package pdftex.def Info: imagenes/esquema_clasificacion.png  used on input line
  180.
 (pdftex.def)             Requested size: 323.9978pt x 124.60951pt.
  [42 <./imagenes/esquema_clasificacion.png>]
-<imagenes/esquema_segmentacion.png, id=1013, 1049.9225pt x 401.5pt>
+<imagenes/esquema_segmentacion.png, id=1025, 1049.9225pt x 401.5pt>
 File: imagenes/esquema_segmentacion.png Graphic file (type png)
 <use imagenes/esquema_segmentacion.png>
 Package pdftex.def Info: imagenes/esquema_segmentacion.png  used on input line 
@@ -1537,25 +1537,25 @@ Package pdftex.def Info: imagenes/esquema_segmentacion.png  used on input line
 (pdftex.def)             Requested size: 323.9978pt x 123.90007pt.
 
 [43 <./imagenes/esquema_segmentacion.png>] [44] [45] [46]
-<imagenes/resnet34_arch.png, id=1042, 979.66pt x 165.61874pt>
+<imagenes/resnet34_arch.png, id=1054, 979.66pt x 165.61874pt>
 File: imagenes/resnet34_arch.png Graphic file (type png)
 <use imagenes/resnet34_arch.png>
 Package pdftex.def Info: imagenes/resnet34_arch.png  used on input line 329.
 (pdftex.def)             Requested size: 360.0pt x 60.85846pt.
  [47 <./imagenes/resnet34_arch.png>]
-<imagenes/xception_arch.png, id=1050, 204.765pt x 116.1138pt>
+<imagenes/xception_arch.png, id=1062, 204.765pt x 116.1138pt>
 File: imagenes/xception_arch.png Graphic file (type png)
 <use imagenes/xception_arch.png>
 Package pdftex.def Info: imagenes/xception_arch.png  used on input line 353.
 (pdftex.def)             Requested size: 288.0011pt x 163.3236pt.
  [48 <./imagenes/xception_arch.png>]
-<imagenes/bottleneck_arch.png, id=1056, 864.22874pt x 711.65875pt>
+<imagenes/bottleneck_arch.png, id=1068, 864.22874pt x 711.65875pt>
 File: imagenes/bottleneck_arch.png Graphic file (type png)
 <use imagenes/bottleneck_arch.png>
 Package pdftex.def Info: imagenes/bottleneck_arch.png  used on input line 384.
 (pdftex.def)             Requested size: 288.0011pt x 237.15022pt.
  [49 <./imagenes/bottleneck_arch.png>]
-<imagenes/PCA_reduction.png, id=1063, 798.985pt x 553.06625pt>
+<imagenes/PCA_reduction.png, id=1075, 798.985pt x 553.06625pt>
 File: imagenes/PCA_reduction.png Graphic file (type png)
 <use imagenes/PCA_reduction.png>
 Package pdftex.def Info: imagenes/PCA_reduction.png  used on input line 404.
@@ -1566,14 +1566,14 @@ Overfull \hbox (0.58707pt too wide) in paragraph at lines 462--463
 cons-truc-ci^^Son ya tendr^^S^^Pamos
  []
 
-<imagenes/arquitectura_clasificacion.png, id=1087, 266.9975pt x 643.40375pt>
+<imagenes/arquitectura_clasificacion.png, id=1099, 266.9975pt x 643.40375pt>
 File: imagenes/arquitectura_clasificacion.png Graphic file (type png)
 <use imagenes/arquitectura_clasificacion.png>
 Package pdftex.def Info: imagenes/arquitectura_clasificacion.png  used on input
  line 466.
 (pdftex.def)             Requested size: 108.0011pt x 260.25311pt.
 [53 <./imagenes/arquitectura_clasificacion.png>]
-<imagenes/arquitectura_segmentacion.png, id=1097, 843.15pt x 482.80376pt>
+<imagenes/arquitectura_segmentacion.png, id=1109, 843.15pt x 482.80376pt>
 File: imagenes/arquitectura_segmentacion.png Graphic file (type png)
 <use imagenes/arquitectura_segmentacion.png>
 Package pdftex.def Info: imagenes/arquitectura_segmentacion.png  used on input 
@@ -1599,7 +1599,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [61]
 [62{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
-<imagenes/dicesimilarity.drawio.png, id=1170, 192.72pt x 191.71625pt>
+<imagenes/dicesimilarity.drawio.png, id=1182, 192.72pt x 191.71625pt>
 File: imagenes/dicesimilarity.drawio.png Graphic file (type png)
 <use imagenes/dicesimilarity.drawio.png>
 Package pdftex.def Info: imagenes/dicesimilarity.drawio.png  used on input line
@@ -1611,14 +1611,14 @@ Overfull \hbox (11.91089pt too wide) in paragraph at lines 696--697
 -ca tie-ne el ob-je-ti-vo de me-dir geom^^Setri-
  []
 
-<imagenes/distanceHaussdorff.png, id=1180, 369.63094pt x 274.77657pt>
+<imagenes/distanceHaussdorff.png, id=1192, 369.63094pt x 274.77657pt>
 File: imagenes/distanceHaussdorff.png Graphic file (type png)
 <use imagenes/distanceHaussdorff.png>
 Package pdftex.def Info: imagenes/distanceHaussdorff.png  used on input line 70
 0.
 (pdftex.def)             Requested size: 143.9978pt x 107.04501pt.
 [64 <./imagenes/distanceHaussdorff.png>]
-<imagenes/esquema_evolucion.png, id=1186, 1334.9875pt x 513.92pt>
+<imagenes/esquema_evolucion.png, id=1198, 1334.9875pt x 513.92pt>
 File: imagenes/esquema_evolucion.png Graphic file (type png)
 <use imagenes/esquema_evolucion.png>
 Package pdftex.def Info: imagenes/esquema_evolucion.png  used on input line 738
@@ -1630,19 +1630,19 @@ Cap\'{\i }tulo 4.
 [67
 
 ]
-<imagenes/clases_pytorch.png, id=1206, 685.56125pt x 983.675pt>
+<imagenes/clases_pytorch.png, id=1218, 685.56125pt x 983.675pt>
 File: imagenes/clases_pytorch.png Graphic file (type png)
 <use imagenes/clases_pytorch.png>
 Package pdftex.def Info: imagenes/clases_pytorch.png  used on input line 25.
 (pdftex.def)             Requested size: 270.0pt x 387.41414pt.
  [68 <./imagenes/clases_pytorch.png>]
-<imagenes/curva_resnet34.png, id=1214, 529.98pt x 348.30125pt>
+<imagenes/curva_resnet34.png, id=1226, 529.98pt x 348.30125pt>
 File: imagenes/curva_resnet34.png Graphic file (type png)
 <use imagenes/curva_resnet34.png>
 Package pdftex.def Info: imagenes/curva_resnet34.png  used on input line 59.
 (pdftex.def)             Requested size: 251.9989pt x 165.61488pt.
  [69 <./imagenes/curva_resnet34.png>]
-<imagenes/reconstruccion_resnet34.png, id=1220, 328.22626pt x 763.85374pt>
+<imagenes/reconstruccion_resnet34.png, id=1232, 328.22626pt x 763.85374pt>
 File: imagenes/reconstruccion_resnet34.png Graphic file (type png)
 <use imagenes/reconstruccion_resnet34.png>
 Package pdftex.def Info: imagenes/reconstruccion_resnet34.png  used on input li
@@ -1652,12 +1652,12 @@ ne 69.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [70 <./imagenes/reconstruccion_resnet34.png>]
-<imagenes/curva_xception.png, id=1226, 533.995pt x 353.32pt>
+<imagenes/curva_xception.png, id=1238, 533.995pt x 353.32pt>
 File: imagenes/curva_xception.png Graphic file (type png)
 <use imagenes/curva_xception.png>
 Package pdftex.def Info: imagenes/curva_xception.png  used on input line 98.
 (pdftex.def)             Requested size: 251.9989pt x 166.73431pt.
-<imagenes/reconstruccion_xception.png, id=1227, 328.22626pt x 763.85374pt>
+<imagenes/reconstruccion_xception.png, id=1239, 328.22626pt x 763.85374pt>
 File: imagenes/reconstruccion_xception.png Graphic file (type png)
 <use imagenes/reconstruccion_xception.png>
 Package pdftex.def Info: imagenes/reconstruccion_xception.png  used on input li
@@ -1671,7 +1671,7 @@ Overfull \hbox (9.2883pt too wide) in paragraph at lines 137--146
  [][] 
  []
 
-<imagenes/task1_freeze.png, id=1239, 530.98375pt x 356.33125pt>
+<imagenes/task1_freeze.png, id=1251, 530.98375pt x 356.33125pt>
 File: imagenes/task1_freeze.png Graphic file (type png)
 <use imagenes/task1_freeze.png>
 Package pdftex.def Info: imagenes/task1_freeze.png  used on input line 152.
@@ -1682,7 +1682,7 @@ Overfull \hbox (9.2883pt too wide) in paragraph at lines 162--172
  []
 
 [73 <./imagenes/task1_freeze.png>]
-<imagenes/task1_unfreeze.png, id=1245, 534.99875pt x 363.3575pt>
+<imagenes/task1_unfreeze.png, id=1257, 534.99875pt x 363.3575pt>
 File: imagenes/task1_unfreeze.png Graphic file (type png)
 <use imagenes/task1_unfreeze.png>
 Package pdftex.def Info: imagenes/task1_unfreeze.png  used on input line 178.
@@ -1692,70 +1692,64 @@ Overfull \hbox (9.2883pt too wide) in paragraph at lines 191--201
  [][] 
  []
 
-<imagenes/task1_totally_unfreeze.png, id=1251, 543.02875pt x 366.36874pt>
+<imagenes/task1_totally_unfreeze.png, id=1263, 543.02875pt x 366.36874pt>
 File: imagenes/task1_totally_unfreeze.png Graphic file (type png)
 <use imagenes/task1_totally_unfreeze.png>
 Package pdftex.def Info: imagenes/task1_totally_unfreeze.png  used on input lin
 e 208.
 (pdftex.def)             Requested size: 251.9989pt x 170.01869pt.
 [75 <./imagenes/task1_totally_unfreeze.png>]
-<imagenes/task1_results_train.png, id=1257, 725.71124pt x 549.05125pt>
+<imagenes/task1_results_train.png, id=1269, 725.71124pt x 549.05125pt>
 File: imagenes/task1_results_train.png Graphic file (type png)
 <use imagenes/task1_results_train.png>
 Package pdftex.def Info: imagenes/task1_results_train.png  used on input line 2
 26.
-(pdftex.def)             Requested size: 288.0011pt x 217.89915pt.
-<imagenes/task1_results_validation.png, id=1258, 728.7225pt x 549.05125pt>
+(pdftex.def)             Requested size: 251.9989pt x 190.65442pt.
+<imagenes/task1_results_validation.png, id=1270, 728.7225pt x 549.05125pt>
 File: imagenes/task1_results_validation.png Graphic file (type png)
 <use imagenes/task1_results_validation.png>
 Package pdftex.def Info: imagenes/task1_results_validation.png  used on input l
 ine 232.
-(pdftex.def)             Requested size: 288.0011pt x 216.98596pt.
+(pdftex.def)             Requested size: 251.9989pt x 189.86691pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [76 <./imagenes/task1_results_train.png>] [77 <./imagenes/task1_results_valida
 tion.png>]
-<imagenes/task1_val_5.png, id=1273, 728.7225pt x 549.05125pt>
+<imagenes/task1_val_5.png, id=1285, 728.7225pt x 549.05125pt>
 File: imagenes/task1_val_5.png Graphic file (type png)
 <use imagenes/task1_val_5.png>
 Package pdftex.def Info: imagenes/task1_val_5.png  used on input line 264.
-(pdftex.def)             Requested size: 288.0011pt x 216.98596pt.
+(pdftex.def)             Requested size: 251.9989pt x 189.86691pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 265--265
 []\OT1/cmr/m/n/10.95 Figura 4.11: []Matriz de con-fu-si^^Son de va-li-da-ci^^So
 n con vo-ta-ci^^Son:
  []
 
-<imagenes/task1_val_3.png, id=1274, 728.7225pt x 549.05125pt>
+<imagenes/task1_val_3.png, id=1286, 728.7225pt x 549.05125pt>
 File: imagenes/task1_val_3.png Graphic file (type png)
 <use imagenes/task1_val_3.png>
 Package pdftex.def Info: imagenes/task1_val_3.png  used on input line 270.
-(pdftex.def)             Requested size: 288.0011pt x 216.98596pt.
+(pdftex.def)             Requested size: 251.9989pt x 189.86691pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 271--271
 []\OT1/cmr/m/n/10.95 Figura 4.12: []Matriz de con-fu-si^^Son de va-li-da-ci^^So
 n con vo-ta-ci^^Son:
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [78 <./imagenes/task1_val_5.png>]
+[78 <./imagenes/task1_val_5.png> <./imagenes/task1_val_3.png>]
 Overfull \hbox (18.01584pt too wide) in paragraph at lines 288--290
 []\OT1/cmr/m/n/10.95 Observamos co-mo ob-te-ne-mos un me-jor ac-cu-racy ba-lan-
 cea-do con $\OML/cmm/m/it/10.95 threshold \OT1/cmr/m/n/10.95 =
  []
 
-<imagenes/task1_test.png, id=1280, 686.565pt x 517.935pt>
+<imagenes/task1_test.png, id=1293, 686.565pt x 517.935pt>
 File: imagenes/task1_test.png Graphic file (type png)
 <use imagenes/task1_test.png>
 Package pdftex.def Info: imagenes/task1_test.png  used on input line 293.
 (pdftex.def)             Requested size: 288.0011pt x 217.2625pt.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [79 <./imagenes/task1_val_3.png>]
 Overfull \hbox (19.65959pt too wide) in paragraph at lines 297--298
 []\OT1/cmr/m/n/10.95 Obtenemos re-sul-ta-dos fi-na-les pa-ra test, ob-te-nien-d
 o un ac-cu-racy del $84\OML/cmm/m/it/10.95 :\OT1/cmr/m/n/10.95 6519 %[]$
@@ -1766,87 +1760,92 @@ Overfull \hbox (6.1329pt too wide) in paragraph at lines 305--318
  [][] 
  []
 
-
+[79 <./imagenes/task1_test.png>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [80 <./imagenes/task1_test.png>]
-<imagenes/curva_segmentation.png, id=1297, 523.9575pt x 357.335pt>
+ [80]
+<imagenes/curva_segmentation.png, id=1309, 523.9575pt x 357.335pt>
 File: imagenes/curva_segmentation.png Graphic file (type png)
 <use imagenes/curva_segmentation.png>
-Package pdftex.def Info: imagenes/curva_segmentation.png  used on input line 34
-9.
+Package pdftex.def Info: imagenes/curva_segmentation.png  used on input line 35
+1.
 (pdftex.def)             Requested size: 251.9989pt x 171.8569pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [81]
-<imagenes/output_segmentation.png, id=1302, 324.21124pt x 757.83125pt>
+<imagenes/output_segmentation.png, id=1310, 324.21124pt x 757.83125pt>
 File: imagenes/output_segmentation.png Graphic file (type png)
 <use imagenes/output_segmentation.png>
 Package pdftex.def Info: imagenes/output_segmentation.png  used on input line 3
-55.
+60.
 (pdftex.def)             Requested size: 180.0pt x 420.75165pt.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 3209) has occurred while \output is active []
 
- [82 <./imagenes/curva_segmentation.png>]
-<imagenes/dist_dice_val.png, id=1308, 852.18375pt x 414.54875pt>
+ [81 <./imagenes/curva_segmentation.png>] [82 <./imagenes/output_segmentation.p
+ng>]
+<imagenes/dist_dice_val.png, id=1321, 852.18375pt x 414.54875pt>
 File: imagenes/dist_dice_val.png Graphic file (type png)
 <use imagenes/dist_dice_val.png>
-Package pdftex.def Info: imagenes/dist_dice_val.png  used on input line 377.
-(pdftex.def)             Requested size: 270.0pt x 131.3426pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [83 <./imagenes/output_segmentation.png>]
-<imagenes/dist_haus_val.png, id=1315, 852.18375pt x 414.54875pt>
+Package pdftex.def Info: imagenes/dist_dice_val.png  used on input line 387.
+(pdftex.def)             Requested size: 251.9989pt x 122.58179pt.
+<imagenes/dist_haus_val.png, id=1322, 852.18375pt x 414.54875pt>
 File: imagenes/dist_haus_val.png Graphic file (type png)
 <use imagenes/dist_haus_val.png>
-Package pdftex.def Info: imagenes/dist_haus_val.png  used on input line 383.
-(pdftex.def)             Requested size: 270.0pt x 131.3426pt.
-<imagenes/dist_sen_val.png, id=1316, 852.18375pt x 414.54875pt>
+Package pdftex.def Info: imagenes/dist_haus_val.png  used on input line 393.
+(pdftex.def)             Requested size: 251.9989pt x 122.58179pt.
+<imagenes/dist_sen_val.png, id=1323, 852.18375pt x 414.54875pt>
 File: imagenes/dist_sen_val.png Graphic file (type png)
 <use imagenes/dist_sen_val.png>
-Package pdftex.def Info: imagenes/dist_sen_val.png  used on input line 389.
-(pdftex.def)             Requested size: 270.0pt x 131.3426pt.
-<imagenes/dist_dice_test.png, id=1317, 852.18375pt x 414.54875pt>
+Package pdftex.def Info: imagenes/dist_sen_val.png  used on input line 399.
+(pdftex.def)             Requested size: 251.9989pt x 122.58179pt.
+
+[83 <./imagenes/dist_dice_val.png> <./imagenes/dist_haus_val.png>]
+<imagenes/dist_dice_test.png, id=1331, 852.18375pt x 414.54875pt>
 File: imagenes/dist_dice_test.png Graphic file (type png)
 <use imagenes/dist_dice_test.png>
-Package pdftex.def Info: imagenes/dist_dice_test.png  used on input line 395.
-(pdftex.def)             Requested size: 270.0pt x 131.3426pt.
+Package pdftex.def Info: imagenes/dist_dice_test.png  used on input line 405.
+(pdftex.def)             Requested size: 251.9989pt x 122.58179pt.
+<imagenes/dist_haus_test.png, id=1332, 852.18375pt x 414.54875pt>
+File: imagenes/dist_haus_test.png Graphic file (type png)
+<use imagenes/dist_haus_test.png>
+Package pdftex.def Info: imagenes/dist_haus_test.png  used on input line 411.
+(pdftex.def)             Requested size: 251.9989pt x 122.58179pt.
+<imagenes/dist_sen_test.png, id=1333, 852.18375pt x 414.54875pt>
+File: imagenes/dist_sen_test.png Graphic file (type png)
+<use imagenes/dist_sen_test.png>
+Package pdftex.def Info: imagenes/dist_sen_test.png  used on input line 417.
+(pdftex.def)             Requested size: 251.9989pt x 122.58179pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [84 <./imagenes/dist_dice_val.png> <./imagenes/dist_haus_val.png> <./imagenes/
-dist_sen_val.png>]
-<imagenes/dist_haus_test.png, id=1325, 852.18375pt x 414.54875pt>
-File: imagenes/dist_haus_test.png Graphic file (type png)
-<use imagenes/dist_haus_test.png>
-Package pdftex.def Info: imagenes/dist_haus_test.png  used on input line 401.
-(pdftex.def)             Requested size: 270.0pt x 131.3426pt.
-<imagenes/dist_sen_test.png, id=1326, 852.18375pt x 414.54875pt>
-File: imagenes/dist_sen_test.png Graphic file (type png)
-<use imagenes/dist_sen_test.png>
-Package pdftex.def Info: imagenes/dist_sen_test.png  used on input line 407.
-(pdftex.def)             Requested size: 270.0pt x 131.3426pt.
-) (./capitulos/05_conclusiones.tex [85 <./imagenes/dist_dice_test.png> <./image
-nes/dist_haus_test.png> <./imagenes/dist_sen_test.png>] [86
+ [84 <./imagenes/dist_sen_val.png> <./imagenes/dist_dice_test.png> <./imagenes/
+dist_haus_test.png>]
+Overfull \hbox (41.0107pt too wide) in paragraph at lines 433--445
+ [][] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [85 <./imagenes/dist_sen_test.png>]) (./capitulos/05_conclusiones.tex [86]
+Cap\'{\i }tulo 5.
+
+Underfull \vbox (badness 2229) has occurred while \output is active []
+
+ [87
 
 ]
-Cap\'{\i }tulo 5.
-) (./proyecto.bbl [87] [88
+[88]) (./proyecto.bbl [89] [90
 
-] [89]
+] [91]
 Underfull \hbox (badness 7362) in paragraph at lines 83--88
 []\OT1/cmr/m/n/10.95 D^^S^^Paz-Pernas, F. J., Mart^^S^^Pnez-Zarzuela, M.,
  []
 
-[90] [91]
+[92] [93]
 Underfull \hbox (badness 1371) in paragraph at lines 211--216
 []\OT1/cmr/m/n/10.95 Ronneberger, O., Fis-cher, P., and Brox, T.
  []
 
-[92]) [93] [94
+[94]) [95] [96
 
 ] (./glosario/entradas_glosario.tex)
 No file proyecto.gls.
@@ -1856,9 +1855,9 @@ Overfull \hbox (1.41133pt too wide) in paragraph at lines 1--207
 y-maths na-me=mathematics,
  []
 
-[95] [96
+[97] [98
 
-] [97] (./proyecto.aux
+] [99] (./proyecto.aux
 LaTeX Info: Redefining \. on input line 28.
 LaTeX Info: Redefining \% on input line 28.
 )
@@ -1874,13 +1873,13 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `proyecto.out' has not changed.
-(rerunfilecheck)             Checksum: 922733E0A5E0EEC81AA566688BB8DC7A;13574.
+(rerunfilecheck)             Checksum: 90072100B1B0A7EB3EB94B9F6D2180D2;14170.
  ) 
 Here is how much of TeX's memory you used:
- 22067 strings out of 475735
- 372846 string characters out of 5784786
+ 22078 strings out of 475735
+ 372979 string characters out of 5784786
  1872759 words of memory out of 5000000
- 42002 multiletter control sequences out of 15000+600000
+ 42005 multiletter control sequences out of 15000+600000
  524890 words of font info for 75 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  94i,13n,93p,2262b,797s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1903,10 +1902,10 @@ xmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-di
 st/fonts/type1/public/amsfonts/latxfont/lasy10.pfb></usr/share/texlive/texmf-di
 st/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf/fonts/type1
 /public/cm-super/sfrm1095.pfb>
-Output written on proyecto.pdf (117 pages, 9876713 bytes).
+Output written on proyecto.pdf (119 pages, 9887725 bytes).
 PDF statistics:
- 1569 PDF objects out of 1728 (max. 8388607)
- 1278 compressed objects within 13 object streams
- 428 named destinations out of 1000 (max. 500000)
- 834 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1601 PDF objects out of 1728 (max. 8388607)
+ 1307 compressed objects within 14 object streams
+ 436 named destinations out of 1000 (max. 500000)
+ 850 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -75,17 +75,19 @@
 \contentsline {subsection}{\numberline {4.3.2}Validación en clasificación}{75}{subsection.4.3.2}%
 \contentsline {subsubsection}{Antes de aplicar votación}{76}{section*.30}%
 \contentsline {subsubsection}{Tras aplicar votación}{77}{section*.31}%
-\contentsline {subsection}{\numberline {4.3.3}Comparativa de clasificación con el estado del arte}{80}{subsection.4.3.3}%
-\contentsline {section}{\numberline {4.4}Segmentación}{81}{section.4.4}%
-\contentsline {subsection}{\numberline {4.4.1}Entrenamiento en segmentación}{81}{subsection.4.4.1}%
-\contentsline {subsection}{\numberline {4.4.2}Validación en segmentación}{83}{subsection.4.4.2}%
+\contentsline {subsection}{\numberline {4.3.3}Comparativa de clasificación con el estado del arte}{79}{subsection.4.3.3}%
+\contentsline {section}{\numberline {4.4}Segmentación}{80}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Entrenamiento en segmentación}{80}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}Validación en segmentación}{82}{subsection.4.4.2}%
+\contentsline {subsection}{\numberline {4.4.3}Comparativa de segmentación con el estado del arte}{85}{subsection.4.4.3}%
 \contentsline {chapter}{\numberline {5}Conclusiones y Trabajos Futuros}{87}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Conclusiones del trabajo}{87}{section.5.1}%
 \contentsline {subsection}{\numberline {5.1.1}Resultados y recursos}{87}{subsection.5.1.1}%
-\contentsline {subsection}{\numberline {5.1.2}Unificación de arquitecturas}{87}{subsection.5.1.2}%
-\contentsline {subsection}{\numberline {5.1.3}Nuevo preprocesado en el problema}{87}{subsection.5.1.3}%
-\contentsline {section}{\numberline {5.2}Trabajos futuros}{87}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}Uso de transformers}{87}{subsection.5.2.1}%
-\contentsline {subsection}{\numberline {5.2.2}Exploración de otras técnicas de aprendizaje no supervisado}{87}{subsection.5.2.2}%
-\contentsline {chapter}{Bibliografía}{87}{subsection.5.2.2}%
-\contentsline {chapter}{Glosario}{95}{appendix*.33}%
+\contentsline {subsection}{\numberline {5.1.2}Nuevo preprocesado en el problema}{88}{subsection.5.1.2}%
+\contentsline {subsection}{\numberline {5.1.3}El poder de la reconstrucción previa}{88}{subsection.5.1.3}%
+\contentsline {section}{\numberline {5.2}Trabajos futuros}{88}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Uso de transformers}{89}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}Unificación de arquitecturas}{89}{subsection.5.2.2}%
+\contentsline {subsection}{\numberline {5.2.3}Exploración de otras técnicas de aprendizaje no supervisado}{89}{subsection.5.2.3}%
+\contentsline {chapter}{Bibliografía}{89}{subsection.5.2.3}%
+\contentsline {chapter}{Glosario}{97}{appendix*.33}%

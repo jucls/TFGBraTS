@@ -223,13 +223,13 @@ A continuación, vemos los resultados obtenidos de ajuste para las métricas en 
  
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\linewidth]{imagenes/task1_results_train.png}
+	\includegraphics[width=0.7\linewidth]{imagenes/task1_results_train.png}
 	\caption{Matriz de confusión de entrenamiento sin votación}
 \end{figure}
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\linewidth]{imagenes/task1_results_validation.png}
+	\includegraphics[width=0.7\linewidth]{imagenes/task1_results_validation.png}
 	\caption{Matriz de confusión de validación sin votación}
 \end{figure}
 
@@ -261,13 +261,13 @@ A continuación mostramos las matrices de confusión asociadas a la aplicación 
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\linewidth]{imagenes/task1_val_5.png}
+	\includegraphics[width=0.7\linewidth]{imagenes/task1_val_5.png}
 	\caption{Matriz de confusión de validación con votación: $Meningiomas < 5$}
 \end{figure}
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\linewidth]{imagenes/task1_val_3.png}
+	\includegraphics[width=0.7\linewidth]{imagenes/task1_val_3.png}
 	\caption{Matriz de confusión de validación con votación: $Meningiomas < 3$}
 \end{figure}
 
@@ -304,7 +304,7 @@ Para finalizar la experimentación de esta primera tarea ponemos en contexto est
 	\centering
 	\begin{tabular}{|cccc|}
 		\toprule
-		Trabajo & accuracy ($\%$) & balanced\_accuracy ($\%$) & $P_{test}$ \\
+		Autor & accuracy ($\%$) & balanced\_accuracy ($\%$) & $P_{test}$ \\
 		\midrule
 		\cite{cheng2015enhanced} & 91.2 & - & 61\\ 
 		\cite{cheng2016retrieval} & 94.7 & - & 61\\ 
@@ -325,8 +325,10 @@ Nuestro trabajo está validado en un conjunto de test $\approx 8$ veces mayor qu
 
 \section{Segmentación}
 
-\subsection{Entrenamiento en segmentación}
+En esta sección recogemos los experimentos y resultados de estos para la tarea de segmentación. 
 
+\subsection{Entrenamiento en segmentación}
+Entrenamos la arquitectura enteramente descongelada con tamaño de lote de $32$ ejemplos durante $7$ épocas alcanzando el entrenamiento una duración de $ \approx 8$ horas. A continuación se presenta la tabla y curva de aprendizaje obtenidas.
 \begin{table}[H]
 	\centering
 	\begin{tabular}{|ccccc|}
@@ -334,10 +336,10 @@ Nuestro trabajo está validado en un conjunto de test $\approx 8$ veces mayor qu
 		epoch & train\_loss & valid\_loss & Dice Loss & time \\ 
 		\midrule
 		0 & 0.095941 & 0.319656 & 0.319656 & 1:34:08 \\ 
-		1 & 0.073242 & 0.258797 & 0.258797 & 1:32:56 \\ 
+		\textbf{1} & \textbf{0.073242} & \textbf{0.258797} & \textbf{0.258797} & \textbf{1:32:56} \\ 
 		2 & 0.059904 & 0.284256 & 0.284256 & 1:34:48 \\ 
 		3 & 0.050076 & 0.274452 & 0.274452 & 1:37:00 \\ 
-		\textbf{4} & \textbf{0.046783} & \textbf{0.266702} & \textbf{0.266702} & \textbf{1:40:18} \\ 
+		4 & 0.046783 & 0.266702 & 0.266702 & 1:40:18 \\ 
 		\bottomrule
 	\end{tabular}
 	\caption{Pérdida de entrenamiento y validación para segmentación toda la red descongelada}
@@ -350,13 +352,19 @@ Nuestro trabajo está validado en un conjunto de test $\approx 8$ veces mayor qu
 	\caption{Curva de aprendizaje para la tarea de segmentación}
 \end{figure}
 
+Observamos como tenemos una muy rápida convergencia en la primera época y cómo se estabiliza en las sucesivas épocas refinándose la pérdida Dice muy ligeramente. En este tiempo de cómputo limitado observamos como no se produce overfitting. Sin embargo, obtenemos un error de validación que disminuye muy poco entre la primera y segunda época aumentando ligeramente en las sucesivas épocas. Podemos interpretar que existe un comportamiento estable en todo el proceso de entrenamiento.
+
+A continuación, comparamos la salida del modelo respecto la imagen real. Esta salida es previa a aplicarle un proceso de umbralización con la cual obtendríamos una máscara binaria final. El proceso de umbralización que se aplicará consiste en determinar como píxeles segmentados (usando la etiqueta 1) los píxeles cuyo valor sea mayor a un umbral $U$ y en caso contrario, píxeles no segmentados (usando la etiqueta 0). El umbral $U$ empleado será $U = 0.8$. Viendo en la práctica como este umbral o uno ligeramente más bajo como $0.5$ no afecta significativamente a los resultados. 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.5\linewidth]{imagenes/output_segmentation.png}
 	\caption{Comparación de la salida del modelo respecto la real}
 \end{figure}
+Observamos buenos resultados consiguiendo máscaras de segmentación que replican en detalle la segmentación original. En la imagen producida por la red se puede apreciar la sombra de un cerebro pudiendo ver un efecto residual del codificador y del uso de skip connections.
 
 \subsection{Validación en segmentación}
+
+A continuación, inferimos los resultados finales para segmentación en validación y test para nuestras tres métricas. Recogemos en la siguiente tabla estos resultados.
 
 \begin{table}[H]
 	\centering
@@ -371,39 +379,71 @@ Nuestro trabajo está validado en un conjunto de test $\approx 8$ veces mayor qu
 	\caption{Resultados de hold-out en validación y test para segmentación}
 	\label{tabla:resultados5}
 \end{table}
+Observamos que ambos conjuntos mantienen resultados muy similares empeorando ligeramente en test indicando robustez y coherencia en los resultados. Observamos que la peor métrica obtenida es la distancia Hausdorff que es demasiado alta, indicando que existe una distancia máxima media de $\approx 14$ píxeles entre la segmentación original y la salida del modelo. Podría significar un problema de creación de artefactos por parte del modelo.
 
+A continuación, para darle explicabilidad a los resultados se muestra el histograma de los resultados de las métricas para todos los ejemplos, primero del conjunto de validación y después para el conjunto de test. De esta forma, podríamos identificar ejemplos especialmente difíciles y caracterizarlos.
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.75\linewidth]{imagenes/dist_dice_val.png}
+	\includegraphics[width=0.7\linewidth]{imagenes/dist_dice_val.png}
 	\caption{Distribución de similaridad Dice en el conjunto de validación}
 \end{figure}
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.75\linewidth]{imagenes/dist_haus_val.png}
+	\includegraphics[width=0.7\linewidth]{imagenes/dist_haus_val.png}
 	\caption{Distribución de distancia Hausdorff en el conjunto de validación}
 \end{figure}
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.75\linewidth]{imagenes/dist_sen_val.png}
+	\includegraphics[width=0.7\linewidth]{imagenes/dist_sen_val.png}
 	\caption{Distribución de sensibilidad en el conjunto de validación}
 \end{figure}
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.75\linewidth]{imagenes/dist_dice_test.png}
+	\includegraphics[width=0.7\linewidth]{imagenes/dist_dice_test.png}
 	\caption{Distribución de similaridad Dice en el conjunto de test}
 \end{figure}
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.75\linewidth]{imagenes/dist_haus_test.png}
+	\includegraphics[width=0.7\linewidth]{imagenes/dist_haus_test.png}
 	\caption{Distribución de distancia Hausdorff en el conjunto de test}
 \end{figure}
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.75\linewidth]{imagenes/dist_sen_test.png}
+	\includegraphics[width=0.7\linewidth]{imagenes/dist_sen_test.png}
 	\caption{Distribución de sensibilidad en el conjunto de test}
 \end{figure}
+
+Los histogramas de estas métricas revelan una distribución en forma de campana de Gauss, lo cual es indicativo de una distribución normal. Este patrón indica robustez dentro del modelo de segmentación, observando que no existe un subconjunto de ejemplos que no puede segmentar bien. Nos sirve como prueba para demostrar la generalidad del modelo conseguida a pesar de poder obtener un modelo mejor.
+
+La normalidad de las distribuciones también implica que las métricas son simétricas y centradas alrededor de un valor promedio consistente, lo que es indicativo de un rendimiento estable.
+
+\subsection{Comparativa de segmentación con el estado del arte}
+
+Para finalizar la experimentación de esta segunda tarea ponemos en contexto estos resultados con el estado del arte. Todos estos resultados han sido evaluados por conjuntos de mismo dataset \textbf{BraTS}, y respetando la misma proporción entre entrenamiento-test que la seguida en este trabajo.
+
+En la siguiente tabla se muestran las métricas y un apartado de recursos que indica la GPU que usaron para el entrenamiento. En nuestro método usamos una gráfica Tesla P100 limitados semanalmente $30$ horas y en cada ejecución a $12$ horas. Por lo que, no podemos entrenar más de $12$ horas seguidas.
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|ccccc|}
+		\toprule
+		Autor & Dice ($\%$) & Hausdorff & Recall ($\%$) & Recursos \\
+		\midrule
+		\cite{chen2021transunet} & 78.73 & 5.0 & - & 8 x Tesla V100 \\
+		\cite{zhou2021latent} & 87.1 & 6.5 & 86.8 & Quadro P5000 \\
+		\cite{myronenko20193d} & 90.4 & 4.4 & - & 8 x Tesla V100\\   
+		\cite{hatamizadeh2021swin} & 92.6 & 5.8 & - & 8 x Tesla V100 \\ 
+		\cite{ferreira2024we} & 92.9 & 4.26 & - & 6 x RTX 6000\\
+		Nuestro método & 77.3 & 14.5 & 70.9 & Tesla P100 \\ 
+		\bottomrule
+	\end{tabular}
+	\caption{Comparativa de segmentación con el estado del arte}
+	\label{tabla:resultados13}
+\end{table}
+
+Como vemos nuestro método es peor que todo el estado del arte reciente que sea comparable. Sin embargo, es una buena aproximación para las capacidades de recursos en términos de capacidad (memoria del dispositivo GPU) y rendimiento de GPU que teníamos frente las del resto de autores que son inmensamente mayores. 
