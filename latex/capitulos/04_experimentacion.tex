@@ -12,7 +12,7 @@ Para el desarrollo de los experimentos usaremos las bibliotecas de aprendizaje p
 	
 	\item \textbf{Clases de las arquitecturas: SegNet y BinaryNet}. Implementan las arquitecturas para clasificación y segmentación. Aparte del constructor que es donde se define la arquitectura tiene la función \texttt{forward(self, x)} que define como se infiere por la red. PyTorch solo necesita la definición de la inferencia para calcular automáticamente la función \texttt{backward} internamente la función para la aplicación de backpropagation (necesario en el entrenamiento). Usa las instancias de los módulos siguientes.
 	
-	\item \textbf{Clases de los módulos de subida y bajada: DownConv y UpConv}. Análogas a las clases de la arquitecturas pero reduciéndolo a una parte. Usa la instancia de la clase siguiente (ya que sólo definimos uno de estos bloques por módulo).
+	\item \textbf{Clases de los módulos de submuestreo y sobremuestreo: DownConv y UpConv}. Análogas a las clases de la arquitecturas pero reduciéndolo a una parte. Usa la instancia de la clase siguiente (ya que sólo definimos uno de estos bloques por módulo).
 	
 	\item \textbf{Clase de un bloque de convolución: ConvBlock}. Clase que define las capas de un bloque de en nuestra red. Dentro del constructor llama a las funciones de PyTorch de ReLU, convolución y batch normalization.
 	
@@ -33,7 +33,7 @@ Pasamos a comentar los experimentos llevados cabo en la tarea de la reconstrucci
 \subsection{Arquitecturas con conexiones residuales: ResNet34}
 
 Comenzamos ajustando \textbf{ResNet34} a las imágenes. Tras $7$ épocas sumando un total de $8$ horas $30$ minutos de entrenamiento para toda la red obtenemos estos resultados.
-Podemos ver los resultados en forma tabular y en forma de gráfica. En la gráfica el eje $Y$ representa la pérdida y el eje $X$ representa la cantidad de imágenes vistas (aunque haya visto la misma imagen más de una vez en distintas épocas). 
+Podemos ver los resultados en forma tabular y en forma de gráfica. En la gráfica (ver Figura 4.2) el eje $Y$ representa la pérdida y el eje $X$ representa la cantidad de imágenes vistas (aunque haya visto la misma imagen más de una vez en distintas épocas). 
 
 \begin{table}[H]
 	\centering
@@ -42,7 +42,7 @@ Podemos ver los resultados en forma tabular y en forma de gráfica. En la gráfi
 		epoch & train\_loss & valid\_loss & MAE & time \\ 
 		\midrule
 		0 & 0.098790 & 0.111301 & 0.111301 & 1:09:46 \\ 
-		0 & 0.079261 & 0.081548 & 0.081548 & 1:13:33 \\
+		1 & 0.079261 & 0.081548 & 0.081548 & 1:13:33 \\
 		2 & 0.071293 & 0.075421 & 0.075421 & 1:14:20 \\ 
 		3 & 0.064748 & 0.067580 & 0.067580 & 1:14:41 \\ 
 		4 & 0.059911 & 0.062933 & 0.062933 & 1:15:55 \\ 
@@ -60,7 +60,7 @@ Podemos ver los resultados en forma tabular y en forma de gráfica. En la gráfi
 	\caption{Curva de aprendizaje con ResNet34}
 \end{figure}
 
-Observamos una rápida convergencia la inicio y un entrenamiento perfecto con ambos errores muy cercanos en todas las épocas $E_{val} \approx E_{train}$. Indicando que el proceso de entrenamiento está realizando correctamente y que la arquitectura es válida para aprender a reconstruir las imágenes. Finalmente, obtenemos un $E_{val} \approx 0.058$ lo cual indica que nuestra red reconstruye las imágenes con una pérdida del $5.8 \%$ de los detalles reales.
+Observamos una rápida convergencia al inicio y un entrenamiento perfecto con ambos errores muy cercanos en todas las épocas $E_{val} \approx E_{train}$. Indicando que el proceso de entrenamiento está realizando correctamente y que la arquitectura es válida para aprender a reconstruir las imágenes. Finalmente, obtenemos un $E_{val} \approx 0.058$ lo cual indica que nuestra red reconstruye las imágenes con una pérdida del $5.8 \%$ de los detalles reales.
 
 A continuación, observamos cómo la red reconstruye tres imágenes. En la siguiente salida vemos tres imágenes donde podemos apreciar la salida de la red como la imagen de la izquierda de cada pareja y la imagen real a la derecha.
 
@@ -99,7 +99,7 @@ Dentro de las pruebas para elegir el mejor codificador seguimos con la prueba de
 	\caption{Curva de aprendizaje con Xception}
 \end{figure}
 
-Observamos una más rápida convergencia que \textbf{ResNet34} motivado posiblemente por los filtros de distintos tamaños. Tenemos el mismo comportamiento de bondad entre la pérdida de entrenamiento y validación. Sin embargo, obtenemos una pérdida en validación de $E_{val} \approx 0.062$ la cual es superior a la de \textbf{ResNet34} indicando que a pesar de la rápida convergencia el resultado final es mejor con un mayor número de conexiones residuales. 
+En la Figura 4.4, observamos una más rápida convergencia que \textbf{ResNet34} motivado posiblemente por los filtros de distintos tamaños. Tenemos el mismo comportamiento de bondad entre la pérdida de entrenamiento y validación. Sin embargo, obtenemos una pérdida en validación de $E_{val} \approx 0.062$ la cual es superior a la de \textbf{ResNet34} indicando que a pesar de la rápida convergencia el resultado final es mejor con un mayor número de conexiones residuales. 
 
 A continuación observamos su reconstrucción con un resultado muy similar en apariencia.
 \begin{figure}[H]
@@ -112,7 +112,7 @@ A continuación, ante los resultados de esta comparación mostramos la siguiente
 
 \begin{table}[H]
 	\centering
-	\begin{tabular}{|cccccc|}
+	\begin{tabular}{|ccc|}
 		\toprule
 		Arquitectura & $E_{train}$ & $E_{val}$ \\ 
 		\midrule
@@ -153,7 +153,7 @@ A continuación, mostramos los experimentos realizados para la tarea de clasific
 	\caption{Curva de aprendizaje para clasificación parte convolucional congelada}
 \end{figure}
 
-Observamos una rápida convergencia al inicio del entrenamiento, estabilizándose durante la época número $1$ y volviendo a converger ligeramente durante la época $2$. En este caso y para esta primera fase, el entrenamiento no es tan óptimo, habiendo cierta distancia entre las pérdidas de validación y entrenamiento. 
+En la figura 4.6, observamos una rápida convergencia al inicio del entrenamiento, estabilizándose durante la época número $1$ y volviendo a converger ligeramente durante la época $2$. En este caso y para esta primera fase, el entrenamiento no es tan óptimo, habiendo cierta distancia entre las pérdidas de validación y entrenamiento. 
 
 A continuación, tras estas $3$ épocas ajustando las capas densamente conectadas pasamos a descongelar toda la red para que quede mejor ajustado.
 
@@ -179,9 +179,9 @@ A continuación, tras estas $3$ épocas ajustando las capas densamente conectada
 	\caption{Curva de aprendizaje para clasificación toda la red descongelada tras ajustar capas densamente conectadas}
 \end{figure}
 
-Observamos como en las dos primeras épocas tenemos convergencia en validación, tras ellos se dispara validación indicándonos que hemos llegado al resultado tope en el entrenamiento. Este proceso de entrenamiento esta configurado con \textbf{EarlyStopping} por lo que PyTorch automáticamente guarda el mejor modelo (el que haya conseguido una pérdida en validación más baja en todas las épocas) en este caso tras descongelar obtiene como modelo final el correspondiente a la época número $1$. 
+En la figura 4.7, observamos como en las dos primeras épocas tenemos convergencia en validación, tras ellos se dispara validación indicándonos que hemos llegado al resultado tope en el entrenamiento. Este proceso de entrenamiento esta configurado con \textbf{EarlyStopping} por lo que PyTorch automáticamente guarda el mejor modelo (el que haya conseguido una pérdida en validación más baja en todas las épocas) en este caso tras descongelar obtiene como modelo final el correspondiente a la época número $1$. 
 
-Observamos como tras haber pasado el proceso de ajuste inicial de las capas densamente conectadas al descongelar todo, obtenemos unas pérdida de validación y entrenamiento mucho más dispares. Esto podría cómo las diferentes partes de la arquitectura inducen complejidad en el proceso de entrenamiento: las capas densamente conectadas (que era lo único entrenable en la primera fase) hacen que esta diferencia sea muy pequeña porque estas capas son en comparación pequeñas. Al descongelar toda las capas de la red, siendo el codificador mucho mayor que las capas densas se observa como se induce un ruido mayor.
+Observamos como tras haber pasado el proceso de ajuste inicial de las capas densamente conectadas al descongelar todo, obtenemos unas pérdida de validación y entrenamiento mucho más dispares. Una posible explicación es debido a que las diferentes partes de la arquitectura inducen complejidad en el proceso de entrenamiento: las capas densamente conectadas (que era lo único entrenable en la primera fase) hacen que esta diferencia sea muy pequeña porque estas capas tienen pocos parámetros entrenables en comparación a la capas previas. Al descongelar toda las capas de la red, siendo el codificador mucho mayor que las capas densas se observa como se induce un ruido mayor.
 
 
 A continuación, y a pesar de que la teoría indica que primero ajustemos las capas densamente conectadas primero congelando el resto de las capas en sus inicios, probamos a entrenar toda la red descongelada sin un ajuste previo.
@@ -209,15 +209,18 @@ A continuación, y a pesar de que la teoría indica que primero ajustemos las ca
 	\caption{Curva de aprendizaje para clasificación todo el entrenamiento toda la red descongelada}
 \end{figure}
 
-Observamos como el mejor resultado que obtenemos es en la época número $2$ siendo peor que la mejor con la estrategia anterior. Adicionalmente, observamos como se alcanza una convergencia rápida llevando a fuerte overfitting justo en la siguiente época. Podemos interpretar como esta estrategia no sólo da peores resultados sino tiene una peor estabilidad en el proceso de entrenamiento.
+En la figura 4.8, observamos como el mejor resultado que obtenemos es en la época número $2$ siendo peor que la mejor con la estrategia anterior. Adicionalmente, observamos como se alcanza una convergencia rápida llevando a fuerte overfitting justo en la siguiente época. Podemos interpretar como esta estrategia no sólo da peores resultados sino tiene una peor estabilidad en el proceso de entrenamiento.
 
 \subsection{Validación en clasificación}
 
-Tras entrenar los modelos pasamos a obtener los resultados finales infiriendo con el modelo en clasificación para los conjuntos de validación y test.
+Tras entrenar los modelos pasamos a obtener los resultados finales infiriendo con el modelo para los conjuntos de validación y test.
 
 \subsubsection{Antes de aplicar votación}
 
-En primer lugar calculamos la bondad sin aplicar el esquema de votación, la esperanza que se tiene es que tras la aplicación el esquema de votación los resultados sean iguales o mejores que los siguiente. No aplicaremos test ya que la tarea real es clasificación binaria con el esquema por lo que no es relevante el resultado de test en estas condiciones. 
+En primer lugar calculamos la bondad sin aplicar el esquema de votación, la esperanza que se tiene es que tras la aplicación el esquema de votación los resultados sean iguales o mejores. No lo aplicaremos al conjunto test ya que la tarea real es clasificación binaria con el esquema por lo que no es relevante el resultado de test en estas condiciones. 
+
+La \textbf{matriz de confusión} es una herramienta en el aprendizaje automático y la estadística, utilizada para evaluar el rendimiento de modelos de clasificación. Para un problema de clasificación con $N$ clases, la matriz de confusión tiene $N$ filas y $N$ columnas. Los elementos de la matriz se pueden denotar como $M_{ij}$, donde $M_{ij}$ es el número de veces que una instancia de la clase $i$ ha sido predicha como clase $j$. La diagonal principal ($M_{ii}$) contiene el número de instancias correctamente clasificadas para cada clase. Fuera de la diagonal principal ($M_{ij}$ para $i \neq j$) se encuentran las instancias que fueron incorrectamente clasificadas, mostrando la confusión entre las clases $i$ y $j$.
+
 
 A continuación, vemos los resultados obtenidos de ajuste para las métricas en entrenamiento y validación sin votación. Construimos las siguientes matrices de confusión tras la inferencia de cada conjunto.
  
@@ -247,11 +250,11 @@ A continuación, vemos los resultados obtenidos de ajuste para las métricas en 
 	\label{tabla:resultados10}
 \end{table}
 
-Observamos un ajuste alto en los datos de entrenamiento indicando un buen proceso de entrenamiento y resultados competitivos pero mejorables en validación. Observamos como la clase más conflictiva es \textbf{No Tumor} con las otras dos clases de tumores, indicando que la tarea más difícil es la detección del tumor y no la caracterización de este.
+En la Figura 4.9, observamos un ajuste alto en los datos de entrenamiento indicando un buen proceso de entrenamiento y en la Figura 4.10 resultados competitivos pero mejorables en validación. Observamos como la clase más conflictiva es \textbf{No Tumor} con las otras dos clases de tumores, indicando que la tarea más difícil es la distinción de que sea o no tumor y no la caracterización de este.
 
 \subsubsection{Tras aplicar votación}
 
-Aplicamos el esquema de votación, en primer lugar necesitamos explorar el parámetro $threshold$ que definimos en la metodología. El parámetro $threshold$ mide la tolerancia que tiene el modelo para predecir a meningioma, cuando existe un mayor número de predicciones por imagen a meningioma que $threshold$ el modelo predice toda la resonancia a meningioma, y en caso contrario a glioblastoma.
+Aplicamos el esquema de votación, en primer lugar necesitamos explorar el parámetro $threshold$ que definimos en la metodología. El parámetro $threshold$ mide la tolerancia que tiene el modelo para predecir a meningioma, cuando existe un mayor número de predicciones por imagen a meningioma el modelo predice toda la resonancia a meningioma, y en caso contrario a glioblastoma.
 
 Tras hacer inferencia y ver qué cantidad promedio de predicciones de cada clase obteníamos para toda la resonancia de unos cuantos ejemplos, observamos como las predicciones a meningiomas eran muchos menores que para los gliomas. Esto está motivado por la propia naturaleza de la cantidad de imágenes de tumores de cada clase debido a que los meningiomas son más pequeños que los gliomas en promedio. 
 
@@ -298,7 +301,7 @@ Obtenemos resultados finales para test, obteniendo un accuracy del $84.6519 \%$ 
 
 \subsection{Comparativa de clasificación con el estado del arte}
 
-Para finalizar la experimentación de esta primera tarea ponemos en contexto estos resultados con el estado del arte. Aunque no sean del todo comparables debido no son formulaciones del problema idénticas (se tiene otro tipo de tumor en el estado del arte) y se utilizan conjuntos de datos distintos T1-CE image en el estado del arte frente a BraTS en el este trabajo. Sin embargo, es importante hacer una observación de la bondad de los resultados teniendo en cuenta estas diferencias. 
+Para finalizar la experimentación de esta primera tarea ponemos en contexto estos resultados con el estado del arte. Aunque no sean del todo comparables debido a que no son formulaciones del problema idénticas (se tiene otro tipo de tumor en el estado del arte) y se utilizan conjuntos de datos distintos T1-CE image en el estado del arte frente a \textbf{BraTS} en el este trabajo. Sin embargo, es importante hacer una observación de la bondad de los resultados teniendo en cuenta estas diferencias. 
 
 \begin{table}[H]
 	\centering
@@ -315,11 +318,11 @@ Para finalizar la experimentación de esta primera tarea ponemos en contexto est
 		Nuestro método & 84.65 & 81.56 & 632 \\ 
 		\bottomrule
 	\end{tabular}
-	\caption{Resultados de validación con votación y de la búsqueda}
+	\caption{Comparativa resultados de test con la literatura}
 	\label{tabla:resultados12}
 \end{table}
 
-Los resultados del estado del arte no incluyen un validación con un esquema balanceado lo cual lo hace soluciones mucho menos generales y reales. Añadimos a la tabla, la entrada $P_{test}$ que la cantidad de pacientes que se usaron en el conjunto de test de cada trabajo.
+Los resultados del estado del arte no incluyen una validación con un esquema balanceado lo cual lo hace soluciones mucho menos generales y reales. Añadimos a la tabla 4.9, la entrada $P_{test}$ que es la cantidad de pacientes que se usaron en el conjunto de test de cada trabajo.
 
 Nuestro trabajo está validado en un conjunto de test $\approx 8$ veces mayor que el mayor conjunto utilizado en la literatura y utiliza una política de aprendizaje balanceado lo cual puede hacer obtener peores resultados en un métrica más débil como puede ser accuracy sin balanceo. Aún así nuestro método supera a 2 de los 6 métodos presentados en la revisión histórica.
 
@@ -328,7 +331,8 @@ Nuestro trabajo está validado en un conjunto de test $\approx 8$ veces mayor qu
 En esta sección recogemos los experimentos y resultados de estos para la tarea de segmentación. 
 
 \subsection{Entrenamiento en segmentación}
-Entrenamos la arquitectura enteramente descongelada con tamaño de lote de $32$ ejemplos durante $7$ épocas alcanzando el entrenamiento una duración de $ \approx 8$ horas. A continuación se presenta la tabla y curva de aprendizaje obtenidas.
+Entrenamos la arquitectura completamente descongelada con tamaño de lote de $32$ ejemplos durante $7$ épocas. El entrenamiento tuvo una duración de $ \approx 8$ horas. A continuación se presenta en la tabla 4.10 los resultados y en la figura 4.14 las curvas de aprendizaje obtenidas.
+
 \begin{table}[H]
 	\centering
 	\begin{tabular}{|ccccc|}
@@ -352,19 +356,19 @@ Entrenamos la arquitectura enteramente descongelada con tamaño de lote de $32$ 
 	\caption{Curva de aprendizaje para la tarea de segmentación}
 \end{figure}
 
-Observamos como tenemos una muy rápida convergencia en la primera época y cómo se estabiliza en las sucesivas épocas refinándose la pérdida Dice muy ligeramente. En este tiempo de cómputo limitado observamos como no se produce overfitting. Sin embargo, obtenemos un error de validación que disminuye muy poco entre la primera y segunda época aumentando ligeramente en las sucesivas épocas. Podemos interpretar que existe un comportamiento estable en todo el proceso de entrenamiento.
+En la Figura 4.14, observamos como tenemos una muy rápida convergencia en la primera época y cómo se estabiliza en las sucesivas épocas refinándose la pérdida Dice muy ligeramente. En este tiempo de cómputo limitado observamos como no se produce overfitting. Sin embargo, obtenemos un error de validación que disminuye muy poco entre la primera y segunda época aumentando ligeramente en las sucesivas épocas. Podemos interpretar que existe un comportamiento estable en todo el proceso de entrenamiento.
 
-A continuación, comparamos la salida del modelo respecto la imagen real. Esta salida es previa a aplicarle un proceso de umbralización con la cual obtendríamos una máscara binaria final. El proceso de umbralización que se aplicará consiste en determinar como píxeles segmentados (usando la etiqueta 1) los píxeles cuyo valor sea mayor a un umbral $U$ y en caso contrario, píxeles no segmentados (usando la etiqueta 0). El umbral $U$ empleado será $U = 0.8$. Viendo en la práctica como este umbral o uno ligeramente más bajo como $0.5$ no afecta significativamente a los resultados. 
+A continuación, comparamos la salida del modelo con la imagen real. Esta salida es previa a aplicarle un proceso de umbralización con la cual obtendríamos una máscara binaria final. El proceso de umbralización que se aplicará consiste en determinar que píxeles formarán parte del tumor (usando la etiqueta 1) y en caso contrario, qué píxeles no (usando la etiqueta 0). El umbral $U$ empleado será $U = 0.8$. Viendo en la práctica como este umbral o uno ligeramente más bajo como $0.5$ no afecta significativamente a los resultados. 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.5\linewidth]{imagenes/output_segmentation.png}
 	\caption{Comparación de la salida del modelo respecto la real}
 \end{figure}
-Observamos buenos resultados consiguiendo máscaras de segmentación que replican en detalle la segmentación original. En la imagen producida por la red se puede apreciar la sombra de un cerebro pudiendo ver un efecto residual del codificador y del uso de skip connections.
+En la figura 4.15, observamos buenos resultados consiguiendo máscaras de segmentación que replican en detalle la segmentación original. En la imagen producida por la red se puede apreciar la sombra de un cerebro pudiendo ver un efecto residual del codificador y del uso de skip connections.
 
 \subsection{Validación en segmentación}
 
-A continuación, inferimos los resultados finales para segmentación en validación y test para nuestras tres métricas. Recogemos en la siguiente tabla estos resultados.
+A continuación, inferimos los resultados finales para segmentación en validación y test para nuestras tres métricas. En la tabla 4.11 se muestra los resultados obtenidos
 
 \begin{table}[H]
 	\centering
@@ -379,7 +383,8 @@ A continuación, inferimos los resultados finales para segmentación en validaci
 	\caption{Resultados de hold-out en validación y test para segmentación}
 	\label{tabla:resultados5}
 \end{table}
-Observamos que ambos conjuntos mantienen resultados muy similares empeorando ligeramente en test indicando robustez y coherencia en los resultados. Observamos que la peor métrica obtenida es la distancia Hausdorff que es demasiado alta, indicando que existe una distancia máxima media de $\approx 14$ píxeles entre la segmentación original y la salida del modelo. Podría significar un problema de creación de artefactos por parte del modelo.
+
+En la Figura 4.14, observamos que ambos conjuntos mantienen resultados muy similares empeorando ligeramente en test indicando robustez y coherencia en los resultados. Observamos que la peor métrica obtenida es la distancia Hausdorff que es demasiado alta, indicando que existe una distancia máxima media de $\approx 14$ píxeles entre la segmentación original y la salida del modelo. Podría significar un problema de creación de artefactos por parte del modelo.
 
 A continuación, para darle explicabilidad a los resultados se muestra el histograma de los resultados de las métricas para todos los ejemplos, primero del conjunto de validación y después para el conjunto de test. De esta forma, podríamos identificar ejemplos especialmente difíciles y caracterizarlos.
 \begin{figure}[H]
@@ -424,7 +429,9 @@ La normalidad de las distribuciones también implica que las métricas son simé
 
 \subsection{Comparativa de segmentación con el estado del arte}
 
-Para finalizar la experimentación de esta segunda tarea ponemos en contexto estos resultados con el estado del arte. Todos estos resultados han sido evaluados por conjuntos de mismo dataset \textbf{BraTS}, y respetando la misma proporción entre entrenamiento-test que la seguida en este trabajo.
+Para finalizar la experimentación de esta segunda tarea ponemos en contexto estos resultados con el estado del arte. Todos estos resultados han sido evaluados por conjuntos del mismo dataset \textbf{BraTS}, y respetando la misma proporción entre entrenamiento-test que la seguida en este trabajo.
+
+Sin embargo, el resultado obtenido por nuestro método incluye la validación en un conjunto que incluye meningiomas y glioblastomas más diversos (como los pediátricos) a diferencia de la literatura, que solo incluye glioblastomas de adultos. Nuestros resultados están validados en un conjunto de datos más diversos.
 
 En la siguiente tabla se muestran las métricas y un apartado de recursos que indica la GPU que usaron para el entrenamiento. En nuestro método usamos una gráfica Tesla P100 limitados semanalmente $30$ horas y en cada ejecución a $12$ horas. Por lo que, no podemos entrenar más de $12$ horas seguidas.
 

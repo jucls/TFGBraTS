@@ -15,7 +15,7 @@
 \contentsline {figure}{\numberline {2.4}{\ignorespaces Evolución del estado del arte hasta 2021 \cite {liu2023deep}.}}{20}{figure.2.4}%
 \contentsline {figure}{\numberline {2.5}{\ignorespaces Comparación entre arquitecturas de una y múltiples trayectorias. Imagen de \cite {liu2023deep}}}{23}{figure.2.5}%
 \contentsline {figure}{\numberline {2.6}{\ignorespaces Arquitectura de dos vías de \cite {havaei2017brain}}}{23}{figure.2.6}%
-\contentsline {figure}{\numberline {2.7}{\ignorespaces Comparación de distintas arquitecturas encoder-decoder}}{25}{figure.2.7}%
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Comparación arquitecturas encoder-decoder. \cite {liu2023deep}}}{25}{figure.2.7}%
 \contentsline {figure}{\numberline {2.8}{\ignorespaces Estructura de método en cascada de \cite {wang2018automatic}}}{26}{figure.2.8}%
 \contentsline {figure}{\numberline {2.9}{\ignorespaces Arquitectura autoencoder regularizador de \cite {myronenko20193d}}}{27}{figure.2.9}%
 \contentsline {figure}{\numberline {2.10}{\ignorespaces Arquitectura de \cite {zhou2021latent}}}{29}{figure.2.10}%
@@ -27,7 +27,7 @@
 \contentsline {figure}{\numberline {2.16}{\ignorespaces Estrategia de aumento de datos de \cite {ferreira2024we}}}{34}{figure.2.16}%
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Comparativa de rendimiento de las GPU disponibles}}{36}{figure.3.1}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Esquema de la arquitectura empleada para inicializar el codificador y representación latente}}{41}{figure.3.2}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Esquema de la arquitectura empleada para inicializar el codificador y representación latente. \cite {subedi2022retracted}}}{41}{figure.3.2}%
 \contentsline {figure}{\numberline {3.3}{\ignorespaces Esquema de la arquitectura empleada para el problema de clasificación}}{42}{figure.3.3}%
 \contentsline {figure}{\numberline {3.4}{\ignorespaces Esquema de la arquitectura empleada para el problema de segmentación}}{43}{figure.3.4}%
 \contentsline {figure}{\numberline {3.5}{\ignorespaces Arquitectura usada de ResNet34 \cite {he2016deep}}}{47}{figure.3.5}%
@@ -56,9 +56,12 @@
 \contentsline {figure}{\numberline {4.14}{\ignorespaces Curva de aprendizaje para la tarea de segmentación}}{81}{figure.4.14}%
 \contentsline {figure}{\numberline {4.15}{\ignorespaces Comparación de la salida del modelo respecto la real}}{82}{figure.4.15}%
 \contentsline {figure}{\numberline {4.16}{\ignorespaces Distribución de similaridad Dice en el conjunto de validación}}{83}{figure.4.16}%
-\contentsline {figure}{\numberline {4.17}{\ignorespaces Distribución de distancia Hausdorff en el conjunto de validación}}{83}{figure.4.17}%
+\contentsline {figure}{\numberline {4.17}{\ignorespaces Distribución de distancia Hausdorff en el conjunto de validación}}{84}{figure.4.17}%
 \contentsline {figure}{\numberline {4.18}{\ignorespaces Distribución de sensibilidad en el conjunto de validación}}{84}{figure.4.18}%
 \contentsline {figure}{\numberline {4.19}{\ignorespaces Distribución de similaridad Dice en el conjunto de test}}{84}{figure.4.19}%
-\contentsline {figure}{\numberline {4.20}{\ignorespaces Distribución de distancia Hausdorff en el conjunto de test}}{84}{figure.4.20}%
+\contentsline {figure}{\numberline {4.20}{\ignorespaces Distribución de distancia Hausdorff en el conjunto de test}}{85}{figure.4.20}%
 \contentsline {figure}{\numberline {4.21}{\ignorespaces Distribución de sensibilidad en el conjunto de test}}{85}{figure.4.21}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
 \addvspace {10\p@ }

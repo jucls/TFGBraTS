@@ -18,7 +18,7 @@ A continuación, se pretende recoger los trabajos más relevantes realizados ent
 
 \subsection{Métodos no profundos}
 
-Los primeros métodos para abordar la clasificación de tumores aparecen en 2015 mucho después de cómo veremos comienzan los esfuerzos en la tarea de segmentación. Y ni siquiera los primeros métodos utilizaban aprendizaje profundo para abordarlo, como tiempo atrás se había hecho con su tarea hermana la segmentación. A continuación, los dos principales trabajos que abordan la clasificación de tumores con métodos no profundos, es decir, extrayendo las características de la imagen a mano o a través de un proceso automático de procesamiento de imagen.
+Los primeros métodos para abordar la clasificación de tumores aparecen en 2015. En ese momento ya existía una fuerte investigación en el problema de segmentación. Y ni siquiera los primeros métodos utilizaban aprendizaje profundo para abordarlo, como tiempo atrás se había hecho con su tarea hermana la segmentación. A continuación, los dos principales trabajos que abordan la clasificación de tumores con métodos no profundos, es decir, extrayendo las características de la imagen a mano o a través de un proceso automático de procesamiento de imagen.
 
 \subsubsection{Basados en SVM}
 
@@ -26,7 +26,7 @@ En \cite{cheng2015enhanced} se propone un método de clasificación basado en t�
 
 \subsubsection{Basados en Fischer Kernel}
 
-Otro enfoque interesante que sigue la línea de construir algoritmos precisos a través del procesamiento de imagen es intentar medir la similaridad de las imágenes del dataset para así poder clasificar en base a esta similaridad. En \cite{cheng2016retrieval} se utiliza un kernel Fischer con esta finalidad. Este trabajo parte de la obtención del conjunto de entrenamiento como muestra de a la que se deben parecer la imágenes de test, la clasificación se basa en determinar a través del kernel para un ejemplo a cual subconjunto de imágenes entre todas las clases se parece más. 
+Otro enfoque interesante que sigue la línea de construir algoritmos precisos a través del procesamiento de imagen es intentar medir la similaridad de las imágenes del dataset para así poder clasificar en base a esta similaridad. En \cite{cheng2016retrieval} se utiliza un kernel Fischer con esta finalidad. La premisa de este trabajo es que la imagen test debe parecerse al conjunto de entrenamiento. La clasificación de una imagen se basa en determinar, usando el kernel, a cual subconjunto de imágenes de entre todas las clases se parece más.
 
 Este trabajo fue evaluado en un conjunto de datos muy pequeño. Sin embargo, este método permite no solo clasificar sino entender las relaciones entre las similitudes de las imágenes.
 
@@ -40,11 +40,11 @@ Este trabajo fue evaluado en un conjunto de datos muy pequeño. Sin embargo, est
 	\caption{Arquitectura usada por \cite{abiwinanda2019brain}}
 \end{figure}
 
-Observamos como sólo utilizan dos capas convoluciones con función de activación \textbf{ReLU}, maxpolling para reducir la dimensionalidad y una red fully-connected para clasificar.
+Observamos como sólo utilizan dos capas convolución con función de activación \textbf{ReLU}, maxpolling para reducir la dimensionalidad y una capa fully-connected para clasificar.
 
-En \cite{pashaei2018brain}, prueban a variar ligeramente la arquitectura de \cite{abiwinanda2019brain} añadiéndole una mayor profundidad. Sin embargo, posiblemente motivado por falta de datos obtienen peores resultados al tener una arquitectura más compleja y por tanto más difícil de ajustar. En este mismo trabajo ante esto, prueban a preprocesar las entradas con un clasificador KELM obteniendo un mejor resultado.
+En \cite{pashaei2018brain}, prueban a variar ligeramente la arquitectura de \cite{abiwinanda2019brain} añadiéndole una mayor profundidad. Sin embargo, posiblemente motivado por falta de datos obtienen peores resultados al tener una arquitectura más compleja y por tanto más difícil de ajustar. En este mismo trabajo ante esto, prueban a preprocesar las entradas con un clasificador KELM obteniendo mejores resultados.
 
-\cite{sultan2019multi} proponen una arquitectura de $16$ capas convolucionales que por si misma a excepción de los trabajos anteriores obtiene resultados mucho más competitivos. La novedad de su trabajo es la inclusión de algún tipo de capa normalizadora en la red, en este caso \textbf{cross channel normalization}. 
+\cite{sultan2019multi} proponen una arquitectura de $16$ capas de convolución que por si misma a excepción de los trabajos anteriores obtiene resultados mucho más competitivos. La novedad de su trabajo es la inclusión de algún tipo de capa normalizadora en la red, en este caso \textbf{cross channel normalization}. 
 
 \begin{figure}[H]
 	\centering
@@ -52,7 +52,7 @@ En \cite{pashaei2018brain}, prueban a variar ligeramente la arquitectura de \cit
 	\caption{Arquitectura usada por \cite{sultan2019multi}}
 \end{figure}
 
-Para finalizar esta revisión, incluimos estado del arte del problema de \textbf{2021}. \cite{diaz2021deep} utiliza una única red CNN sin ningún clasificador añadido en sus entradas o salidas. Su estrategia es utilizar características multi-escala para capturar mejor las características de la lesión.
+Para finalizar esta revisión, incluimos en la revisión al estado del arte del problema. \cite{diaz2021deep} utiliza una red CNN con múltiples capas con kernels de distintos tamaños y capas FCN como clasificador final. Este es un enfoque simple únicamente neuronal ya que no utiliza otros tipos clasificadores. Su estrategia es utilizar características multi-escala para capturar mejor las características de la lesión. En concreto, utiliza filtros $11 \times 11$, $7 \times 7$ y $3 \times 3$.
 
 \begin{figure}[H]
 	\centering
@@ -105,12 +105,15 @@ A pesar de los años de desarrollo, el problema de la segmentación de tumores c
 	Se empezarán a construir arquitecturas encoder-decorder convolucionales para conseguir pipelines completos para la segmentación. El aprendizaje profundo toma el problema de lleno proclamándose el enfoque que define el estado del arte.
 	
 	Las soluciones basadas en aprendizaje profundo se pueden clasificar en tres categorías que se corresponden con el problema que quieren resolver y que describiremos  a continuación. Sin embargo, como veremos en las soluciones lo ideal es tratar con los tres problemas.
-	
+	\vspace{0.5cm}
 	\subsection{Métodos que se enfocan en la arquitectura}
+	\vspace{1cm}
 		
 		 Para poder obtener redes que automáticamente extraen características discriminativas a altas dimensiones es necesario un efectivo diseño de módulos y arquitecturas. Por un lado, se pretende que la arquitectura sea capaz de aprender las características distintivas de los tejidos y a localizar regiones de interés por medio de añadir profundidad a la red, a través de mecanismos de atención o la fusión de características entre las resonancias. Por otro lado, se pretende minimizar la cantidad de parámetros entrenables de la red o conseguir un entrenamiento más rápido.
+		 \vspace{0.5cm}
 		 
 		\subsubsection{Diseño de bloques especializados}
+			\vspace{0.5cm}
 			
 			Los primeros trabajos que tenían este objetivo comenzaron por basarse en arquitecturas bien conocidas como AlexNet o VGGNet a través del uso de una única imagen de la resonancia completa como entrada de la red.
 			
@@ -171,7 +174,7 @@ A pesar de los años de desarrollo, el problema de la segmentación de tumores c
 				\begin{figure}[H]
 					\centering
 					\includegraphics[width=0.85\linewidth]{imagenes/encoder-decoderIMG.drawio.png}
-					\caption{Comparación de distintas arquitecturas encoder-decoder}
+					\caption{Comparación arquitecturas encoder-decoder. \cite{liu2023deep}}
 				\end{figure}
 				
 			\end{enumerate}
@@ -296,7 +299,7 @@ A pesar de los años de desarrollo, el problema de la segmentación de tumores c
 	
 	Con la inclusión de las arquitecturas transformadoras se planteó un nuevo modelo que podía traer ventajas significativas. No siendo la imagen médica y en concreto este problema una excepción.
 	
-	Con la adaptación de los transformers al campo de la visión, los Vision Transformers podría ser un modelo más unificador, paralelizable y que ofreciera mejores resultados que las redes convolucionales al romper con la localidad que supone el uso de convoluciones. 
+	Con la adaptación de los transformers al campo de la visión, Vision Transformers podría ser un modelo más unificador, paralelizable y que ofreciera mejores resultados que las redes convolucionales al romper con la localidad que supone el uso de convoluciones. 
 	
 	En las soluciones más recientes de la segmentación de tumores cerebrales se introduce el uso de Vision Transformers con estas expectativas.
 	
@@ -333,7 +336,7 @@ A pesar de los años de desarrollo, el problema de la segmentación de tumores c
 		\item \textbf{Flexibilidad de tamaño}: El tamaño de las ventanas locales y el desplazamiento se pueden ajustar para diferentes aplicaciones, permitiendo una gran flexibilidad.
 	\end{itemize}
 	
-	Gracias a estas características, los Swin Transformers han demostrado un rendimiento superior que los Transformers ya siguen mantienen cierta relación de localidad.
+	Gracias a estas características, Swin Transformers han demostrado un rendimiento superior que Transformers ya siguen mantienen cierta relación de localidad.
 	
 	A continuación, comentamos la arquitectura de \cite{hatamizadeh2021swin}.
 	
@@ -343,8 +346,7 @@ A pesar de los años de desarrollo, el problema de la segmentación de tumores c
 		\caption{Arquitectura de \cite{hatamizadeh2021swin}}
 	\end{figure}
 	
-	Implementan una U-net con un representación latente y decodificador convolucionales pero un codificador basado en Transformer.
-	
+	Implementan una U-net con un representación latente y decodificador convolucionales pero un codificador basado en Transformer. Esto permite capturar capturar dependencias globales a través de la atención propia, lo cual es beneficioso para identificar relaciones espaciales complejas en las imágenes. Además de esto, la combinación del transformador y las CNNs permite la extracción de características tanto locales como globales, mejorando la precisión de la segmentación. En otras palabras, se aprovecha las capacidades de atención global de los transformadores y la habilidad de las CNNs para capturar detalles locales.
 	
 	En años posteriores a estos trabajos se incluirá comúnmente la fusión de arquitecturas transformadoras y CNN tomando las ventajas de ambas. Como es el siguiente trabajo que define el estado del arte para 2023.
 	

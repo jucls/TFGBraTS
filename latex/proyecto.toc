@@ -72,7 +72,7 @@
 \contentsline {subsection}{\numberline {4.2.2}Arquitecturas con filtros con distinto tamaño: Xception}{71}{subsection.4.2.2}%
 \contentsline {section}{\numberline {4.3}Clasificación}{73}{section.4.3}%
 \contentsline {subsection}{\numberline {4.3.1}Entrenamiento en clasificación}{73}{subsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.3.2}Validación en clasificación}{75}{subsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.3.2}Validación en clasificación}{76}{subsection.4.3.2}%
 \contentsline {subsubsection}{Antes de aplicar votación}{76}{section*.30}%
 \contentsline {subsubsection}{Tras aplicar votación}{77}{section*.31}%
 \contentsline {subsection}{\numberline {4.3.3}Comparativa de clasificación con el estado del arte}{79}{subsection.4.3.3}%
@@ -90,4 +90,17 @@
 \contentsline {subsection}{\numberline {5.2.2}Unificación de arquitecturas}{89}{subsection.5.2.2}%
 \contentsline {subsection}{\numberline {5.2.3}Exploración de otras técnicas de aprendizaje no supervisado}{89}{subsection.5.2.3}%
 \contentsline {chapter}{Bibliografía}{89}{subsection.5.2.3}%
-\contentsline {chapter}{Glosario}{97}{appendix*.33}%
+\contentsline {chapter}{\numberline {A}Códigos y repositorio}{97}{appendix.Alph1}%
+\contentsline {section}{\numberline {A.1}Repositorio de GitHub}{97}{section.Alph1.1}%
+\contentsline {section}{\numberline {A.2}Notebooks en Kaggle}{97}{section.Alph1.2}%
+\contentsline {section}{\numberline {A.3}Modelos en Kaggle}{98}{section.Alph1.3}%
+\contentsline {section}{\numberline {A.4}Demostración de uso de la interfaz}{98}{section.Alph1.4}%
+\contentsline {chapter}{\numberline {B}Documentación de la interfaz}{99}{appendix.Alph2}%
+\contentsline {section}{\numberline {B.1}Estructura de ficheros}{99}{section.Alph2.1}%
+\contentsline {section}{\numberline {B.2}Definición de los modelos}{99}{section.Alph2.2}%
+\contentsline {section}{\numberline {B.3}Programa principal}{99}{section.Alph2.3}%
+\contentsline {section}{\numberline {B.4}Fichero de inferencia}{99}{section.Alph2.4}%
+\contentsline {section}{\numberline {B.5}Dependencias}{99}{section.Alph2.5}%
+\contentsline {chapter}{\numberline {C}Manual de uso de la interfaz}{101}{appendix.Alph3}%
+\contentsline {section}{\numberline {C.1}Clasificando}{101}{section.Alph3.1}%
+\contentsline {section}{\numberline {C.2}Segmentando}{101}{section.Alph3.2}%

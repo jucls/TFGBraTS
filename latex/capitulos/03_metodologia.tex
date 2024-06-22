@@ -62,7 +62,7 @@ $$ X_{std}^{i}= \frac{x^{i}-mean}{std} $$
 
 \subsection{Recortado de imagen}
 
-Podría ser razonable reducir las dimensiones de las imágenes para hacer a nuestros datos menos pesados. Sin embargo, se opta por no hacerlo por seguridad y escalibilidad. \textbf{BraTS} fija esas dimensiones en base al estándar en una resonancia magnética, así para cualquier paciente se garantiza que la imagen de su cerebro se puede representar en una resonancia en unas condiciones de resolución iguales al resto de pacientes.
+Podría ser razonable reducir las dimensiones de las imágenes para hacer que los datos sean menos pesados. Sin embargo, se opta por no hacerlo por seguridad y escalibilidad. \textbf{BraTS} fija esas dimensiones en base al estándar en una resonancia magnética, así para cualquier paciente se garantiza que la imagen de su cerebro se puede representar en una resonancia en unas condiciones de resolución iguales al resto de pacientes.
 
 Si recortamos las imágenes de forma cuadrada al cerebro más grande de todas las resonancias, podríamos encontrarnos en inferencia con un cerebro mayor que no se podría representar en una imagen. Es necesario dejar cierto margen, optando por respetar el margen inicial que marcan los organizadores médicos de \textbf{BraTS}.
 
@@ -121,10 +121,10 @@ En estos archivos CSV existen las siguientes columnas:
 \begin{enumerate}
 	\item \textbf{Rutas absolutas} : En $4$ columnas están las rutas absolutas a los archivos .nii de cada prueba de cada resonancia.
 	\item \textbf{Número de slice} : Se guarda el número de slice en la que se localiza esa imagen dentro de la resonancia. Este campo es necesario para poder extraer la imagen.
-	\item \textbf{Etiqueta} : Para el problema de clasificación es necesario guardar la etiqueta que identifica a cada imagen, 0 para Glioblastoma, 1 para Meningioma y 2 para No Tumor.
+	\item \textbf{Etiqueta} : Para el problema de clasificación es necesario guardar la etiqueta que identifica a cada imagen, 0 para Meningioma, 1 para Glioblastoma y 2 para No Tumor.
 \end{enumerate}
 
-Tras aplicar este undersampling nos quedamos con $74487$ imágenes reducidas $I_{RED}$ en entrenamiento, $31899$ en validación y $45354$ en test respecto un total de imágenes $I_{TOTAL} = Pacientes \times Slices$. En la siguiente tabla podemos ver recogida esta información también en términos de porcentaje respecto las imágenes totales.
+Tras aplicar este undersampling nos quedamos con $74487$ imágenes reducidas $I_{RED}$ en entrenamiento, $31899$ en validación y $45354$ en test respecto a un total de imágenes $I_{TOTAL} = Pacientes \times Slices$. En la siguiente tabla podemos ver recogida esta información también en términos de porcentaje.
 
 \begin{table}[H]
 	\centering
@@ -159,7 +159,7 @@ A continuación, mostramos un esquema explicativo de las partes implicadas en la
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=1.0\linewidth]{imagenes/esquema_codificador.png}
-	\caption{Esquema de la arquitectura empleada para inicializar el codificador y representación latente}
+	\caption{Esquema de la arquitectura empleada para inicializar el codificador y representación latente. \cite{subedi2022retracted}}
 \end{figure}
 
 
@@ -173,7 +173,7 @@ Esta razón explica de forma teórica como un proceso de ajuste previo al conjun
 
 A continuación, presentamos el modelo de clasificación.
 
-La entrada $x$ es el vector de características iniciales, las imágenes concatenadas de las $3$ pruebas. El codificador es una red neuronal que transforma la entrada de alta dimensionalidad $x$ en una representación de menor dimensionalidad $z$. El proceso de codificación se puede ver como una función $g_{\phi}$ parametrizada por $\phi$, que aprende a extraer las características más relevantes de los datos de entrada. La parte final del esquema es una red neuronal densa que toma la representación comprimida $z$ y realiza la tarea específica del modelo
+La entrada $x$ es el vector de características iniciales. En nuestro caso, son las tres imágenes correspondientes a las $3$ pruebas. El codificador es una red neuronal que transforma la entrada de alta dimensionalidad $x$ en una representación de menor dimensionalidad $z$. El proceso de codificación se puede ver como una función $g_{\phi}$ parametrizada por $\phi$, que aprende a extraer las características más relevantes de los datos de entrada. La parte final del esquema es una red neuronal densa que toma la representación comprimida $z$ y realiza la tarea específica del modelo
 
 \begin{figure}[H]
 	\centering
@@ -356,12 +356,7 @@ La arquitectura Inception, particularmente en sus versiones más recientes como 
 
 La convolución separable en profundidad es una técnica que factoriza una convolución estándar en dos operaciones más simples y eficientes: una \textbf{convolución en profundidad} (depthwise convolution) y una \textbf{convolución puntual} (pointwise convolution). En una convolución estándar, los filtros de convolución mezclan canales de entrada y espaciales en una única operación. En cambio, la convolución separable en profundidad realiza estos dos pasos por separado.
 
-Matemáticamente, una convolución separable en profundidad se puede representar como:
-\[
-\mathbf{Z} = \mathbf{X} *_{\text{depthwise}} \mathbf{K} + \mathbf{X} *_{\text{pointwise}} \mathbf{K}
-\]
-Donde \(\mathbf{X}\) es la entrada, \(\mathbf{K}\) es el filtro de convolución, \(*_{\text{depthwise}}\) es la operación de convolución en profundidad y \(*_{\text{pointwise}}\) es la operación de convolución puntual.
-
+Matemáticamente, una convolución separable en profundidad donde \(\mathbf{X}\) es la entrada, \(\mathbf{K}\) es el filtro de convolución, \(*_{\text{depthwise}}\) es la operación de convolución en profundidad y \(*_{\text{pointwise}}\) es la operación de convolución puntual.
 
 Xception se compone de varias capas organizadas en bloques de convolución separables en profundidad. Como capa de entrada tiene una capa convolucional inicial con 32 filtros de tamaño 3x3 y un stride de 2, seguida de una capa convolucional con 64 filtros de tamaño 3x3.
 
@@ -385,7 +380,7 @@ A continuación, describiremos qué capas y dimensiones tiene la representación
 	\caption{Arquitectura de la representación latente}
 \end{figure}
 
-El bloque \textbf{ConvBlock(512, 1024)} se utiliza como representación latente dentro de nuestro autoencoder representa una etapa de procesamiento que transforma una entrada de 512 canales (o características) en una salida de 1024 canales mediante operaciones convolucionales seguidas de normalización y activación no lineal. En detalle, el bloque consiste en dos capas convolucionales cada una seguida por capas de Batch Normalization y activación ReLU. La primera capa convolucional transforma los 512 canales de entrada en 1024 canales de salida, manteniendo el tamaño de la entrada con un kernel de 3x3, stride de 1 y padding de 1. Luego, la segunda capa convolucional opera sobre los 1024 canales de salida, manteniendo este número de canales con el mismo tamaño de kernel y configuración de stride y padding. La Batch Normalization se aplica después de cada capa convolucional para estabilizar y acelerar el entrenamiento, y la ReLU como función de activación introduce no linealidades que ayudan a capturar características más complejas en los datos de entrada. Este tipo de bloque que funciona como representación latente del conjunto de datos es crucial en redes autoencoder para aprender representaciones más profundas y significativas de los datos, condensando y expandiendo la información a través de capas convolucionales apiladas como se diseña en este caso.
+El bloque \textbf{ConvBlock(512, 1024)} se utiliza como representación latente dentro de nuestro autoencoder representa una etapa de procesamiento que transforma una entrada de 512 canales (o características) en una salida de 1024 canales mediante operaciones convolucionales seguidas de normalización y activación no lineal. En detalle, el bloque consiste de dos capas convolucionales cada una seguida por capas de Batch Normalization y activación ReLU. La primera capa convolucional transforma los 512 canales de entrada en 1024 canales de salida, manteniendo el tamaño de la entrada con un kernel de 3x3, stride de 1 y padding de 1. Luego, la segunda capa convolucional opera sobre los 1024 canales de salida, manteniendo este número de canales con el mismo tamaño de kernel y configuración de stride y padding. La capa de Batch Normalization se aplica después de cada capa convolucional para estabilizar y acelerar el entrenamiento, y la ReLU como función de activación introduce no linealidades que ayudan a capturar características más complejas en los datos de entrada. Este tipo de bloque que funciona como representación latente del conjunto de datos, es crucial en redes autoencoder para aprender representaciones más profundas y significativas de los datos, condensando y expandiendo la información a través de capas convolucionales apiladas.
 
 \subsubsection{Reducción de canales}
 
@@ -421,7 +416,7 @@ Sin embargo, las arquitecturas empleadas como codificador sólo aceptan imágene
 
 \subsubsection{Bloque UpConv}
 
-Definimos qué capas tiene nuestro propio bloque \textbf{UpConv} nos será útil para construir el decodificador. Definimos el bloque UpConv como una operación de convolución transpuesta seguido de la aplicación del bloque \textbf{ConvBlock} definido en el apartado de la representación latente.
+Con el objetivo de describir la parte decodificadora de la arquitectura vamos a definir nuestro propio bloque \textbf{UpConv}. Definimos el bloque UpConv como una operación de convolución transpuesta seguido de la aplicación del bloque \textbf{ConvBlock} definido en el apartado de la representación latente.
 
 La \textbf{operación de convolución transpuesta o deconvolución} se define como la inversa de la convolución estándar en una red neuronal convolucional. A continuación, se explica los detalles matemáticos de la convolución transpuesta.
 
@@ -471,7 +466,7 @@ Utilizamos el codificador seguido de la representación latente tras la represen
 
 \subsection{Arquitectura para segmentación}
 
-Tras construir la arquitectura autoencoder para el problema de la reconstrucción adaptarla para el problema de segmentación es una tarea sencilla. Por un lado, observamos como la estadarización que presentan los datos es favorable para que una misma arquitectura (en el contexto que es una red con una dimensiones y capas fijas) sea igualmente apta en ambos problemas (reconstrucción y segmentación). Si recordamos \cite{myronenko20193d} utilizaba esta idea, su arquitectura de doble tarea comparte codificador y representación latente, y además ambos decodificadores son prácticamente idénticos. Por lo tanto, se mantendrá el mismo diseño de decodificador que en la tarea de la reconstrucción. La única diferencia que se introducirá en segmentación será el uso de \textbf{skips connections}.
+Tras construir la arquitectura autoencoder para el problema de la reconstrucción, adaptarla para el problema de segmentación es una tarea sencilla. Por un lado, observamos como la estadarización que presentan los datos es favorable para que una misma arquitectura (en el contexto que es una red con unas dimensiones y capas fijas) sea igualmente apta en ambos problemas (reconstrucción y segmentación). Si recordamos \cite{myronenko20193d} utilizaba esta idea, su arquitectura de doble tarea comparte codificador y representación latente, y además ambos decodificadores son prácticamente idénticos. Por lo tanto, se mantendrá el mismo diseño de decodificador que en la tarea de la reconstrucción. La única diferencia que se introducirá en segmentación será el uso de \textbf{skips connections}.
 
 \subsubsection{Skips connections} 
 
@@ -635,7 +630,7 @@ En este trabajo usaremos esta política como forma de regularización y como mé
 
 Para la evaluación se distinguirán entre tres subconjuntos de datos: entrenamiento, validación y test. Se utilizará un conjuntos fijos basado en \textbf{hold out}, común a todas las tareas. Por motivos de eficiencia no podemos permitirnos usar validación cruzada o distintos conjuntos variables. Estos conjuntos serán separados mediante la utilización de archivos CSV con las rutas absolutas de cada ejemplo para cada uno de ellos. 
 
-Seguirán la siguiente distribución: un $49 \%$ para entrenamiento, $21 \%$ para validación y un $30 \%$ para test del conjunto total de datos (glioblastomas y meningiomas juntos) haciendo un reparto aleatorio entre ellos. Se sigue la regla de partición: $70 \%$ entrenamiento + validación y $30 \%$ test. Además de $70 \%$ entrenamiento y $30 \%$ validación. La finalidad de cada subconjunto es para entrenamiento ajustar los modelos a este subconjunto de datos, validación elegir el mejor modelo de los probados, y test dar el resultado final garantizador de la bondad de los modelos.
+Seguirán la siguiente distribución: un $49 \%$ para entrenamiento, $21 \%$ para validación y un $30 \%$ para test del conjunto total de datos (glioblastomas y meningiomas juntos) haciendo un reparto aleatorio entre ellos. Se sigue la regla de partición: $70 \%$ entrenamiento + validación y $30 \%$ test. La finalidad de cada subconjunto es para entrenamiento ajustar los modelos a este subconjunto de datos, el objetivo del conjunto de validación es elegir el mejor modelo de los probados, y el conjunto de test dar el resultado final garantizador de la bondad de los modelos.
 
 \subsection{Métricas para clasificación}
 
@@ -727,9 +722,9 @@ Para ello, se utilizará tres métricas. Las dos primeras utilizadas en todas la
 
 Por falta de datos y recursos no pudimos entrar a resolver la predicción de la evolución de una lesión tumoral. Sin embargo, al menos teóricamente planteamos resolver esta tercera tarea. Es necesario tener en cuenta que la solución que aportaremos se sustenta en justo lo que no tuvimos, \textbf{más imágenes de una misma resonancia en diferentes momentos en el tiempo}. Se cree que la existencia de estos datos es una condición necesaria, ya que hasta el conocimiento que se tiene en este trabajo soluciones sin etiquetas no son viables.
 
-Para construir el esquema solución a este problema podemos valernos del \textbf{mismo encoder $g_{\phi}$ y representación latente $z$} utilizados en todas las arquitecturas con anterioridad. Posteriormente, podemos conectar un \textbf{Visual Transformer} que tenga como entrada la salida aplanada de la representación latente y tenga como output la segmentación en una instancia a corto plazo futura.
+Para construir una solución a este problema podemos valernos del \textbf{mismo encoder $g_{\phi}$ y representación latente $z$} utilizados en todas las arquitecturas con anterioridad. Posteriormente, podemos conectar un \textbf{Visual Transformer} que tenga como entrada la salida aplanada de la representación latente y tenga como output la segmentación en una instancia a corto plazo futura.
 
-El objetivo del uso de una arquitectura transformadora es encontrar la correlación entre las \textbf{palabras} de entrada del decodificador para poder minar \textbf{(si existen)} detalles en la imagen que lleven a poder predecir en el corto plazo cómo se extendería la lesión tumoral.
+El objetivo del uso de una arquitectura transformadora es encontrar la correlación entre las \textbf{palabras} de entrada del decodificador (patches o píxeles de las imágenes) para poder minar \textbf{(si existen)} detalles en la imagen que lleven a poder predecir en el corto plazo cómo se extendería la lesión tumoral.
 
 A continuación, podemos ver el esquema de este modelo hipótesis planteado.
 

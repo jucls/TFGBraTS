@@ -1,0 +1,56 @@
+\glsdefs@newdocentry{prevalencia}%
+{%
+name={prevalencia},%
+sort={prevalencia},%
+type={main},%
+first={prevalencia},%
+firstplural={prevalencias},%
+text={prevalencia},%
+plural={prevalencias},%
+description={En epidemiología, proporción de personas que sufren una enfermedad con respecto al total de la población en estudio},%
+descriptionplural={En epidemiología, proporción de personas que sufren una enfermedad con respecto al total de la población en estudio},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{maths}%
+{%
+name={mathematics},%
+sort={mathematics},%
+type={main},%
+first={mathematics},%
+firstplural={mathematicss},%
+text={mathematics},%
+plural={mathematicss},%
+description={Mathematics is what mathematicians do},%
+descriptionplural={Mathematics is what mathematicians do},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+

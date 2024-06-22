@@ -15,7 +15,7 @@ Con este trabajo se persigue la creación de una arquitectura basada en aprendiz
 
 Se seguirá un planteamiento similar al seguido en la competición \textbf{BraTS: Brain Tumor Segmentation 2023} \cite{baid2021rsna} históricamente reconocida por ser un benchmark recurrente de las capacidades de las arquitecturas profundas en el campo de la imagen médica.
 
-BraTS es una competición que se define como un conglomerado de diferentes tareas relevantes en el diagnóstico de los tumores cerebrales <<Cluster of Challenges>>. En 2023 dando especialmente importancia a la generalidad de un modelo que mantenga los resultados anteriores para pacientes más diversos (de diferente origen étnico y de diferentes edades) y con diferentes tipos de tumores. En concreto para 2023, se contemplaron las siguientes tareas por separado: segmentación de glioblastomas en adultos, segmentación de meningiomas en adultos, segmentación de tumores pediátricos, segmentación de tumores de pacientes de origen africano, generación de pruebas faltantes y generación de partes de la imagen.
+\textbf{BraTS} es una competición que se define como un conglomerado de diferentes tareas relevantes en el diagnóstico de los tumores cerebrales <<Cluster of Challenges>>. En 2023 dando especialmente importancia a la generalidad de un modelo que mantenga los resultados anteriores para pacientes más diversos (de diferente origen étnico y de diferentes edades) y con diferentes tipos de tumores. En concreto para 2023, se contemplaron las siguientes tareas por separado: segmentación de glioblastomas en adultos, segmentación de meningiomas en adultos, segmentación de tumores pediátricos, segmentación de tumores de pacientes de origen africano, generación de pruebas faltantes y generación de partes de la imagen.
 
 De forma análoga a esta competición, se plantea conseguir dicho objetivo a partir de la resolución de las siguientes tareas.
 
@@ -32,7 +32,7 @@ Sólo en los EEUU para 2024 se esperan 25400 nuevos casos de tumor cerebral. La 
 
 El cerebro no tiene terminaciones nerviosas. Los pacientes no sienten dolor a causa de un tumor cerebral por sí mismo, lo cual hace que no exista una alerta sobre el paciente que lo motive a buscar ayuda médica en las primeras fases de la patología. Generalmente, acaban buscando ayuda médica por la aparición de otros indicios relacionados difíciles de distinguir de otras patologías agudas y de menor transcendencia como visión borrosa, pérdida del control, etc. Además, los glioblastomas son tumores de muy rápido crecimiento pueden llegar a estar en una fase avanzada desde su inicio en tan solo 2-3 meses.
 
-Por estos motivos, es común llegar tarde. Tomando mucha importancia el diagnóstico temprano para su superación. Con el objetivo de dar un diagnostico temprano se han introducido máquinas basadas en aprendizaje profundo. Así en este proyecto evaluaremos las capacidades del aprendizaje profundo para la segmentación de tumores. Prestando mayor interés a aquellos tumores que en sus inicios podrían pasar desapercibidos por el especialista humano, e incluso dar una segmentación de zonas potenciales que pueden aparecer nuevos tumores.
+Por estos motivos, es común llegar tarde. Tomando mucha importancia el diagnóstico temprano para su superación. Con el objetivo de dar un diagnostico temprano se han introducido máquinas basadas en aprendizaje profundo. Así en este proyecto evaluaremos las capacidades del aprendizaje profundo para la segmentación de tumores. Prestando mayor interés a aquellos tumores que en sus inicios podrían pasar desapercibidos por el especialista humano, e incluso dar una segmentación de zonas potenciales en las que podrían aparecer nuevos tumores.
 
 En general, los tumores cerebrales son difíciles de tratar y son resistentes a terapias convencionales usadas en otros tipos de cánceres como la quimioterapia debido a los desafíos que presenta el cerebro para tolerar ciertos químicos, transportar medicamentos dentro de él y la alta importancia que tiene en este órgano la optimización del uso de tratamientos que puedan ser invasivos. En otras palabras, el uso de tratamientos basados en la extirpación o en la medicación pueden ser arriesgados. Por tanto, el tratamiento más común de estos está basado en la radioterapia.
 
@@ -60,7 +60,7 @@ Una de las \textbf{limitaciones frecuentes en el campo de la imagen médica} es 
 	
 \end{enumerate}
 
-Partimos del conjunto de datos \textbf{BraTS} y serán los que únicamente utilizaremos para todo el trabajo ya que son los únicos que se pueden encontrar en la red pidiendo un acceso a ellos de una forma simple e incluso podríamos decir legal.
+Partimos del conjunto de datos \textbf{BraTS} y serán los que únicamente utilizaremos para todo el trabajo ya que son los únicos que se pueden encontrar en la red pidiendo un acceso a ellos de una forma simple.
 
 Hasta nuestro conocimiento, \textbf{BraTS} es el mayor conglomerado de resonancias magnéticas en la actualidad para los desafíos que planteamos en este trabajo. Otros datasets usados por la comunidad para este problema como el incluido en \textbf{Medical Segmentation Decathlon} descubrimos que es un subconjunto de \textbf{BraTS}.
 
@@ -83,14 +83,11 @@ En términos numéricos, contando solo los datos que tenemos sobre adultos tenem
 
 Por otro lado, observamos los pacientes que tienen más de una resonancia versus los que tienen una única resonancia para caracterizar la cantidad de instancias temporales que tenemos en el dataset.
 \\
-\\
-\\
-\\
-\\
+
 
 \begin{figure}[!h]
 	\centering
-	\includegraphics[width=0.8\linewidth]{imagenes/cantidadinstanciastemporales.png}
+	\includegraphics[width=1.0\linewidth]{imagenes/cantidadinstanciastemporales.png}
 	\caption{Cantidad de instancias temporales en el conjunto de datos}
 \end{figure}
 
@@ -100,7 +97,7 @@ En comparativa, observamos como la mayoría de pacientes no tienen más de una r
 
 A continuación, detallaremos más profundamente los datos haciendo algunas visualizaciones. 
 
-Para todos los tumores $P$ del conjunto de datos tenemos distintos tipos de muestras según las características de la frecuencia empleada en la toma de la resonancia, \textbf{T1-weighted} o \textbf{T2-weighted}. \cite{labella2023asnrmiccai}
+Para todos los tumores del conjunto de datos $X$ tenemos distintos tipos de muestras según las características de la frecuencia empleada en la toma de la resonancia, \textbf{T1-weighted} o \textbf{T2-weighted}. \cite{labella2023asnrmiccai}
 
 El tiempo de repetición (TR) es la cantidad de tiempo entre secuencias de pulsos sucesivas aplicadas al mismo segmento. El tiempo hasta el eco (TE) es el tiempo entre la llegada del pulso sobre el tejido y la recepción de la señal de eco.
 
@@ -142,11 +139,13 @@ A continuación, exploraremos el \textbf{etiquetado de las resonancias}, es deci
 La etiquetas de la segmentación pueden tomar cuatro valores, los del intervalo $[0, 3]$ que están relacionados con el tipo de tejido que segmentan. Tenemos tres tipos de tejidos que se relacionan con el valor de etiquetas en el array.
 
 \begin{enumerate}
-	\item \textbf{Etiqueta 0. Sano}: Tejido sano o la no existencia de tejido es etiquetado con $0$.
+	\item \textbf{Etiqueta 0. Sano}: Tejido sano.
 	\item \textbf{Etiqueta 1. NCR}: Tejido Necrótico. Núcleo del tumor tejido sin vida y usualmente reseco.
 	\item \textbf{Etiqueta 2. ED}: Edema peritumoral. Tejido afectado por expansión del tumor generalmente acumulación de líquido y tejido sano desplazado. 
 	\item \textbf{Etiqueta 3. ET}: Enhancing tumor. Tejido donde se encuentra la principal actividad de expansión del tumor. Área de actividad tumoral más agresiva o prolifera.
 \end{enumerate}
+
+La no existencia de tejido también recibe la etiqueta 0 junto con el tejido sano.
 
 Podemos ver la segmentación de las resonancias que se mostraron en \href{fig:visual0}{Figura 1.3} y \href{fig:visual1}{Figura 1.4}.
 \begin{figure}[!h]
@@ -164,13 +163,13 @@ Podemos ver la segmentación de las resonancias que se mostraron en \href{fig:vi
 \newpage
 A continuación, exploraremos la \textbf{localización de los tumores} en todo el conjunto de datos. Buscando responder a la siguiente pregunta significativa para el trascurso del trabajo: ¿Existe alguna zona del cerebro especialmente afectada? Para responderlo podemos intentar visualizarlo. Crearemos un mapa de calor para los $150$ primeros slices marcando la presencia de la lesión, ponderaremos de forma lineal a los tejidos según su importancia.
 
-\begin{figure}[!h]
+\begin{figure}[H]
 	\centering
 	\includegraphics[width=1.0\linewidth]{imagenes/metodologia_heatmapsGLI.png}
 	\caption{Distribución del tejido tumoral en Gliomas.}
 \end{figure}
 
-\begin{figure}[!h]
+\begin{figure}[H]
 	\centering
 	\includegraphics[width=1.0\linewidth]{imagenes/metodologia_heatmapsMEN.png}
 	\caption{Distribución del tejido tumoral en Meningiomas.}
@@ -194,7 +193,7 @@ Tras la visualización, no se observa una zona especialmente marcada ni en gliob
  
 \subsection{Planificación del trabajo}
 
-A continuación, mostramos la planificación de llevar a cabo este trabajo en un entorno real a través de una tabla de Gram que recoja el presupuesto y tiempo dedicado a en cada fase del desarrollo de la investigación y de su software.
+A continuación, mostramos la planificación de llevar a cabo este trabajo en un entorno real a través de una tabla de Gantt que recoja el presupuesto y tiempo dedicado a en cada fase del desarrollo de la investigación y de su software.
 
 \begin{table}[H]
 	\centering
@@ -203,13 +202,13 @@ A continuación, mostramos la planificación de llevar a cabo este trabajo en un
 		\textbf{Tarea} & \textbf{Semanas} & \textbf{Presupuesto medio} \\
 		\midrule
 		Revisión del estado del arte & 1-2 & 300 \\
-		Definición de línea de investigación & 1-2 & 300 \\
+		Definición de línea de investigación & 1 & 300 \\
 		Implementación de los experimentos & 1-2 & 300 \\
 		Ejecución de los experimentos & 3-4 & 900 \\
 		Validación de los experimentos & 1-2 & 310 \\
 		Diseño de la interfaz & 1 & 200 \\
 		Implementación de la interfaz & 1-2 & 300\\
-		Documentación & 1 &  200 \\
+		Documentación & 1-2 &  200 \\
 		\hline
 		\textbf{Total} & 10-16 &  2810 \\
 		\bottomrule
@@ -218,9 +217,9 @@ A continuación, mostramos la planificación de llevar a cabo este trabajo en un
 	\label{tabla:planificacion}
 \end{table}
 
-El presupuesto medio necesario ha sido calculado lo que costaría pagar a un becario durante ese tiempo  para esa tarea asumiendo que el becario cobra \textbf{800} euros al mes más el coste del uso del hardware empleado en los experimentos. 
+El presupuesto medio necesario ha sido calculado en base a lo que costaría pagar a un becario durante ese tiempo para esa tarea asumiendo que el becario cobra \textbf{800} euros al mes más el coste del uso del hardware empleado en los experimentos. 
 
-Para el calculo del hardware no asumimos que usamos las gráficas gratuitas de Kaggle sino que la alquilamos en Lambda Cloud con un precio de uso de $\approx 5$ euros por hora.
+Para el calculo del hardware no asumimos que usamos las gráficas gratuitas de Kaggle sino que la alquilamos en Lambda Cloud con un precio de uso de $\approx 5$ euros por hora. De esta forma, estimamos el presupuesto medio de la tabla 
 
 
 \subsection{Metodología de desarrollo}
@@ -228,9 +227,9 @@ Para el calculo del hardware no asumimos que usamos las gráficas gratuitas de K
 En este trabajo nos intentaremos ajustar lo máximo posible a una metodología de desarrollo ágil, \textbf{SCRUM}. Contemplando las siguientes características a cumplir.
 
 \begin{enumerate}
-	\item \textbf{Enfoque en roles y procesos}: SCRUM define roles. En nuestro caso, la tutora líder del proyecto (tomando las decisiones estructurales) y el alumno implementador y solucionador (llevándolo a la práctica y tomando el resto de decisiones). También define procesos estructurados como las reuniones de planificación de sprint, la revisión de sprint y la retrospectiva. Que se traducen en las tutorías y comunicación proporcionado durante el desarrollo del proyecto.
+	\item \textbf{Enfoque en roles y procesos}: SCRUM define roles. En nuestro caso, la tutora líder del proyecto (tomando las decisiones estructurales) y el alumno implementador (llevándolo a la práctica y tomando el resto de decisiones). También define procesos estructurados como las reuniones de planificación de sprint y la revisión de sprint. Esto se traducen en las tutorías y comunicación durante el desarrollo del proyecto.
 	
-	\item \textbf{Iterativo e incremental}: SCRUM se basa en iteraciones cortas (sprints) para desarrollar de manera incremental. En nuestro comenzando por clasificación y posteriormente por segmentación. Así como seguir la planificación de trabajo dispuesta anteriormente, informando de ello.
+	\item \textbf{Iterativo e incremental}: SCRUM se basa en iteraciones cortas (sprints) para desarrollar de manera incremental. En nuestro caso, comenzando por clasificación y posteriormente por segmentación. Siguiendo la planificación de trabajo e informando de los avances.
 	
 	\item \textbf{Flexibilidad en las prácticas técnicas}: SCRUM permite adaptarse. Esta característica es muy importante en este proyecto ante pruebas sin éxito o cambios de enfoque que sean necesarios.
 \end{enumerate}

@@ -16,16 +16,16 @@ Los resultados son moderadamente peores que la parte más reciente del estado de
 
 \subsection{Nuevo preprocesado en el problema}
 
-Para poder entrenar con los datos se tuvo que hacer un nuevo preprocesado que consistía en eliminar partes que podrían parecer redundantes. Se redujo las imágenes de entrenamiento a imágenes a aquellas con solo contenían lesión tumoral más una parte balanceada sin lesión. Esta reducción supone una nueva forma de preprocesar este conjunto de datos, y ante los resultados podemos considerar que se han mantenido estables, validando en la práctica este preprocesado.
+Para poder entrenar con los datos se tuvo que hacer un nuevo preprocesado que consistía en eliminar partes que podrían parecer redundantes. Se redujo las imágenes de entrenamiento a aquellas imágenes con solo contenían lesión tumoral más una parte balanceada sin lesión. Esta reducción supone una nueva forma de preprocesar este conjunto de datos, y ante los resultados podemos considerar que se han mantenido estables, validando en la práctica este preprocesado.
 
 Podemos concluir que la eliminación de la prueba \textbf{T2W} tampoco ha influido significativamente en los resultados. Pudiendo significar la existencia de información redundante en el conjunto de datos.
 
-Por otro lado, tras los resultados no vemos unos fuertes efectos de la reducción en la dimensionalidad. La mayoría de los trabajos recientes usan 3D, usando toda la resonancia como entrada a la red. Descartamos esta opción por recursos, pero en la práctica no vemos una diferencia sustancial que haga que la información espacial entre imágenes de una resonancia permita segmentar mejor.
+Por otro lado, tras los resultados obtenidos no hemos apreciado efectos negativos tras haber hecho una reducción de dimensionalidad. La mayoría de los trabajos recientes usan información 3D, usando toda la resonancia como entrada a la red. Descartamos esta opción por recursos, pero en la práctica no vemos una diferencia sustancial que haga que la información espacial entre imágenes de una resonancia permita segmentar mejor.
 
 
 \subsection{El poder de la reconstrucción previa}
 
-Finalmente, uno de los aspectos clave para hacer posible este trabajo es gran aceleración que hemos obtenido en el entrenamiento mediante la reconstrucción de las imágenes previa para inicializar la red.
+Finalmente, uno de los aspectos clave para hacer posible este trabajo es el ahorro en tiempo de ejecución que hemos obtenido mediante el entrenamiento de una arquitectura encoder-decoder para obtener una reconstrucción de las imágenes. El aprendizaje derivado de esta arquitectura se ha usado en las tareas de clasificación y segmentación.
 
 El preentrenamiento con el autoencoder ha permitido que el codificador y representación latente capten características relevantes y patrones inherentes a los datos antes de que se entrene para la tarea de clasificación o segmentación. Esto es especialmente útil cuando se dispone de una cantidad limitada de datos etiquetados como es en el caso de datos médicos. Esta técnica consiste en aprovechar al máximo las imágenes de entrada.
 
@@ -47,7 +47,7 @@ En el estado del arte hemos visto que el uso de transformer es una tendencia al 
 
 \subsection{Unificación de arquitecturas}
 
-En todo el trabajo hemos usado un codificador y representación latente común a las dos tareas y en la teoría también común a la tercera. Un trabajo a futuro sería investigar la bondad de ambos tres modelos para diferentes tareas optimizando esta parte común junto a los decoder o capas densamente conectadas de cada una en un mismo proceso de entrenamiento. Parte de la literatura ha indicado que esto bien ejecutado podría tener un efecto regularizador y reducir el ruido irreducible que veíamos en la optimización.
+En todo el trabajo hemos usado un codificador y representación latente común a las dos tareas y en la teoría también común a la tercera. Un trabajo a futuro sería investigar la bondad de los tres modelos para diferentes tareas optimizando esta parte común junto a los decoder o capas densamente conectadas de cada una en un mismo proceso de entrenamiento. Parte de la literatura ha indicado que esto bien ejecutado podría tener un efecto regularizador y reducir el ruido irreducible que veíamos en la optimización.
 
 Por otro lado, esta puede ser una fuerte motivación a usar una arquitectura transformadora ya que en trabajos recientes han sido utilizadas como modelo multi-modal.
 
