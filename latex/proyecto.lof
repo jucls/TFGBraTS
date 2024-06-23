@@ -64,4 +64,15 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {B.1}{\ignorespaces Diagrama de clases de toda la interfaz}}{100}{figure.Alph2.1}%
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {C.1}{\ignorespaces Diagrama de flujo de la interfaz.}}{105}{figure.Alph3.1}%
+\contentsline {figure}{\numberline {C.2}{\ignorespaces Inicio de la interfaz.}}{106}{figure.Alph3.2}%
+\contentsline {figure}{\numberline {C.3}{\ignorespaces Seleccionar archivo a cargar en la interfaz.}}{106}{figure.Alph3.3}%
+\contentsline {figure}{\numberline {C.4}{\ignorespaces Seleccionar prueba a cargar en la interfaz.}}{107}{figure.Alph3.4}%
+\contentsline {figure}{\numberline {C.5}{\ignorespaces Visualizado de imágenes y 3D en la interfaz.}}{107}{figure.Alph3.5}%
+\contentsline {figure}{\numberline {C.6}{\ignorespaces Segmentar con la interfaz y visualizado de la máscara resultado.}}{108}{figure.Alph3.6}%
+\contentsline {figure}{\numberline {C.7}{\ignorespaces Clasificar con la interfaz y resultados de clasificación.}}{108}{figure.Alph3.7}%
+\contentsline {figure}{\numberline {C.8}{\ignorespaces Exportar segmentación con la interfaz.}}{109}{figure.Alph3.8}%
+\contentsline {figure}{\numberline {C.9}{\ignorespaces Seleccionar ruta a exportar en la interfaz.}}{109}{figure.Alph3.9}%
+\contentsline {figure}{\numberline {C.10}{\ignorespaces Mensaje de exportación realizada correctamente.}}{110}{figure.Alph3.10}%

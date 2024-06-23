@@ -96,11 +96,10 @@
 \contentsline {section}{\numberline {A.3}Modelos en Kaggle}{98}{section.Alph1.3}%
 \contentsline {section}{\numberline {A.4}Demostración de uso de la interfaz}{98}{section.Alph1.4}%
 \contentsline {chapter}{\numberline {B}Documentación de la interfaz}{99}{appendix.Alph2}%
-\contentsline {section}{\numberline {B.1}Estructura de ficheros}{99}{section.Alph2.1}%
-\contentsline {section}{\numberline {B.2}Definición de los modelos}{99}{section.Alph2.2}%
-\contentsline {section}{\numberline {B.3}Programa principal}{99}{section.Alph2.3}%
-\contentsline {section}{\numberline {B.4}Fichero de inferencia}{99}{section.Alph2.4}%
-\contentsline {section}{\numberline {B.5}Dependencias}{99}{section.Alph2.5}%
-\contentsline {chapter}{\numberline {C}Manual de uso de la interfaz}{101}{appendix.Alph3}%
-\contentsline {section}{\numberline {C.1}Clasificando}{101}{section.Alph3.1}%
-\contentsline {section}{\numberline {C.2}Segmentando}{101}{section.Alph3.2}%
+\contentsline {section}{\numberline {B.1}Estructura de la interfaz}{99}{section.Alph2.1}%
+\contentsline {subsection}{\numberline {B.1.1}Diagrama de clases}{99}{subsection.Alph2.1.1}%
+\contentsline {subsection}{\numberline {B.1.2}Documentación de funciones}{100}{subsection.Alph2.1.2}%
+\contentsline {section}{\numberline {B.2}Dependencias}{102}{section.Alph2.2}%
+\contentsline {chapter}{\numberline {C}Manual de uso de la interfaz}{105}{appendix.Alph3}%
+\contentsline {section}{\numberline {C.1}Diagrama de flujo de la interfaz}{105}{section.Alph3.1}%
+\contentsline {section}{\numberline {C.2}Tutorial sobre el flujo de la interfaz}{106}{section.Alph3.2}%

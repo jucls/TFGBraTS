@@ -41,32 +41,6 @@ class InfoWindow(QDialog):
 
         self.setLayout(layout)
 
-        self.setStyleSheet("""
-            QDialog {
-                background-color: #2E3440;
-                color: #D8DEE9;
-                border-radius: 10px;
-                padding: 10px;
-            }
-            QLabel {
-                font-size: 16px;
-                color: #D8DEE9;
-            }
-            QPushButton {
-                background-color: #4C566A;
-                color: #D8DEE9;
-                border: none;
-                padding: 5px 10px;
-                border-radius: 5px;
-            }
-            QPushButton:hover {
-                background-color: #5E81AC;
-            }
-            QPushButton:pressed {
-                background-color: #81A1C1;
-            }
-        """)
-
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
