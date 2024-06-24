@@ -92,7 +92,7 @@
 \contentsline {chapter}{Bibliografía}{89}{subsection.5.2.3}%
 \contentsline {chapter}{\numberline {A}Códigos y repositorio}{97}{appendix.Alph1}%
 \contentsline {section}{\numberline {A.1}Repositorio de GitHub}{97}{section.Alph1.1}%
-\contentsline {section}{\numberline {A.2}Notebooks en Kaggle}{97}{section.Alph1.2}%
+\contentsline {section}{\numberline {A.2}Cuadernos en Kaggle}{97}{section.Alph1.2}%
 \contentsline {section}{\numberline {A.3}Modelos en Kaggle}{98}{section.Alph1.3}%
 \contentsline {section}{\numberline {A.4}Demostración de uso de la interfaz}{98}{section.Alph1.4}%
 \contentsline {chapter}{\numberline {B}Documentación de la interfaz}{99}{appendix.Alph2}%

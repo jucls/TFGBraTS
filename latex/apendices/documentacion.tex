@@ -9,13 +9,13 @@ A continuación, comentamos la implementación y diseño de la interfaz. Mostrar
 
 \subsection{Diagrama de clases}
 
-La interfaz tiene una estructura de ficheros modular separando un fichero principal \textbf{main} de otros ficheros que se encargan de la inferencia. Los programas que se encargan de utilizar los modelos para inferir son \textbf{model definition} y \textbf{predictions}. 
+La interfaz tiene una estructura de ficheros modular, separando un fichero principal \textbf{main} de otros ficheros que se encargan de la inferencia. Los programas que se ocupan de utilizar los modelos para inferir son: \textbf{model definition} y \textbf{predictions}. 
 \begin{itemize}
 	\item \textbf{Model definition}. Este fichero reúne el código necesario para definir los modelos.
 	\item \textbf{Predictions}. Utiliza la instancia del \textbf{Learner} de \textbf{Model definition} para hacer la predicción final.
 \end{itemize}
 
-En un diagrama de clases mostraremos todos los ficheros representados como metaclases que contienen a su vez sus propias clases. Dentro de la definición de la metaclase o fichero \textbf{model definition} representaremos como un cuadro instancia todas las clases y métodos necesarios para las arquitectura y modelos que definimos en la Figura 4.1.
+En el diagrama de clases (ver Figura B.1) mostraremos todos los ficheros representados como metaclases que contienen a su vez sus propias clases. Dentro de la definición de la metaclase o fichero \textbf{model definition}, representaremos con un cuadro instancia todas las clases y métodos necesarios para las arquitectura y modelos que se definieron en la Figura 4.1.
 
 A continuación, mostraremos el diagrama de clases de toda la interfaz.
 
@@ -25,7 +25,7 @@ A continuación, mostraremos el diagrama de clases de toda la interfaz.
 	\caption{Diagrama de clases de toda la interfaz}
 \end{figure}
 
-En la figura B.1, observamos el diagrama de clases de la interfaz. Las relaciones en este diagrama es como podemos ver la metaclase principal que instancia la ventana de la interfaz para interir utiliza a \textbf{predictions} y este a su vez utiliza a \textbf{model definition}. Además se observa como la metaclase de la definición del modelo utiliza a PyTorch y a FastAI. Y como la clase de la ventana principal usa \textbf{PyQt5} y \textbf{PyVista}. Finalmente, se observa como todas las clases usan a la librería \textbf{NiBabel}.
+En la figura B.1, observamos el diagrama de clases de la interfaz. Las relaciones que se muestran en el diagrama tienen su origen en la metaclase principal (main). Así la metaclase principal instancia la ventana de la interfaz. Para inferir usa a la metaclase \textbf{predictions}. La metaclase predictions a su vez se relaciona con \textbf{model definition} ya que usa las funciones que devuelven sus objetos \textbf{Learner}. Además se observa como la metaclase de la definición del modelo utiliza a PyTorch y a FastAI. Y como la clase de la ventana principal usa \textbf{PyQt5} y \textbf{PyVista}. Finalmente, se observa como todas las clases usan a la librería \textbf{NiBabel}.
 
 
 \subsection{Documentación de funciones}

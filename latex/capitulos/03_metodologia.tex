@@ -356,8 +356,6 @@ La arquitectura Inception, particularmente en sus versiones más recientes como 
 
 La convolución separable en profundidad es una técnica que factoriza una convolución estándar en dos operaciones más simples y eficientes: una \textbf{convolución en profundidad} (depthwise convolution) y una \textbf{convolución puntual} (pointwise convolution). En una convolución estándar, los filtros de convolución mezclan canales de entrada y espaciales en una única operación. En cambio, la convolución separable en profundidad realiza estos dos pasos por separado.
 
-Matemáticamente, una convolución separable en profundidad donde \(\mathbf{X}\) es la entrada, \(\mathbf{K}\) es el filtro de convolución, \(*_{\text{depthwise}}\) es la operación de convolución en profundidad y \(*_{\text{pointwise}}\) es la operación de convolución puntual.
-
 Xception se compone de varias capas organizadas en bloques de convolución separables en profundidad. Como capa de entrada tiene una capa convolucional inicial con 32 filtros de tamaño 3x3 y un stride de 2, seguida de una capa convolucional con 64 filtros de tamaño 3x3.
 
 \begin{itemize}
